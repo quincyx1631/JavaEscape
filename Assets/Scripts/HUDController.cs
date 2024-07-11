@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class HUDController : MonoBehaviour
 {
-   public static HUDController instance;
+    public static HUDController instance;
 
     private void Awake()
     {
@@ -19,6 +17,13 @@ public class HUDController : MonoBehaviour
         interactionText.text = text + " (F)";
         interactionText.gameObject.SetActive(true);
     }
+
+    public void EnableDropText(string text)
+    {
+        interactionText.text = text + " (G) Drop";
+        interactionText.gameObject.SetActive(true);
+    }
+
     public void DisableInteractionText()
     {
         interactionText.gameObject.SetActive(false);

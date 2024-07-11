@@ -9,22 +9,38 @@ public class Interactables : MonoBehaviour
     public string message;
 
     public UnityEvent onInteraction;
+    public UnityEvent onPickUp;
+    public UnityEvent onInspect;
+
     // Start is called before the first frame update
     void Start()
     {
         outline = GetComponent<Outline>();
         DisableOutline();
     }
+
     public void DisableOutline()
     {
         outline.enabled = false;
     }
+
     public void EnableOutline()
     {
         outline.enabled = true;
     }
+
     public void Interact()
     {
         onInteraction.Invoke();
+    }
+
+    public void PickUp()
+    {
+        onPickUp.Invoke();
+    }
+
+    public void Inspect()
+    {
+        onInspect.Invoke();
     }
 }

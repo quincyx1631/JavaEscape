@@ -7,13 +7,26 @@ public class PlayerInteraction : MonoBehaviour
     public float PlayerReach = 3f;
     Interactables CurrentInteractables;
     public Camera PlayerCamera;
+    public Transform itemHolder;  // Reference to the item holder
 
     void Update()
     {
         CheckInteraction();
-        if (Input.GetKeyDown(KeyCode.F) && CurrentInteractables != null)
+
+        if (CurrentInteractables != null)
         {
-            CurrentInteractables.Interact();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                CurrentInteractables.Interact();
+            }
+            else if (Input.GetKeyDown(KeyCode.G) && IsItemHolderEmpty())
+            {
+                CurrentInteractables.PickUp();
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                CurrentInteractables.Inspect();
+            }
         }
     }
 
@@ -66,7 +79,12 @@ public class PlayerInteraction : MonoBehaviour
     {
         CurrentInteractables = newInteractables;
         CurrentInteractables.EnableOutline();
-        HUDController.instance.EnableInteractionText(CurrentInteractables.message);
+
+        // Only enable interaction text if item holder is empty
+        if (IsItemHolderEmpty())
+        {
+            HUDController.instance.EnableInteractionText(CurrentInteractables.message);
+        }
     }
 
     void DisableCurrentInteractables()
@@ -77,5 +95,10 @@ public class PlayerInteraction : MonoBehaviour
             CurrentInteractables.DisableOutline();
             CurrentInteractables = null;
         }
+    }
+
+    bool IsItemHolderEmpty()
+    {
+        return itemHolder.childCount == 0;
     }
 }
