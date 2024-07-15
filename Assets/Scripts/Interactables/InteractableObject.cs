@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MonoBehaviour
+public class InteractableObject : MonoBehaviour
 {
     private Animator animator;
     private bool isOpen = false;
@@ -19,7 +19,7 @@ public class Box : MonoBehaviour
     {
         isOpen = !isOpen;
         animator.SetBool("IsOpen", isOpen);
-        UpdateMessage();  // Update the message whenever the box is interacted with
+        UpdateMessage();  // Update the message whenever the object is interacted with
         HUDController.instance.EnableInteractionText(interactables.message);  // Update the HUD with the new message
     }
 
