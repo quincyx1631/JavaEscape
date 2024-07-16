@@ -9,6 +9,9 @@ public class Interactables : MonoBehaviour
     public UnityEvent onInteraction;
     public UnityEvent onPickUp;
     public UnityEvent onInspect;
+    public bool canInteract = true;
+    public bool canPickup = true;
+    public bool canInspect = true;
 
     private Inspect inspector;
 

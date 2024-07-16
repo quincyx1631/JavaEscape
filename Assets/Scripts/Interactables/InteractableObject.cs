@@ -27,11 +27,11 @@ public class InteractableObject : MonoBehaviour
     {
         if (isOpen)
         {
-            interactables.message = "Close";
+            interactables.message = "[F] Close";
         }
         else
         {
-            interactables.message = "Open";
+            interactables.message = "[F] Open";
         }
     }
 

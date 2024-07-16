@@ -5,7 +5,7 @@ public class PlayerInteraction : MonoBehaviour
     public float PlayerReach = 3f;
     Interactables CurrentInteractables;
     public Camera PlayerCamera;
-    public Transform itemHolder;  // Reference to the item holder
+    public Transform itemHolder;
     private PickUp currentItem;
 
     void Update()
@@ -18,27 +18,34 @@ public class PlayerInteraction : MonoBehaviour
             {
                 currentItem.Drop();
                 Debug.Log("Item dropped: " + currentItem.gameObject.name);
-                currentItem = null; // Clear the reference after dropping
+                currentItem = null;
             }
-            else if (CurrentInteractables != null && IsItemHolderEmpty())
+            else if (CurrentInteractables != null && CurrentInteractables.canPickup && IsItemHolderEmpty())
             {
                 CurrentInteractables.PickUp();
                 currentItem = CurrentInteractables.GetComponent<PickUp>();
-                Debug.Log("Item picked up: " + currentItem.gameObject.name);
+                if (currentItem != null)
+                {
+                    Debug.Log("Item picked up: " + currentItem.gameObject.name);
+                }
+                else
+                {
+                    Debug.LogWarning("Picked up item does not have a PickUp component.");
+                }
             }
         }
 
         if (CurrentInteractables != null)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && CurrentInteractables.canInteract)
             {
                 CurrentInteractables.Interact();
             }
-            else if (Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.E) && CurrentInteractables.canInspect)
             {
                 CurrentInteractables.Inspect();
             }
-            else if (Input.GetKeyDown(KeyCode.Escape) && CurrentInteractables != null && CurrentInteractables.enabled)
+            else if (Input.GetKeyDown(KeyCode.Escape) && CurrentInteractables.enabled)
             {
                 CurrentInteractables.StopInspecting();
             }
@@ -56,7 +63,6 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(PlayerCamera.transform.position, PlayerCamera.transform.forward);
 
-        // Debugging: Draw the ray in the Scene view
         Debug.DrawRay(ray.origin, ray.direction * PlayerReach, Color.red);
 
         if (Physics.Raycast(ray, out hit, PlayerReach))
@@ -95,16 +101,42 @@ public class PlayerInteraction : MonoBehaviour
         CurrentInteractables = newInteractables;
         CurrentInteractables.EnableOutline();
 
-        // Only enable interaction text if item holder is empty
         if (IsItemHolderEmpty())
         {
-            HUDController.instance.EnableInteractionText(CurrentInteractables.message);
+            if (CurrentInteractables.canInteract)
+            {
+                HUDController.instance.EnableInteractionText(CurrentInteractables.message);
+            }
+            else
+            {
+                HUDController.instance.DisableInteractionText();
+            }
+
+            if (CurrentInteractables.canPickup)
+            {
+                HUDController.instance.EnablePickupText();
+            }
+            else
+            {
+                HUDController.instance.DisablePickupText();
+            }
+
+            if (CurrentInteractables.canInspect)
+            {
+                HUDController.instance.EnableInspectText();
+            }
+            else
+            {
+                HUDController.instance.DisableInspectText();
+            }
         }
     }
 
     void DisableCurrentInteractables()
     {
         HUDController.instance.DisableInteractionText();
+        HUDController.instance.DisablePickupText();
+        HUDController.instance.DisableInspectText();
         if (CurrentInteractables)
         {
             CurrentInteractables.DisableOutline();

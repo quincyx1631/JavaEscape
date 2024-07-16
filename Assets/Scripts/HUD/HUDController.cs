@@ -1,31 +1,55 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
     public static HUDController instance;
 
+    public TextMeshProUGUI interactText;
+    public TextMeshProUGUI pickupText;
+    public TextMeshProUGUI inspectText;
+
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    [SerializeField] TMP_Text interactionText;
-
-    public void EnableInteractionText(string text)
+    public void EnableInteractionText(string message)
     {
-        interactionText.text = " (F)" + text ;
-        interactionText.gameObject.SetActive(true);
-    }
-
-    public void EnableDropText(string text)
-    {
-        interactionText.text = text + " (G) Drop";
-        interactionText.gameObject.SetActive(true);
+        interactText.text = message;
+        interactText.gameObject.SetActive(true);
     }
 
     public void DisableInteractionText()
     {
-        interactionText.gameObject.SetActive(false);
+        interactText.gameObject.SetActive(false);
+    }
+
+    public void EnablePickupText()
+    {
+        pickupText.gameObject.SetActive(true);
+    }
+
+    public void DisablePickupText()
+    {
+        pickupText.gameObject.SetActive(false);
+    }
+
+    public void EnableInspectText()
+    {
+        inspectText.gameObject.SetActive(true);
+    }
+
+    public void DisableInspectText()
+    {
+        inspectText.gameObject.SetActive(false);
     }
 }
