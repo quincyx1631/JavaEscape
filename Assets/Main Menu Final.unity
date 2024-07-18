@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2057,6 +2057,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183636480}
   m_CullTransparentMesh: 1
+--- !u!1 &190441218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190441219}
+  - component: {fileID: 190441220}
+  m_Layer: 5
+  m_Name: Quiz Selection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &190441219
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190441218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1302356904}
+  m_Father: {fileID: 1738823704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &190441220
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190441218}
+  m_CullTransparentMesh: 1
 --- !u!1 &219791448
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,7 +3272,7 @@ GameObject:
   - component: {fileID: 387441170}
   - component: {fileID: 387441174}
   m_Layer: 5
-  m_Name: Button 0
+  m_Name: Button A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4709,9 +4754,9 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 75
+    m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 4
@@ -4924,7 +4969,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 75
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 4
@@ -4974,15 +5019,15 @@ RectTransform:
   m_Children:
   - {fileID: 1277494801}
   - {fileID: 387441169}
-  - {fileID: 758276237}
   - {fileID: 1993887300}
+  - {fileID: 758276237}
   - {fileID: 1959876990}
-  m_Father: {fileID: 1738823704}
+  m_Father: {fileID: 1302356904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664039388
 MonoBehaviour:
@@ -5803,38 +5848,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: Bahay ni Ano
+  - Question: 'In Object-Oriented Programming, what is a class? '
     Answers:
-    - Neil
-    - Janus
-    - 'Michael '
-    - Javen
+    - 'A. An instance of an object '
+    - 'B. A blueprint or prototype from which objects are created '
+    - 'C. A method that performs actions '
+    - 'D. A data type that holds values '
     CorrectAnswer: 2
-  - Question: Naghugas ng Pinggan
+  - Question: 'Which OOP principle is described as hiding the internal details of
+      how a piece of software is written, exposing only what is necessary? '
     Answers:
-    - Neil
-    - Michael
-    - Janus
-    - Javen
-    CorrectAnswer: 1
-  - Question: Ginagawa ni Javen
+    - 'A. Polymorphism '
+    - B. Inheritance
+    - C. Encapsulation
+    - D. Overriding
+    CorrectAnswer: 3
+  - Question: 'What is the purpose of debugging in programming? '
     Answers:
-    - Desk
-    - Lamesa
-    - Kama
-    - Libro
+    - 'A. Writing new code '
+    - B. Enhancing performance
+    - 'C. Defining and eliminating mistakes in the program '
+    - D. Adding new features
+    CorrectAnswer: 3
+  - Question: 'What year was Java released as a core component of Sun Microsystems''
+      Java platform? '
+    Answers:
+    - A. 1991
+    - B. 1994
+    - C. 1995
+    - D. 2000
+    CorrectAnswer: 3
+  - Question: 'Which feature of Java allows programs to run on any platform? '
+    Answers:
+    - 'A. Object-Oriented '
+    - B. Simple
+    - 'C. Platform Independent '
+    - D. Secure
+    CorrectAnswer: 3
+  - Question: 'Who led the team that designed the first version of Java at Sun Microsystems? '
+    Answers:
+    - 'A. Patrick Naughton '
+    - B. Jonathan Payne
+    - C. Bill Joy
+    - 'D. James Gosling '
     CorrectAnswer: 4
-  - Question: Lugar ng bahay
+  - Question: ' How do you write a single-line comment in Java? '
     Answers:
-    - Paombong
-    - BSU
-    - Malolos
-    - Anilao
+    - 'A. /* This is a comment */ '
+    - 'B. <!-- This is a comment --> '
+    - 'C. # This is a comment '
+    - 'D. // This is a comment '
+    CorrectAnswer: 4
+  - Question: 'How do you create a new Java project in NetBeans IDE? '
+    Answers:
+    - 'A. Click File -> New Project -> Select Java Project '
+    - 'B. Click Tools -> New Java Project -> Enter Project Name '
+    - 'C. Right-click on Workspace -> New Project -> Choose Java Project '
+    - 'D. None of the above '
+    CorrectAnswer: 1
+  - Question: 'Why might one choose to start with Terminal I/O rather than GUI for
+      Java programming? '
+    Answers:
+    - 'A. It''s more visually appealing to users. '
+    - 'B. It''s easier to implement in Java and many other languages. '
+    - 'C. It requires less memory usage. '
+    - 'D. It supports advanced graphics rendering. '
+    CorrectAnswer: 2
+  - Question: 'Which Java platform is intended for small, resource-constrained devices
+      like cell phones and PDAs? '
+    Answers:
+    - 'A. Java SE '
+    - 'B. Java EE '
+    - C. Java ME
+    - D. Java Card
     CorrectAnswer: 3
   options:
   - {fileID: 387441168}
-  - {fileID: 758276236}
   - {fileID: 1993887299}
+  - {fileID: 758276236}
   - {fileID: 1959876989}
   currentQuestion: 0
   QuestionTxt: {fileID: 1915563739}
@@ -5857,7 +5948,7 @@ GameObject:
   - component: {fileID: 758276238}
   - component: {fileID: 758276242}
   m_Layer: 5
-  m_Name: Button 1
+  m_Name: Button C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9203,6 +9294,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277494800}
   m_CullTransparentMesh: 1
+--- !u!1 &1302356903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302356904}
+  - component: {fileID: 1302356905}
+  m_Layer: 5
+  m_Name: Week 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1302356904
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302356903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1631021971}
+  - {fileID: 664039387}
+  - {fileID: 2085217360}
+  m_Father: {fileID: 190441219}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1302356905
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302356903}
+  m_CullTransparentMesh: 1
 --- !u!1 &1355145243
 GameObject:
   m_ObjectHideFlags: 0
@@ -9522,7 +9660,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 75
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 4
@@ -11360,12 +11498,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1738823704}
+  m_Father: {fileID: 1302356904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631021972
 MonoBehaviour:
@@ -12368,9 +12506,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1631021971}
-  - {fileID: 2085217360}
-  - {fileID: 664039387}
+  - {fileID: 190441219}
   m_Father: {fileID: 1040584622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -13731,7 +13867,7 @@ GameObject:
   - component: {fileID: 1959876991}
   - component: {fileID: 1959876995}
   m_Layer: 5
-  m_Name: Button 3
+  m_Name: Button D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13970,7 +14106,7 @@ GameObject:
   - component: {fileID: 1993887301}
   - component: {fileID: 1993887305}
   m_Layer: 5
-  m_Name: Button 2
+  m_Name: Button B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14746,7 +14882,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 75
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 4
@@ -15038,12 +15174,12 @@ RectTransform:
   - {fileID: 32320308}
   - {fileID: 152449559}
   - {fileID: 1462570360}
-  m_Father: {fileID: 1738823704}
+  m_Father: {fileID: 1302356904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085217361
 MonoBehaviour:
