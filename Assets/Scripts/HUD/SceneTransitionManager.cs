@@ -26,24 +26,27 @@ public class SceneTransitionManager : MonoBehaviour
 
     public void LoadSceneAfterAnimation(string sceneName, Animator doorAnimator)
     {
-        doorAnimator.SetTrigger("IsOpen");
-        isAnimationComplete = false; // Reset flag
+        Debug.Log("LoadSceneAfterAnimation called.");
+        doorAnimator.SetTrigger("OpenDoor");
+        isAnimationComplete = false;
         StartCoroutine(WaitForAnimationToEnd(sceneName));
     }
 
     private IEnumerator WaitForAnimationToEnd(string sceneName)
     {
-        // Wait until animation completes
+        Debug.Log("Waiting for animation to end...");
         while (!isAnimationComplete)
         {
             yield return null;
         }
-        SceneManager.LoadScene(sceneName); // Load the next scene
+        Debug.Log("Animation complete, loading scene: " + sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 
     // Called by Animation Event
     public void OnAnimationComplete()
     {
-        isAnimationComplete = true; // Animation is done
+        Debug.Log("OnAnimationComplete called.");
+        isAnimationComplete = true;
     }
 }
