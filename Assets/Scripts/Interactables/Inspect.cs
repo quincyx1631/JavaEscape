@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Inspect : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class Inspect : MonoBehaviour
     public Transform inspectionPoint;
     public FirstPersonController controller;
     private Collider itemCollider;
-    public GameObject escapeUI;
     // Cube or point where the item should be placed
 
     // Start is called before the first frame update
@@ -62,7 +60,6 @@ public class Inspect : MonoBehaviour
     {
         if (!isInspecting)
         {
-            escapeUI.gameObject.SetActive(true);
             isInspecting = true;
             inspectRotation = transform.eulerAngles;
             originalPosition = transform.position; // Store original position
@@ -100,7 +97,6 @@ public class Inspect : MonoBehaviour
     {
         if (isInspecting)
         {
-             escapeUI.gameObject.SetActive(true);
             isInspecting = false;
             // Reset position and rotation to original
             transform.position = originalPosition;
