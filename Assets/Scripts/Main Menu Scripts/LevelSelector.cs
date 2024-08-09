@@ -7,25 +7,15 @@ using UnityEngine.UI;
 public class LevelSelector : MonoBehaviour
 {
     public Button[] buttons;
-    private SaveData saveData;
-    private int slot = 0; // Use a default slot
 
     private void Awake()
     {
-        saveData = SaveLoadManager.instance.LoadGame(slot) ?? new SaveData();
-        UpdateLevelButtons();
-    }
-
-    private void UpdateLevelButtons()
-    {
-        // Disable all buttons initially
-        foreach (Button button in buttons)
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        for (int i = 0; i < buttons.Length; i++)
         {
-            button.interactable = false;
+            buttons[i].interactable = false;
         }
-
-        // Enable buttons for completed levels and the next level to complete
-        for (int i = 0; i <= saveData.completedLevels.Count && i < buttons.Length; i++)
+        for (int i = 0; i < unlockedLevel; i++)
         {
             buttons[i].interactable = true;
         }
