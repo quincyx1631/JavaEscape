@@ -47,6 +47,12 @@ public class MainMenuController : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     private Resolution[] resolutions;
 
+    [Header("Progress Levels")]
+    [SerializeField] private int defaultReachIndex = 1;
+    [SerializeField] private int defaultUnlockedLevel = 1;
+    [SerializeField] public GameObject levelSelector = null;
+    [SerializeField] private GameObject newGameConfirmationDialog = null;
+
     public void Start()
     {
         resolutions = Screen.resolutions;
@@ -113,6 +119,44 @@ public class MainMenuController : MonoBehaviour
                 noSavedGameDialog.SetActive(true);
             }
         }*/
+
+    public void CheckSavedGame()
+    {
+        int reachIndex = PlayerPrefs.GetInt("ReachIndex", defaultReachIndex);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", defaultUnlockedLevel);
+
+        if (reachIndex == 1 && unlockedLevel == 1)
+        {
+            noSavedGameDialog.SetActive(true);
+            levelSelector.SetActive(false);
+            Debug.Log("No saved game found. Showing NoSavedGameDialog.");
+        }
+        else
+        {
+            noSavedGameDialog.SetActive(false);
+            levelSelector.SetActive(true);
+            Debug.Log("Saved game found. Showing LevelSelector.");
+        }
+    }
+
+    public void newGameDialog()
+    {
+        int reachIndex = PlayerPrefs.GetInt("ReachIndex", defaultReachIndex);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", defaultUnlockedLevel);
+
+        if (reachIndex > 1 && unlockedLevel > 1)
+        {
+            newGameConfirmationDialog.SetActive(true);
+            levelSelector.SetActive(false);
+            Debug.Log("No saved game found. Showing NoSavedGameDialog.");
+        }
+        else
+        {
+            newGameConfirmationDialog.SetActive(false);
+            levelSelector.SetActive(true);
+            Debug.Log("Saved game found. Showing LevelSelector.");
+        }
+    }
 
     public void ExitButton()
     {
@@ -186,7 +230,10 @@ public class MainMenuController : MonoBehaviour
 
     public void ResetButton(string MenuType)
     {
-        if(MenuType == "Audio")
+        int reachIndex = PlayerPrefs.GetInt("ReachIndex", defaultReachIndex);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", defaultUnlockedLevel);
+
+        if (MenuType == "Audio")
         {
             AudioListener.volume = defaultVolume;
             volumeSlider.value = defaultVolume;
@@ -218,6 +265,38 @@ public class MainMenuController : MonoBehaviour
             Screen.SetResolution(currentResolution.width, currentResolution.height, Screen.fullScreen);
             resolutionDropdown.value = resolutions.Length;
             GraphicsApply();
+        }
+
+        if (MenuType == "Progress")
+        {
+            if (reachIndex > 1 && unlockedLevel > 1)
+            {
+                newGameConfirmationDialog.SetActive(true);
+                levelSelector.SetActive(false);
+                Debug.Log("Save Data Found. Showing New Game Confirmation.");
+            }
+            else if(reachIndex == 1 && unlockedLevel == 1)
+            {
+                newGameConfirmationDialog.SetActive(false);
+                levelSelector.SetActive(true);
+                Debug.Log("No Save Data Found. Showing LevelSelector.");
+
+                //Reset Reach Index and Unlocked Levels
+                PlayerPrefs.SetInt("ReachIndex", defaultReachIndex);
+                PlayerPrefs.SetInt("UnlockedLevel", defaultUnlockedLevel);
+                PlayerPrefs.Save();
+
+                Debug.Log("Progress reset: ReachIndex and UnlockedLevel set to default values.");
+            }
+        }
+        if(MenuType == "ResetOnly")
+        {
+            //Reset Reach Index and Unlocked Levels
+            PlayerPrefs.SetInt("ReachIndex", defaultReachIndex);
+            PlayerPrefs.SetInt("UnlockedLevel", defaultUnlockedLevel);
+            PlayerPrefs.Save();
+
+            Debug.Log("Progress reset: ReachIndex and UnlockedLevel set to default values.");
         }
     }
 
