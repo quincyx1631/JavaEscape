@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using TMPro;
+using LootLocker.Requests;
 
 public class QuizManager : MonoBehaviour
 {
+    [Header("Lootlocker Leaderboard")]
+    public QuizLeaderboard leaderboard;
+    public TMP_InputField playerNameInputFieldQuiz;
+
     public List<QuestionAndAnswer> QnA;
+    private List<QuestionAndAnswer> originalQnA; // Original list to reset questions
     public GameObject[] options;
     public int currentQuestion;
 
@@ -22,20 +28,93 @@ public class QuizManager : MonoBehaviour
     private void Start()
     {
         totalQuestions = QnA.Count;
-        ScorePanel.SetActive(false);
-        generateQuestion();
+        PlayerPrefs.DeleteKey("QuizRetry");
+        PlayerPrefs.DeleteKey("QuizScore");
+        // Create a copy of the original QnA list
+        originalQnA = new List<QuestionAndAnswer>(QnA);
+
+        // Check if there is a retry flag
+        if (PlayerPrefs.HasKey("QuizRetry1"))
+        {
+            PlayerPrefs.DeleteKey("QuizRetry1"); // Clear the retry flag
+            ScorePanel.SetActive(false);
+            generateQuestion();
+        }
+        else if (PlayerPrefs.HasKey("QuizScore1"))
+        {
+            // If there is a saved score, show the ScorePanel
+            score = PlayerPrefs.GetInt("QuizScore1");
+            ShowScorePanel();
+        }
+        else
+        {
+            // Start quiz normally
+            ScorePanel.SetActive(false);
+            generateQuestion();
+        }
+    }
+
+    public void SetPlayerName()
+    {
+        LootLockerSDKManager.SetPlayerName(playerNameInputFieldQuiz.text, (response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log("Succesfully set player name");
+            }
+            else 
+            {
+                Debug.Log("Could not set player name" + response.errorData);
+
+            }
+        });
     }
 
     public void retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Set the retry flag and save it
+        PlayerPrefs.SetInt("QuizRetry1", 1);
+        PlayerPrefs.Save();
+
+        // Reset the score and the question list
+        score = 0;
+        QnA = new List<QuestionAndAnswer>(originalQnA); // Reset QnA to the original list
+        totalQuestions = QnA.Count;
+
+        // Reset the UI elements
+        ScorePanel.SetActive(false);
+        QuizPanel.SetActive(true);
+
+        // Regenerate the first question
+        generateQuestion();
     }
 
     void GameOver()
     {
+        // Save the score to PlayerPrefs
+        PlayerPrefs.SetInt("QuizScore1", score);
+        PlayerPrefs.Save();
+        StartCoroutine(GameOverRoutine());
+    }
+
+    IEnumerator GameOverRoutine()
+    {
+        // Show the score panel
+        ShowScorePanel();
+
+        // Wait for 1 second
+        yield return new WaitForSecondsRealtime(1f);
+
+        // Submit the score to the leaderboard
+        yield return leaderboard.SubmitScoreRoutine(score);
+    }
+
+
+    void ShowScorePanel()
+    {
         QuizPanel.SetActive(false);
         ScorePanel.SetActive(true);
-        scoreTxt.text = score + "/" + totalQuestions;
+        scoreTxt.text = "Score: " + score + "/" + totalQuestions;
     }
 
     public void correct()
@@ -43,9 +122,8 @@ public class QuizManager : MonoBehaviour
         score += 1;
         QnA.RemoveAt(currentQuestion);
         generateQuestion();
-
     }
-    
+
     public void wrong()
     {
         QnA.RemoveAt(currentQuestion);
@@ -59,16 +137,16 @@ public class QuizManager : MonoBehaviour
             options[i].GetComponent<AnswerScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQuestion].Answers[i];
 
-            if (QnA[currentQuestion].CorrectAnswer == i+1)
+            if (QnA[currentQuestion].CorrectAnswer == i + 1)
             {
-                options[i].GetComponent <AnswerScript>().isCorrect = true;
+                options[i].GetComponent<AnswerScript>().isCorrect = true;
             }
         }
     }
 
     void generateQuestion()
     {
-        if(QnA.Count > 0)
+        if (QnA.Count > 0)
         {
             currentQuestion = Random.Range(0, QnA.Count);
 
