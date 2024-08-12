@@ -17,7 +17,6 @@ public class Inspect : MonoBehaviour
 
     public Camera inspectionCamera;
     public Transform inspectionPoint;
-    public FirstPersonController controller;
     private Collider itemCollider;
     public GameObject escapeUI;
     public Light inspectionLight;
@@ -87,7 +86,7 @@ public class Inspect : MonoBehaviour
             originalPosition = transform.position;
             originalRotation = transform.rotation;
 
-            DisablePlayerControls();
+            PlayerControlManager.Instance.DisablePlayerControls();
             itemCollider.enabled = false;
 
             if (inspectionCamera != null)
@@ -136,26 +135,13 @@ public class Inspect : MonoBehaviour
                 inspectionLight.enabled = false;
             }
 
-            EnablePlayerControls();
+            
             itemCollider.enabled = true;
 
             Time.timeScale = 1f;
+            PlayerControlManager.Instance.EnablePlayerControls();
         }
     }
 
-    private void DisablePlayerControls()
-    {
-        controller.enableCrouch = false;
-        controller.enableJump = false;
-        controller.playerCanMove = false;
-        controller.cameraCanMove = false;
-    }
-
-    private void EnablePlayerControls()
-    {
-        controller.enableCrouch = true;
-        controller.enableJump = true;
-        controller.playerCanMove = true;
-        controller.cameraCanMove = true;
-    }
+  
 }

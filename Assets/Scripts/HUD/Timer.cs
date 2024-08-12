@@ -1,7 +1,6 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 using TMPro;
+using UnityEngine;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
@@ -40,5 +39,10 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         timerRunning = false;
+    }
+
+    public float GetElapsedTime() // Add this method to get the elapsed time
+    {
+        return elapsedTime;
     }
 }

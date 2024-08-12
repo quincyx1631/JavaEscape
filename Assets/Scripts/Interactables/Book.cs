@@ -49,7 +49,7 @@ public class Book : MonoBehaviour
             isUIActive = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            DisablePlayerControls();
+            PlayerControlManager.Instance.DisablePlayerControls();
             itemCollider.enabled = false;
 
             // Hide the book object
@@ -73,7 +73,7 @@ public class Book : MonoBehaviour
             isUIActive = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            EnablePlayerControls();
+            PlayerControlManager.Instance.EnablePlayerControls();
 
             if (bookContents != null)
             {
@@ -100,17 +100,5 @@ public class Book : MonoBehaviour
         }
     }
 
-    private void DisablePlayerControls()
-    {
-        // Example: Disable player movement (adjust according to your player control setup)
-        controller.playerCanMove = false;
-        controller.cameraCanMove = false;
-    }
-
-    private void EnablePlayerControls()
-    {
-        // Example: Enable player movement (adjust according to your player control setup)
-        controller.playerCanMove = true;
-        controller.cameraCanMove = true;
-    }
+   
 }
