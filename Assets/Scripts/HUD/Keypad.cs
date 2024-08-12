@@ -4,16 +4,18 @@ using TMPro;
 public class Keypad : MonoBehaviour
 {
     public TMP_Text displayText; // Reference to the display text
-    public string correctPassword = "ABCD"; // The correct password
+    [SerializeField] public string correctPassword = "ABCD"; // The correct password
     public Animator doorAnimator; // Reference to the door's Animator component
     public string nextSceneName = "NextScene"; // The name of the next scene
 
     private string currentInput = ""; // Stores the current input
-    private Keypad3D keypad3D; // Reference to the Keypad3D script
+    private KeypadOBJ keypad3D; // Reference to the Keypad3D script
+    public GameObject escapeUI;
 
     private void Start()
     {
-        keypad3D = FindObjectOfType<Keypad3D>(); // Find the Keypad3D script in the scene
+        keypad3D = FindObjectOfType<KeypadOBJ>(); // Find the Keypad3D script in the scene
+        escapeUI.SetActive(true);
     }
 
     private void Update()
@@ -21,8 +23,9 @@ public class Keypad : MonoBehaviour
         // Hide the keypad UI when the Escape key is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            keypad3D.DisableKeypadUI();
+            OnExit();
         }
+     
     }
 
     // Functions to handle button presses
@@ -67,7 +70,8 @@ public class Keypad : MonoBehaviour
     // Function to exit the keypad
     public void OnExit()
     {
-        keypad3D.DisableKeypadUI(); // Deactivate the keypad UI and hide the cursor
+        keypad3D.DisableKeypadUI();
+        escapeUI.SetActive(false);// Deactivate the keypad UI and hide the cursor
     }
 
     // Function to update the display text

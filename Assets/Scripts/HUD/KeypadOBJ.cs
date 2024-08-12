@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Keypad3D : MonoBehaviour
+public class KeypadOBJ : MonoBehaviour
 {
     public GameObject keypadUI; // Reference to the Keypad UI GameObject
     public FirstPersonController controller;
@@ -31,22 +31,18 @@ public class Keypad3D : MonoBehaviour
     }
     private void DisablePlayerControls()
     {
-        // Example: Disable player movement (adjust according to your player control setup)
+
+        controller.enableCrouch = false;
+        controller.enableJump = false;
         controller.playerCanMove = false;
         controller.cameraCanMove = false;
-
-
-        // Example: Disable other scripts responsible for player movement
-        // PlayerMovementScript.enabled = false;
     }
 
     private void EnablePlayerControls()
     {
-        // Example: Enable player movement (adjust according to your player control setup)
-
+        controller.enableCrouch = true;
+        controller.enableJump = true;
         controller.playerCanMove = true;
         controller.cameraCanMove = true;
-        // Example: Enable other scripts responsible for player movement
-        // PlayerMovementScript.enabled = true;
     }
 }
