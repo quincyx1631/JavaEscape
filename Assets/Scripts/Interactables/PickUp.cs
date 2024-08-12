@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public Transform itemHolder;
+    public string pickupSoundName; // Name of the sound in AudioManager
     private Transform originalParent;
     private Rigidbody rb;
     private Vector3 originalScale;
@@ -25,6 +26,13 @@ public class PickUp : MonoBehaviour
         if (itemHolder != null && IsItemHolderEmpty())
         {
             Debug.Log("Picking up item: " + gameObject.name);
+
+            // Play the pickup sound
+            if (!string.IsNullOrEmpty(pickupSoundName))
+            {
+                AudioManager.Instance.Play(pickupSoundName);
+            }
+
             transform.SetParent(itemHolder);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;

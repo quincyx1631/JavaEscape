@@ -4,7 +4,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     private Vector3 initialPosition;
-    private Vector3 movedPosition;
+    private Vector3 localMovedPosition;
     private bool isOpen = false;
     private bool isMoving = false;
     private Interactables interactables;
@@ -13,12 +13,12 @@ public class InteractableObject : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
-        movedPosition = initialPosition + new Vector3(0.5f, 0, 0);  // Move 0.5 units along the x-axis
+        // Calculate moved position in local space (forward direction)
+        localMovedPosition = new Vector3(0, 0, 1.2f);
         interactables = GetComponent<Interactables>();
         UpdateMessage();  // Update the initial message based on the initial state
 
         Debug.Log($"Initial Position: {initialPosition}");
-        Debug.Log($"Moved Position: {movedPosition}");
     }
 
     public void Interact()
@@ -31,7 +31,7 @@ public class InteractableObject : MonoBehaviour
         Debug.Log("Interact method called");
 
         isOpen = !isOpen;
-        Vector3 targetPosition = isOpen ? movedPosition : initialPosition;
+        Vector3 targetPosition = isOpen ? transform.TransformPoint(localMovedPosition) : initialPosition;
         StartCoroutine(MoveToPosition(targetPosition));
 
         UpdateMessage();  // Update the message whenever the object is interacted with
@@ -69,16 +69,7 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
-    {
-        if (!isMoving)
-        {
-            HUDController.instance.EnableInteractionText(interactables.message);
-        }
-    }
+   //
 
-    private void OnMouseExit()
-    {
-        HUDController.instance.DisableInteractionText();
-    }
+   
 }

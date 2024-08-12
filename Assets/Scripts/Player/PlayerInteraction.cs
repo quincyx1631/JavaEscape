@@ -45,10 +45,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 CurrentInteractables.Inspect();
             }
-            else if (Input.GetKeyDown(KeyCode.Escape) && CurrentInteractables.enabled)
-            {
-                CurrentInteractables.StopInspecting();
-            }
+           
         }
     }
 
