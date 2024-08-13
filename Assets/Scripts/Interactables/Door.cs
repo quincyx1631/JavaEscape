@@ -84,5 +84,22 @@ public class Door : MonoBehaviour
             FinishUI.Instance.DisplayFinalTime(finalElapsedTime); // Display the final time on the Finish UI
             finishUI.SetActive(true); // Display the Finish UI
         }
+
+        //Saving Progress Script
+        UnlockNewLevel();
+    }
+
+    void UnlockNewLevel()
+    {
+        int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+
+        if (currentSceneIndex >= PlayerPrefs.GetInt("ReachIndex"))
+        {
+            PlayerPrefs.SetInt("ReachIndex", currentSceneIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+
+            Debug.Log("Level unlocked: ReachIndex updated to " + (currentSceneIndex + 1));
+        }
     }
 }
