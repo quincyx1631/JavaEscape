@@ -27,6 +27,7 @@ public class PlayerControlManager : MonoBehaviour
             controller.enableJump = false;
             controller.playerCanMove = false;
             controller.cameraCanMove = false;
+            controller.enableHeadBob = false;
         }
     }
 
@@ -38,6 +39,7 @@ public class PlayerControlManager : MonoBehaviour
             controller.enableJump = true;
             controller.playerCanMove = true;
             controller.cameraCanMove = true;
+            controller.enableHeadBob = true;
         }
     }
 }

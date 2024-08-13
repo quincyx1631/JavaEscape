@@ -3,18 +3,17 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
-[System.Serializable]
-public class DialogueEntry
-{
-    public string characterName;
-    public Sprite characterImage;
-    [TextArea]
-    public string dialogueText;
-    public string voiceOverName; // Name of the voice-over in the AudioManager
-}
-
 public class Dialogue : MonoBehaviour
 {
+    [System.Serializable]
+    public class DialogueEntry
+    {
+        public string characterName;
+        public Sprite characterImage;
+        [TextArea]
+        public string dialogueText;
+        public string voiceOverName; // Name of the voice-over in the AudioManager
+    }
     public FirstPersonController controller;
     public Image characterImageUI;
     public TMP_Text characterNameUI;
@@ -28,7 +27,13 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
-        DisplayDialogue();
+        // Ensure the button is properly linked
+        if (nextButton != null)
+        {
+            nextButton.onClick.AddListener(NextDialogue);
+        }
+
+        // Disable player controls and show cursor
         DisablePlayerControls();
         ShowCursor();
     }
@@ -51,6 +56,11 @@ public class Dialogue : MonoBehaviour
                 AudioManager.Instance.Play(entry.voiceOverName);
             }
         }
+        else
+        {
+            // End of dialogue
+            EndDialogue();
+        }
     }
 
     private IEnumerator TypeText(string text)
@@ -69,6 +79,7 @@ public class Dialogue : MonoBehaviour
 
     public void NextDialogue()
     {
+        Debug.Log("NextDialogue called");
         if (isTyping)
         {
             StopAllCoroutines();
@@ -86,23 +97,27 @@ public class Dialogue : MonoBehaviour
         }
 
         currentDialogueIndex++;
-        if (currentDialogueIndex < dialogueEntries.Length)
-        {
-            DisplayDialogue();
-        }
-        else
-        {
-            // End of dialogue, hide the UI, enable player controls, and hide the cursor
-            gameObject.SetActive(false);
-            EnablePlayerControls();
-            HideCursor();
+        DisplayDialogue();
+    }
 
-            // Start the timer
-            if (timer != null)
-            {
-                timer.StartTimer(); // Start the timer with a duration of 60 seconds
-            }
+    private void EndDialogue()
+    {
+        // End of dialogue, hide the UI, enable player controls, and hide the cursor
+        gameObject.SetActive(false);
+        EnablePlayerControls();
+        HideCursor();
+
+        // Start the timer
+        if (timer != null)
+        {
+            timer.StartTimer(); // Start the timer with a duration of 60 seconds
         }
+    }
+    public void StartDialogue()
+    {
+        DisplayDialogue();
+        DisablePlayerControls();
+        ShowCursor();
     }
 
     private void DisablePlayerControls()
@@ -112,6 +127,7 @@ public class Dialogue : MonoBehaviour
         controller.enableJump = false;
         controller.playerCanMove = false;
         controller.cameraCanMove = false;
+        controller.enableHeadBob = false;
     }
 
     private void EnablePlayerControls()
@@ -121,6 +137,7 @@ public class Dialogue : MonoBehaviour
         controller.enableJump = true;
         controller.playerCanMove = true;
         controller.cameraCanMove = true;
+        controller.enableHeadBob = true;
     }
 
     private void ShowCursor()
