@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LootLocker.Requests;
+using TMPro;
 
 public class LeaderboardManager : MonoBehaviour
 {
@@ -29,11 +30,5 @@ public class LeaderboardManager : MonoBehaviour
             }
         });
         yield return new WaitWhile(() => done == false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
