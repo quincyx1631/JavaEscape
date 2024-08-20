@@ -8,7 +8,7 @@ public class QuizLeaderboard : MonoBehaviour
 {
     public TMP_InputField studentSectionInputField; 
     public TMP_InputField studentNameInputField;
-    int leaderboardID = 24125; 
+/*    int leaderboardID = 24125; */
     string leaderboardKey = "quizRoom1"; 
 
     void Start()
