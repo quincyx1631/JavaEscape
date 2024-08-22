@@ -9,24 +9,32 @@ public class LevelTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            // Unlock the new level and update the database
             UnlockNewLevel();
+
+            // Show the level selection UI and update the UI inputs
             ShowLevelSelection();
             DisableMovement();
             EnableUIInput();
+
+            // Refresh the level selection buttons
+            RefreshLevelSelection();
         }
     }
 
     void UnlockNewLevel()
     {
-        int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentSceneIndex >= PlayerPrefs.GetInt("ReachIndex"))
+        // Assuming the level is properly handled in UserProfile
+        ProfileData profileData = UserProfile.Instance.profileData;
+
+        // Check if the current level is the highest one reached
+        if (currentSceneIndex >= profileData.level)
         {
-            PlayerPrefs.SetInt("ReachIndex", currentSceneIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
-            PlayerPrefs.Save();
-
-            Debug.Log("Level unlocked: ReachIndex updated to " + (currentSceneIndex + 1));
+            // Increase the level in ProfileData and update in real-time
+            UserProfile.Instance.AddLevel();
+            Debug.Log("Level unlocked: Profile level updated to " + UserProfile.Instance.profileData.level);
         }
     }
 
@@ -60,5 +68,23 @@ public class LevelTrigger : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        Debug.Log("Cursor unlocked and visible.");
+    }
+
+    void RefreshLevelSelection()
+    {
+        if (levelSelectorPanel != null)
+        {
+            LevelSelector levelSelector = levelSelectorPanel.GetComponent<LevelSelector>();
+            if (levelSelector != null)
+            {
+                // Refresh the buttons based on the latest profile data
+                levelSelector.UpdateLevelSelection(UserProfile.Instance.profileData);
+            }
+            else
+            {
+                Debug.LogError("LevelTrigger: LevelSelector script not found on the level selector panel.");
+            }
+        }
     }
 }
