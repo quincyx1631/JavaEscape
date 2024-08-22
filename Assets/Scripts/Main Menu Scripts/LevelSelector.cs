@@ -50,5 +50,8 @@ public class LevelSelector : MonoBehaviour
         string levelName = "Level " + levelIndex;
         SceneManager.LoadScene(levelName);
     }
-
+    public void BackMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu Final");
+    }
 }
