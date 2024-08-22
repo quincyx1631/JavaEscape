@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using PlayFab;
 
 public class UIProfile : MonoBehaviour
 {
@@ -12,58 +11,42 @@ public class UIProfile : MonoBehaviour
     [SerializeField] TMP_Text playerScoreText;
     [SerializeField] TMP_Text playerQuiz1Text;
 
-    private bool isSignInSuccessful = false;
-
-    private void OnEnable()
+    void OnEnable()
     {
-        // Add listeners
+        // Re-add the listener for ProfileDataUpdated
         UserProfile.OnProfileDataUpdated.AddListener(ProfileDataUpdated);
-        UserAccountManager.OnSignInSuccess.AddListener(OnSignIn);
 
-        // Start coroutine to check sign-in status
-        StartCoroutine(CheckSignInStatus());
-    }
-
-    private void OnDisable()
-    {
-        // Remove listeners
-        UserProfile.OnProfileDataUpdated.RemoveListener(ProfileDataUpdated);
-        UserAccountManager.OnSignInSuccess.RemoveListener(OnSignIn);
-
-        // Stop coroutine when disabled
-        StopCoroutine(CheckSignInStatus());
-    }
-
-    private IEnumerator CheckSignInStatus()
-    {
-        // Wait until sign-in is successful
-        while (!isSignInSuccessful)
-        {
-            yield return null; // Wait for the next frame
-        }
-
-        // Once sign-in is successful, reload profile data
+        // Reload profile data whenever the scene is loaded or reloaded
         ReloadProfileData();
     }
 
-    private void OnSignIn()
+    void OnDisable()
     {
-        isSignInSuccessful = true;
+        // Remove the listener to avoid memory leaks
+        UserProfile.OnProfileDataUpdated.RemoveListener(ProfileDataUpdated);
     }
 
-    private void ReloadProfileData()
+    // Function to reload profile data
+    void ReloadProfileData()
     {
+        if (UserAccountManager.Instance == null)
+        {
+            // Attempt to find the UserAccountManager in the scene
+            UserAccountManager.Instance = FindObjectOfType<UserAccountManager>();
+        }
+
         if (UserAccountManager.Instance != null)
         {
             UserAccountManager.Instance.GetUserData("ProfileData");
         }
         else
         {
-            Debug.LogError("UserAccountManager instance is not found.");
+            Debug.LogError("UserAccountManager instance is still not found.");
         }
     }
 
-    private void ProfileDataUpdated(ProfileData profileData)
+    // Callback to update UI elements when profile data is updated
+    void ProfileDataUpdated(ProfileData profileData)
     {
         if (profileData != null)
         {
