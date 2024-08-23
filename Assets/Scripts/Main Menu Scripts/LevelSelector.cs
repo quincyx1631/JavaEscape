@@ -6,52 +6,30 @@ using UnityEngine.UI;
 
 public class LevelSelector : MonoBehaviour
 {
-    public Button[] levelButtons; // Array to hold 8 buttons for levels
-    public int maxLevel = 8; // Maximum level, set to 8
-    private int currentLevel;
+    public Button[] buttons;
 
-    private void Start()
+    private void Awake()
     {
-        // Subscribe to the profile data updated event
-        UserProfile.OnProfileDataUpdated.AddListener(UpdateLevelSelection);
+        UpdateButtonStates();
+    }
 
-        // Initialize the level buttons based on current profile data
-        if (UserProfile.Instance != null)
+    public void UpdateButtonStates()
+    {
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+
+        for (int i = 0; i < buttons.Length; i++)
         {
-            UpdateLevelSelection(UserProfile.Instance.profileData);
+            buttons[i].interactable = false;
+        }
+        for (int i = 0; i < unlockedLevel; i++)
+        {
+            buttons[i].interactable = true;
         }
     }
 
-    // Method to update level selection based on the user's profile data
-    public void UpdateLevelSelection(ProfileData profileData)
+    public void OpenLevel(int levelId)
     {
-        currentLevel = profileData.level;
-
-        // Ensure Level 1 is always open
-        levelButtons[0].interactable = true;
-
-        // Loop through the level buttons and set interactability
-        for (int i = 1; i < levelButtons.Length; i++)
-        {
-            if (i <= currentLevel)
-            {
-                levelButtons[i].interactable = true;
-            }
-            else
-            {
-                levelButtons[i].interactable = false;
-            }
-        }
-    }
-
-    // Public method to be called when a level button is clicked
-    public void OnLevelButtonClick(int levelIndex)
-    {
-        string levelName = "Level " + levelIndex;
+        string levelName = "Level " + levelId;
         SceneManager.LoadScene(levelName);
-    }
-    public void BackMainMenu()
-    {
-        SceneManager.LoadScene("Main Menu Final");
     }
 }

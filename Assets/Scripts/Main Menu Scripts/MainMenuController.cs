@@ -38,8 +38,10 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject confirmationPrompt = null;
 
     [Header("Levels to Load")]
+    public string _newGameLevel;
     private string levelToLoad;
     [SerializeField] private GameObject noSavedGameDialog = null;
+    public GameObject loadSavePanel;
 
     [Header("Resolution DropDowns")]
     public TMP_Dropdown resolutionDropdown;
@@ -82,6 +84,10 @@ public class MainMenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
+    public void NewGameDialogYes()
+    {
+        SceneManager.LoadScene(_newGameLevel);
+    }
     public void LoadGameDialogYes()
     {
         if (PlayerPrefs.HasKey("SavedLevel"))
@@ -94,6 +100,25 @@ public class MainMenuController : MonoBehaviour
             noSavedGameDialog.SetActive(true);
         }
     }
+
+    /*    public void LoadGameDialogYes()
+        {
+            Debug.Log("Attempting to load game data...");
+
+            // Check if the save file exists
+            SaveData data = SaveLoadManager.instance.LoadGame(0); // Assume slot 0 for this example
+
+            if (data != null && !string.IsNullOrEmpty(data.playerName))
+            {
+                Debug.Log("Save data loaded. Player Name: " + data.playerName);
+                loadSavePanel.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("No save data found.");
+                noSavedGameDialog.SetActive(true);
+            }
+        }*/
 
     public void CheckSavedGame()
     {
