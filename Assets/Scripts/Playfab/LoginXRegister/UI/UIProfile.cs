@@ -6,6 +6,7 @@ using TMPro;
 
 public class UIProfile : MonoBehaviour
 {
+    [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] TMP_Text playerNameText;
     [SerializeField] TMP_Text playerLevelText;
     [SerializeField] TMP_Text playerScoreText;
@@ -16,14 +17,18 @@ public class UIProfile : MonoBehaviour
         // Re-add the listener for ProfileDataUpdated
         UserProfile.OnProfileDataUpdated.AddListener(ProfileDataUpdated);
 
-        // Reload profile data whenever the scene is loaded or reloaded
-        ReloadProfileData();
+        UserAccountManager.OnSignInSuccess.AddListener(SignIn);
+
+/*        // Reload profile data whenever the scene is loaded or reloaded
+        ReloadProfileData();*/
     }
 
     void OnDisable()
     {
         // Remove the listener to avoid memory leaks
         UserProfile.OnProfileDataUpdated.RemoveListener(ProfileDataUpdated);
+
+        UserAccountManager.OnSignInSuccess.RemoveListener(SignIn);
     }
 
     // Function to reload profile data
@@ -43,6 +48,13 @@ public class UIProfile : MonoBehaviour
         {
             Debug.LogError("UserAccountManager instance is still not found.");
         }
+    }
+
+    void SignIn()
+    {
+        canvasGroup.alpha = 1;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
     }
 
     // Callback to update UI elements when profile data is updated
