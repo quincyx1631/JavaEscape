@@ -11,6 +11,7 @@ namespace ChristinaCreatesGames.Typography.Book
         [Space][SerializeField] private TMP_Text leftPagination;
         [SerializeField] private TMP_Text rightPagination;
         [SerializeField] private TextMeshProUGUI contentText;
+        [SerializeField] private string pageTurnSoundName;
 
         private void OnValidate()
         {
@@ -54,7 +55,11 @@ namespace ChristinaCreatesGames.Typography.Book
                 leftSide.pageToDisplay = 1;
 
             rightSide.pageToDisplay = leftSide.pageToDisplay + 1;
-
+            if (!string.IsNullOrEmpty(pageTurnSoundName))
+            {
+                Debug.Log("Playing page turn sound: " + pageTurnSoundName);
+                AudioManager.Instance.Play(pageTurnSoundName);
+            }
             UpdatePagination();
         }
 
@@ -74,6 +79,11 @@ namespace ChristinaCreatesGames.Typography.Book
                 rightSide.pageToDisplay = leftSide.pageToDisplay + 1;
             }
 
+            if (!string.IsNullOrEmpty(pageTurnSoundName))
+            {
+                Debug.Log("Playing page turn sound: " + pageTurnSoundName);
+                AudioManager.Instance.Play(pageTurnSoundName);
+            }
             UpdatePagination();
         }
 

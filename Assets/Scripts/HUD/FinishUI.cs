@@ -25,7 +25,6 @@ public class FinishUI : MonoBehaviour
         int minutes = Mathf.FloorToInt(finalTime / 60);
         int seconds = Mathf.FloorToInt(finalTime % 60);
         finalTimeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        Cursor.lockState = CursorLockMode.None;   
-        Cursor.visible = true;
+        MouseManager.Instance.EnableMouse();
     }
 }

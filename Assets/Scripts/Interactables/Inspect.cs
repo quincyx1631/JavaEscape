@@ -1,27 +1,26 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Inspect : MonoBehaviour
 {
     private bool isInspecting = false;
-    private Vector3 inspectRotation;
-    private Vector3 originalPosition; // Store original position before inspection
-    private Quaternion originalRotation; // Store original rotation
+    private Quaternion originalRotation;
+    private Vector3 originalPosition;
+    private Vector3 lastMousePosition;
+    private bool isRotating = false;
 
-    public float rotationSpeed = 5f;
-    public float zoomSpeed = 0.1f;
-    public float minZoom = 0.5f;
-    public float maxZoom = 3f;
-    public float minRotationX = -60f;
-    public float maxRotationX = 60f;
+    public float rotationSpeed = 200f;
 
     public Camera inspectionCamera;
     public Transform inspectionPoint;
     private Collider itemCollider;
+    private Rigidbody itemRigidbody;
     public GameObject escapeUI;
     public Light inspectionLight;
+    public PostProcessVolume postProcessVolume; // Reference to your Post-Processing Volume
 
-    private float currentZoom = 1f;
+    public string inspectStartSoundName; // Name of the sound to play when inspection starts
+    public string inspectStopSoundName;  // Name of the sound to play when inspection stops
 
     void Start()
     {
@@ -31,9 +30,16 @@ public class Inspect : MonoBehaviour
             inspectionCamera.gameObject.SetActive(false);
         }
         itemCollider = GetComponent<Collider>();
+        itemRigidbody = GetComponent<Rigidbody>();
         if (inspectionLight != null)
         {
             inspectionLight.enabled = false;
+        }
+
+        // Make sure the PostProcessVolume is disabled at the start
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = false;
         }
     }
 
@@ -42,7 +48,7 @@ public class Inspect : MonoBehaviour
         if (isInspecting)
         {
             HandleRotation();
-            HandleZoom();
+
             transform.position = inspectionPoint.position;
 
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -54,25 +60,28 @@ public class Inspect : MonoBehaviour
 
     private void HandleRotation()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-
-        inspectRotation.y += mouseX * rotationSpeed;
-        inspectRotation.x = Mathf.Clamp(inspectRotation.x - mouseY * rotationSpeed, minRotationX, maxRotationX);
-
-        transform.rotation = Quaternion.Euler(inspectRotation);
-    }
-
-    private void HandleZoom()
-    {
-        if (Input.GetMouseButton(0)) // Left mouse button for zooming
+        if (Input.GetMouseButtonDown(0))
         {
-            float mouseY = Input.GetAxis("Mouse Y");
-            currentZoom = Mathf.Clamp(currentZoom - mouseY * zoomSpeed, minZoom, maxZoom);
+            isRotating = true;
+            lastMousePosition = Input.mousePosition;
+        }
 
-            // Calculate new position based on zoom level
-            Vector3 direction = (transform.position - inspectionPoint.position).normalized;
-            transform.position = inspectionPoint.position + direction * currentZoom;
+        if (Input.GetMouseButton(0) && isRotating)
+        {
+            Vector3 mouseDelta = Input.mousePosition - lastMousePosition;
+
+            float angleX = mouseDelta.y * rotationSpeed * Time.deltaTime;
+            float angleY = -mouseDelta.x * rotationSpeed * Time.deltaTime;
+
+            transform.Rotate(inspectionCamera.transform.up, angleY, Space.World);
+            transform.Rotate(inspectionCamera.transform.right, angleX, Space.World);
+
+            lastMousePosition = Input.mousePosition;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isRotating = false;
         }
     }
 
@@ -82,12 +91,20 @@ public class Inspect : MonoBehaviour
         {
             escapeUI.SetActive(true);
             isInspecting = true;
-            inspectRotation = transform.eulerAngles;
-            originalPosition = transform.position;
             originalRotation = transform.rotation;
+            originalPosition = transform.position;
 
+            // Play the sound for starting inspection
+            if (!string.IsNullOrEmpty(inspectStartSoundName))
+            {
+                AudioManager.Instance.Play(inspectStartSoundName);
+            }
+
+            MouseManager.Instance.EnableMouse();
             PlayerControlManager.Instance.DisablePlayerControls();
-            itemCollider.enabled = false;
+
+            if (itemCollider != null) itemCollider.enabled = false;
+            if (itemRigidbody != null) itemRigidbody.isKinematic = true;
 
             if (inspectionCamera != null)
             {
@@ -105,6 +122,11 @@ public class Inspect : MonoBehaviour
                 inspectionLight.enabled = true;
             }
 
+            if (postProcessVolume != null)
+            {
+                postProcessVolume.enabled = true; // Enable the blur effect
+            }
+
             Time.timeScale = 0.5f;
         }
     }
@@ -115,6 +137,12 @@ public class Inspect : MonoBehaviour
         {
             escapeUI.SetActive(false);
             isInspecting = false;
+
+            // Play the sound for stopping inspection
+            if (!string.IsNullOrEmpty(inspectStopSoundName))
+            {
+                AudioManager.Instance.Play(inspectStopSoundName);
+            }
 
             transform.position = originalPosition;
             transform.rotation = originalRotation;
@@ -135,13 +163,17 @@ public class Inspect : MonoBehaviour
                 inspectionLight.enabled = false;
             }
 
-            
-            itemCollider.enabled = true;
+            if (postProcessVolume != null)
+            {
+                postProcessVolume.enabled = false; // Disable the blur effect
+            }
+
+            if (itemCollider != null) itemCollider.enabled = true;
+            if (itemRigidbody != null) itemRigidbody.isKinematic = false;
 
             Time.timeScale = 1f;
             PlayerControlManager.Instance.EnablePlayerControls();
+            MouseManager.Instance.DisableMouse();
         }
     }
-
-  
 }

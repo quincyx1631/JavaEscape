@@ -1,6 +1,5 @@
-using UnityEngine;
-using TMPro;
 using ChristinaCreatesGames.Typography.Book;
+using UnityEngine;
 
 public class Book : MonoBehaviour
 {
@@ -10,13 +9,17 @@ public class Book : MonoBehaviour
     public FirstPersonController controller;
     private bool isUIActive = false; // Track if the UI is currently active
     private Collider itemCollider;
+    private Rigidbody itemRigidbody;
     private Vector3 originalPosition; // Store original position before inspection
     private Quaternion originalRotation; // Store original rotation
     private Renderer bookRenderer; // Reference to the book's Renderer component
     public GameObject escapeUI;
+    public string interactSoundName; // Name of the sound to play when interacting with the book
+
     void Start()
     {
         itemCollider = GetComponent<Collider>();
+        itemRigidbody = GetComponent<Rigidbody>();
         bookRenderer = GetComponent<Renderer>(); // Get the Renderer component
 
         // Set initial content for the book
@@ -30,7 +33,6 @@ public class Book : MonoBehaviour
     {
         if (isUIActive && Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Hiding Book UI");
             HideBookUI();
         }
     }
@@ -41,38 +43,52 @@ public class Book : MonoBehaviour
         if (bookUI != null)
         {
             Debug.Log("Showing Book UI");
+
+            // Play the interaction sound
+            if (!string.IsNullOrEmpty(interactSoundName))
+            {
+                AudioManager.Instance.Play(interactSoundName);
+            }
+
             if (bookContents != null)
             {
                 bookContents.SetContent(initialContent);
             }
+
+            // Store original position and rotation
+            originalPosition = transform.position;
+            originalRotation = transform.rotation;
+
             bookUI.SetActive(true);
             isUIActive = true;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            MouseManager.Instance.EnableMouse();
             PlayerControlManager.Instance.DisablePlayerControls();
-            itemCollider.enabled = false;
 
-            // Hide the book object
+            if (itemCollider != null)
+            {
+                itemCollider.enabled = false;
+            }
+
+            if (itemRigidbody != null)
+            {
+                itemRigidbody.isKinematic = true; // Prevent physics from affecting the book
+            }
+
             if (bookRenderer != null)
             {
                 bookRenderer.enabled = false; // Disable the Renderer to hide the book
             }
-
-            originalPosition = transform.position; // Store original position
-            originalRotation = transform.rotation; // Store original rotation
         }
     }
 
     public void HideBookUI()
     {
-        escapeUI.SetActive(false);
         if (bookUI != null)
         {
             Debug.Log("Hiding Book UI");
             bookUI.SetActive(false);
             isUIActive = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            MouseManager.Instance.DisableMouse();
             PlayerControlManager.Instance.EnablePlayerControls();
 
             if (bookContents != null)
@@ -80,15 +96,25 @@ public class Book : MonoBehaviour
                 bookContents.ClearContent();
             }
 
-            // Show the book object
+            // Restore the book object's position and rotation
+            transform.position = originalPosition;
+            transform.rotation = originalRotation;
+
             if (bookRenderer != null)
             {
                 bookRenderer.enabled = true; // Enable the Renderer to show the book
             }
+
+            if (itemCollider != null)
+            {
+                itemCollider.enabled = true; // Re-enable the Collider for interaction
+            }
+
+            if (itemRigidbody != null)
+            {
+                itemRigidbody.isKinematic = false; // Re-enable physics for the book
+            }
         }
-        itemCollider.enabled = true;
-        transform.position = originalPosition;
-        transform.rotation = originalRotation;
     }
 
     public void SetBookContent(string content)
@@ -99,6 +125,4 @@ public class Book : MonoBehaviour
             bookContents.SetContent(content);
         }
     }
-
-   
 }

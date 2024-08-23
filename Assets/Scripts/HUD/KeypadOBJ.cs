@@ -5,6 +5,8 @@ public class KeypadOBJ : MonoBehaviour
     public GameObject keypadUI; // Reference to the Keypad UI GameObject
     public Door door; // Reference to the Door script
     public FirstPersonController controller;
+    public CollectionUI collectionUI; // Reference to the CollectionUI script
+    public AlertUI alertUI; // Reference to the AlertUI script
 
     // Function to handle password input
     public void CheckPassword(string enteredPassword)
@@ -30,12 +32,23 @@ public class KeypadOBJ : MonoBehaviour
     // Function to enable the Keypad UI and the mouse cursor
     public void EnableKeypadUI()
     {
-        if (keypadUI != null)
+        // Check if all items are collected before enabling the keypad UI
+        if (collectionUI != null && collectionUI.AreAllItemsCollected())
         {
-            keypadUI.SetActive(true); // Enable the Keypad UI
-            Cursor.lockState = CursorLockMode.None; // Unlock the cursor
-            Cursor.visible = true; // Show the cursor
-            PlayerControlManager.Instance.DisablePlayerControls();
+            if (keypadUI != null)
+            {
+                keypadUI.SetActive(true); // Enable the Keypad UI
+                MouseManager.Instance.EnableMouse();
+                PlayerControlManager.Instance.DisablePlayerControls();
+            }
+        }
+        else
+        {
+            // Show alert if items are not collected
+            if (alertUI != null)
+            {
+                alertUI.ShowAlert("You must collect all items before using the keypad.","Alert");
+            }
         }
     }
 
@@ -45,10 +58,8 @@ public class KeypadOBJ : MonoBehaviour
         if (keypadUI != null)
         {
             keypadUI.SetActive(false); // Disable the Keypad UI
-            Cursor.lockState = CursorLockMode.Locked; // Lock the cursor
-            Cursor.visible = false; // Hide the cursor
+            MouseManager.Instance.DisableMouse();
             PlayerControlManager.Instance.EnablePlayerControls();
-
         }
     }
 }
