@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using LootLocker.Requests;
 
 public class QuizManager : MonoBehaviour
 {
-    [Header("Lootlocker Leaderboard")]
-    public QuizLeaderboard leaderboard;
-
     public List<QuestionAndAnswer> QnA;
     private List<QuestionAndAnswer> originalQnA; // Original list to reset questions
     public GameObject[] options;
@@ -87,11 +83,18 @@ public class QuizManager : MonoBehaviour
         // Wait for 1 second
         yield return new WaitForSecondsRealtime(1f);
 
-        // Get a reference to the QuizLeaderboard script
-        QuizLeaderboard leaderboard = FindObjectOfType<QuizLeaderboard>();
+        UserProfile uiProfile = FindAnyObjectByType<UserProfile>();
 
-        // Submit the score with the current score
-        leaderboard.OnSubmitMetadata(score);
+        if (uiProfile != null)
+        {
+            Debug.Log("UserProfile found. Setting quiz score...");
+            uiProfile.SetQuizScore();
+            Debug.Log("Quiz score set successfully.");
+        }
+        else
+        {
+            Debug.LogError("UserProfile not found in the scene.");
+        }
     }
 
 
