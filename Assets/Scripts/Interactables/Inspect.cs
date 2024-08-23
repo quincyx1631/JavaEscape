@@ -1,60 +1,87 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Inspect : MonoBehaviour
 {
     private bool isInspecting = false;
-    private Vector3 inspectRotation;
-    private Vector3 originalPosition; // Store original position before inspection
-    private Quaternion originalRotation; // Store original rotation
+    private Quaternion originalRotation;
+    private Vector3 originalPosition;
+    private Vector3 lastMousePosition;
+    private bool isRotating = false;
 
-    // Adjust the sensitivity as needed
-    public float rotationSpeed = 5f;
+    public float rotationSpeed = 200f;
 
-    // Reference to the inspection camera
     public Camera inspectionCamera;
     public Transform inspectionPoint;
-    public FirstPersonController controller;
     private Collider itemCollider;
+    private Rigidbody itemRigidbody;
     public GameObject escapeUI;
-    // Cube or point where the item should be placed
+    public Light inspectionLight;
+    public PostProcessVolume postProcessVolume; // Reference to your Post-Processing Volume
 
-    // Start is called before the first frame update
+    public string inspectStartSoundName; // Name of the sound to play when inspection starts
+    public string inspectStopSoundName;  // Name of the sound to play when inspection stops
+
     void Start()
     {
-        // Ensure inspection camera is disabled initially
         if (inspectionCamera != null)
         {
             inspectionCamera.enabled = false;
             inspectionCamera.gameObject.SetActive(false);
         }
         itemCollider = GetComponent<Collider>();
+        itemRigidbody = GetComponent<Rigidbody>();
+        if (inspectionLight != null)
+        {
+            inspectionLight.enabled = false;
+        }
+
+        // Make sure the PostProcessVolume is disabled at the start
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = false;
+        }
     }
 
     private void Update()
     {
         if (isInspecting)
         {
-            // Rotate the item based on mouse movement
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
+            HandleRotation();
 
-            inspectRotation.y += mouseX * rotationSpeed;
-            inspectRotation.x -= mouseY * rotationSpeed;
+            transform.position = inspectionPoint.position;
 
-            transform.rotation = Quaternion.Euler(inspectRotation);
-
-            // Position the item at the inspection point
-            if (inspectionPoint != null)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                transform.position = inspectionPoint.position;
+                StopInspection();
             }
         }
+    }
 
-        // Check for escape key to stop inspection
-        if (isInspecting && Input.GetKeyDown(KeyCode.Escape))
+    private void HandleRotation()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            StopInspection();
+            isRotating = true;
+            lastMousePosition = Input.mousePosition;
+        }
+
+        if (Input.GetMouseButton(0) && isRotating)
+        {
+            Vector3 mouseDelta = Input.mousePosition - lastMousePosition;
+
+            float angleX = mouseDelta.y * rotationSpeed * Time.deltaTime;
+            float angleY = -mouseDelta.x * rotationSpeed * Time.deltaTime;
+
+            transform.Rotate(inspectionCamera.transform.up, angleY, Space.World);
+            transform.Rotate(inspectionCamera.transform.right, angleX, Space.World);
+
+            lastMousePosition = Input.mousePosition;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isRotating = false;
         }
     }
 
@@ -62,37 +89,45 @@ public class Inspect : MonoBehaviour
     {
         if (!isInspecting)
         {
-            escapeUI.gameObject.SetActive(true);
+            escapeUI.SetActive(true);
             isInspecting = true;
-            inspectRotation = transform.eulerAngles;
-            originalPosition = transform.position; // Store original position
-            originalRotation = transform.rotation; // Store original rotation
+            originalRotation = transform.rotation;
+            originalPosition = transform.position;
 
-            // Disable player controls (if applicable)
-            DisablePlayerControls();
+            // Play the sound for starting inspection
+            if (!string.IsNullOrEmpty(inspectStartSoundName))
+            {
+                AudioManager.Instance.Play(inspectStartSoundName);
+            }
 
-            itemCollider.enabled = false;
-            // Enable the inspection camera
+            MouseManager.Instance.EnableMouse();
+            PlayerControlManager.Instance.DisablePlayerControls();
+
+            if (itemCollider != null) itemCollider.enabled = false;
+            if (itemRigidbody != null) itemRigidbody.isKinematic = true;
+
             if (inspectionCamera != null)
             {
                 inspectionCamera.enabled = true;
                 inspectionCamera.gameObject.SetActive(true);
             }
 
-            // Optionally, activate the inspection point (if needed)
             if (inspectionPoint != null)
             {
                 inspectionPoint.gameObject.SetActive(true);
             }
 
-            // Position the item at the inspection point
-            if (inspectionPoint != null)
+            if (inspectionLight != null)
             {
-                transform.position = inspectionPoint.position;
+                inspectionLight.enabled = true;
             }
 
-            // Optionally, freeze time or adjust game speed for inspection mode
-            Time.timeScale = 0.5f; // Example: Slow down time for inspection (adjust as needed)
+            if (postProcessVolume != null)
+            {
+                postProcessVolume.enabled = true; // Enable the blur effect
+            }
+
+            Time.timeScale = 0.5f;
         }
     }
 
@@ -100,53 +135,45 @@ public class Inspect : MonoBehaviour
     {
         if (isInspecting)
         {
-             escapeUI.gameObject.SetActive(true);
+            escapeUI.SetActive(false);
             isInspecting = false;
-            // Reset position and rotation to original
+
+            // Play the sound for stopping inspection
+            if (!string.IsNullOrEmpty(inspectStopSoundName))
+            {
+                AudioManager.Instance.Play(inspectStopSoundName);
+            }
+
             transform.position = originalPosition;
             transform.rotation = originalRotation;
 
-            // Disable the inspection camera
             if (inspectionCamera != null)
             {
                 inspectionCamera.enabled = false;
                 inspectionCamera.gameObject.SetActive(false);
             }
 
-            // Optionally, deactivate the inspection point (if activated)
             if (inspectionPoint != null)
             {
                 inspectionPoint.gameObject.SetActive(false);
             }
 
-            // Enable player controls (if applicable)
-            EnablePlayerControls();
-            itemCollider.enabled = true;
+            if (inspectionLight != null)
+            {
+                inspectionLight.enabled = false;
+            }
 
-            // Optionally, reset time scale or game speed adjustments
-            Time.timeScale = 1f; // Reset time scale to normal
-            
+            if (postProcessVolume != null)
+            {
+                postProcessVolume.enabled = false; // Disable the blur effect
+            }
+
+            if (itemCollider != null) itemCollider.enabled = true;
+            if (itemRigidbody != null) itemRigidbody.isKinematic = false;
+
+            Time.timeScale = 1f;
+            PlayerControlManager.Instance.EnablePlayerControls();
+            MouseManager.Instance.DisableMouse();
         }
-    }
-
-    private void DisablePlayerControls()
-    {
-        // Example: Disable player movement (adjust according to your player control setup)
-      controller.playerCanMove = false;
-        controller.cameraCanMove = false;
-   
-
-        // Example: Disable other scripts responsible for player movement
-        // PlayerMovementScript.enabled = false;
-    }
-
-    private void EnablePlayerControls()
-    {
-        // Example: Enable player movement (adjust according to your player control setup)
-
-       controller.playerCanMove = true;
-        controller.cameraCanMove = true;
-        // Example: Enable other scripts responsible for player movement
-        // PlayerMovementScript.enabled = true;
     }
 }
