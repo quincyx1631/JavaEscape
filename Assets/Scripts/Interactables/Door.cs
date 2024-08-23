@@ -8,6 +8,9 @@ public class Door : MonoBehaviour
     public GameObject finishUI; // Reference to the Finish UI GameObject
     public Timer timer; // Reference to the Timer component
     private float finalElapsedTime; // Variable to store the final elapsed time
+    public AlertUI alertUI; // Reference to the AlertUI component
+    public string doorOpenSoundName; // Name of the door open sound in the Audio Manager
+    public string doorLockedSoundName; // Name of the door locked sound in the Audio Manager
 
     private bool isLocked = true; // Track if the door is locked
     private bool isOpened = false; // Track if the door is already opened
@@ -32,6 +35,7 @@ public class Door : MonoBehaviour
         else
         {
             Debug.Log("Door is locked.");
+            alertUI.ShowAlert("The door is locked.", doorLockedSoundName); // Show alert if the door is locked
         }
     }
 
@@ -56,6 +60,12 @@ public class Door : MonoBehaviour
         float elapsedTime = 0f;
 
         Debug.Log($"Opening Door: Initial Rotation: {initialRotation.eulerAngles}, Target Rotation: {targetRotationQuaternion.eulerAngles}");
+
+        // Play the door open sound
+        if (!string.IsNullOrEmpty(doorOpenSoundName))
+        {
+            AudioManager.Instance.Play(doorOpenSoundName);
+        }
 
         while (elapsedTime < 1f)
         {

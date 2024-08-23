@@ -35,7 +35,7 @@ public class Dialogue : MonoBehaviour
 
         // Disable player controls and show cursor
         DisablePlayerControls();
-        ShowCursor();
+        MouseManager.Instance.EnableMouse();
     }
 
     public void DisplayDialogue()
@@ -105,7 +105,7 @@ public class Dialogue : MonoBehaviour
         // End of dialogue, hide the UI, enable player controls, and hide the cursor
         gameObject.SetActive(false);
         EnablePlayerControls();
-        HideCursor();
+        MouseManager.Instance.DisableMouse();
 
         // Start the timer
         if (timer != null)
@@ -117,7 +117,7 @@ public class Dialogue : MonoBehaviour
     {
         DisplayDialogue();
         DisablePlayerControls();
-        ShowCursor();
+        MouseManager.Instance.EnableMouse();
     }
 
     private void DisablePlayerControls()
@@ -140,15 +140,5 @@ public class Dialogue : MonoBehaviour
         controller.enableHeadBob = true;
     }
 
-    private void ShowCursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None; // Makes the cursor visible and free to move
-    }
-
-    private void HideCursor()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked; // Hides the cursor and locks it to the center of the screen
-    }
+ 
 }

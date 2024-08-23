@@ -3,19 +3,25 @@ using UnityEngine.Events;
 
 public class Interactables : MonoBehaviour
 {
-    Outline outline;
+    private Outline outline;
+    private Inspect inspector;
+
     public string message;
 
     public UnityEvent onInteraction;
     public UnityEvent onPickUp;
     public UnityEvent onInspect;
+
     public bool canInteract = true;
     public bool canPickup = true;
     public bool canInspect = true;
 
-    private Inspect inspector;
+    public bool collectOnInteract = false; // Set true if collecting upon interaction
+    public bool collectOnPickUp = false;   // Set true if collecting upon pickup
+    public bool collectOnInspect = false;  // Set true if collecting upon inspection
 
-    // Start is called before the first frame update
+    private bool isCollected = false;
+
     void Start()
     {
         outline = GetComponent<Outline>();
@@ -36,22 +42,51 @@ public class Interactables : MonoBehaviour
 
     public void Interact()
     {
-        onInteraction.Invoke();
+        if (canInteract)
+        {
+            onInteraction.Invoke();
+            if (collectOnInteract)
+            {
+                Collect();
+            }
+        }
     }
 
     public void PickUp()
     {
-        onPickUp.Invoke();
+        if (canPickup)
+        {
+            onPickUp.Invoke();
+            if (collectOnPickUp)
+            {
+                Collect();
+            }
+        }
     }
 
     public void Inspect()
     {
-        onInspect.Invoke();
-       
+        if (canInspect)
+        {
+            onInspect.Invoke();
+            if (collectOnInspect)
+            {
+                Collect();
+            }
+        }
     }
 
     public void StopInspecting()
     {
         inspector.StopInspection(); // Stop inspecting the item
+    }
+
+    private void Collect()
+    {
+        if (!isCollected)
+        {
+            isCollected = true;
+            CollectionManager.Instance.MarkAsCollected(this);
+        }
     }
 }
