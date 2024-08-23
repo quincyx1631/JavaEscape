@@ -10,13 +10,7 @@ public class LevelSelector : MonoBehaviour
 
     private void Awake()
     {
-        UpdateButtonStates();
-    }
-
-    public void UpdateButtonStates()
-    {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
-
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;

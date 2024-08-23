@@ -9,6 +9,7 @@ public class QuizManager : MonoBehaviour
 {
     [Header("Lootlocker Leaderboard")]
     public QuizLeaderboard leaderboard;
+    public TMP_InputField playerNameInputFieldQuiz;
 
     public List<QuestionAndAnswer> QnA;
     private List<QuestionAndAnswer> originalQnA; // Original list to reset questions
@@ -52,6 +53,23 @@ public class QuizManager : MonoBehaviour
             generateQuestion();
         }
     }
+
+    public void SetPlayerName()
+    {
+        LootLockerSDKManager.SetPlayerName(playerNameInputFieldQuiz.text, (response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log("Succesfully set player name");
+            }
+            else 
+            {
+                Debug.Log("Could not set player name" + response.errorData);
+
+            }
+        });
+    }
+
     public void retry()
     {
         // Set the retry flag and save it
@@ -87,13 +105,9 @@ public class QuizManager : MonoBehaviour
         // Wait for 1 second
         yield return new WaitForSecondsRealtime(1f);
 
-        // Get a reference to the QuizLeaderboard script
-        QuizLeaderboard leaderboard = FindObjectOfType<QuizLeaderboard>();
-
-        // Submit the score with the current score
-        leaderboard.OnSubmitMetadata(score);
+        // Submit the score to the leaderboard
+        yield return leaderboard.SubmitScoreRoutine(score);
     }
-
 
 
     void ShowScorePanel()

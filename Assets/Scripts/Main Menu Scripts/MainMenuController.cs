@@ -297,8 +297,6 @@ public class MainMenuController : MonoBehaviour
             PlayerPrefs.Save();
 
             Debug.Log("Progress reset: ReachIndex and UnlockedLevel set to default values.");
-            // Update button states
-            levelSelector.GetComponent<LevelSelector>().UpdateButtonStates();
         }
     }
 
