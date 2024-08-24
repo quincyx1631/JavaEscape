@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public float PlayerReach = 3f;
-    Interactables CurrentInteractables;
+    private Interactables CurrentInteractables;
     public Camera PlayerCamera;
     public Transform itemHolder;
     private PickUp currentItem;
@@ -12,15 +12,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         CheckInteraction();
 
+        // Handle pickup interaction
         if (Input.GetKeyDown(KeyCode.G))
         {
-            if (currentItem != null)
-            {
-                currentItem.Drop();
-                Debug.Log("Item dropped: " + currentItem.gameObject.name);
-                currentItem = null;
-            }
-            else if (CurrentInteractables != null && CurrentInteractables.canPickup && IsItemHolderEmpty())
+            if (CurrentInteractables != null && CurrentInteractables.canPickup && IsItemHolderEmpty())
             {
                 CurrentInteractables.PickUp();
                 currentItem = CurrentInteractables.GetComponent<PickUp>();
@@ -35,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
+        // Handle interaction and inspection
         if (CurrentInteractables != null)
         {
             if (Input.GetKeyDown(KeyCode.F) && CurrentInteractables.canInteract)
@@ -45,7 +41,6 @@ public class PlayerInteraction : MonoBehaviour
             {
                 CurrentInteractables.Inspect();
             }
-           
         }
     }
 
@@ -68,7 +63,7 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.collider.CompareTag("Interactables"))
             {
                 Interactables newInteractables = hit.collider.GetComponent<Interactables>();
-                if (CurrentInteractables && newInteractables != CurrentInteractables)
+                if (CurrentInteractables != null && newInteractables != CurrentInteractables)
                 {
                     CurrentInteractables.DisableOutline();
                 }
@@ -96,45 +91,63 @@ public class PlayerInteraction : MonoBehaviour
     void SetNewCurrentInteractables(Interactables newInteractables)
     {
         CurrentInteractables = newInteractables;
-        CurrentInteractables.EnableOutline();
-
-        if (IsItemHolderEmpty())
+        if (CurrentInteractables != null)
         {
-            if (CurrentInteractables.canInteract)
-            {
-                HUDController.instance.EnableInteractionText(CurrentInteractables.message);
-            }
-            else
-            {
-                HUDController.instance.DisableInteractionText();
-            }
+            CurrentInteractables.EnableOutline();
 
-            if (CurrentInteractables.canPickup)
+            if (IsItemHolderEmpty())
             {
-                HUDController.instance.EnablePickupText();
-            }
-            else
-            {
-                HUDController.instance.DisablePickupText();
-            }
+                if (HUDController.instance != null)
+                {
+                    if (CurrentInteractables.canInteract)
+                    {
+                        HUDController.instance.EnableInteractImage();
+                    }
+                    else
+                    {
+                        HUDController.instance.DisableInteractImage();
+                    }
 
-            if (CurrentInteractables.canInspect)
-            {
-                HUDController.instance.EnableInspectText();
-            }
-            else
-            {
-                HUDController.instance.DisableInspectText();
+                    if (CurrentInteractables.canPickup)
+                    {
+                        HUDController.instance.EnablePickupImage();
+                    }
+                    else
+                    {
+                        HUDController.instance.DisablePickupImage();
+                    }
+
+                    if (CurrentInteractables.canInspect)
+                    {
+                        HUDController.instance.EnableInspectImage();
+                    }
+                    else
+                    {
+                        HUDController.instance.DisableInspectImage();
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("HUDController.instance is not assigned.");
+                }
             }
         }
     }
 
     void DisableCurrentInteractables()
     {
-        HUDController.instance.DisableInteractionText();
-        HUDController.instance.DisablePickupText();
-        HUDController.instance.DisableInspectText();
-        if (CurrentInteractables)
+        if (HUDController.instance != null)
+        {
+            HUDController.instance.DisableInteractImage();
+            HUDController.instance.DisablePickupImage();
+            HUDController.instance.DisableInspectImage();
+        }
+        else
+        {
+            Debug.LogWarning("HUDController.instance is not assigned.");
+        }
+
+        if (CurrentInteractables != null)
         {
             CurrentInteractables.DisableOutline();
             CurrentInteractables = null;
@@ -143,6 +156,6 @@ public class PlayerInteraction : MonoBehaviour
 
     bool IsItemHolderEmpty()
     {
-        return itemHolder.childCount == 0;
+        return itemHolder != null && itemHolder.childCount == 0;
     }
 }

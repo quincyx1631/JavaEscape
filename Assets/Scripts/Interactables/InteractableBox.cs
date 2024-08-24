@@ -23,7 +23,7 @@ public class InteractableBox : MonoBehaviour
         // Calculate moved position in local space (forward direction)
         localMovedPosition = new Vector3(0, 0, 1.2f);
         interactables = GetComponent<Interactables>();
-        UpdateMessage();  // Update the initial message based on the initial state
+          // Update the initial message based on the initial state
 
         Debug.Log($"Initial Position: {initialPosition}");
     }
@@ -52,7 +52,7 @@ public class InteractableBox : MonoBehaviour
 
         StartCoroutine(MoveToPosition(targetPosition));
 
-        UpdateMessage();  // Update the message whenever the object is interacted with
+        // Update the message whenever the object is interacted with
 
         if (isOpen && requiresKey)
         {
@@ -118,28 +118,8 @@ public class InteractableBox : MonoBehaviour
         Debug.Log($"Box is now at position: {transform.position}");
     }
 
-    private void UpdateMessage()
-    {
-        if (isOpen)
-        {
-            interactables.message = "[F] Close";
-        }
-        else
-        {
-            interactables.message = requiresKey ? "[F] Open (Key Required)" : "[F] Open";
-        }
-    }
+  
 
-    private void OnMouseEnter()
-    {
-        if (!isMoving)
-        {
-            HUDController.instance.EnableInteractionText(interactables.message);
-        }
-    }
+   
 
-    private void OnMouseExit()
-    {
-        HUDController.instance.DisableInteractionText();
-    }
 }

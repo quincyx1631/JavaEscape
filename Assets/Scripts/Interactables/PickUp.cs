@@ -16,7 +16,10 @@ public class PickUp : MonoBehaviour
     private Collider itemCollider;
     private bool canDropItem = true; // Flag to enable or disable dropping
     private int originalLayer; // Store the original layer
-    private Vector3 originalScale; // Store the original scale
+    private Vector3 originalWorldScale; // Store the original world scale
+    private Transform originalParent; // Store the original parent
+    private bool hasCollided; // Flag to check if the item has already collided
+    private bool collisionDetectionEnabled = false; // Flag to delay collision detection
 
     private void Start()
     {
@@ -29,6 +32,11 @@ public class PickUp : MonoBehaviour
         {
             meshCollider.convex = true;
         }
+
+        // Store original properties
+        originalLayer = gameObject.layer;
+        originalWorldScale = transform.lossyScale; // Store the original world scale
+        originalParent = transform.parent; // Store the original parent
     }
 
     private void Update()
@@ -43,7 +51,6 @@ public class PickUp : MonoBehaviour
             EnableDrop();
         }
 
-        // Handle dropping the item when the "G" key is pressed
         if (Input.GetKeyDown(KeyCode.G))
         {
             TryDropItem();
@@ -61,19 +68,15 @@ public class PickUp : MonoBehaviour
                 AudioManager.Instance.Play(pickupSoundName);
             }
 
-            // Store the original layer and scale
-            originalLayer = gameObject.layer;
-            originalScale = transform.localScale;
+            // Detach from parent and store the original world scale
+            transform.SetParent(null);
+            originalWorldScale = transform.lossyScale;
 
-            // Change layer to "Item"
-            SetLayer(itemLayerName);
-
-            // Reset scale to the original scale
-            transform.localScale = originalScale;
-
+            // Re-parent to the item holder and apply the correct scale
             transform.SetParent(itemHolder);
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
+            ApplyWorldScale(originalWorldScale); // Apply the world scale
 
             // Disable the collider when picked up
             if (itemCollider != null)
@@ -81,6 +84,11 @@ public class PickUp : MonoBehaviour
                 itemCollider.enabled = false;
             }
             rb.isKinematic = true;
+            gameObject.layer = LayerMask.NameToLayer(itemLayerName);
+
+            // Reset collision flag
+            hasCollided = false;
+            collisionDetectionEnabled = false; // Disable collision detection initially
         }
     }
 
@@ -90,20 +98,16 @@ public class PickUp : MonoBehaviour
         {
             Debug.Log("Dropping item: " + gameObject.name);
 
-            // Restore original layer
-            SetLayer(LayerMask.LayerToName(originalLayer));
-
+            // Detach from parent and apply the original world scale
             transform.SetParent(null);
-            rb.isKinematic = false;
+            ApplyWorldScale(originalWorldScale);
 
             // Re-enable the collider when dropped
             if (itemCollider != null)
             {
                 itemCollider.enabled = true;
             }
-
-            // Reset scale to the original scale
-            transform.localScale = originalScale;
+            rb.isKinematic = false;
 
             // Add force and torque
             if (Camera.main != null)
@@ -113,15 +117,20 @@ public class PickUp : MonoBehaviour
                 rb.AddTorque(Random.insideUnitSphere * dropTorque, ForceMode.Impulse);
             }
 
-            // Play drop sound on collision
-            if (!string.IsNullOrEmpty(dropSoundName))
-            {
-                AudioManager.Instance.Play(dropSoundName);
-            }
+            // Restore the original layer
+            gameObject.layer = originalLayer;
+
+            // Enable collision detection after a short delay
+            Invoke(nameof(EnableCollisionDetection), 0.1f);
         }
     }
 
-    private void TryDropItem()
+    private void EnableCollisionDetection()
+    {
+        collisionDetectionEnabled = true;
+    }
+
+    public void TryDropItem()
     {
         if (canDropItem)
         {
@@ -133,7 +142,7 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    private bool IsCollidingWithOtherObject()
+    public bool IsCollidingWithOtherObject()
     {
         Vector3 worldCenter = transform.position + transform.TransformDirection(checkBoxCenter);
         Collider[] colliders = Physics.OverlapBox(worldCenter, checkBoxSize / 2);
@@ -160,25 +169,26 @@ public class PickUp : MonoBehaviour
         Debug.Log("Drop disabled");
     }
 
-    private void SetLayer(string layerName)
+    private void ApplyWorldScale(Vector3 targetWorldScale)
     {
-        int layer = LayerMask.NameToLayer(layerName);
-        if (layer == -1)
-        {
-            Debug.LogError($"Layer '{layerName}' does not exist. Please add this layer in the Unity Editor.");
-        }
-        else
-        {
-            gameObject.layer = layer;
-        }
+        // Calculate the required local scale to achieve the target world scale
+        transform.localScale = new Vector3(
+            targetWorldScale.x / transform.lossyScale.x * transform.localScale.x,
+            targetWorldScale.y / transform.lossyScale.y * transform.localScale.y,
+            targetWorldScale.z / transform.lossyScale.z * transform.localScale.z
+        );
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Play drop sound if item collides with another object
-        if (!string.IsNullOrEmpty(dropSoundName))
+        if (!hasCollided && collisionDetectionEnabled)
         {
-            AudioManager.Instance.Play(dropSoundName);
+            hasCollided = true;
+
+            if (!string.IsNullOrEmpty(dropSoundName))
+            {
+                AudioManager.Instance.Play(dropSoundName);
+            }
         }
     }
 
