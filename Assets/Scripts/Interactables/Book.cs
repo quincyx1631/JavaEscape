@@ -86,6 +86,13 @@ public class Book : MonoBehaviour
         if (bookUI != null)
         {
             Debug.Log("Hiding Book UI");
+
+            // Hide the escape UI as well
+            if (escapeUI != null)
+            {
+                escapeUI.SetActive(false);
+            }
+
             bookUI.SetActive(false);
             isUIActive = false;
             MouseManager.Instance.DisableMouse();
@@ -116,6 +123,7 @@ public class Book : MonoBehaviour
             }
         }
     }
+
 
     public void SetBookContent(string content)
     {

@@ -34,8 +34,7 @@ public class InteractableObject : MonoBehaviour
         Vector3 targetPosition = isOpen ? transform.TransformPoint(localMovedPosition) : initialPosition;
         StartCoroutine(MoveToPosition(targetPosition));
 
-        UpdateMessage();  // Update the message whenever the object is interacted with
-        HUDController.instance.EnableInteractionText(interactables.message);  // Update the HUD with the new message
+       
     }
 
     private IEnumerator MoveToPosition(Vector3 targetPosition)

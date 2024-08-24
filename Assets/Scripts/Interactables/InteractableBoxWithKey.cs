@@ -33,7 +33,7 @@ public class InteractableBoxWithKey : MonoBehaviour
         if (!isOpen && !HasKey())
         {
             Debug.Log("You need a key to open this box.");
-            HUDController.instance.EnableInteractionText("You need a key to open this box.");
+           
             return;
         }
 
@@ -43,9 +43,7 @@ public class InteractableBoxWithKey : MonoBehaviour
         Vector3 targetPosition = isOpen ? transform.TransformPoint(localMovedPosition) : initialPosition;
         StartCoroutine(MoveToPosition(targetPosition));
 
-        UpdateMessage();  // Update the message whenever the object is interacted with
-        HUDController.instance.EnableInteractionText(interactables.message);  // Update the HUD with the new message
-
+       
         if (isOpen)
         {
             RemoveKey();  // Remove the key from the player's hand
@@ -109,16 +107,5 @@ public class InteractableBoxWithKey : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
-    {
-        if (!isMoving)
-        {
-            HUDController.instance.EnableInteractionText(interactables.message);
-        }
-    }
-
-    private void OnMouseExit()
-    {
-        HUDController.instance.DisableInteractionText();
-    }
+   
 }
