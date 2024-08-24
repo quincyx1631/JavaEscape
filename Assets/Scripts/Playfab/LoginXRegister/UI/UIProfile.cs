@@ -4,15 +4,55 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using PlayFab;
 
 public class UIProfile : MonoBehaviour
 {
-    [SerializeField] CanvasGroup canvasGroup;
+
+    [SerializeField] GameObject mainMenuCanvas;
+    [SerializeField] GameObject loginCanvas;
     [SerializeField] TMP_Text playerNameText;
     [SerializeField] TMP_Text playerLevelText;
     [SerializeField] TMP_Text playerScoreText;
     [SerializeField] TMP_Text playerQuiz1Text;
 
+    private void Start()
+    {
+        CheckLoginStatus();
+    }
+
+    private void CheckLoginStatus()
+    {
+        // Assuming PlayFabClientAPI is used for client-side login in PlayFab
+        if (IsUserLoggedIn())
+        {
+            // User is already logged in, hide the login canvas
+            mainMenuCanvas.SetActive(true);
+            loginCanvas.SetActive(false);
+            ReloadProfileData();
+        }
+    }
+
+    private bool IsUserLoggedIn()
+    {
+        // Check if there is a valid session ticket or entity token
+        var authContext = PlayFabSettings.staticPlayer; // Reference to the static player object in PlayFabSettings
+
+        if (authContext != null && !string.IsNullOrEmpty(authContext.ClientSessionTicket))
+        {
+            // The session ticket exists, the user is logged in
+            return true;
+        }
+
+        // Alternatively, check for an Entity Token if applicable
+        if (authContext != null && !string.IsNullOrEmpty(authContext.EntityToken))
+        {
+            // The entity token exists, the user is logged in
+            return true;
+        }
+
+        return false;
+    }
 
     void OnEnable()
     {
@@ -21,7 +61,7 @@ public class UIProfile : MonoBehaviour
 
         UserAccountManager.OnSignInSuccess.AddListener(SignIn);
 
-        /*        // Reload profile data whenever the scene is loaded or reloaded
+        /*Reload profile data whenever the scene is loaded or reloaded
                 ReloadProfileData();*/
     }
 
@@ -54,9 +94,41 @@ public class UIProfile : MonoBehaviour
 
     public void SignIn()
     {
-        canvasGroup.alpha = 1;
-        canvasGroup.interactable = true;
-        canvasGroup.blocksRaycasts = true;
+        loginCanvas.SetActive(false);
+        mainMenuCanvas.SetActive(true);
+    }
+
+    public void MainMenuBack()
+    {
+        mainMenuCanvas.SetActive(true);
+        loginCanvas.SetActive(false);
+    }
+
+    private void ReloadCurrentScene()
+    {
+        // Get the current scene name and reload it
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+    }
+
+    public void playerLogout()
+    {
+        PlayFabClientAPI.ForgetAllCredentials();
+
+        ReloadCurrentScene();
+
+        Debug.Log("Player logged out successfully.");
+    }
+
+    private void DestroyPlayFabHttpInstance()
+    {
+        // Destroy the PlayFabHttp instance
+        var playFabHttpInstance = PlayFab.Internal.PlayFabHttp.instance;
+        if (playFabHttpInstance != null)
+        {
+            Destroy(playFabHttpInstance.gameObject);
+            Debug.Log("PlayFabHttp instance destroyed.");
+        }
     }
 
     // Callback to update UI elements when profile data is updated

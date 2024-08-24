@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class LevelSelector : MonoBehaviour
     public Button[] levelButtons; // Array to hold 8 buttons for levels
     public int maxLevel = 8; // Maximum level, set to 8
     private int currentLevel;
+    private UIProfile _profileUI;
 
     private void Start()
     {
@@ -50,6 +52,7 @@ public class LevelSelector : MonoBehaviour
         string levelName = "Level " + levelIndex;
         SceneManager.LoadScene(levelName);
     }
+
     public void BackMainMenu()
     {
         SceneManager.LoadScene("Main Menu Final");
