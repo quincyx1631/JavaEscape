@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using LootLocker.Requests;
 
 public class QuizManager : MonoBehaviour
 {
-    [Header("Lootlocker Leaderboard")]
-    public QuizLeaderboard leaderboard;
-    public TMP_InputField playerNameInputFieldQuiz;
-
     public List<QuestionAndAnswer> QnA;
     private List<QuestionAndAnswer> originalQnA; // Original list to reset questions
     public GameObject[] options;
@@ -53,23 +48,6 @@ public class QuizManager : MonoBehaviour
             generateQuestion();
         }
     }
-
-    public void SetPlayerName()
-    {
-        LootLockerSDKManager.SetPlayerName(playerNameInputFieldQuiz.text, (response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("Succesfully set player name");
-            }
-            else 
-            {
-                Debug.Log("Could not set player name" + response.errorData);
-
-            }
-        });
-    }
-
     public void retry()
     {
         // Set the retry flag and save it
@@ -105,9 +83,20 @@ public class QuizManager : MonoBehaviour
         // Wait for 1 second
         yield return new WaitForSecondsRealtime(1f);
 
-        // Submit the score to the leaderboard
-        yield return leaderboard.SubmitScoreRoutine(score);
+        UserProfile uiProfile = FindAnyObjectByType<UserProfile>();
+
+        if (uiProfile != null)
+        {
+            Debug.Log("UserProfile found. Setting quiz score...");
+            uiProfile.SetQuizScore();
+            Debug.Log("Quiz score set successfully.");
+        }
+        else
+        {
+            Debug.LogError("UserProfile not found in the scene.");
+        }
     }
+
 
 
     void ShowScorePanel()
