@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIProfile : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class UIProfile : MonoBehaviour
     [SerializeField] TMP_Text playerScoreText;
     [SerializeField] TMP_Text playerQuiz1Text;
 
+
     void OnEnable()
     {
         // Re-add the listener for ProfileDataUpdated
@@ -19,8 +21,8 @@ public class UIProfile : MonoBehaviour
 
         UserAccountManager.OnSignInSuccess.AddListener(SignIn);
 
-/*        // Reload profile data whenever the scene is loaded or reloaded
-        ReloadProfileData();*/
+        /*        // Reload profile data whenever the scene is loaded or reloaded
+                ReloadProfileData();*/
     }
 
     void OnDisable()
@@ -50,7 +52,7 @@ public class UIProfile : MonoBehaviour
         }
     }
 
-    void SignIn()
+    public void SignIn()
     {
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;

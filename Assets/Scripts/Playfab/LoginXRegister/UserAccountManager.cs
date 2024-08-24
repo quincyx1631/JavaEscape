@@ -51,6 +51,7 @@ public class UserAccountManager : MonoBehaviour
 
     public void SignIn(string username, string password)
     {
+        
         PlayFabClientAPI.LoginWithPlayFab(new LoginWithPlayFabRequest ()
         {
             Username = username,
