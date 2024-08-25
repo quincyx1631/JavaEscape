@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,17 +9,35 @@ public class QuizLevelSelector : MonoBehaviour
     public Button[] Quizbuttons;
     public GameObject QuizWeekSelection;
     public GameObject[] quizLevels;
+    private int currentQuiz;
 
-    private void Awake()
+    void Start()
     {
-        int ReferenceLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        // Subscribe to the profile data updated event
+        UserProfile.OnProfileDataUpdated.AddListener(UpdateQuizSelection);
+
+        // Initialize the level buttons based on current profile data
+        if (UserProfile.Instance != null)
+        {
+            UpdateQuizSelection(UserProfile.Instance.profileData);
+        }
+    }
+
+    void UpdateQuizSelection(ProfileData profileData)
+    {
+        currentQuiz = profileData.level;
+
+        // Loop through the level buttons and set interactability
         for (int i = 0; i < Quizbuttons.Length; i++)
         {
-            Quizbuttons[i].interactable = false;
-        }
-        for (int i = 0; i < ReferenceLevel; i++)
-        {
-            Quizbuttons[i].interactable = true;
+            if (i < currentQuiz)
+            {
+                Quizbuttons[i].interactable = true;
+            }
+            else
+            {
+                Quizbuttons[i].interactable = false;
+            }
         }
     }
 

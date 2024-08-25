@@ -97,8 +97,6 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-
-
     void ShowScorePanel()
     {
         QuizPanel.SetActive(false);

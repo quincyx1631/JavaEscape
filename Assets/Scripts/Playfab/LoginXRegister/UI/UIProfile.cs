@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using PlayFab;
+using System;
 
 public class UIProfile : MonoBehaviour
 {
@@ -60,9 +61,6 @@ public class UIProfile : MonoBehaviour
         UserProfile.OnProfileDataUpdated.AddListener(ProfileDataUpdated);
 
         UserAccountManager.OnSignInSuccess.AddListener(SignIn);
-
-        /*Reload profile data whenever the scene is loaded or reloaded
-                ReloadProfileData();*/
     }
 
     void OnDisable()
@@ -74,7 +72,7 @@ public class UIProfile : MonoBehaviour
     }
 
     // Function to reload profile data
-    void ReloadProfileData()
+    public void ReloadProfileData()
     {
         if (UserAccountManager.Instance == null)
         {
