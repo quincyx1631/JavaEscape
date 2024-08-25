@@ -39,7 +39,7 @@ public class Book : MonoBehaviour
 
     public void ShowBookUI()
     {
-        escapeUI.SetActive(true);
+        HUDController.instance.EnableEscapeImage();
         if (bookUI != null)
         {
             Debug.Log("Showing Book UI");
@@ -90,7 +90,7 @@ public class Book : MonoBehaviour
             // Hide the escape UI as well
             if (escapeUI != null)
             {
-                escapeUI.SetActive(false);
+                HUDController.instance.DisableEscapeImage();
             }
 
             bookUI.SetActive(false);

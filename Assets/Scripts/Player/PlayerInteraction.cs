@@ -7,39 +7,53 @@ public class PlayerInteraction : MonoBehaviour
     public Camera PlayerCamera;
     public Transform itemHolder;
     private PickUp currentItem;
+    private bool raycastingEnabled = true;
+
+    void Start()
+    {
+        if (PlayerCamera == null)
+        {
+            Debug.LogError("PlayerCamera is not assigned.");
+        }
+        if (itemHolder == null)
+        {
+            Debug.LogError("itemHolder is not assigned.");
+        }
+    }
 
     void Update()
     {
-        CheckInteraction();
-
-        // Handle pickup interaction
-        if (Input.GetKeyDown(KeyCode.G))
+        if (raycastingEnabled)
         {
-            if (CurrentInteractables != null && CurrentInteractables.canPickup && IsItemHolderEmpty())
+            CheckInteraction();
+
+            if (Input.GetKeyDown(KeyCode.G))
             {
-                CurrentInteractables.PickUp();
-                currentItem = CurrentInteractables.GetComponent<PickUp>();
-                if (currentItem != null)
+                if (CurrentInteractables != null && CurrentInteractables.canPickup && IsItemHolderEmpty())
                 {
-                    Debug.Log("Item picked up: " + currentItem.gameObject.name);
-                }
-                else
-                {
-                    Debug.LogWarning("Picked up item does not have a PickUp component.");
+                    CurrentInteractables.PickUp();
+                    currentItem = CurrentInteractables.GetComponent<PickUp>();
+                    if (currentItem != null)
+                    {
+                        Debug.Log("Item picked up: " + currentItem.gameObject.name);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Picked up item does not have a PickUp component.");
+                    }
                 }
             }
-        }
 
-        // Handle interaction and inspection
-        if (CurrentInteractables != null)
-        {
-            if (Input.GetKeyDown(KeyCode.F) && CurrentInteractables.canInteract)
+            if (CurrentInteractables != null)
             {
-                CurrentInteractables.Interact();
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && CurrentInteractables.canInspect)
-            {
-                CurrentInteractables.Inspect();
+                if (Input.GetKeyDown(KeyCode.F) && CurrentInteractables.canInteract)
+                {
+                    CurrentInteractables.Interact();
+                }
+                else if (Input.GetKeyDown(KeyCode.E) && CurrentInteractables.canInspect)
+                {
+                    CurrentInteractables.Inspect();
+                }
             }
         }
     }
@@ -94,43 +108,7 @@ public class PlayerInteraction : MonoBehaviour
         if (CurrentInteractables != null)
         {
             CurrentInteractables.EnableOutline();
-
-            if (IsItemHolderEmpty())
-            {
-                if (HUDController.instance != null)
-                {
-                    if (CurrentInteractables.canInteract)
-                    {
-                        HUDController.instance.EnableInteractImage();
-                    }
-                    else
-                    {
-                        HUDController.instance.DisableInteractImage();
-                    }
-
-                    if (CurrentInteractables.canPickup)
-                    {
-                        HUDController.instance.EnablePickupImage();
-                    }
-                    else
-                    {
-                        HUDController.instance.DisablePickupImage();
-                    }
-
-                    if (CurrentInteractables.canInspect)
-                    {
-                        HUDController.instance.EnableInspectImage();
-                    }
-                    else
-                    {
-                        HUDController.instance.DisableInspectImage();
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning("HUDController.instance is not assigned.");
-                }
-            }
+            UpdateUI();
         }
     }
 
@@ -154,8 +132,72 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    void UpdateUI()
+    {
+        if (CurrentInteractables == null)
+        {
+            Debug.LogWarning("CurrentInteractables is null. Cannot update UI.");
+            return;
+        }
+
+        if (HUDController.instance != null)
+        {
+            if (CurrentInteractables.canInteract)
+            {
+                HUDController.instance.EnableInteractImage();
+            }
+            else
+            {
+                HUDController.instance.DisableInteractImage();
+            }
+
+            if (CurrentInteractables.canPickup)
+            {
+                HUDController.instance.EnablePickupImage();
+            }
+            else
+            {
+                HUDController.instance.DisablePickupImage();
+            }
+
+            if (CurrentInteractables.canInspect)
+            {
+                HUDController.instance.EnableInspectImage();
+            }
+            else
+            {
+                HUDController.instance.DisableInspectImage();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("HUDController.instance is not assigned.");
+        }
+    }
+
     bool IsItemHolderEmpty()
     {
         return itemHolder != null && itemHolder.childCount == 0;
+    }
+
+    public void DisableRaycast()
+    {
+        raycastingEnabled = false;
+        DisableCurrentInteractables();
+    }
+
+    public void EnableRaycast()
+    {
+        raycastingEnabled = true;
+
+        // Check if we still have a valid CurrentInteractables when re-enabling raycast
+        if (CurrentInteractables != null)
+        {
+            UpdateUI();
+        }
+        else
+        {
+            Debug.LogWarning("CurrentInteractables is null after enabling raycast.");
+        }
     }
 }

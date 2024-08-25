@@ -35,11 +35,14 @@ public class HUDController : MonoBehaviour
         interactAnimator = interactImage.GetComponent<Animator>();
         pickupAnimator = pickupImage.GetComponent<Animator>();
         inspectAnimator = inspectImage.GetComponent<Animator>();
+        EscapeAnimator = EscapeImage.GetComponent<Animator>();
 
         // Initialize the images to be off-screen
         InitializeImage(interactImage, interactAnimator);
         InitializeImage(pickupImage, pickupAnimator);
         InitializeImage(inspectImage, inspectAnimator);
+        InitializeImage(EscapeImage, EscapeAnimator);
+
     }
 
     private void InitializeImage(Image image, Animator animator)
@@ -104,7 +107,7 @@ public class HUDController : MonoBehaviour
     {
         if (EscapeImage != null && EscapeAnimator != null)
         {
-            inspectImage.gameObject.SetActive(true);
+            EscapeImage.gameObject.SetActive(true);
            EscapeAnimator.SetBool("IsVisible", true);
         }
     }
@@ -113,6 +116,7 @@ public class HUDController : MonoBehaviour
     {
         if (EscapeImage != null && EscapeAnimator != null)
         {
+
             EscapeAnimator.SetBool("IsVisible", false);
         }
     }
