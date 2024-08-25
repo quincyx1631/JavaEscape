@@ -17,10 +17,12 @@ public class Inspect : MonoBehaviour
     private Rigidbody itemRigidbody;
     public GameObject escapeUI;
     public Light inspectionLight;
-    public PostProcessVolume postProcessVolume; // Reference to your Post-Processing Volume
+    public PostProcessVolume postProcessVolume;
 
-    public string inspectStartSoundName; // Name of the sound to play when inspection starts
-    public string inspectStopSoundName;  // Name of the sound to play when inspection stops
+    public string inspectStartSoundName;
+    public string inspectStopSoundName;
+
+    public PlayerInteraction playerInteraction;
 
     void Start()
     {
@@ -36,7 +38,6 @@ public class Inspect : MonoBehaviour
             inspectionLight.enabled = false;
         }
 
-        // Make sure the PostProcessVolume is disabled at the start
         if (postProcessVolume != null)
         {
             postProcessVolume.enabled = false;
@@ -89,12 +90,19 @@ public class Inspect : MonoBehaviour
     {
         if (!isInspecting)
         {
-            escapeUI.SetActive(true);
+            if (HUDController.instance != null)
+            {
+                HUDController.instance.EnableEscapeImage();
+            }
+            else
+            {
+                Debug.LogWarning("HUDController.instance is not assigned.");
+            }
+
             isInspecting = true;
             originalRotation = transform.rotation;
             originalPosition = transform.position;
 
-            // Play the sound for starting inspection
             if (!string.IsNullOrEmpty(inspectStartSoundName))
             {
                 AudioManager.Instance.Play(inspectStartSoundName);
@@ -102,6 +110,15 @@ public class Inspect : MonoBehaviour
 
             MouseManager.Instance.EnableMouse();
             PlayerControlManager.Instance.DisablePlayerControls();
+
+            if (playerInteraction != null)
+            {
+                playerInteraction.DisableRaycast();
+            }
+            else
+            {
+                Debug.LogWarning("playerInteraction is not assigned.");
+            }
 
             if (itemCollider != null) itemCollider.enabled = false;
             if (itemRigidbody != null) itemRigidbody.isKinematic = true;
@@ -124,7 +141,7 @@ public class Inspect : MonoBehaviour
 
             if (postProcessVolume != null)
             {
-                postProcessVolume.enabled = true; // Enable the blur effect
+                postProcessVolume.enabled = true;
             }
 
             Time.timeScale = 0.5f;
@@ -135,10 +152,17 @@ public class Inspect : MonoBehaviour
     {
         if (isInspecting)
         {
-            escapeUI.SetActive(false);
+            if (HUDController.instance != null)
+            {
+                HUDController.instance.DisableEscapeImage();
+            }
+            else
+            {
+                Debug.LogWarning("HUDController.instance is not assigned.");
+            }
+
             isInspecting = false;
 
-            // Play the sound for stopping inspection
             if (!string.IsNullOrEmpty(inspectStopSoundName))
             {
                 AudioManager.Instance.Play(inspectStopSoundName);
@@ -165,15 +189,25 @@ public class Inspect : MonoBehaviour
 
             if (postProcessVolume != null)
             {
-                postProcessVolume.enabled = false; // Disable the blur effect
+                postProcessVolume.enabled = false;
             }
+
+            Time.timeScale = 1f;
 
             if (itemCollider != null) itemCollider.enabled = true;
             if (itemRigidbody != null) itemRigidbody.isKinematic = false;
 
-            Time.timeScale = 1f;
-            PlayerControlManager.Instance.EnablePlayerControls();
             MouseManager.Instance.DisableMouse();
+            PlayerControlManager.Instance.EnablePlayerControls();
+
+            if (playerInteraction != null)
+            {
+                playerInteraction.EnableRaycast();
+            }
+            else
+            {
+                Debug.LogWarning("playerInteraction is not assigned.");
+            }
         }
     }
 }
