@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class UserProfile : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class UserProfile : MonoBehaviour
             profileData.playerName = "New Player"; // Default name
             profileData.score = 0; // Default score
             profileData.QuizScore_1 = 0; // Default quiz score
+            profileData.Level_1_Timer = "";
         }
     }
 
@@ -81,6 +83,11 @@ public class UserProfile : MonoBehaviour
     public void AddLevel()
     {
         profileData.level += 1;
+
+        Door timerLevel = FindAnyObjectByType<Door>();
+        string timerLevelSave = timerLevel.finalElapsedTime.ToString();
+
+        profileData.Level_1_Timer = timerLevelSave;
         SetUserData();
         GetUserData();
     }
@@ -90,7 +97,7 @@ public class UserProfile : MonoBehaviour
         QuizManager quizManager = FindObjectOfType<QuizManager>();
         if (quizManager != null)
         {
-            if(profileData.QuizScore_1 == 0)
+            if (profileData.QuizScore_1 == 0)
             {
                 profileData.QuizScore_1 += quizManager.score;
 
@@ -101,7 +108,6 @@ public class UserProfile : MonoBehaviour
                 Debug.Log("You already Completed the Quiz");
             }
         }
-
     }
 }
 
@@ -112,6 +118,7 @@ public class ProfileData
     public int level;
     public int score;
     public int QuizScore_1;
+    public string Level_1_Timer;
 }
 
 /*   //SCORING NG QUIZ AAYUSIN PA

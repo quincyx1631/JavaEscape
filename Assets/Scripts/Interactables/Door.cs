@@ -7,7 +7,7 @@ public class Door : MonoBehaviour
     public float rotationSpeed = 100f; // Speed of rotation
     public GameObject finishUI; // Reference to the Finish UI GameObject
     public Timer timer; // Reference to the Timer component
-    private float finalElapsedTime; // Variable to store the final elapsed time
+    public float finalElapsedTime; // Variable to store the final elapsed time
     public AlertUI alertUI; // Reference to the AlertUI component
     public string doorOpenSoundName; // Name of the door open sound in the Audio Manager
     public string doorLockedSoundName; // Name of the door locked sound in the Audio Manager
@@ -17,6 +17,7 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
+
         isLocked = true;
         isOpened = false;
 
@@ -51,7 +52,7 @@ public class Door : MonoBehaviour
         Debug.Log("Door unlocked.");
     }
 
-    private IEnumerator OpenDoor()
+    public IEnumerator OpenDoor()
     {
         if (isOpened) yield break;
 
@@ -93,6 +94,7 @@ public class Door : MonoBehaviour
         {
             FinishUI.Instance.DisplayFinalTime(finalElapsedTime); // Display the final time on the Finish UI
             finishUI.SetActive(true); // Display the Finish UI
+            UserProfile.Instance.AddLevel();
         }
     }
 }

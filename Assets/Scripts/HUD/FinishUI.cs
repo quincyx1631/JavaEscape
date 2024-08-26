@@ -24,6 +24,7 @@ public class FinishUI : MonoBehaviour
     public void DisplayFinalTime(float finalTime)
     {
         PlayerControlManager.Instance.DisablePlayerControls();
+        
 
         // Convert time to minutes and seconds
         int minutes = Mathf.FloorToInt(finalTime / 60);
