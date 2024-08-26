@@ -8,6 +8,7 @@ public class MoveableChair : MonoBehaviour
 
     public Transform targetPosition; // Target position and rotation
     public float moveDuration = 1f; // Duration of the move
+    public string moveSoundName; // Name of the sound to play when the chair moves
 
     private Outline outlineComponent;
     private Collider chairCollider;
@@ -30,6 +31,12 @@ public class MoveableChair : MonoBehaviour
     {
         if (!isMoved)
         {
+            // Play the move sound if a name is provided
+            if (!string.IsNullOrEmpty(moveSoundName))
+            {
+                AudioManager.Instance.Play(moveSoundName); // Assuming you have an AudioManager with a Play method
+            }
+
             StopAllCoroutines(); // Stop any ongoing movement
             StartCoroutine(MoveToTarget(targetPosition.position, targetPosition.rotation));
             isMoved = true;

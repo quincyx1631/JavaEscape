@@ -2406,7 +2406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 95}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476264579
@@ -4709,6 +4709,24 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: KeyPickup
+    clip: {fileID: 8300000, guid: a95b10ba5e94632499c7aef1ed3476fb, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: KeyDrop
+    clip: {fileID: 8300000, guid: 47f49159a93a9134d8a0d066fd64d8cb, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ChairMove
+    clip: {fileID: 8300000, guid: 9a87fcbfe5b622448a463e68603b7779, type: 3}
+    loop: 0
+    volume: 0.474
+    pitch: 1.63
+    source: {fileID: 0}
 --- !u!4 &1107597194
 Transform:
   m_ObjectHideFlags: 0
@@ -5393,8 +5411,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 1009477757}
-  pickupSoundName: 
-  dropSoundName: 
+  pickupSoundName: KeyPickup
+  dropSoundName: KeyDrop
   dropForce: 5
   dropTorque: 10
   checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
@@ -7065,7 +7083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1417194603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7558,11 +7576,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1519000127}
+  m_Father: {fileID: 1855498985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 833.3228, y: 454}
+  m_AnchoredPosition: {x: -2.677185, y: 0}
   m_SizeDelta: {x: 466.6458, y: 250.3287}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482343592
@@ -9375,9 +9393,6 @@ PrefabInstance:
     - {fileID: 6168346304740052598, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 765303100930388167, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 1482343591}
-    - targetCorrespondingSourceObject: {fileID: 765303100930388167, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1657076033}
     - targetCorrespondingSourceObject: {fileID: 765303100930388167, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
@@ -9392,6 +9407,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 765303100930388167, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2023413464}
+    - targetCorrespondingSourceObject: {fileID: 1291194771280186056, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482343591}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 767184352233653592, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       insertIndex: -1
@@ -9523,6 +9541,11 @@ Transform:
 --- !u!1 &1855498983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3295705087857284140, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1819093389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1855498985 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1291194771280186056, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 1819093389}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1885152225
@@ -13733,6 +13756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 135110716}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &4557896390076200516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14004,6 +14028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 697188776}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &4810760144339557229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14362,6 +14387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 1472439572}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &5328351010387590590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14507,6 +14533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 922454017}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &5570392006616794608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16070,6 +16097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 1651560294}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &7527584265924808134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16269,6 +16297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 768712300}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!4 &7685259907195875498
 Transform:
   m_ObjectHideFlags: 0
@@ -16580,6 +16609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 41732791}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &8142635208236927059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16843,6 +16873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 1831035906}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &8435545162615286111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17001,6 +17032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 1220115195}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &8493015187198041921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17192,6 +17224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 1964350196}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &8520516293171578739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17644,6 +17677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 1885152226}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!23 &8840999908925768405
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18000,6 +18034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 790684719}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!114 &9185587870833361338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18236,6 +18271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 62162892}
   moveDuration: 0.5
+  moveSoundName: ChairMove
 --- !u!33 &9217037048409481542
 MeshFilter:
   m_ObjectHideFlags: 0
