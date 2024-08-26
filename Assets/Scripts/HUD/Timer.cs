@@ -5,7 +5,7 @@ using System.Collections;
 public class Timer : MonoBehaviour
 {
     public TMP_Text timerText; // Reference to the Text component displaying the timer
-    private float elapsedTime = 0f;
+    private float startTime;
     private bool timerRunning = false;
 
     private void Start()
@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
+        startTime = Time.time;
         timerRunning = true;
         StartCoroutine(UpdateTimer());
     }
@@ -23,13 +24,13 @@ public class Timer : MonoBehaviour
     {
         while (timerRunning)
         {
-            yield return new WaitForSeconds(1f); // Update every second
-            elapsedTime += 1f;
-            UpdateTimerText();
+            float elapsedTime = Time.time - startTime;
+            UpdateTimerText(elapsedTime);
+            yield return null; // Update every frame
         }
     }
 
-    private void UpdateTimerText()
+    private void UpdateTimerText(float elapsedTime)
     {
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
@@ -41,8 +42,8 @@ public class Timer : MonoBehaviour
         timerRunning = false;
     }
 
-    public float GetElapsedTime() // Add this method to get the elapsed time
+    public float GetElapsedTime()
     {
-        return elapsedTime;
+        return Time.time - startTime;
     }
 }
