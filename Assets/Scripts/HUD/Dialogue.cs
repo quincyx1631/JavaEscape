@@ -14,7 +14,7 @@ public class Dialogue : MonoBehaviour
         public string dialogueText;
         public string voiceOverName; // Name of the voice-over in the AudioManager
     }
-    public FirstPersonController controller;
+
     public Image characterImageUI;
     public TMP_Text characterNameUI;
     public TMP_Text dialogueTextUI;
@@ -24,41 +24,55 @@ public class Dialogue : MonoBehaviour
     public DialogueEntry[] dialogueEntries;
     private int currentDialogueIndex = 0;
     private bool isTyping = false;
-
+    private Coroutine typingCoroutine;
+    public FadeInIntro fadeInIntro;
     private void Start()
     {
-        // Ensure the button is properly linked
         if (nextButton != null)
         {
             nextButton.onClick.AddListener(NextDialogue);
         }
 
-        // Disable player controls and show cursor
-        DisablePlayerControls();
+        PlayerControlManager.Instance.DisablePlayerControls();
         MouseManager.Instance.EnableMouse();
+
+        StartDialogue();
     }
 
-    public void DisplayDialogue()
+    public void StartDialogue()
     {
-        if (currentDialogueIndex < dialogueEntries.Length)
+        currentDialogueIndex = 0; // Reset index
+        DisplayDialogue();
+    }
+
+    private void DisplayDialogue()
+    {
+        if (currentDialogueIndex >= 0 && currentDialogueIndex < dialogueEntries.Length)
         {
             DialogueEntry entry = dialogueEntries[currentDialogueIndex];
             characterNameUI.text = entry.characterName;
             characterImageUI.sprite = entry.characterImage;
 
-            // Stop any ongoing typing coroutine and start a new one
-            if (isTyping) StopAllCoroutines();
-            StartCoroutine(TypeText(entry.dialogueText));
+            // Clear previous text and stop any ongoing typing coroutine
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+            }
+            dialogueTextUI.text = ""; // Ensure text starts blank
+
+            // Start typing the new dialogue text
+            typingCoroutine = StartCoroutine(TypeText(entry.dialogueText));
 
             // Play the voice-over using the AudioManager
-            if (!string.IsNullOrEmpty(entry.voiceOverName))
+            if (!string.IsNullOrEmpty(entry.voiceOverName) && AudioManager.Instance != null)
             {
+                AudioManager.Instance.StopAll(); // Stop any currently playing audio
                 AudioManager.Instance.Play(entry.voiceOverName);
             }
         }
         else
         {
-            // End of dialogue
             EndDialogue();
         }
     }
@@ -66,7 +80,6 @@ public class Dialogue : MonoBehaviour
     private IEnumerator TypeText(string text)
     {
         isTyping = true;
-        dialogueTextUI.text = "";
 
         foreach (char letter in text.ToCharArray())
         {
@@ -79,32 +92,48 @@ public class Dialogue : MonoBehaviour
 
     public void NextDialogue()
     {
-        Debug.Log("NextDialogue called");
         if (isTyping)
         {
-            StopAllCoroutines();
+            // If typing is still in progress, stop typing and show complete text
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+            }
             isTyping = false;
             dialogueTextUI.text = dialogueEntries[currentDialogueIndex].dialogueText; // Show complete text
             return;
         }
 
         // Stop the current voice-over immediately
-        DialogueEntry currentEntry = dialogueEntries[currentDialogueIndex];
-        if (!string.IsNullOrEmpty(currentEntry.voiceOverName))
+        if (currentDialogueIndex >= 0 && currentDialogueIndex < dialogueEntries.Length)
         {
-            Debug.Log($"Stopping audio: {currentEntry.voiceOverName}");
-            AudioManager.Instance.Stop(currentEntry.voiceOverName);
+            DialogueEntry currentEntry = dialogueEntries[currentDialogueIndex];
+            if (!string.IsNullOrEmpty(currentEntry.voiceOverName) && AudioManager.Instance != null)
+            {
+                AudioManager.Instance.Stop(currentEntry.voiceOverName);
+            }
         }
 
+        // Increment to the next dialogue entry
         currentDialogueIndex++;
-        DisplayDialogue();
+
+        // Check if the current index is within bounds before displaying the next dialogue
+        if (currentDialogueIndex < dialogueEntries.Length)
+        {
+            DisplayDialogue();
+        }
+        else
+        {
+            EndDialogue();
+        }
     }
 
     private void EndDialogue()
     {
         // End of dialogue, hide the UI, enable player controls, and hide the cursor
         gameObject.SetActive(false);
-        EnablePlayerControls();
+        PlayerControlManager.Instance.EnablePlayerControls();
         MouseManager.Instance.DisableMouse();
 
         // Start the timer
@@ -112,33 +141,9 @@ public class Dialogue : MonoBehaviour
         {
             timer.StartTimer(); // Start the timer with a duration of 60 seconds
         }
+        if (fadeInIntro != null)
+        {
+            fadeInIntro.ShowUIElements();
+        }
     }
-    public void StartDialogue()
-    {
-        DisplayDialogue();
-        DisablePlayerControls();
-        MouseManager.Instance.EnableMouse();
-    }
-
-    private void DisablePlayerControls()
-    {
-        controller.enabled = false;
-        controller.enableCrouch = false;
-        controller.enableJump = false;
-        controller.playerCanMove = false;
-        controller.cameraCanMove = false;
-        controller.enableHeadBob = false;
-    }
-
-    private void EnablePlayerControls()
-    {
-        controller.enabled = true;
-        controller.enableCrouch = true;
-        controller.enableJump = true;
-        controller.playerCanMove = true;
-        controller.cameraCanMove = true;
-        controller.enableHeadBob = true;
-    }
-
- 
 }

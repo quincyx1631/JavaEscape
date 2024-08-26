@@ -160,13 +160,13 @@ public class PickUp : MonoBehaviour
     private void EnableDrop()
     {
         canDropItem = true;
-        Debug.Log("Drop enabled");
+       
     }
 
     private void DisableDrop()
     {
         canDropItem = false;
-        Debug.Log("Drop disabled");
+      
     }
 
     private void ApplyWorldScale(Vector3 targetWorldScale)
