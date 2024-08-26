@@ -16,8 +16,20 @@ public class FadeInIntro : MonoBehaviour
     public float textFadeDuration = 1.5f; // Duration for fade-out of the texts
     public float audioFadeDuration = 1.5f; // Duration for fading out the audio
 
+    // UI elements to hide and show
+    public GameObject[] uiElementsToHide; // Array of UI elements to hide during the intro
+
     private void Start()
     {
+        // Hide specified UI elements
+        foreach (GameObject uiElement in uiElementsToHide)
+        {
+            if (uiElement != null)
+            {
+                uiElement.SetActive(false);
+            }
+        }
+
         PlayerControlManager.Instance.DisablePlayerControls();
         StartCoroutine(FadeInSequence());
     }
@@ -116,7 +128,7 @@ public class FadeInIntro : MonoBehaviour
             introText.gameObject.SetActive(false);
         }
 
-        // Hide the black screen and texts after the fade-out
+        // Hide the black screen after the fade-out
         blackScreen.gameObject.SetActive(false);
 
         // Activate the dialogue system after all texts fade out
@@ -124,6 +136,18 @@ public class FadeInIntro : MonoBehaviour
         {
             dialogueSystem.gameObject.SetActive(true);
             dialogueSystem.StartDialogue(); // Ensure StartDialogue method exists and is accessible
+        }
+    }
+
+    // Method to show the hidden UI elements
+    public void ShowUIElements()
+    {
+        foreach (GameObject uiElement in uiElementsToHide)
+        {
+            if (uiElement != null)
+            {
+                uiElement.SetActive(true);
+            }
         }
     }
 }

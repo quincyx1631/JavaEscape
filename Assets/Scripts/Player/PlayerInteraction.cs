@@ -73,7 +73,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, PlayerReach))
         {
-            Debug.Log("Raycast hit: " + hit.collider.name);
+            
             if (hit.collider.CompareTag("Interactables"))
             {
                 Interactables newInteractables = hit.collider.GetComponent<Interactables>();
