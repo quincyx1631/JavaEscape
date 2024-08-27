@@ -105,4 +105,37 @@ public class UserAccountManager : MonoBehaviour
             Debug.Log($"Unsuccessful SetUserData {error.ErrorMessage}");
         });
     }
+
+    public void SetDisplayName(string displayName)
+    {
+        PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest()
+        {
+            DisplayName = displayName
+        },
+        response =>
+        {
+            Debug.Log($"Successful SetDisplayName");
+        },
+        error =>
+        {
+            Debug.Log($"Unsuccessful SetDisplayName {error.ErrorMessage}");
+        });
+    }
 }
+
+/*    public void SetStudentData(string key, string value, UnityAction OnSucess = null)
+{
+    PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest() {
+        Data = new Dictionary<string ,string>()
+        {
+            { key, value }
+        }
+    },
+    response => {
+        Debug.Log($"Successful SetUserData");
+        OnSucess?.Invoke();
+    }, 
+    error => {
+        Debug.Log($"Unsuccessful SetUserData {error.ErrorMessage}");
+    });
+}*/

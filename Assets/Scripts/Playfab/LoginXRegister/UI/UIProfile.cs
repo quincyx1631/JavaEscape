@@ -9,13 +9,24 @@ using System;
 
 public class UIProfile : MonoBehaviour
 {
-
+    [Header("Scene Management")]
     [SerializeField] GameObject mainMenuCanvas;
     [SerializeField] GameObject loginCanvas;
+
+    [Header("Student Infomations")]
     [SerializeField] TMP_Text playerNameText;
+    [SerializeField] TMP_Text playerSectionText;
+
+    [Header("Levels")]
     [SerializeField] TMP_Text playerLevelText;
+
+    [Header("Quizzes")]
     [SerializeField] TMP_Text playerScoreText;
     [SerializeField] TMP_Text playerQuiz1Text;
+
+    [Header("Text Fields")]
+    [SerializeField] GameObject NameUI;
+    [SerializeField] GameObject SectionUI;
 
     private void Start()
     {
@@ -134,10 +145,36 @@ public class UIProfile : MonoBehaviour
     {
         if (profileData != null)
         {
+            //User Infomations
             playerNameText.text = "Player Name: " + profileData.playerName;
+            playerSectionText.text = "Player Section: " + profileData.Student_Section;
+
+            //Levels
             playerLevelText.text = "Level Completed: " + profileData.level.ToString();
+
+            //Quizzes
             playerScoreText.text = UserProfile.Instance.score.ToString();
             playerQuiz1Text.text = "Quiz 1: " + profileData.QuizScore_1.ToString();
+        }
+
+        // Check if the player's name is not null
+        if (!string.IsNullOrEmpty(profileData.playerName))
+        {
+            NameUI.SetActive(false);  // Hide the Name UI
+        }
+        else
+        {
+            NameUI.SetActive(true);   // Show the Name UI
+        }
+
+        // Check if the player's section is not null
+        if (!string.IsNullOrEmpty(profileData.Student_Section))
+        {
+            SectionUI.SetActive(false);  // Hide the Section UI
+        }
+        else
+        {
+            SectionUI.SetActive(true);   // Show the Section UI
         }
     }
 }

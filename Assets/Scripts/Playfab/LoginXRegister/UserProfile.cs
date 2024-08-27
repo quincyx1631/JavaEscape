@@ -23,11 +23,19 @@ public class UserProfile : MonoBehaviour
         if (profileData == null)
         {
             profileData = new ProfileData();
+
+            //Levels
             profileData.level = 1; // Default level value
-            profileData.playerName = "New Player"; // Default name
+            profileData.Level_1_Timer = "";
+
+            //User Informations
+            //profileData.playerName = ""; // Default name
+            //profileData.Student_Section = "";
+
+            //Quizzes
             profileData.score = 0; // Default score
             profileData.QuizScore_1 = 0; // Default quiz score
-            profileData.Level_1_Timer = "";
+            
         }
     }
 
@@ -101,7 +109,7 @@ public class UserProfile : MonoBehaviour
             {
                 profileData.QuizScore_1 += quizManager.score;
 
-                SetUserData();
+                SetUserData(GetUserData);
             }
             else
             {
@@ -109,17 +117,55 @@ public class UserProfile : MonoBehaviour
             }
         }
     }
+
+    public void SetPlayerName(string displayName)
+    {
+        // Check if the display name is not null or empty
+        if (!string.IsNullOrEmpty(displayName))
+        {
+            profileData.playerName = displayName;
+            SetUserData(GetUserData);
+            UserAccountManager.Instance.SetDisplayName(displayName);
+        }
+        else
+        {
+            Debug.LogWarning("Display name is empty. Please enter a valid name.");
+        }
+    }
+
+    public void SetPlayerSection(string playerSection)
+    {
+        // Check if the player section is not null or empty
+        if (!string.IsNullOrEmpty(playerSection))
+        {
+            profileData.Student_Section = playerSection;
+            SetUserData(GetUserData);
+        }
+        else
+        {
+            Debug.LogWarning("Player section is empty. Please enter a valid section.");
+        }
+    }
+
 }
 
 [System.Serializable]
 public class ProfileData
 {
     public string playerName;
+    public string Student_Section;
     public int level;
     public int score;
     public int QuizScore_1;
     public string Level_1_Timer;
+    
 }
+
+/*public class StudentData
+{
+    public string Student_Name;
+    public string Student_Section;
+}*/
 
 /*   //SCORING NG QUIZ AAYUSIN PA
      public int QuizScore_2;
