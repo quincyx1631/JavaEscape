@@ -27,8 +27,11 @@ public class QuizLevelSelector : MonoBehaviour
     {
         currentQuiz = profileData.level;
 
+        // Ensure Level 1 is always open
+        Quizbuttons[0].interactable = true;
+
         // Loop through the level buttons and set interactability
-        for (int i = 0; i < Quizbuttons.Length; i++)
+        for (int i = 1; i < Quizbuttons.Length; i++)
         {
             if (i < currentQuiz)
             {
