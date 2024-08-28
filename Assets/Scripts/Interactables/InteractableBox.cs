@@ -88,16 +88,19 @@ public class InteractableBox : MonoBehaviour
 
     private void RemoveKey()
     {
-        // Remove the key from the itemHolder
+        // Find the key in the itemHolder and remove it from the player's hand without destroying it
         foreach (Transform child in itemHolder)
         {
             if (child.gameObject == key)
             {
-                Destroy(child.gameObject);
+                // Deactivate the key and move it to a hidden inventory or a predefined hidden location
+                child.gameObject.SetActive(false);
+                child.SetParent(null);  // Detach the key from the itemHolder
                 break;
             }
         }
     }
+
 
     private IEnumerator MoveToPosition(Vector3 targetPosition)
     {
