@@ -21,7 +21,6 @@ public class UIProfile : MonoBehaviour
     [SerializeField] TMP_Text playerLevelText;
 
     [Header("Quizzes")]
-    [SerializeField] TMP_Text playerScoreText;
     [SerializeField] TMP_Text playerQuiz1Text;
 
     [Header("Text Fields")]

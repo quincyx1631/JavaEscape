@@ -90,9 +90,16 @@ public class UserProfile : MonoBehaviour
         profileData.level += 1;
 
         Door timerLevel = FindAnyObjectByType<Door>();
-        string timerLevelSave = timerLevel.finalElapsedTime.ToString();
 
+        // Convert finalElapsedTime (which is in seconds) to TimeSpan
+        TimeSpan timeSpan = TimeSpan.FromSeconds(timerLevel.finalElapsedTime);
+
+        // Format the TimeSpan into a string with minutes and seconds
+        string timerLevelSave = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+
+        // Save the formatted time string into profileData
         profileData.Level_1_Timer = timerLevelSave;
+
         SetUserData();
         GetUserData();
     }
