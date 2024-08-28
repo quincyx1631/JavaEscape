@@ -7,11 +7,9 @@ using UnityEngine.UI;
 public class QuizLevelSelector : MonoBehaviour
 {
     public Button[] Quizbuttons;
-    public GameObject QuizWeekSelection;
-    public GameObject[] quizLevels;
     private int currentQuiz;
 
-    void Start()
+    private void Start()
     {
         // Subscribe to the profile data updated event
         UserProfile.OnProfileDataUpdated.AddListener(UpdateQuizSelection);
@@ -23,7 +21,7 @@ public class QuizLevelSelector : MonoBehaviour
         }
     }
 
-    void UpdateQuizSelection(ProfileData profileData)
+    public void UpdateQuizSelection(ProfileData profileData)
     {
         currentQuiz = profileData.level;
 
@@ -33,7 +31,7 @@ public class QuizLevelSelector : MonoBehaviour
         // Loop through the level buttons and set interactability
         for (int i = 1; i < Quizbuttons.Length; i++)
         {
-            if (i < currentQuiz)
+            if (i <= currentQuiz)
             {
                 Quizbuttons[i].interactable = true;
             }
@@ -42,23 +40,5 @@ public class QuizLevelSelector : MonoBehaviour
                 Quizbuttons[i].interactable = false;
             }
         }
-    }
-
-    public void OpenQuizLevel(int QuizWeekNo)
-    {
-        string quizWeekLabel = "Level " + QuizWeekNo;
-
-        // Disable all quiz level GameObjects
-        foreach (GameObject quizLevel in quizLevels)
-        {
-            quizLevel.SetActive(false);
-        }
-
-        // Assuming the naming convention or some other mechanism maps the quizWeekLabel to a specific GameObject
-        // Activate the selected quiz level GameObject
-        quizLevels[QuizWeekNo - 1].SetActive(true); // Assuming quizWeekNo starts from 1
-
-        // Close the level selection UI
-        QuizWeekSelection.SetActive(false);
     }
 }

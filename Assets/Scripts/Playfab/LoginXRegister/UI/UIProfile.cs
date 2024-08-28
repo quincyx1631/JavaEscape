@@ -153,8 +153,7 @@ public class UIProfile : MonoBehaviour
             playerLevelText.text = "Level Completed: " + profileData.level.ToString();
 
             //Quizzes
-            playerScoreText.text = UserProfile.Instance.score.ToString();
-            playerQuiz1Text.text = "Quiz 1: " + profileData.QuizScore_1.ToString();
+            playerQuiz1Text.text = "Quiz 1: " + profileData.QuizScore_1;
         }
 
         // Check if the player's name is not null

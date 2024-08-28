@@ -5,6 +5,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using System.Net.Mail;
 using UnityEngine.Events;
+using System;
 
 public class UserAccountManager : MonoBehaviour
 {
@@ -106,21 +107,24 @@ public class UserAccountManager : MonoBehaviour
         });
     }
 
-    public void SetDisplayName(string displayName)
+    public void SetDisplayName(string displayName, Action<bool> callback)
     {
-        PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest()
+        PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest
         {
             DisplayName = displayName
         },
-        response =>
+        result =>
         {
-            Debug.Log($"Successful SetDisplayName");
+            Debug.Log("Display name set successfully.");
+            callback?.Invoke(true); // Indicate success
         },
         error =>
         {
-            Debug.Log($"Unsuccessful SetDisplayName {error.ErrorMessage}");
+            Debug.LogError($"Error setting display name: {error.GenerateErrorReport()}");
+            callback?.Invoke(false); // Indicate failure
         });
     }
+
 }
 
 /*    public void SetStudentData(string key, string value, UnityAction OnSucess = null)

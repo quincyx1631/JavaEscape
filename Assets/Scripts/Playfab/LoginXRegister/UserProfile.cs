@@ -13,8 +13,6 @@ public class UserProfile : MonoBehaviour
 
     [SerializeField] public ProfileData profileData;
 
-    //SCORE NEEDED FOR QUIZ I NEED TO FIX THIS!!
-    public int score = 10;
 
     private void Awake()
     {
@@ -33,8 +31,7 @@ public class UserProfile : MonoBehaviour
             //profileData.Student_Section = "";
 
             //Quizzes
-            profileData.score = 0; // Default score
-            profileData.QuizScore_1 = 0; // Default quiz score
+            profileData.QuizScore_1 = ""; // Default quiz score
             
         }
     }
@@ -105,9 +102,9 @@ public class UserProfile : MonoBehaviour
         QuizManager quizManager = FindObjectOfType<QuizManager>();
         if (quizManager != null)
         {
-            if (profileData.QuizScore_1 == 0)
+            if (profileData.QuizScore_1 != null)
             {
-                profileData.QuizScore_1 += quizManager.score;
+                profileData.QuizScore_1 = quizManager.score.ToString() + "/10";
 
                 SetUserData(GetUserData);
             }
@@ -124,14 +121,28 @@ public class UserProfile : MonoBehaviour
         if (!string.IsNullOrEmpty(displayName))
         {
             profileData.playerName = displayName;
-            SetUserData(GetUserData);
-            UserAccountManager.Instance.SetDisplayName(displayName);
+
+            // Try to set the display name first
+            UserAccountManager.Instance.SetDisplayName(displayName, displayNameSuccess =>
+            {
+                if (displayNameSuccess)
+                {
+                    // If setting the display name succeeds, set the user data
+                    SetUserData(GetUserData);
+                    Debug.Log("Player name and user data set successfully.");
+                }
+                else
+                {
+                    Debug.LogError("Failed to set display name. User data was not set.");
+                }
+            });
         }
         else
         {
             Debug.LogWarning("Display name is empty. Please enter a valid name.");
         }
     }
+
 
     public void SetPlayerSection(string playerSection)
     {
@@ -155,8 +166,7 @@ public class ProfileData
     public string playerName;
     public string Student_Section;
     public int level;
-    public int score;
-    public int QuizScore_1;
+    public string QuizScore_1;
     public string Level_1_Timer;
     
 }
