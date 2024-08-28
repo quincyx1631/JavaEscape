@@ -4,10 +4,15 @@ using TMPro;
 public class Keypad : MonoBehaviour
 {
     public TMP_Text displayText; // Reference to the display text
-    [SerializeField] public string correctPassword = "ABCD"; // The correct password
+    [SerializeField] private string correctPassword = "ABCD"; // The correct password
     public Door door; // Reference to the Door script
     public KeypadOBJ keypadOBJ; // Reference to the KeypadOBJ script
     private string currentInput = ""; // Stores the current input
+
+    // Names of the sounds in your audio manager
+    public string keyPressSound = "KeypadPress";
+    public string correctSound = "Correct";
+    public string incorrectSound = "Incorrect";
 
     private void Start()
     {
@@ -19,7 +24,6 @@ public class Keypad : MonoBehaviour
 
     public void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             keypadOBJ.DisableKeypadUI();
@@ -37,6 +41,7 @@ public class Keypad : MonoBehaviour
         {
             currentInput += letter;
             UpdateDisplay();
+            PlaySound(keyPressSound); // Play the key press sound
         }
     }
 
@@ -44,6 +49,7 @@ public class Keypad : MonoBehaviour
     {
         currentInput = "";
         UpdateDisplay();
+        PlaySound(keyPressSound); // Play the key press sound on clear as well
     }
 
     public void OnExecute()
@@ -52,6 +58,7 @@ public class Keypad : MonoBehaviour
         {
             displayText.text = "Correct!";
             Debug.Log("Correct password entered.");
+            PlaySound(correctSound); // Play the correct sound
 
             if (door != null)
             {
@@ -70,11 +77,18 @@ public class Keypad : MonoBehaviour
         else
         {
             displayText.text = "Incorrect!";
+            PlaySound(incorrectSound); // Play the incorrect sound
         }
     }
 
     private void UpdateDisplay()
     {
         displayText.text = currentInput;
+    }
+
+    private void PlaySound(string soundName)
+    {
+        // Assuming you have a method in your audio manager like PlaySound
+        AudioManager.Instance.Play(soundName);
     }
 }

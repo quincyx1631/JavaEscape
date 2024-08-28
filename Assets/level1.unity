@@ -1136,6 +1136,53 @@ PrefabInstance:
       propertyPath: bookContents
       value: 
       objectReference: {fileID: 1819093392}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "Lesson 4\r\n<b><size=36><color=#FF0000> LESSON 4: CLASSES, INTERFACES,
+        AND PACKAGES</color></size></b>\r\n<size=26>\r\n<b><size=30><color=#FF0000>
+        Classes</color></size></b>\r\n\u2022\t<b><size=26><color=#E97132> Definition:
+        </color></size></b> Classes in Java combine data and operations into a single
+        unit, defining a blueprint for creating objects.\r\n\u2022\t<b><size=26><color=#E97132>
+        Usage: </color></size></b> They encapsulate behaviors and properties that
+        define specific types of objects in a program.\r\n\r\n<b><size=30><color=#FF0000>
+        Interfaces</color></size></b>\r\n\u2022\t<b><size=26><color=#E97132> Definition:
+        </color></size></b> Interfaces in Java are collections of method declarations
+        without implementations.\r\n\u2022\t<b><size=26><color=#E97132> Usage: </color></size></b>
+        They define a contract that classes can implement, specifying additional
+        behaviors beyond what they inherit.\r\n\r\n<b><size=30><color=#FF0000> Packages</color></size></b>\r\n\u2022\t<b><size=26><color=#E97132>
+        Definition: </color></size></b> Packages in Java organize related classes
+        and interfaces to manage namespace and avoid naming conflicts.\r\n\u2022\t<b><size=26><color=#E97132>
+        Usage: </color></size></b> They help in structuring large-scale applications
+        and libraries, ensuring modular and maintainable code.\r\n\r\n<b><size=30><color=#FF0000>
+        Comments</color></size></b>\r\n\u2022\t<b><size=26><color=#E97132> Types:
+        </color></size></b>\r\n\u2022\t<b><size=26><color=#E97132> Single-line: </color></size></b>
+        Marked with //, used for brief comments on a single line.\r\n\u2022\t<b><size=26><color=#E97132>
+        Multi-line (Block comments): </color></size></b> Enclosed between /* and
+        */, used for longer explanations spanning multiple lines.\r\n\u2022\t<b><size=26><color=#E97132>
+        Usage: </color></size></b> Comments are non-executing statements used for
+        documentation within the code to explain its purpose, methods, classes, or
+        specific sections.\r\n\r\n\r\n<b><size=30><color=#FF0000> Example Java Program
+        with Comments</color></size></b>\r\n\r\n\r\njava\r\n<color=#03AC13> /* This
+        program demonstrates basic Java syntax and structure */\r\n// Package declaration</color>\r\npackage</color>
+        sampleProgram;\r\n<color=#03AC13> // Class declaration</color>\r\n<color=#0492C2>
+        public class</color> LearningComments {\r\n   \r\n   <color=#03AC13>  //
+        Main method declaration</color>\r\n    <color=#0492C2> public static</color>
+        void main(String[] <color=#03AC13> args</color>) {\r\n        <color=#03AC13>
+        // Single-line comment</color>\r\n       <color=#63C5DA>  System.out</color><color=#FFFF00> 
+        .println</color> (<color=#FC6A03>\"Hello World\"</color>); <color=#03AC13>
+        // Output: Hello World</color>\r\n      <color=#63C5DA>  System.out</color><color=#FFFF00> 
+        .print</color> ((<color=#FC6A03>\"Java Programming is fun!\" </color>); <color=#03AC13>
+        // Output: Java Programming is fun! </color>\r\n    } <color=#03AC13> //
+        End of main method</color>\r\n} <color=#03AC13> // End of class</color>\r\n\r\n<b><size=30><color=#FF0000>
+        Explanation: </color></size></b>\r\n\u2022\t<b><size=26><color=#E97132> Class
+        (LearningComments): </color></size></b>\r\n\u2022\tDefines the main structure
+        of the program.\r\n\u2022\t<b><size=26><color=#E97132> Main Method: </color></size></b>\r\n\u2022\tEntry
+        point of execution in Java programs (public static void main(String[] args)).\r\n\u2022\t<b><size=26><color=#E97132>
+        Comments: </color></size></b>\r\n\u2022\t<b><size=26><color=#E97132> Single-line:
+        </color></size></b> Describes a specific line of code.\r\n\u2022\t<b><size=26><color=#E97132>
+        Multi-line: </color></size></b> Provides an overall description of the program
+        or specific section\r\n</size>\r\n"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3951,6 +3998,67 @@ PrefabInstance:
       propertyPath: bookContents
       value: 
       objectReference: {fileID: 1819093392}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36><color=#FF0000> LESSON 2: A GLIMPSE TO JAVA PROGRAMMING\r\n</color></size></b>\r\n<size=26>\r\nOriginally
+        developed by Sun Microsystems, Java is an object-oriented programming language
+        used for general-purpose business applications and interactive web-based
+        programs. Released in 1995, Java's syntax is derived from C and C++ but offers
+        a simpler object model and fewer low-level facilities. Java applications
+        are compiled to bytecode, which can run on any Java Virtual Machine (JVM),
+        making them platform-independent.\r\n\r\n<b><size=30><color=#FF0000> History
+        of the Java Language</color></size></b>\r\n\r\n<b><size=30><color=#E97132>
+        1991: </color></size></b>\r\n\u2022\t James Gosling and his team at Sun Microsystems
+        began designing Java, initially intended for home appliances.\r\n\r\n<b><size=30><color=#E97132>
+        1994: </color></size></b>\r\n\u2022\t Realizing its potential for web development,
+        Gosling's team created a web browser called HotJava.\r\n\r\n<b><size=30><color=#E97132>
+        1995: </color></size></b>\r\n\u2022\t Netscape Inc. incorporated Java into
+        its browser, leading to Java's first public implementation and rapid popularity.\r\n\r\n<b><size=30><color=#E97132>
+        Java 2: </color></size></b>\r\n\u2022\t Introduced different configurations
+        for various platforms:\r\n\r\n<b><size=30><color=#E97132> J2EE: </color></size></b>\r\n\u2022\t
+        Enterprise applications\r\n\r\n<b><size=30><color=#E97132> J2ME: </color></size></b>\r\n\u2022\t
+        Mobile applications\r\n\r\n<b><size=30><color=#E97132> J2SE: </color></size></b>\r\n\u2022\t
+        Standard Edition\r\n\r\n<b><size=30><color=#E97132> 2006: </color></size></b>\r\n\u2022\t
+        Renamed for marketing purposes to Java EE, Java ME, and Java SE.\r\n\r\n\r\n\r\n\r\n\r\n\r\n<b><size=36><color=#FF0000>
+        Characteristics or Features of Java</color></size></b>\r\n\r\n<b><size=26><color=#E97132>
+        Java is not only popular for being object-oriented but also for its unique
+        features: </color></size></b>\r\n\u2022\t<b><size=30><color=#E97132> Platform
+        Independent: </color></size></b> Write-once-run-anywhere. Programs can run
+        on any platform (Farrell, 2012).\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Simple: </color></size></b> Easy to write and debug.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Object-Oriented: </color></size></b> Features inheritance, encapsulation,
+        polymorphism, and dynamic binding.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Robust: </color></size></b> Reliable and strong error handling.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Distributed: </color></size></b> Built-in networking capabilities.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Dynamic: </color></size></b> Adapts to evolving environments.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Secure: </color></size></b> Uses public key encryption for secure data transmission.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Performance: </color></size></b> Just-in-time compilation for faster execution.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Multithreaded: </color></size></b> Supports concurrent execution of multiple
+        threads.\r\n\r\n\u2022\t<b><size=30><color=#E97132> Interpreted: </color></size></b>
+        Programs run directly from the source code.\r\n\r\n\r\n<b><size=36><color=#E97132>
+        Java Byte-Code</color></size></b>\r\nJava programs are compiled into Java
+        Virtual Machine (JVM) code, which is platform-independent and interpreted
+        by the JVM.\r\n\r\n<b><size=36><color=#E97132> Java Virtual Machine</color></size></b>\r\nThe
+        JVM acts as a high-level computer, executing Java byte-code programs.\r\n\r\n<b><size=36><color=#E97132>
+        Interpreter</color></size></b>\r\nThe JVM interpreter translates byte-code
+        into machine language.\r\n\r\n<b><size=36><color=#FF0000> Java Program Execution</color></size></b>\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Compiling: </color></size></b> Uses a Just-in-Time (JIT) compiler to translate
+        Java programs into byte-code.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Running: </color></size></b> The byte-code interpreter translates and executes
+        each byte-code instruction.\r\n\r\n<b><size=36><color=#FF0000> Kinds of Java
+        Programs</color></size></b>\r\n\r\n\u2022\t<b><size=30><color=#E97132> Application:
+        </color></size></b> Regular programs run on a computer.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Applet: </color></size></b> Small programs run on the internet, embedded
+        in web pages.\r\n\r\n<b><size=36><color=#FF0000> Java Platforms</color></size></b>\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Java Card: </color></size></b> Runs small Java-based applications on smart
+        cards and similar devices (e.g., SIM cards, ATM cards).\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Java ME (Micro Edition): </color></size></b> For small, resource-constrained
+        devices like cell phones and PDAs.\r\n\r\n\u2022\t<b><size=30><color=#E97132>
+        Java SE (Standard Edition): </color></size></b> For general-purpose use on
+        desktop PCs and servers.\r\n\r\n\u2022\t<b><size=30><color=#E97132> Java
+        EE (Enterprise Edition): </color></size></b> For large distributed enterprises
+        or internet environments, including APIs for multi-tier client-server applications.\r\n</size>\r\n"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4620,10 +4728,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Walk
-    clip: {fileID: 8300000, guid: a6a8cae965c3485448ba5776fe9e86b0, type: 3}
+    clip: {fileID: 8300000, guid: 5781d3c2fc8ba1e4eb0b7615801150e3, type: 3}
     loop: 1
-    volume: 1
-    pitch: 1
+    volume: 3
+    pitch: 0.66
     source: {fileID: 0}
   - name: BookPickup
     clip: {fileID: 8300000, guid: a81999d2b7c25bc42a2a02d098e9a6b5, type: 3}
@@ -4640,7 +4748,7 @@ MonoBehaviour:
   - name: Try Intro
     clip: {fileID: 8300000, guid: 13cfba3cc1cea5b4c9be62abaaf21582, type: 3}
     loop: 0
-    volume: 1
+    volume: 0.7
     pitch: 1
     source: {fileID: 0}
   - name: BookDrop
@@ -4726,6 +4834,24 @@ MonoBehaviour:
     loop: 0
     volume: 0.474
     pitch: 1.63
+    source: {fileID: 0}
+  - name: KeyPress
+    clip: {fileID: 8300000, guid: 13f8d8cd16d35ad498aca5f580db6325, type: 3}
+    loop: 0
+    volume: 1.67
+    pitch: 1
+    source: {fileID: 0}
+  - name: Correct
+    clip: {fileID: 8300000, guid: e36732ebd567f514fb364526a25fbb14, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Incorrect
+    clip: {fileID: 8300000, guid: 53c369b33ef972549927999ff2581cda, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
 --- !u!4 &1107597194
 Transform:
@@ -5025,6 +5151,142 @@ PrefabInstance:
       propertyPath: bookContents
       value: 
       objectReference: {fileID: 1819093392}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36><color=#E97132>Machine language</color></size></b>\r\n<size=26>\u2013
+        It uses binary digits 0 and 1. It is the natural language of a computer;
+        thus, they are machine-dependent, which is the most basic circuitry-level
+        language. </size>\r\n\r\n\r\n<b><size=36><color=#E97132>Assembly language</color></size></b>\r\n<size=26>\u2013
+        It uses mnemonics or symbols to represent instructions and data. They used
+        assemblers to convert the source code to machine language, then loaded and
+        run by a loader. </size>\r\n\r\n\r\n\r\n\r\n<b><size=36><color=#E97132>High-level
+        language</color></size></b><b></b> \r\n<size=26>\u2013 It uses an English-like
+        statement similar to \"read,\" \"write,\" or \"add\" instead of the systems
+        of on-off switches that perform these tasks. Also, it uses compilers or interpreters
+        to translate the source code to machine languages, and each high-level language
+        has its syntax or rules of the language. (Farrell, 2012). </size>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<b><size=36><color=red>Three
+        Types of Bugs/Error</color></size></b>\r\n\r\n<b><size=36><color=#E97132>Syntax
+        Error</color></size></b><b> </b>\r\n<size=26>\u2013 This is a programming
+        error that occurs when there is a grammatical mistake by introducing typing
+        errors into the program. </size>\r\n\r\n<b><size=36><color=#E97132>Run-time
+        Error</color></size></b><b> </b><b>\u2013</b> \r\n<size=26>\u2013 This error
+        is detected when the program is executed. </size>\r\n\r\n<b><size=36><color=#E97132>Logic
+        Error </color></size></b>\r\n<size=26>\u2013 This happens when the output
+        of your program is different from what is expected. The logical error is
+        a conceptual error in the program's algorithm. If the program runs and gives
+        output, but the outcome is incorrect, that means it has a logic error. </size>\r\n<size=26><b><size=36><color=#FF0000>Examples</color></size></b>\r\n\r\npublic
+        class ErrorExamples {\r\n    \r\n    // Syntax Error Example\r\n    System.out.println(\"Hello,
+        World!\" // Missing closing parenthesis\r\n\r\n    // Runtime Error Example\r\n   
+        try {\r\n        int result = divide(10, 0); // Division by zero causes a
+        runtime error\r\n        System.out.println(\"Result: \" + result);\r\n   
+        } catch (ArithmeticException e) {\r\n        // When divide(10, 0) is called,
+        it causes an <color=red><b>ArithmeticException</b></color> due to division
+        by zero. The error is caught and printed in the catch block.\r\n        System.out.println(\"Runtime
+        Error: \" + e.getMessage());\r\n    }\r\n\r\n    // Logic Error Example\r\n   
+        int[] numbers = {1, 2, 3, 4, 5};\r\n    int sum = calculateSum(numbers);
+        // Incorrectly implemented sum calculation\r\n    System.out.println(\"Sum:
+        \" + sum); // The output will be incorrect due to logic error\r\n\r\n   
+        // Method with runtime error (division by zero)\r\n    public static int
+        divide(int a, int b) {\r\n        return a / b; // This will cause a runtime
+        error if b is zero\r\n    }\r\n\r\n    // Method with logic error (incorrect
+        sum calculation)\r\n    public static int calculateSum(int[] nums) {\r\n       
+        int sum = 0;\r\n        // Logic error: it should be 'sum += nums[i];' instead
+        of 'sum = nums[i];'\r\n        for (int i = 0; i < nums.length; i++) {\r\n           
+        sum = nums[i]; // This will just set sum to the last element in the array\r\n       
+        }\r\n        return sum; // The logic error here is that the sum variable
+        is incorrectly set to the value of the last element in the array, instead
+        of accumulating the sum of all elements. As a result, the output will not
+        be the correct sum of the array elements.\r\n    }\r\n}\r\n</size>\r\n\r\n\r\n\r\n\r\n\r\n\r\n<b><size=36><color=#FF0000>Object-Oriented
+        Programming Language</color></size></b>\r\n\r\n<size=26>is a high-level programming
+        paradigm that uses objects and their interactions to design applications
+        and programs. It extends procedural programming by viewing programs as collections
+        of interacting objects, enhancing code reusability and reducing development
+        time and redundancy.</size>\r\n\r\n\r\n\r\n\r\n\r\n<b><size=36><color=#FF0000>Concepts
+        of Object-Oriented Programming</color></size></b>\r\n\r\n<b><size=36><color=#E97132>Objects
+        </color></size></b>\r\n<size=26>\u2013 A program construction with data (that
+        is, information) associated with it and can perform specific actions (Savitch,
+        2004). It is a software bundle of related state and behavior. Software objects
+        are often used to model the real world objects that you find in everyday
+        life.</size>\r\n<b><size=36><color=#E97132>Methods </color></size></b>\r\n<size=26>
+        \u2013These are actions done by an object. Methods are called functions,
+        procedures, or subroutines in some other programming languages.</size>\r\n\r\n<b><size=36><color=#E97132>Class
+        </color></size></b>\r\n<size=26>\u2013it is a blueprint or prototype from
+        which objects are created. Objects of the same type have the same class.</size>\r\n\r\n<size=26><b><size=36><color=#FF0000>Examples</color></size></b>\r\n\r\n//
+        Define a class named Car\r\nclass Car {\r\n    // Fields (attributes) of
+        the class\r\n    String make;\r\n    String model;\r\n    int year;\r\n   
+        // Constructor to initialize the object\r\n    Car(String make, String model,
+        int year) {\r\n        this.make = make;\r\n        this.model = model;\r\n       
+        this.year = year;\r\n    }\r\n    // Method (action) of the class\r\n   
+        void displayInfo() {\r\n        System.out.println(\"Make: \" + make);\r\n       
+        System.out.println(\"Model: \" + model);\r\n        System.out.println(\"Year:
+        \" + year);\r\n    }\r\n    // Another method (action) of the class\r\n   
+        void startEngine() {\r\n        System.out.println(model + \" engine started.\");\r\n   
+        }\r\n}\r\npublic class Main {\r\n    public static void main(String[] args)
+        {\r\n        // Create an object of the class Car\r\n        Car myCar =
+        new Car(\"Toyota\", \"Corolla\", 2020);\r\n        // Call methods on the
+        object\r\n        myCar.displayInfo();\r\n        myCar.startEngine();\r\n   
+        }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<b><size=36><color=#FF0000>Explanation</color></size></b>\r\n1.\t<b><color=#FF0000>Class:</color></b>\r\n\u2022\t-
+        The Car class is a blueprint for creating car objects. It contains fields
+        (attributes) and methods (actions).\r\n\r\n2.\t<b><color=#FF0000>Object:</color></b>\r\n\u2022\t-
+        The myCar object is an instance of the Car class, created using the constructor
+        Car(\"Toyota\", \"Corolla\", 2020).\r\n\r\n3.\t<b><color=#FF0000>Methods:</color></b>\r\n\u2022\t-
+        The displayInfo method prints the car's make, model, and year.\r\n\u2022\t-
+        The startEngine method simulates starting the car's engine.\r\nWhen you run
+        this program, it will create a Car object, display its information, and start
+        its engine, demonstrating the use of objects, methods, and classes in OOP.\r\n</size>\r\n\r\n<size=26><b><size=36><color=#E97132>
+        Object-Oriented Programming Design Principles\r\n</color></size></b>\r\n\r\n1.
+        <b><color=#FF0000> Encapsulation:</color></b>\r\n\u2022\tEncapsulation is
+        the process of hiding the internal details of how a piece of software is
+        written, exposing only what is necessary. This \"capsule\" can be a class
+        or interface that conceals the finer details, often referred to as information
+        hiding.\r\n\r\n\r\n2. <b><color=#FF0000> Polymorphism:</color></b>\r\n\u2022\tPolymorphism
+        allows one method to perform different actions depending on the object that
+        invokes it. This means the same instruction can cause varied behaviors based
+        on the context.\r\n\r\n3.    <b><color=#FF0000> Inheritance:</color></b>\r\n\u2022\tInheritance
+        organizes classes in a hierarchical manner where properties are defined once
+        and applied across a collection of classes. This avoids repetition of code.
+        For instance, a Vehicle class can have properties that are inherited by Bus,
+        Motorcycle, and Car classes. The Bus class can further have subclasses like
+        School Bus and Electric Bus, which inherit properties from Bus and Vehicle.\r\n\r\n//
+        <b><color=#FF0000> Encapsulation:</color></b>: Define a class with private
+        fields and public methods\r\nclass Vehicle {\r\n    // Private fields (Encapsulation)\r\n   
+        private String make;\r\n    private String model;\r\n    private int wheels;\r\n  
+        <b><color=#E97132>  // Constructor</color></b>\r\n    public Vehicle(String
+        make, String model, int wheels) {\r\n        this.make = make;\r\n       
+        this.model = model;\r\n        this.wheels = wheels;\r\n    }\r\n    // Public
+        method to access private fields\r\n    public void displayInfo() {\r\n       
+        System.out.println(\"Make: \" + make);\r\n        System.out.println(\"Model:
+        \" + model);\r\n        System.out.println(\"Wheels: \" + wheels);\r\n   
+        }\r\n    // <b><color=#FF0000> Polymorphism:</color></b> Method to be overridden
+        by subclasses\r\n    public void startEngine() {\r\n        System.out.println(\"Starting
+        engine of \" + model);\r\n    }\r\n}\r\n// <b><color=#FF0000> Inheritance:</color></b>Define
+        subclasses that inherit from Vehicle\r\nclass Car extends Vehicle {\r\n<b><color=#E97132>
+        // Constructor</color></b>\r\n    public Car(String make, String model) {\r\n       
+        super(make, model, 4); // A car has 4 wheels\r\n    }\r\n    // Override
+        startEngine method (Polymorphism)\r\n    @Override\r\n    public void startEngine()
+        {\r\n        System.out.println(\"Starting car engine of \" + model);\r\n   
+        }\r\n}\r\nclass Motorcycle extends Vehicle {\r\n<b><color=#E97132> // Constructor</color></b>\r\n   
+        public Motorcycle(String make, String model) {\r\n        super(make, model,
+        2); // A motorcycle has 2 wheels\r\n    }\r\n    // Override startEngine
+        method (Polymorphism)\r\n    @Override\r\n    public void startEngine() {\r\n       
+        System.out.println(\"Starting motorcycle engine of \" + model);\r\n    }\r\n}\r\npublic
+        class Main {\r\n    public static void main(String[] args) {\r\n        //
+        Create objects of Car and Motorcycle\r\n        Car myCar = new Car(\"Toyota\",
+        \"Corolla\");\r\n        Motorcycle myMotorcycle = new Motorcycle(\"Harley\",
+        \"Sportster\");\r\n        // Display information and start engines\r\n       
+        myCar.displayInfo();\r\n        myCar.startEngine();\r\n        myMotorcycle.displayInfo();\r\n       
+        myMotorcycle.startEngine();\r\n    }\r\n}\r\n\r\n<b><size=36><color=#FF0000>Explanation</color></size></b>\r\n1.
+        <b><color=#FF0000> Encapsulation:</color></b>\r\n\u2022\tThe Vehicle class
+        has private fields (make, model, wheels) that are not accessible directly.
+        Public methods like displayInfo allow controlled access to these fields.\r\n\r\n2.
+        <b><color=#FF0000> Polymorphism:</color></b>\r\n\u2022\tThe startEngine method
+        in the Vehicle class is overridden in the Car and Motorcycle subclasses.
+        When startEngine is called on a Car or Motorcycle object, the appropriate
+        version of the method is executed based on the object type.\r\n\r\n3. <b><color=#FF0000>
+        Inheritance:</color></b>\r\nThe Car and Motorcycle classes inherit from the
+        Vehicle class, reusing its properties and methods. This demonstrates how
+        inheritance allows for code reuse and logical organization of related classes.\r\n</size>\r\n\r\n\r\n"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7083,7 +7345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1417194603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7778,111 +8040,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 818006341075994548, guid: ee2e5d109bddf2d40844eddfa5b8f906, type: 3}
   m_PrefabInstance: {fileID: 8015714902977320377}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1554857659
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.0835643
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.655
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.61728406
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5569182
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5569183
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.43570876
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.4357086
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 76.076
-      objectReference: {fileID: 0}
-    - target: {fileID: 3396935937281666516, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: m_Name
-      value: book (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3855071847644708668, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PickUpItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: itemHolder
-      value: 
-      objectReference: {fileID: 1009477757}
-    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: playerCollider
-      value: 
-      objectReference: {fileID: 1283768817}
-    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: itemHolderPoint
-      value: 
-      objectReference: {fileID: 1009477757}
-    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: escapeUI
-      value: 
-      objectReference: {fileID: 1819093391}
-    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: inspectionPoint
-      value: 
-      objectReference: {fileID: 1559743425}
-    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: inspectionCamera
-      value: 
-      objectReference: {fileID: 1559743426}
-    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: postProcessVolume
-      value: 
-      objectReference: {fileID: 472822495}
-    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: bookUI
-      value: 
-      objectReference: {fileID: 1819093393}
-    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: escapeUI
-      value: 
-      objectReference: {fileID: 1819093391}
-    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1034097636}
-    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
-      propertyPath: bookContents
-      value: 
-      objectReference: {fileID: 1819093392}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
 --- !u!1001 &1559743424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9880,8 +10037,7 @@ MonoBehaviour:
     - book (1)
     - book (2)
     - book (3)
-    - book (4)
-    total: 5
+    total: 4
     collected: 0
     collectedText: Book
     itemText: {fileID: 474732200}
@@ -18298,7 +18454,6 @@ SceneRoots:
   - {fileID: 970547473}
   - {fileID: 983966941}
   - {fileID: 158059782}
-  - {fileID: 1554857659}
   - {fileID: 1819093389}
   - {fileID: 1785182702}
   - {fileID: 8518379310393227917}
