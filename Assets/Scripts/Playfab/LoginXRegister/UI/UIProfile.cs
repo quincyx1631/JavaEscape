@@ -153,6 +153,7 @@ public class UIProfile : MonoBehaviour
 
             //Quizzes
             playerQuiz1Text.text = "Quiz 1: " + profileData.QuizScore_1;
+
         }
 
         // Check if the player's name is not null

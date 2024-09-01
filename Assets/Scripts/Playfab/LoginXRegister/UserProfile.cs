@@ -32,7 +32,8 @@ public class UserProfile : MonoBehaviour
 
             //Quizzes
             profileData.QuizScore_1 = ""; // Default quiz score
-            
+            profileData.QuizScore_2 = "";
+
         }
     }
 
@@ -109,15 +110,33 @@ public class UserProfile : MonoBehaviour
         QuizManager quizManager = FindObjectOfType<QuizManager>();
         if (quizManager != null)
         {
-            if (profileData.QuizScore_1 != null)
+            // Check if the quiz has already been completed
+            if (string.IsNullOrEmpty(profileData.QuizScore_1))
             {
                 profileData.QuizScore_1 = quizManager.score.ToString() + "/10";
-
-                SetUserData(GetUserData);
+                SetUserData(GetUserData); // Assuming this method updates the user data
             }
             else
             {
-                Debug.Log("You already Completed the Quiz");
+                Debug.Log("You already completed Quiz 1");
+            }
+        }
+    }
+
+    public void SetQuiz2Score()
+    {
+        QuizManager2 quiz2Manager = FindObjectOfType<QuizManager2>();
+        if (quiz2Manager != null)
+        {
+            // Check if the quiz has already been completed
+            if (string.IsNullOrEmpty(profileData.QuizScore_2))
+            {
+                profileData.QuizScore_2 = quiz2Manager.score.ToString() + "/10";
+                SetUserData(GetUserData); // Assuming this method updates the user data
+            }
+            else
+            {
+                Debug.Log("You already completed Quiz 2");
             }
         }
     }
@@ -174,21 +193,6 @@ public class ProfileData
     public string Student_Section;
     public int level;
     public string QuizScore_1;
+    public string QuizScore_2;
     public string Level_1_Timer;
-    
 }
-
-/*public class StudentData
-{
-    public string Student_Name;
-    public string Student_Section;
-}*/
-
-/*   //SCORING NG QUIZ AAYUSIN PA
-     public int QuizScore_2;
-     public int QuizScore_3;
-     public int QuizScore_4;
-     public int QuizScore_5;
-     public int QuizScore_6;
-     public int QuizScore_7;
-     public int QuizScore_8;*/
