@@ -14,8 +14,8 @@ public class InteractableBox : MonoBehaviour
     public Transform itemHolder;  // Reference to the itemHolder in the player
     public AlertUI alertUI; // Reference to the AlertUI script
 
-    public string openSoundName;  // Name of the sound to play when the box opens
-    public string closeSoundName;  // Name of the sound to play when the box closes
+    public AudioSource openSoundSource;  // AudioSource for the opening sound
+    public AudioSource closeSoundSource; // AudioSource for the closing sound
 
     void Start()
     {
@@ -23,7 +23,6 @@ public class InteractableBox : MonoBehaviour
         // Calculate moved position in local space (forward direction)
         localMovedPosition = new Vector3(0, 0, 1.2f);
         interactables = GetComponent<Interactables>();
-          // Update the initial message based on the initial state
 
         Debug.Log($"Initial Position: {initialPosition}");
     }
@@ -48,7 +47,7 @@ public class InteractableBox : MonoBehaviour
         Vector3 targetPosition = isOpen ? transform.TransformPoint(localMovedPosition) : initialPosition;
 
         // Play the appropriate sound based on whether the box is opening or closing
-        PlaySound(isOpen ? openSoundName : closeSoundName);
+        PlaySound(isOpen ? openSoundSource : closeSoundSource);
 
         StartCoroutine(MoveToPosition(targetPosition));
 
@@ -61,15 +60,15 @@ public class InteractableBox : MonoBehaviour
         }
     }
 
-    private void PlaySound(string soundName)
+    private void PlaySound(AudioSource soundSource)
     {
-        if (!string.IsNullOrEmpty(soundName))
+        if (soundSource != null)
         {
-            AudioManager.Instance.Play(soundName);
+            soundSource.Play(); // Play the assigned AudioSource
         }
         else
         {
-            Debug.LogWarning("Sound name is not set.");
+            Debug.LogWarning("AudioSource is not assigned.");
         }
     }
 
@@ -101,7 +100,6 @@ public class InteractableBox : MonoBehaviour
         }
     }
 
-
     private IEnumerator MoveToPosition(Vector3 targetPosition)
     {
         isMoving = true;
@@ -120,9 +118,4 @@ public class InteractableBox : MonoBehaviour
 
         Debug.Log($"Box is now at position: {transform.position}");
     }
-
-  
-
-   
-
 }
