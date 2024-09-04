@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FinishUI : MonoBehaviour
 {
@@ -39,5 +40,10 @@ public class FinishUI : MonoBehaviour
 
         // Enable the mouse cursor
         MouseManager.Instance.EnableMouse();
+    }
+
+    public void LoadMainMenuNext()
+    {
+        SceneManager.LoadScene("Main Menu Final");
     }
 }

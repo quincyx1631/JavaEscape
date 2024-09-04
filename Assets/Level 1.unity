@@ -9455,6 +9455,7 @@ MonoBehaviour:
   rotationSpeed: 1
   finishUI: {fileID: 2056122605}
   timer: {fileID: 1519000123}
+  finalElapsedTime: 0
   alertUI: {fileID: 2023413465}
   doorOpenSoundName: DoorOpen
   doorLockedSoundName: DoorLocked
@@ -13240,6 +13241,34 @@ PrefabInstance:
       propertyPath: uiElementsToHide.Array.data[3]
       value: 
       objectReference: {fileID: 1062343972}
+    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1819093394}
+    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenuNext
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FinishUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13271,6 +13300,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8966303063572695285, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 1819093389}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1819093394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1819093389}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056122605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa8af5bd506e714ca25a23d7614bf4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1819093402 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1520532428477834811, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
