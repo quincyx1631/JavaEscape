@@ -8,7 +8,7 @@ public class MoveableChair : MonoBehaviour
 
     public Transform targetPosition; // Target position and rotation
     public float moveDuration = 1f; // Duration of the move
-    public string moveSoundName; // Name of the sound to play when the chair moves
+    public AudioSource moveSoundSource; // Reference to the AudioSource component
 
     private Outline outlineComponent;
     private Collider chairCollider;
@@ -24,6 +24,12 @@ public class MoveableChair : MonoBehaviour
 
         // Get the Collider component to disable interaction after moving
         chairCollider = GetComponent<Collider>();
+
+        // Ensure the AudioSource component is assigned
+        if (moveSoundSource == null)
+        {
+            Debug.LogError("AudioSource is not assigned in the MoveableChair script.");
+        }
     }
 
     // Call this method to move the chair to the target position
@@ -31,10 +37,10 @@ public class MoveableChair : MonoBehaviour
     {
         if (!isMoved)
         {
-            // Play the move sound if a name is provided
-            if (!string.IsNullOrEmpty(moveSoundName))
+            // Play the move sound if an AudioSource is provided
+            if (moveSoundSource != null)
             {
-                AudioManager.Instance.Play(moveSoundName); // Assuming you have an AudioManager with a Play method
+                moveSoundSource.Play(); // Play the attached AudioSource
             }
 
             StopAllCoroutines(); // Stop any ongoing movement

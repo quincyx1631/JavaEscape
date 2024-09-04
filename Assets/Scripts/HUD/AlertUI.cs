@@ -1,10 +1,12 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AlertUI : MonoBehaviour
 {
     public TextMeshProUGUI alertText; // Reference to the TextMeshProUGUI component
+    public Image alertBackground; // Reference to the Image component (background)
     public float fadeDuration = 1f; // Duration of the fade out
     public float displayDuration = 2f; // Duration the alert is displayed before fading
     public string defaultAlertSoundName; // The default alert sound name
@@ -13,11 +15,14 @@ public class AlertUI : MonoBehaviour
     public float shakeMagnitude = 0.1f; // Magnitude of the camera shake
 
     private Camera mainCamera; // Reference to the main camera
+    private AudioSource audioSource;
 
     private void Start()
     {
+        AudioSource audioSource = GetComponent<AudioSource>();
+
         // Ensure the alert starts invisible
-        alertText.alpha = 0f;
+        SetAlpha(0f);
 
         // Get the main camera
         mainCamera = Camera.main;
@@ -52,6 +57,7 @@ public class AlertUI : MonoBehaviour
         if (!string.IsNullOrEmpty(soundName))
         {
             AudioManager.Instance.Play(soundName);
+            
         }
         else
         {
@@ -89,7 +95,7 @@ public class AlertUI : MonoBehaviour
         while (timer <= fadeDuration)
         {
             timer += Time.deltaTime;
-            alertText.alpha = Mathf.Lerp(0f, 1f, timer / fadeDuration);
+            SetAlpha(Mathf.Lerp(0f, 1f, timer / fadeDuration));
             yield return null;
         }
 
@@ -101,11 +107,26 @@ public class AlertUI : MonoBehaviour
         while (timer <= fadeDuration)
         {
             timer += Time.deltaTime;
-            alertText.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+            SetAlpha(Mathf.Lerp(1f, 0f, timer / fadeDuration));
             yield return null;
         }
 
         // Ensure the alert is fully hidden at the end
-        alertText.alpha = 0f;
+        SetAlpha(0f);
+    }
+
+    // Sets the alpha of both the text and the background image
+    private void SetAlpha(float alpha)
+    {
+        if (alertText != null)
+        {
+            alertText.alpha = alpha;
+        }
+        if (alertBackground != null)
+        {
+            Color bgColor = alertBackground.color;
+            bgColor.a = alpha;
+            alertBackground.color = bgColor;
+        }
     }
 }

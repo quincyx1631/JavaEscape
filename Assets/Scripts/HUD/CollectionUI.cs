@@ -15,7 +15,6 @@ public class CollectionItem
 public class CollectionUI : MonoBehaviour
 {
     public List<CollectionItem> collectionItems; // List of items to collect
-
     private Dictionary<string, CollectionItem> itemDictionary;
 
     void Start()
@@ -40,14 +39,16 @@ public class CollectionUI : MonoBehaviour
                 Debug.LogError($"ItemText for {item.itemNames[0]} is not assigned!");
             }
         }
+
+        // Ensure all books are visible at the start
+        ShowAllBooks();
     }
 
-    // Call this method when an item is collected
     public void OnItemCollected(string itemName)
     {
         if (itemDictionary.TryGetValue(itemName, out var item))
         {
-            if (item.collected < item.total) // Ensure not to exceed total number
+            if (item.collected < item.total)
             {
                 item.collected++;
                 UpdateItemText(item);
@@ -64,12 +65,65 @@ public class CollectionUI : MonoBehaviour
         }
     }
 
-    // Update the UI text for a specific CollectionItem
+    public void InitializeQuizzes(List<string> quizNames)
+    {
+        // Deactivate all quizzes initially
+        foreach (var item in itemDictionary.Values)
+        {
+            if (item.itemNames.Contains("Quiz")) // Assuming quizzes are labeled with "Quiz"
+            {
+                item.itemText.gameObject.SetActive(false); // Hide the quiz item
+                item.collected = 0;
+                UpdateItemText(item);
+            }
+        }
+
+        // Activate and reset only the quiz items in the quizNames list
+        foreach (var quizName in quizNames)
+        {
+            if (itemDictionary.TryGetValue(quizName, out var item))
+            {
+                if (item.itemText != null)
+                {
+                    item.itemText.gameObject.SetActive(true); // Show the quiz item
+                    item.collected = 0; // Reset the collected count
+                    UpdateItemText(item);
+                }
+                else
+                {
+                    Debug.LogError($"ItemText for {quizName} is null!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"Quiz {quizName} not found in the collection.");
+            }
+        }
+    }
+
+    private void ShowAllBooks()
+    {
+        foreach (var item in collectionItems)
+        {
+            if (!item.itemNames.Contains("Quiz")) // Assuming books are not labeled with "Quiz"
+            {
+                if (item.itemText != null)
+                {
+                    item.itemText.gameObject.SetActive(true); // Show all book items
+                    UpdateItemText(item);
+                }
+                else
+                {
+                    Debug.LogError($"ItemText for book {item.itemNames[0]} is null!");
+                }
+            }
+        }
+    }
+
     private void UpdateItemText(CollectionItem item)
     {
         if (item.itemText != null)
         {
-            // Base text display
             string displayText = $"{item.collectedText}: {item.collected}/{item.total}";
 
             // Check if all items are collected
