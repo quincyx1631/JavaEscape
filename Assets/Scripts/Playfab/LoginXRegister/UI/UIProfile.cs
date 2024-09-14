@@ -22,6 +22,13 @@ public class UIProfile : MonoBehaviour
 
     [Header("Quizzes")]
     [SerializeField] TMP_Text playerQuiz1Text;
+    [SerializeField] TMP_Text playerQuiz2Text;
+    [SerializeField] TMP_Text playerQuiz3Text;
+    [SerializeField] TMP_Text playerQuiz4Text;
+    [SerializeField] TMP_Text playerQuiz5Text;
+    [SerializeField] TMP_Text playerQuiz6Text;
+    [SerializeField] TMP_Text playerQuiz7Text;
+    [SerializeField] TMP_Text playerQuiz8Text;
 
     [Header("Text Fields")]
     [SerializeField] GameObject NameUI;
@@ -153,7 +160,13 @@ public class UIProfile : MonoBehaviour
 
             //Quizzes
             playerQuiz1Text.text = "Quiz 1: " + profileData.QuizScore_1;
-
+            playerQuiz2Text.text = "Quiz 2: " + profileData.QuizScore_2;
+            playerQuiz3Text.text = "Quiz 3: " + profileData.QuizScore_3;
+            playerQuiz4Text.text = "Quiz 4: " + profileData.QuizScore_4;
+            playerQuiz5Text.text = "Quiz 5: " + profileData.QuizScore_5;
+            playerQuiz6Text.text = "Quiz 6: " + profileData.QuizScore_6;
+            playerQuiz7Text.text = "Quiz 7: " + profileData.QuizScore_7;
+            playerQuiz8Text.text = "Quiz 8: " + profileData.QuizScore_8;
         }
 
         // Check if the player's name is not null
