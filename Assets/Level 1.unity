@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -237,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -246,6 +247,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &4199160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +270,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &4199161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -375,12 +379,13 @@ MonoBehaviour:
   itemHolder: {fileID: 1009477757}
   pickupSoundName: PaperPickup
   dropSoundName: PaperDrop
-  dropForce: 5
-  dropTorque: 10
+  dropForce: 2
+  dropTorque: 8
   checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &28927837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,15 +398,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 20
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
   inspectionLight: {fileID: 0}
   postProcessVolume: {fileID: 472822495}
-  inspectStartSoundName: PaperPickup
-  inspectStopSoundName: PaperDrop
+  inspectStartSoundName: 
+  inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &28927838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -758,15 +766,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
   inspectionLight: {fileID: 0}
   postProcessVolume: {fileID: 472822495}
-  inspectStartSoundName: PaperPickup
-  inspectStopSoundName: PaperDrop
+  inspectStartSoundName: 
+  inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &82301999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +798,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &82302000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -2253,6 +2265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -2323,7 +2336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -2332,6 +2345,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &187978658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2353,6 +2368,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &187978659
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2445,6 +2461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -2515,7 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -2524,6 +2541,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &202100273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2545,6 +2564,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &202100274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2859,6 +2879,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &248777730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2871,7 +2892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -2880,6 +2901,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &248777731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2910,6 +2933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -3051,6 +3075,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &265830065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,7 +3088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -3072,6 +3097,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &265830066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3102,6 +3129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -3212,6 +3240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -3282,7 +3311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -3291,6 +3320,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &276394932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3312,6 +3343,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &276394933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3371,51 +3403,51 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1789139098}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.045408726
+      value: 0.017000012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.045408685
+      value: 0.01700001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.03809938
+      value: 0.017000012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0958915
+      value: -7.4139442
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8130076
+      value: 1.5480291
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6255314
+      value: -11.001474
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.50030917
+      value: 0.7043459
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.49936774
+      value: 0.7043459
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5004511
+      value: -0.062425256
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.49987134
+      value: 0.062425237
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3423,7 +3455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 10.13
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       propertyPath: m_Name
@@ -3443,22 +3475,25 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2050975314}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2050975313}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2050975312}
+      addedObject: {fileID: 2050975322}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2050975311}
+      addedObject: {fileID: 2050975321}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2050975310}
+      addedObject: {fileID: 2050975320}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2050975309}
+      addedObject: {fileID: 2050975319}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2050975318}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2050975317}
   m_SourcePrefab: {fileID: 100100000, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
 --- !u!64 &294167581
 MeshCollider:
@@ -5213,6 +5248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -5283,7 +5319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -5292,6 +5328,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &692130274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5313,6 +5351,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &692130275
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5835,6 +5874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -5905,7 +5945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -5914,6 +5954,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &766686592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5935,6 +5977,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &766686593
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6041,6 +6084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -6111,7 +6155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -6120,6 +6164,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &770043321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6141,6 +6187,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &770043322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6549,6 +6596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -6619,7 +6667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -6628,6 +6676,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &908163822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6649,6 +6699,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &908163823
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7809,6 +7860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -7879,7 +7931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -7888,6 +7940,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &1026590273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7909,6 +7963,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &1026590274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8588,6 +8643,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1819093391}
     - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
       propertyPath: inspectionPoint
       value: 
       objectReference: {fileID: 1559743425}
@@ -8595,6 +8654,10 @@ PrefabInstance:
       propertyPath: inspectionCamera
       value: 
       objectReference: {fileID: 1559743426}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: targetRotation.y
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
       propertyPath: playerInteraction
       value: 
@@ -9073,15 +9136,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 20
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
-  escapeUI: {fileID: 1819093391}
+  escapeUI: {fileID: 0}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 472822495}
+  postProcessVolume: {fileID: 0}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 0}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &1165254171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9103,6 +9168,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1165254172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9115,6 +9181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -9489,6 +9556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -9577,15 +9645,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
   inspectionLight: {fileID: 0}
   postProcessVolume: {fileID: 472822495}
-  inspectStartSoundName: PaperPickup
-  inspectStopSoundName: PaperDrop
+  inspectStartSoundName: 
+  inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &1207865420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9607,6 +9677,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &1207865421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9619,6 +9690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -9838,15 +9910,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
   inspectionLight: {fileID: 0}
   postProcessVolume: {fileID: 472822495}
-  inspectStartSoundName: PaperPickup
-  inspectStopSoundName: PaperDrop
+  inspectStartSoundName: 
+  inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &1215611016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9868,6 +9942,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &1215611017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9880,6 +9955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -10335,6 +10411,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &1306604706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10347,7 +10424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -10356,6 +10433,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &1306604707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10386,6 +10465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -10634,15 +10714,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
   inspectionLight: {fileID: 0}
   postProcessVolume: {fileID: 472822495}
-  inspectStartSoundName: PaperPickup
-  inspectStopSoundName: PaperDrop
+  inspectStartSoundName: 
+  inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &1347436143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10664,6 +10746,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &1347436144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10676,6 +10759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -10924,6 +11008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -10994,7 +11079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -11003,6 +11088,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &1390182764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11024,6 +11111,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!54 &1390182765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11954,7 +12042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 20
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -11963,6 +12051,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 0}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!114 &1576581444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11984,6 +12074,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1576581445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11996,6 +12087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -13110,11 +13202,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1789139098 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1809642526466891664, guid: ee2e5d109bddf2d40844eddfa5b8f906, type: 3}
-  m_PrefabInstance: {fileID: 8015714902977320377}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1789366781
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13237,38 +13324,14 @@ PrefabInstance:
       propertyPath: keypadOBJ
       value: 
       objectReference: {fileID: 938772596}
+    - target: {fileID: 3193513921184848039, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3486072758006884548, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: uiElementsToHide.Array.data[3]
       value: 
       objectReference: {fileID: 1062343972}
-    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1819093394}
-    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenuNext
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FinishUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13300,17 +13363,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8966303063572695285, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 1819093389}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1819093394 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-  m_PrefabInstance: {fileID: 1819093389}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056122605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa8af5bd506e714ca25a23d7614bf4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1819093402 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1520532428477834811, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
@@ -13348,6 +13400,7 @@ MonoBehaviour:
   checkBoxCenter: {x: 0, y: 0, z: 0}
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &1819298101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13360,7 +13413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
+  rotationSpeed: 10
   inspectionCamera: {fileID: 1559743426}
   inspectionPoint: {fileID: 1559743425}
   escapeUI: {fileID: 1819093391}
@@ -13369,6 +13422,8 @@ MonoBehaviour:
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
 --- !u!114 &1819298102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13399,6 +13454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -14216,6 +14272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704da5735a6d6fe4db7a02f15b1c2d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2022695786 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2793263280572299334, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
+  m_PrefabInstance: {fileID: 5837907545438376414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2022850712
 GameObject:
   m_ObjectHideFlags: 0
@@ -14348,123 +14409,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
   m_PrefabInstance: {fileID: 280070400}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2050975308 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1cd136ff51f41d4bafb194b299b41cf, type: 3}
-  m_PrefabInstance: {fileID: 280070400}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2050975309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050975307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 509e877f09310564c9093ad71498bcb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemHolder: {fileID: 1009477757}
-  pickupSoundName: PaperPickup
-  dropSoundName: PaperDrop
-  dropForce: 5
-  dropTorque: 10
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
-  checkBoxCenter: {x: 0, y: 0, z: 0}
-  playerCollider: {fileID: 1283768817}
-  itemLayerName: Item
---- !u!114 &2050975310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050975307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 50
-  inspectionCamera: {fileID: 1559743426}
-  inspectionPoint: {fileID: 1559743425}
-  escapeUI: {fileID: 1819093391}
-  inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 472822495}
-  inspectStartSoundName: 
-  inspectStopSoundName: 
-  playerInteraction: {fileID: 2022695785}
---- !u!114 &2050975311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050975307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 0.9622642, g: 0.8772603, b: 0, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &2050975312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050975307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: 
-  onInteraction:
-    m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2050975309}
-        m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
-        m_MethodName: PickUpItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onInspect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2050975310}
-        m_TargetAssemblyTypeName: Inspect, Assembly-CSharp
-        m_MethodName: StartInspection
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  canInteract: 0
-  canPickup: 1
-  canInspect: 1
-  collectOnInteract: 0
-  collectOnPickUp: 0
-  collectOnInspect: 1
 --- !u!54 &2050975313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14492,7 +14436,219 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &2050975314
+--- !u!82 &2050975317
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050975307}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2050975318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050975307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  inspectionCamera: {fileID: 1559743426}
+  inspectionPoint: {fileID: 1559743425}
+  escapeUI: {fileID: 1819093391}
+  inspectionLight: {fileID: 0}
+  postProcessVolume: {fileID: 472822495}
+  inspectStartSoundName: PaperPickup
+  inspectStopSoundName: PaperDrop
+  playerInteraction: {fileID: 2022695785}
+  playerTransform: {fileID: 2022695786}
+  initialRotationEulerAngles: {x: 0, y: 0, z: 90}
+--- !u!114 &2050975319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050975307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509e877f09310564c9093ad71498bcb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
+  pickupSoundName: PaperPickup
+  dropSoundName: PaperDrop
+  dropForce: 2
+  dropTorque: 8
+  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
+  checkBoxCenter: {x: 0, y: 0, z: 0}
+  playerCollider: {fileID: 1283768817}
+  itemLayerName: Item
+  desiredRotation: {x: 0, y: 0, z: 90}
+--- !u!114 &2050975320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050975307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemHolder: {fileID: 1009477757}
+  message: 
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2050975319}
+        m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
+        m_MethodName: PickUpItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onInspect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2050975318}
+        m_TargetAssemblyTypeName: Inspect, Assembly-CSharp
+        m_MethodName: StartInspection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  canInteract: 0
+  canPickup: 1
+  canInspect: 1
+  collectOnInteract: 0
+  collectOnPickUp: 0
+  collectOnInspect: 1
+--- !u!114 &2050975321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050975307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.990566, g: 0.9441894, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!65 &2050975322
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14511,8 +14667,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 27.940002, y: 20.320005, z: 0.25761014}
-  m_Center: {x: 0.000034330387, y: 0.00030517383, z: -0.024754083}
+  m_Size: {x: 27.939999, y: 20.320002, z: 0.25760487}
+  m_Center: {x: -1.1494171e-11, y: -1.2968873e-10, z: -0.02474263}
 --- !u!1 &2056122605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5631290037764602702, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
@@ -17657,6 +17813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -18026,6 +18183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -18481,6 +18639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -18723,6 +18882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -20447,6 +20607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -20670,6 +20831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -21074,9 +21236,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 818006341075994548, guid: ee2e5d109bddf2d40844eddfa5b8f906, type: 3}
       insertIndex: -1
       addedObject: {fileID: 82301997}
-    - targetCorrespondingSourceObject: {fileID: 1809642526466891664, guid: ee2e5d109bddf2d40844eddfa5b8f906, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2050975308}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7214503828306382498, guid: ee2e5d109bddf2d40844eddfa5b8f906, type: 3}
       insertIndex: -1
@@ -21190,6 +21349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -21550,6 +21710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -21806,6 +21967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -22097,6 +22259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -22573,6 +22736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -23100,6 +23264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -23361,6 +23526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
   message: 
   onInteraction:
     m_PersistentCalls:
@@ -23513,6 +23679,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 543450652400766386}
+  - {fileID: 280070400}
   - {fileID: 1659285647}
   - {fileID: 369651248}
   - {fileID: 343324877}

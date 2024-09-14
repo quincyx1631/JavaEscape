@@ -5,6 +5,7 @@ public class Inspect : MonoBehaviour
 {
     private bool isInspecting = false;
     private Quaternion originalRotation;
+    private Quaternion initialRotation;
     private Vector3 originalPosition;
     private Vector3 lastMousePosition;
     private bool isRotating = false;
@@ -23,6 +24,10 @@ public class Inspect : MonoBehaviour
     public string inspectStopSoundName;
 
     public PlayerInteraction playerInteraction;
+    public Transform playerTransform; // Reference to the player's transform
+
+    // Public field for initial rotation
+    public Vector3 initialRotationEulerAngles; // Allows setting initial rotation in degrees via the Inspector
 
     void Start()
     {
@@ -74,6 +79,7 @@ public class Inspect : MonoBehaviour
             float angleX = mouseDelta.y * rotationSpeed * Time.deltaTime;
             float angleY = -mouseDelta.x * rotationSpeed * Time.deltaTime;
 
+            // Rotate based on camera's local up and right vectors
             transform.Rotate(inspectionCamera.transform.up, angleY, Space.World);
             transform.Rotate(inspectionCamera.transform.right, angleX, Space.World);
 
@@ -84,6 +90,18 @@ public class Inspect : MonoBehaviour
         {
             isRotating = false;
         }
+    }
+
+    private Quaternion CalculateInitialRotation()
+    {
+        // Calculate rotation based on the player's position relative to the item
+        Vector3 directionToPlayer = playerTransform.position - transform.position;
+        directionToPlayer.y = 0; // Ignore vertical difference
+
+        Quaternion playerRotation = Quaternion.LookRotation(-directionToPlayer, Vector3.up);
+
+        // Combine the player's rotation with the manually set initial rotation
+        return playerRotation * Quaternion.Euler(initialRotationEulerAngles);
     }
 
     public void StartInspection()
@@ -102,6 +120,10 @@ public class Inspect : MonoBehaviour
             isInspecting = true;
             originalRotation = transform.rotation;
             originalPosition = transform.position;
+
+            // Calculate and apply the initial rotation
+            initialRotation = CalculateInitialRotation();
+            transform.rotation = initialRotation;
 
             if (!string.IsNullOrEmpty(inspectStartSoundName))
             {

@@ -5,6 +5,7 @@ public class Interactables : MonoBehaviour
 {
     private Outline outline;
     private Inspect inspector;
+    [SerializeField] private Transform itemHolder; // Assign in Inspector if possible
 
     public string message;
 
@@ -28,6 +29,17 @@ public class Interactables : MonoBehaviour
         DisableOutline();
 
         inspector = GetComponent<Inspect>(); // Get the Inspect component
+
+        // If itemHolder isn't assigned via the Inspector, try to find it by name
+        if (itemHolder == null)
+        {
+            itemHolder = GameObject.Find("ItemHolder")?.transform; // Find by name
+
+            if (itemHolder == null)
+            {
+                Debug.LogError("ItemHolder not assigned and not found by name. Assign it in the Inspector.");
+            }
+        }
     }
 
     public void DisableOutline()
@@ -54,13 +66,29 @@ public class Interactables : MonoBehaviour
 
     public void PickUp()
     {
-        if (canPickup)
+        // Debugging to check what's happening during pickup
+        if (itemHolder != null)
         {
-            onPickUp.Invoke();
-            if (collectOnPickUp)
+            Debug.Log("ItemHolder child count: " + itemHolder.childCount);
+        }
+
+        // Ensure the player isn't already holding an item
+        if (itemHolder != null && itemHolder.childCount == 0)
+        {
+            Debug.Log("Picking up item: " + gameObject.name);
+
+            if (canPickup)
             {
-                Collect();
+                onPickUp.Invoke();
+                if (collectOnPickUp)
+                {
+                    Collect();
+                }
             }
+        }
+        else
+        {
+            Debug.Log("Cannot pick up item: Already holding another item.");
         }
     }
 

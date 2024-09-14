@@ -12,6 +12,9 @@ public class PickUp : MonoBehaviour
     public Collider playerCollider; // Reference to the player's collider
     public string itemLayerName = "Item"; // Layer name for the item
 
+    // Add this field for desired rotation
+    public Vector3 desiredRotation = Vector3.zero; // Desired local rotation when item is picked up
+
     private Rigidbody rb;
     private Collider itemCollider;
     private bool canDropItem = true; // Flag to enable or disable dropping
@@ -20,6 +23,9 @@ public class PickUp : MonoBehaviour
     private Transform originalParent; // Store the original parent
     private bool hasCollided; // Flag to check if the item has already collided
     private bool collisionDetectionEnabled = false; // Flag to delay collision detection
+
+    // New variable to manage item pickup status
+    private static bool itemOnHand = false;
 
     private void Start()
     {
@@ -61,12 +67,16 @@ public class PickUp : MonoBehaviour
     {
         if (itemHolder != null && itemHolder.childCount == 0)
         {
+            EnableDrop();
             Debug.Log("Picking up item: " + gameObject.name);
 
             if (!string.IsNullOrEmpty(pickupSoundName))
             {
                 AudioManager.Instance.Play(pickupSoundName);
             }
+
+            // Set itemOnHand to true to prevent picking up another item
+            itemOnHand = true;
 
             // Detach from parent and store the original world scale
             transform.SetParent(null);
@@ -75,7 +85,10 @@ public class PickUp : MonoBehaviour
             // Re-parent to the item holder and apply the correct scale
             transform.SetParent(itemHolder);
             transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.identity;
+
+            // Apply the specified desired rotation
+            transform.localRotation = Quaternion.Euler(desiredRotation);
+
             ApplyWorldScale(originalWorldScale); // Apply the world scale
 
             // Disable the collider when picked up
@@ -89,6 +102,12 @@ public class PickUp : MonoBehaviour
             // Reset collision flag
             hasCollided = false;
             collisionDetectionEnabled = false; // Disable collision detection initially
+        }
+        else
+        {
+            DisableDrop() ;
+            // If an item is already held, display a message or handle as needed
+            Debug.Log("Cannot pick up item: Already holding another item.");
         }
     }
 
@@ -120,15 +139,14 @@ public class PickUp : MonoBehaviour
             // Restore the original layer
             gameObject.layer = originalLayer;
 
-            // Enable collision detection after a short delay
-            Invoke(nameof(EnableCollisionDetection), 0.1f);
+            // Set itemOnHand to false to allow picking up another item
+            itemOnHand = false;
+
+           
         }
     }
 
-    private void EnableCollisionDetection()
-    {
-        collisionDetectionEnabled = true;
-    }
+    
 
     public void TryDropItem()
     {
@@ -160,13 +178,11 @@ public class PickUp : MonoBehaviour
     private void EnableDrop()
     {
         canDropItem = true;
-       
     }
 
     private void DisableDrop()
     {
         canDropItem = false;
-      
     }
 
     private void ApplyWorldScale(Vector3 targetWorldScale)
