@@ -19,6 +19,10 @@ public class UserAccountManager : MonoBehaviour
 
     public static UnityEvent<string, string> OnUserDataRecieved = new UnityEvent<string, string>();
 
+    public static UnityEvent<string> OnForgotPasswordFailed = new UnityEvent<string>();
+
+    public static UnityEvent OnForgotPasswordSuccess = new UnityEvent();
+
     string playfabID;
 
     void Awake()
@@ -125,6 +129,44 @@ public class UserAccountManager : MonoBehaviour
         });
     }
 
+    public void ForgotPassword(string emailAddress)
+    {
+        if (string.IsNullOrEmpty(emailAddress))
+        {
+            OnForgotPasswordFailed.Invoke("Email address is required.");
+            return;
+        }
+
+        try
+        {
+            PlayFabClientAPI.SendAccountRecoveryEmail(new SendAccountRecoveryEmailRequest
+            {
+                Email = emailAddress,
+                TitleId = PlayFabSettings.TitleId
+            },
+            response =>
+            {
+                Debug.Log($"Password recovery email sent successfully to {emailAddress}");
+                OnForgotPasswordSuccess.Invoke();
+            },
+            error =>
+            {
+                string errorMessage = "An error occurred. Please try again.";
+                if (error.Error == PlayFabErrorCode.InvalidEmailAddress ||
+                    error.ErrorMessage.Contains("Invalid email address"))
+                {
+                    errorMessage = "This email address is not registered.";
+                }
+                Debug.LogWarning($"Failed to send password recovery email: {error.GenerateErrorReport()}");
+                OnForgotPasswordFailed.Invoke(errorMessage);
+            });
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Unexpected error in ForgotPassword: {ex.Message}");
+            OnForgotPasswordFailed.Invoke("An unexpected error occurred. Please try again later.");
+        }
+    }
 }
 
 /*    public void SetStudentData(string key, string value, UnityAction OnSucess = null)

@@ -46,4 +46,18 @@ public class FinishUI : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu Final");
     }
+
+    public void nextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            Debug.Log("You're not in the correct scene");
+        }
+    }
+
+
 }
