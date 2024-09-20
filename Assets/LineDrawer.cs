@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
+using TMPro;
 
 public class LineDrawer : MonoBehaviour
 {
@@ -19,6 +21,11 @@ public class LineDrawer : MonoBehaviour
     private int selectedQuestionIndex = -1; // Index to track the selected question
 
     public int[] correctMatches; // To define the correct matching pairs of questions and answers
+    public AlertUI alertUI; // Reference to the AlertUI component
+    public GameObject blackboard; // Reference to the blackboard GameObject
+
+    public TextMeshProUGUI[] blackboardTexts; // Array for multiple TextMeshPro components
+    public TextMeshProUGUI clue; // Reference to the clue TextMeshPro component
 
     void Start()
     {
@@ -153,23 +160,46 @@ public class LineDrawer : MonoBehaviour
             if (assignedAnswerIndex != correctMatches[i])
             {
                 allCorrect = false;
-                Debug.Log($"Question {i + 1} is incorrect.");
-            }
-            else
-            {
-                Debug.Log($"Question {i + 1} is correct.");
+                alertUI.ShowAlert("Incorrect answer, Try Again!!"); // Show alert for incorrect answer
+                return; // Exit the method if there's an incorrect answer
             }
         }
 
-        if (allCorrect)
+        // If all answers are correct
+        CameraSwitch cameraSwitch = FindObjectOfType<CameraSwitch>();
+        if (cameraSwitch != null)
         {
-            Debug.Log("All matches are correct!");
-        }
-        else
-        {
-            Debug.Log("Some matches are incorrect. Try again!");
+            ClearAllLines(); // Clear the lines
+
+            // Change the tag of the blackboard to "Untagged"
+            if (blackboard != null)
+            {
+                blackboard.tag = "Untagged"; // Change the tag of the blackboard
+            }
+
+            // Hide all TextMeshPro texts on the blackboard
+            if (blackboardTexts.Length > 0)
+            {
+                foreach (var text in blackboardTexts)
+                {
+                    if (text != null)
+                    {
+                        text.gameObject.SetActive(false); // Hide each text
+                    }
+                }
+            }
+
+            // Show the clue
+            if (clue != null)
+            {
+                clue.gameObject.SetActive(true); // Show the clue
+            }
+
+            cameraSwitch.SwitchToMainCamera(); // Switch back to the main camera
         }
     }
+
+
 
     public void ClearAllLines()
     {
