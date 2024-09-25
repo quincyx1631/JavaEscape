@@ -64,7 +64,6 @@ public class LevelSelector : MonoBehaviour
         StartCoroutine(LoadLevelAsync(levelName));
     }
 
-    // Coroutine to load the level asynchronously with a progress bar and a 3-second delay
     IEnumerator LoadLevelAsync(string levelName)
     {
         // Activate the loading screen
@@ -79,14 +78,20 @@ public class LevelSelector : MonoBehaviour
         // Prevent the scene from activating immediately when it's loaded
         operation.allowSceneActivation = false;
 
-        float timer = 0f;  // Timer to keep track of loading time
+        float fakeProgress = 0f;  // This will simulate the progress bar if the loading is too fast
+        float timer = 0f;         // Timer to ensure a minimum display time
 
         // While the scene is loading, update the progress bar
         while (!operation.isDone)
         {
-            // Normalize operation.progress from 0 to 0.9 into 0 to 1
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            progressBar.value = progress;
+            // The actual progress goes from 0 to 0.9, so normalize it
+            float actualProgress = Mathf.Clamp01(operation.progress / 0.9f);
+
+            // Move fakeProgress gradually towards actualProgress
+            fakeProgress = Mathf.MoveTowards(fakeProgress, actualProgress, Time.deltaTime / 3f);  // Adjust speed by changing divisor (higher is slower)
+
+            // Update the progress bar with the fake progress
+            progressBar.value = fakeProgress;
 
             // Increment the timer
             timer += Time.deltaTime;
@@ -104,6 +109,7 @@ public class LevelSelector : MonoBehaviour
         // Once loading is complete, deactivate the loading screen
         loadingScreen.SetActive(false);
     }
+
 
 
     public void BackMainMenu()
