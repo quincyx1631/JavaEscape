@@ -7,7 +7,7 @@ using TMPro;
 public class QuizManager : MonoBehaviour
 {
     public List<QuestionAndAnswer> QnA;
-    private List<QuestionAndAnswer> originalQnA; // Original list to reset questions
+    private List<QuestionAndAnswer> originalQnA; 
     public GameObject[] options;
     public int currentQuestion;
 

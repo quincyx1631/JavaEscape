@@ -219,7 +219,7 @@ public class UserProfile : MonoBehaviour
             }
             else
             {
-                Debug.Log("You already completed Quiz 5");
+                Debug.Log("You already completed Quiz 6");
             }
         }
     }
@@ -238,7 +238,7 @@ public class UserProfile : MonoBehaviour
             }
             else
             {
-                Debug.Log("You already completed Quiz 5");
+                Debug.Log("You already completed Quiz 7");
             }
         }
     }
@@ -257,7 +257,7 @@ public class UserProfile : MonoBehaviour
             }
             else
             {
-                Debug.Log("You already completed Quiz 5");
+                Debug.Log("You already completed Quiz 8");
             }
         }
     }

@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Mail;
 using System.Text.RegularExpressions;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
