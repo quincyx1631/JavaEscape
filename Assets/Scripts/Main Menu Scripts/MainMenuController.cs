@@ -51,6 +51,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] public GameObject levelSelector = null;
     [SerializeField] private GameObject newGameConfirmationDialog = null;
 
+
     public void Start()
     {
         resolutions = Screen.resolutions;
