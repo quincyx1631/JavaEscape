@@ -3,10 +3,13 @@ using UnityEngine;
 public class KeypadOBJ : MonoBehaviour
 {
     public GameObject keypadUI; // Reference to the Keypad UI GameObject
+    public GameObject escapeUI; // Reference to the Escape UI GameObject
+    public Animator escapeUIAnimator; // Animator for the Escape UI
     public Door door; // Reference to the Door script
     public FirstPersonController controller;
     public CollectionUI collectionUI; // Reference to the CollectionUI script
     public AlertUI alertUI; // Reference to the AlertUI script
+    public PlayerInteraction playerInteraction; // Reference to the PlayerInteraction script
 
     // Function to handle password input
     public void CheckPassword(string enteredPassword)
@@ -37,9 +40,26 @@ public class KeypadOBJ : MonoBehaviour
         {
             if (keypadUI != null)
             {
-                keypadUI.SetActive(true); // Enable the Keypad UI
+                // Trigger the escape UI animation before showing the keypad UI
+                if (escapeUI != null && escapeUIAnimator != null)
+                {
+                    escapeUI.SetActive(true);
+                    escapeUIAnimator.SetBool("IsVisible", true); // Play the Escape UI animation
+                }
+
+                keypadUI.SetActive(true); // Enable the Keypad UI after Escape UI
                 MouseManager.Instance.EnableMouse();
                 PlayerControlManager.Instance.DisablePlayerControls();
+
+                // Disable raycast for player interaction
+                if (playerInteraction != null)
+                {
+                    playerInteraction.DisableRaycast();
+                }
+                else
+                {
+                    Debug.LogWarning("playerInteraction is not assigned.");
+                }
             }
         }
         else
@@ -47,7 +67,7 @@ public class KeypadOBJ : MonoBehaviour
             // Show alert if items are not collected
             if (alertUI != null)
             {
-                alertUI.ShowAlert("You must collect all items before using the keypad.","Alert");
+                alertUI.ShowAlert("You must collect all items before using the keypad.", "Alert");
             }
         }
     }
@@ -60,6 +80,22 @@ public class KeypadOBJ : MonoBehaviour
             keypadUI.SetActive(false); // Disable the Keypad UI
             MouseManager.Instance.DisableMouse();
             PlayerControlManager.Instance.EnablePlayerControls();
+
+            // Enable raycast for player interaction
+            if (playerInteraction != null)
+            {
+                playerInteraction.EnableRaycast();
+            }
+            else
+            {
+                Debug.LogWarning("playerInteraction is not assigned.");
+            }
+        }
+
+        // Hide the escape UI
+        if (escapeUI != null && escapeUIAnimator != null)
+        {
+            escapeUIAnimator.SetBool("IsVisible", false); // Hide the Escape UI animation
         }
     }
 }

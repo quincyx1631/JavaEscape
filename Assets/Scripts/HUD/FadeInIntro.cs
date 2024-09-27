@@ -21,12 +21,27 @@ public class FadeInIntro : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(DelayedStart());
+    }
+
+    private IEnumerator DelayedStart()
+    {
+        // Ensure a frame delay to allow for proper UI initialization
+        yield return null; // Wait one frame
+
+        Debug.Log("Starting FadeInIntro, hiding UI elements.");
+
         // Hide specified UI elements
         foreach (GameObject uiElement in uiElementsToHide)
         {
             if (uiElement != null)
             {
+                Debug.Log($"Hiding UI element: {uiElement.name}");
                 uiElement.SetActive(false);
+            }
+            else
+            {
+                Debug.LogWarning("UI element in uiElementsToHide array is null!");
             }
         }
 
@@ -146,7 +161,12 @@ public class FadeInIntro : MonoBehaviour
         {
             if (uiElement != null)
             {
+                Debug.Log($"Showing UI element: {uiElement.name}");
                 uiElement.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("UI element in uiElementsToHide array is null!");
             }
         }
     }

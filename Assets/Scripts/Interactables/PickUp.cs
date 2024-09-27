@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro; // If you're using TextMeshPro for the alert text
 
 public class PickUp : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public class PickUp : MonoBehaviour
     public Collider playerCollider; // Reference to the player's collider
     public string itemLayerName = "Item"; // Layer name for the item
 
-    // Add this field for desired rotation
     public Vector3 desiredRotation = Vector3.zero; // Desired local rotation when item is picked up
+    public Vector3 positionOffset = Vector3.zero;  // New position offset for when item is picked up
+
+    public AlertUI alertUI; // Reference to the alert UI GameObject
 
     private Rigidbody rb;
     private Collider itemCollider;
@@ -43,6 +46,9 @@ public class PickUp : MonoBehaviour
         originalLayer = gameObject.layer;
         originalWorldScale = transform.lossyScale; // Store the original world scale
         originalParent = transform.parent; // Store the original parent
+
+        // Initially hide the alert UI
+       
     }
 
     private void Update()
@@ -51,10 +57,12 @@ public class PickUp : MonoBehaviour
         if (IsCollidingWithOtherObject())
         {
             DisableDrop();
+           
         }
         else
         {
             EnableDrop();
+           
         }
 
         if (Input.GetKeyDown(KeyCode.G))
@@ -84,7 +92,9 @@ public class PickUp : MonoBehaviour
 
             // Re-parent to the item holder and apply the correct scale
             transform.SetParent(itemHolder);
-            transform.localPosition = Vector3.zero;
+
+            // Apply the position offset
+            transform.localPosition = positionOffset;
 
             // Apply the specified desired rotation
             transform.localRotation = Quaternion.Euler(desiredRotation);
@@ -105,7 +115,7 @@ public class PickUp : MonoBehaviour
         }
         else
         {
-            DisableDrop() ;
+            DisableDrop();
             // If an item is already held, display a message or handle as needed
             Debug.Log("Cannot pick up item: Already holding another item.");
         }
@@ -141,24 +151,24 @@ public class PickUp : MonoBehaviour
 
             // Set itemOnHand to false to allow picking up another item
             itemOnHand = false;
-
-           
         }
     }
-
-    
 
     public void TryDropItem()
     {
-        if (canDropItem)
+        // First check if the item can be dropped
+        if (!canDropItem)
         {
-            Drop();
+            Debug.Log("Cannot drop the item for some other reason.");
+            return; // Exit early since item can't be dropped
+      
         }
-        else
-        {
-            Debug.Log("Item cannot be dropped because it's colliding with another object.");
-        }
+
+        // Proceed with the drop if allowed
+        Drop();
     }
+
+
 
     public bool IsCollidingWithOtherObject()
     {
@@ -178,11 +188,13 @@ public class PickUp : MonoBehaviour
     private void EnableDrop()
     {
         canDropItem = true;
+        
     }
 
     private void DisableDrop()
     {
         canDropItem = false;
+      
     }
 
     private void ApplyWorldScale(Vector3 targetWorldScale)
@@ -194,6 +206,8 @@ public class PickUp : MonoBehaviour
             targetWorldScale.z / transform.lossyScale.z * transform.localScale.z
         );
     }
+
+  
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -214,4 +228,17 @@ public class PickUp : MonoBehaviour
         Gizmos.color = canDropItem ? Color.blue : Color.red;
         Gizmos.DrawWireCube(worldCenter, checkBoxSize);
     }
+
+    public void AlertChecker()
+    {
+        // Only check for collision if the player is holding the item (itemHolder has a child)
+        if (itemHolder.childCount >= 1)
+        {
+            if (!canDropItem)
+            {
+                alertUI.ShowAlert("The item shouldn't be colliding with other objects.");
+            }
+        }
+    }
+
 }

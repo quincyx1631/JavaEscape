@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using TMPro;
 
 public class LineDrawer : MonoBehaviour
@@ -20,12 +19,16 @@ public class LineDrawer : MonoBehaviour
     private Button[] answerAssigned; // Array to track if an answer has been assigned a line
     private int selectedQuestionIndex = -1; // Index to track the selected question
 
-    public int[] correctMatches; // To define the correct matching pairs of questions and answers
+    private int[] correctMatches; // To define the correct matching pairs of questions and answers
     public AlertUI alertUI; // Reference to the AlertUI component
     public GameObject blackboard; // Reference to the blackboard GameObject
 
     public TextMeshProUGUI[] blackboardTexts; // Array for multiple TextMeshPro components
     public TextMeshProUGUI clue; // Reference to the clue TextMeshPro component
+
+    [Header("Line Settings")]
+    public float lineWidth = 5f; // Adjustable line width
+    public float lineLengthMultiplier = 1.0f;
 
     void Start()
     {
@@ -85,23 +88,23 @@ public class LineDrawer : MonoBehaviour
             Vector3 direction = endPos - startPos;
             float distance = direction.magnitude;
 
-            // Set the position and rotation of the line
+            // Set the length using the multiplier from the inspector
+            lineRect.sizeDelta = new Vector2(distance * lineLengthMultiplier, lineWidth); // Length = distance * multiplier, Width = lineWidth
+
             lineRect.position = startPos;
-            lineRect.sizeDelta = new Vector2(distance, 5f); // Line width (you can adjust)
-            lineRect.pivot = new Vector2(0, 0.5f); // Set the pivot at the start
+            lineRect.pivot = new Vector2(0, 0.5f);
             lineRect.rotation = Quaternion.FromToRotation(Vector3.right, direction);
 
             return lineObject;
         }
+
         return null;
     }
 
     Vector3 GetButtonPosition(Button button)
     {
-        RectTransform rectTransform = button.GetComponent<RectTransform>();
-        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(canvas.worldCamera, rectTransform.position);
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.GetComponent<RectTransform>(), screenPoint, canvas.worldCamera, out var localPoint);
-        return canvas.transform.TransformPoint(localPoint);
+        RectTransform buttonRect = button.GetComponent<RectTransform>();
+        return buttonRect.position; // Get the world position of the button
     }
 
     bool IsAnswerAlreadyAssigned(Button selectedAnswerButton)
@@ -151,12 +154,20 @@ public class LineDrawer : MonoBehaviour
 
     public void CheckMatches()
     {
+        if (correctMatches == null || correctMatches.Length == 0)
+        {
+            Debug.LogError("Correct matches have not been set.");
+            return;
+        }
+
         bool allCorrect = true;
 
+        // Now check against the correctMatches defined in this class
         for (int i = 0; i < questionButtons.Length; i++)
         {
             int assignedAnswerIndex = System.Array.IndexOf(answerButtons, answerAssigned[i]);
 
+            // Check if assigned answer is correct
             if (assignedAnswerIndex != correctMatches[i])
             {
                 allCorrect = false;
@@ -164,20 +175,17 @@ public class LineDrawer : MonoBehaviour
                 return; // Exit the method if there's an incorrect answer
             }
         }
-
         // If all answers are correct
         CameraSwitch cameraSwitch = FindObjectOfType<CameraSwitch>();
         if (cameraSwitch != null)
         {
             ClearAllLines(); // Clear the lines
 
-            // Change the tag of the blackboard to "Untagged"
             if (blackboard != null)
             {
                 blackboard.tag = "Untagged"; // Change the tag of the blackboard
             }
 
-            // Hide all TextMeshPro texts on the blackboard
             if (blackboardTexts.Length > 0)
             {
                 foreach (var text in blackboardTexts)
@@ -189,7 +197,6 @@ public class LineDrawer : MonoBehaviour
                 }
             }
 
-            // Show the clue
             if (clue != null)
             {
                 clue.gameObject.SetActive(true); // Show the clue
@@ -198,8 +205,6 @@ public class LineDrawer : MonoBehaviour
             cameraSwitch.SwitchToMainCamera(); // Switch back to the main camera
         }
     }
-
-
 
     public void ClearAllLines()
     {
@@ -225,4 +230,18 @@ public class LineDrawer : MonoBehaviour
         hasStartPosition = false;
         selectedQuestionIndex = -1;
     }
+
+    // Public method to set correct answers from other scripts
+    public void SetCorrectAnswers(int[] correctAnswers)
+    {
+        this.correctMatches = correctAnswers;
+    }
+
+    // Public method to set correct answers from LevelTwoGenerator
+    public void UpdateCorrectAnswers(int[] correctAnswers)
+    {
+        this.correctMatches = correctAnswers;
+        Debug.Log("Correct matches updated: " + string.Join(",", correctMatches));
+    }
+
 }
