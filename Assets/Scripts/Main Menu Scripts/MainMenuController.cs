@@ -12,6 +12,14 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultVolume = 1.0f;
 
+    [SerializeField] private TMP_Text musicTextValue = null; 
+    [SerializeField] private Slider _musicSlider = null; 
+    [SerializeField] private float defaultMusicVolume = 1.0f; 
+
+    [SerializeField] private TMP_Text sfxTextValue = null; 
+    [SerializeField] private Slider _sfxSlider = null; 
+    [SerializeField] private float defaultSfxVolume = 1.0f; 
+
     [Header("Gameplay Settings")]
     [SerializeField] private TMP_Text controllerSenTextValue = null;
     [SerializeField] private Slider controllerSenSlider = null;
@@ -37,20 +45,9 @@ public class MainMenuController : MonoBehaviour
     [Header("Confirmation")]
     [SerializeField] private GameObject confirmationPrompt = null;
 
-    [Header("Levels to Load")]
-    private string levelToLoad;
-    [SerializeField] private GameObject noSavedGameDialog = null;
-
     [Header("Resolution DropDowns")]
     public TMP_Dropdown resolutionDropdown;
     private Resolution[] resolutions;
-
-    [Header("Progress Levels")]
-    [SerializeField] private int defaultReachIndex = 1;
-    [SerializeField] private int defaultUnlockedLevel = 1;
-    [SerializeField] public GameObject levelSelector = null;
-    [SerializeField] private GameObject newGameConfirmationDialog = null;
-
 
     public void Start()
     {
@@ -83,57 +80,6 @@ public class MainMenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void LoadGameDialogYes()
-    {
-        if (PlayerPrefs.HasKey("SavedLevel"))
-        {
-            levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(levelToLoad);
-        }
-        else
-        {
-            noSavedGameDialog.SetActive(true);
-        }
-    }
-
-    public void CheckSavedGame()
-    {
-        int reachIndex = PlayerPrefs.GetInt("ReachIndex", defaultReachIndex);
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", defaultUnlockedLevel);
-
-        if (reachIndex == 1 && unlockedLevel == 1)
-        {
-            noSavedGameDialog.SetActive(true);
-            levelSelector.SetActive(false);
-            Debug.Log("No saved game found. Showing NoSavedGameDialog.");
-        }
-        else
-        {
-            noSavedGameDialog.SetActive(false);
-            levelSelector.SetActive(true);
-            Debug.Log("Saved game found. Showing LevelSelector.");
-        }
-    }
-
-    public void newGameDialog()
-    {
-        int reachIndex = PlayerPrefs.GetInt("ReachIndex", defaultReachIndex);
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", defaultUnlockedLevel);
-
-        if (reachIndex > 1 && unlockedLevel > 1)
-        {
-            newGameConfirmationDialog.SetActive(true);
-            levelSelector.SetActive(false);
-            Debug.Log("No saved game found. Showing NoSavedGameDialog.");
-        }
-        else
-        {
-            newGameConfirmationDialog.SetActive(false);
-            levelSelector.SetActive(true);
-            Debug.Log("Saved game found. Showing LevelSelector.");
-        }
-    }
-
     public void ExitButton()
     {
         Application.Quit();
@@ -148,7 +94,24 @@ public class MainMenuController : MonoBehaviour
     public void VolumeApply()
     {
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+
+        PlayerPrefs.SetFloat("musicVolume", _musicSlider.value);
+
+        PlayerPrefs.SetFloat("sfxVolume", _sfxSlider.value);
+
         StartCoroutine(ConfirmationBox());
+    }
+
+    public void SetMusicVolume(float musicVolume)
+    {
+        MenuAudioManager.Instance.MusicVolume(musicVolume); 
+        musicTextValue.text = musicVolume.ToString("0.0"); 
+    }
+
+    public void SetSFXVolume(float sfxVolume)
+    {
+        MenuAudioManager.Instance.SFXVolume(sfxVolume); 
+        sfxTextValue.text = sfxVolume.ToString("0.0");
     }
 
     public void SetControllerSen(float sensitivity)
@@ -162,12 +125,10 @@ public class MainMenuController : MonoBehaviour
         if (invertYToggle.isOn)
         {
             PlayerPrefs.SetInt("masterInvertY", 1);
-            //invert Y
         }
         else
         {
             PlayerPrefs.SetInt("masterInvertY", 0);
-            //not invert
         }
 
         PlayerPrefs.SetFloat("masterSen", mainControllerSen);
@@ -206,14 +167,20 @@ public class MainMenuController : MonoBehaviour
 
     public void ResetButton(string MenuType)
     {
-        int reachIndex = PlayerPrefs.GetInt("ReachIndex", defaultReachIndex);
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", defaultUnlockedLevel);
-
         if (MenuType == "Audio")
         {
             AudioListener.volume = defaultVolume;
             volumeSlider.value = defaultVolume;
             volumeTextValue.text = defaultVolume.ToString("0.0");
+
+            _musicSlider.value = defaultMusicVolume;
+            MenuAudioManager.Instance.MusicVolume(defaultMusicVolume); 
+            musicTextValue.text = defaultMusicVolume.ToString("0.0");
+
+            _sfxSlider.value = defaultSfxVolume;
+            MenuAudioManager.Instance.SFXVolume(defaultSfxVolume); 
+            sfxTextValue.text = defaultSfxVolume.ToString("0.0");
+
             VolumeApply();
         }
 
@@ -242,38 +209,6 @@ public class MainMenuController : MonoBehaviour
             resolutionDropdown.value = resolutions.Length;
             GraphicsApply();
         }
-
-        if (MenuType == "Progress")
-        {
-            if (reachIndex > 1 && unlockedLevel > 1)
-            {
-                newGameConfirmationDialog.SetActive(true);
-                levelSelector.SetActive(false);
-                Debug.Log("Save Data Found. Showing New Game Confirmation.");
-            }
-            else if(reachIndex == 1 && unlockedLevel == 1)
-            {
-                newGameConfirmationDialog.SetActive(false);
-                levelSelector.SetActive(true);
-                Debug.Log("No Save Data Found. Showing LevelSelector.");
-
-                //Reset Reach Index and Unlocked Levels
-                PlayerPrefs.SetInt("ReachIndex", defaultReachIndex);
-                PlayerPrefs.SetInt("UnlockedLevel", defaultUnlockedLevel);
-                PlayerPrefs.Save();
-
-                Debug.Log("Progress reset: ReachIndex and UnlockedLevel set to default values.");
-            }
-        }
-        if(MenuType == "ResetOnly")
-        {
-            //Reset Reach Index and Unlocked Levels
-            PlayerPrefs.SetInt("ReachIndex", defaultReachIndex);
-            PlayerPrefs.SetInt("UnlockedLevel", defaultUnlockedLevel);
-            PlayerPrefs.Save();
-
-            Debug.Log("Progress reset: ReachIndex and UnlockedLevel set to default values.");
-        }
     }
 
     public IEnumerator ConfirmationBox()
@@ -281,5 +216,15 @@ public class MainMenuController : MonoBehaviour
         confirmationPrompt.SetActive(true);
         yield return new WaitForSeconds(2);
         confirmationPrompt.SetActive(false);
+    }
+
+    public void MusicVolume()
+    {
+        MenuAudioManager.Instance.MusicVolume(_musicSlider.value);
+    }
+
+    public void SFXVolume()
+    {
+        MenuAudioManager.Instance.SFXVolume(_sfxSlider.value);
     }
 }
