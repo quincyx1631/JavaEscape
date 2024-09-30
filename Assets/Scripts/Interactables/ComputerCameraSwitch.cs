@@ -2,27 +2,26 @@ using UnityEngine;
 
 public class ComputerCameraSwitch : MonoBehaviour
 {
-    private Outline outline; // Reference to the Outline component
+    private Outline outline; // Outline component to highlight interactable objects
     public Camera mainCamera;           // Reference to the main camera
-    public Camera computerCamera;       // Reference to the computer camera
+    public Camera computerCamera;       // Reference to the computer's camera
     public GameObject[] uiToDisable;    // UI elements to disable when switching
-    public GameObject[] uiToEnable;     // UI elements to enable when switching
-    public GameObject objectToHide;     // Object to hide when switching
-    public GameObject escapeUI;         // Escape UI GameObject
-    public Animator escapeUIAnimator;   // Animator component for the escape UI animation
+    public GameObject objectToHide;     // Object to hide when switching (e.g., player's body)
+    public GameObject escapeUI;         // Escape UI for showing when in computer mode
+    public Animator escapeUIAnimator;   // Animator for escape UI
 
-    private bool isComputerCameraActive = false; // Track if the computer camera view is active
-    private Computer currentComputer; // Reference to the current Computer instance
+    private bool isComputerCameraActive = false; // Track if the computer camera is active
+    private Computer currentComputer;            // Current computer reference
 
     void Start()
     {
         outline = GetComponent<Outline>();
-        SwitchToMainCamera(); // Ensure the main camera is active by default
+        SwitchToMainCamera(); // Start with the main camera active
     }
 
     public void SwitchToComputerCamera(Computer computer)
     {
-        currentComputer = computer; // Set the current computer reference
+        currentComputer = computer; // Set the current computer
 
         if (!isComputerCameraActive)
         {
@@ -34,12 +33,20 @@ public class ComputerCameraSwitch : MonoBehaviour
         }
     }
 
-    private void ShowLoginUI()
+    private void ShowLoginOrDebugUI()
     {
-        // Check if the current computer exists and set the password
-        if (currentComputer != null)
+        // If login is complete, show the Debug UI for the current computer
+        if (currentComputer.isLoginComplete)
         {
+            LoginUIManager.Instance.HideLoginUI();
+            LoginUIManager.Instance.ShowDebugUI(); // Show the Debug UI specific to the computer
+        }
+        else
+        {
+            // Otherwise, show the Login UI and set up the password
             LoginUIManager.Instance.SetPassword(currentComputer.password);
+            LoginUIManager.Instance.SetCurrentComputer(currentComputer);
+            LoginUIManager.Instance.ShowLoginUI();
         }
     }
 
@@ -59,16 +66,11 @@ public class ComputerCameraSwitch : MonoBehaviour
             uiElement.SetActive(false);
         }
 
-        foreach (var uiElement in uiToEnable)
-        {
-            uiElement.SetActive(true);
-        }
-
         MouseManager.Instance.EnableMouse();
         isComputerCameraActive = true;
-        ShowLoginUI(); // Show the login UI when switching to the computer camera
+        ShowLoginOrDebugUI(); // Show the appropriate UI based on the login state
 
-        // Enable the escape UI
+        // Show the escape UI
         if (escapeUI != null && escapeUIAnimator != null)
         {
             escapeUI.SetActive(true);
@@ -92,15 +94,16 @@ public class ComputerCameraSwitch : MonoBehaviour
             uiElement.SetActive(true);
         }
 
-        foreach (var uiElement in uiToEnable)
-        {
-            uiElement.SetActive(false);
-        }
-
         MouseManager.Instance.DisableMouse();
         isComputerCameraActive = false;
 
-        // Disable the escape UI
+        // Hide any Debug UI when switching back
+        LoginUIManager.Instance.HideDebugUI();
+
+        // Hide the Login UI when switching back to the main camera
+        LoginUIManager.Instance.HideLoginUI();
+
+        // Hide the escape UI
         if (escapeUI != null && escapeUIAnimator != null)
         {
             escapeUIAnimator.SetBool("IsVisible", false);
