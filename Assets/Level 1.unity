@@ -271,6 +271,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &4199161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -386,6 +388,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &28927837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,6 +803,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &82302000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,51 +2054,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1906540420}
   m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
---- !u!1 &158692045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 158692047}
-  - component: {fileID: 158692046}
-  m_Layer: 0
-  m_Name: Collection Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &158692046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158692045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54752ad6c404124d8c5b5cf5dda93f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectionUI: {fileID: 91033318}
---- !u!4 &158692047
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158692045}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168149465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5758977277521239800, guid: ee2e5d109bddf2d40844eddfa5b8f906, type: 3}
@@ -2319,6 +2280,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &187978659
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2515,6 +2478,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &202100274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2830,6 +2795,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &248777730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3026,6 +2993,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &265830065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3294,6 +3263,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &276394933
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5402,6 +5373,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &692130275
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6028,6 +6001,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &766686593
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6238,6 +6213,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &770043322
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6884,6 +6861,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &908163823
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8164,6 +8143,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &1026590274
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9206,6 +9187,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 90, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &1165254172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9715,6 +9698,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &1207865421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9980,6 +9965,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &1215611017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10449,6 +10436,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &1306604706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10784,6 +10773,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &1347436144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11149,6 +11140,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!54 &1390182765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12067,6 +12060,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &1576581445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13407,6 +13402,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &1819298101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14583,6 +14580,8 @@ MonoBehaviour:
   playerCollider: {fileID: 1283768817}
   itemLayerName: Item
   desiredRotation: {x: 0, y: 0, z: 90}
+  positionOffset: {x: 0, y: 0, z: 0}
+  alertUI: {fileID: 0}
 --- !u!114 &2050975320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19307,6 +19306,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652400766386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5830886582431208398
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2702960262547733351, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: collectionUI
+      value: 
+      objectReference: {fileID: 91033318}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726222315113607151, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600180912396293338, guid: d8eedd7994642684aa532b0223755648, type: 3}
+      propertyPath: m_Name
+      value: Collection Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8eedd7994642684aa532b0223755648, type: 3}
 --- !u!23 &5831810735885278677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24020,7 +24080,7 @@ SceneRoots:
   - {fileID: 761215977}
   - {fileID: 3501837371038059780}
   - {fileID: 8497659988378206333}
-  - {fileID: 158692047}
+  - {fileID: 5830886582431208398}
   - {fileID: 966459774}
   - {fileID: 126390221}
   - {fileID: 8634891757818810675}

@@ -8,17 +8,16 @@ public class CameraSwitch : MonoBehaviour
     public GameObject[] uiToDisable;    // UI elements to disable when switching
     public GameObject[] uiToEnable;     // UI elements to enable when switching
     public GameObject objectToHide;     // Object to hide when switching
-    public LineDrawer lineDrawer;       // Reference to the LineDrawer component
+    public LineDrawer lineDrawer;       // Optional reference to the LineDrawer component
 
     [Header("Escape UI Settings")]
     public GameObject escapeUI;         // Escape UI GameObject
     public Animator escapeUIAnimator;   // Animator component for the escape UI animation
 
-    [Header("Item Requirement")]
-    public bool needObject = false;     // Set to true if the object is required for interaction
-    public GameObject requiredItem;     // The item required to use the blackboard (e.g., Marker)
-    public Transform itemHolder;        // The player's item holder where the required item should be
-    public AlertUI alertUI;             // Reference to your existing AlertUI system for showing alerts
+    [Header("Item Requirement Settings")]
+    public bool needItem = false;           // Flag to indicate if item is required to interact
+    public CollectibleItem requiredItem;    // Reference to the required item
+    public AlertUI alertUI;                 // Reference to your existing AlertUI system for showing alerts
 
     private bool isSecondaryCameraActive = false; // Track if the secondary camera view is active
 
@@ -31,17 +30,18 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwitchCamera()
     {
-        // If needObject is true, check if the player is holding the required item (e.g., Marker)
-        if (needObject && !HasRequiredItem())
+        // Check if an item is required and if the player has collected it
+        if (needItem && requiredItem != null && !requiredItem.IsCollected)
         {
-            // Use your existing alertUI to display a message when the required item is missing
+            // Display an alert if the item is required but not collected
             if (alertUI != null)
             {
-                alertUI.ShowAlert("You need a marker on hand to use this whiteboard.");
+                alertUI.ShowAlert("You need to collect the required item first!");
             }
-            return; // Prevent switching camera if the item is not held
+            return; // Prevent switching cameras
         }
 
+        // Switch between main and secondary cameras
         if (!isSecondaryCameraActive)
         {
             SwitchToSecondaryCamera();
@@ -121,20 +121,13 @@ public class CameraSwitch : MonoBehaviour
         {
             if (isSecondaryCameraActive)
             {
-                lineDrawer.ClearAllLines(); // Clear lines when switching back
+                // Check if lineDrawer is assigned before calling any methods
+                if (lineDrawer != null)
+                {
+                    lineDrawer.ClearAllLines(); // Clear lines when switching back
+                }
                 SwitchToMainCamera();
             }
         }
-    }
-
-    // Check if the player is holding the required item (marker) in the itemHolder
-    private bool HasRequiredItem()
-    {
-        if (requiredItem != null && itemHolder != null)
-        {
-            // Check if the item in the itemHolder is the required item
-            return itemHolder.childCount > 0 && itemHolder.GetChild(0).gameObject == requiredItem;
-        }
-        return false;
     }
 }
