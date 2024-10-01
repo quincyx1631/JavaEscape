@@ -3,15 +3,15 @@ using UnityEngine;
 public class ComputerCameraSwitch : MonoBehaviour
 {
     private Outline outline; // Outline component to highlight interactable objects
-    public Camera mainCamera;           // Reference to the main camera
-    public Camera computerCamera;       // Reference to the computer's camera
-    public GameObject[] uiToDisable;    // UI elements to disable when switching
-    public GameObject objectToHide;     // Object to hide when switching (e.g., player's body)
-    public GameObject escapeUI;         // Escape UI for showing when in computer mode
-    public Animator escapeUIAnimator;   // Animator for escape UI
+    public Camera mainCamera; // Reference to the main camera
+    public Camera computerCamera; // Reference to the computer's camera
+    public GameObject[] uiToDisable; // UI elements to disable when switching
+    public GameObject objectToHide; // Object to hide when switching (e.g., player's body)
+    public GameObject escapeUI; // Escape UI for showing when in computer mode
+    public Animator escapeUIAnimator; // Animator for escape UI
 
     private bool isComputerCameraActive = false; // Track if the computer camera is active
-    private Computer currentComputer;            // Current computer reference
+    private Computer currentComputer; // Current computer reference
 
     void Start()
     {
@@ -39,7 +39,7 @@ public class ComputerCameraSwitch : MonoBehaviour
         if (currentComputer.isLoginComplete)
         {
             LoginUIManager.Instance.HideLoginUI();
-            LoginUIManager.Instance.ShowDebugUI(); // Show the Debug UI specific to the computer
+            currentComputer.ToggleDebugUI(true); // Show the Debug UI specific to the computer
         }
         else
         {
@@ -97,11 +97,24 @@ public class ComputerCameraSwitch : MonoBehaviour
         MouseManager.Instance.DisableMouse();
         isComputerCameraActive = false;
 
-        // Hide any Debug UI when switching back
-        LoginUIManager.Instance.HideDebugUI();
-
         // Hide the Login UI when switching back to the main camera
         LoginUIManager.Instance.HideLoginUI();
+
+        // Hide the screen-space Debug UI when switching back to the main camera
+        if (currentComputer != null && currentComputer.debugUI != null)
+        {
+            currentComputer.debugUI.SetActive(false); // Hide the screen-space Debug UI
+        }
+
+        // Check if the debug question has been answered
+        if (currentComputer != null && currentComputer.isDebugAnswered)
+        {
+            // Only hide the World Space Debug UI if the debug has been answered
+            if (currentComputer.worldSpaceDebugUI != null)
+            {
+                currentComputer.worldSpaceDebugUI.SetActive(false); // Hide the World Space Debug UI
+            }
+        }
 
         // Hide the escape UI
         if (escapeUI != null && escapeUIAnimator != null)

@@ -25,6 +25,7 @@ public class LoginUIManager : MonoBehaviour
     public void SetCurrentComputer(Computer computer)
     {
         currentComputer = computer; // Set the current computer reference
+        SetPassword(computer.password); // Set the current password from the computer
     }
 
     public void ShowLoginUI()
@@ -36,6 +37,14 @@ public class LoginUIManager : MonoBehaviour
     public void ShowDebugUI()
     {
         HideLoginUI();
+
+        // Hide the world-space login UI (computerCanvas)
+        if (currentComputer.computerCanvas != null)
+        {
+            currentComputer.computerCanvas.alpha = 0;
+            currentComputer.computerCanvas.interactable = false;
+            currentComputer.computerCanvas.blocksRaycasts = false;
+        }
 
         // Show the regular Debug UI
         if (currentComputer != null && currentComputer.debugUI != null)
@@ -81,6 +90,49 @@ public class LoginUIManager : MonoBehaviour
         {
             // Password is incorrect
             alertUI.ShowAlert("Incorrect password, try again!");
+        }
+    }
+
+    public void OnDebugButtonPressed()
+    {
+        if (currentComputer != null)
+        {
+            string userCode = currentComputer.GetDebugInput(); // Get the user input from the specific debug input field
+            string feedback = currentComputer.ValidateDebugCode(userCode); // Validate the debug code
+
+            // Show alert for incorrect feedback
+            if (feedback != "Debug code accepted.")
+            {
+                alertUI.ShowAlert(feedback); // Show alert for feedback if debug code is incorrect
+            }
+            else
+            {
+                // Logic for handling correct debug code
+                currentComputer.ToggleDebugUI(false); // Hide both Debug UIs
+                currentComputer.ShowClueUI(); // Show the clue UI
+
+                // Destroy computerCanvas and worldSpaceDebugUI
+                if (currentComputer.computerCanvas != null)
+                {
+                    Destroy(currentComputer.computerCanvas.gameObject); // Destroy the computerCanvas GameObject
+                }
+
+                if (currentComputer.worldSpaceDebugUI != null)
+                {
+                    Destroy(currentComputer.worldSpaceDebugUI); // Destroy the World Space Debug UI GameObject
+                }
+
+                // Open the next computer directly from LoginUIManager
+                if (currentComputer.nextComputer != null)
+                {
+                    Debug.Log("Opening next computer: " + currentComputer.nextComputer.name);
+                    currentComputer.nextComputer.OpenComputer(); // Open the next computer
+                }
+                else
+                {
+                    Debug.LogWarning("Next computer is not assigned for: " + currentComputer.name);
+                }
+            }
         }
     }
 }
