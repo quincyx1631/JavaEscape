@@ -93,21 +93,28 @@ public class UserProfile : MonoBehaviour
     //REFERENCE FOR LEVEL PROGRESSION NI JAVEN
     public void AddLevel()
     {
-        profileData.level += 1;
+        const int maxLevel = 8;
 
-        Door timerLevel = FindAnyObjectByType<Door>();
+        if (profileData.level < maxLevel)
+        {
+            profileData.level += 1;
+            Door timerLevel = FindAnyObjectByType<Door>();
 
-        // Convert finalElapsedTime (which is in seconds) to TimeSpan
-        TimeSpan timeSpan = TimeSpan.FromSeconds(timerLevel.finalElapsedTime);
+            // Convert finalElapsedTime (which is in seconds) to TimeSpan
+            TimeSpan timeSpan = TimeSpan.FromSeconds(timerLevel.finalElapsedTime);
 
-        // Format the TimeSpan into a string with minutes and seconds
-        string timerLevelSave = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
+            // Format the TimeSpan into a string with minutes and seconds
+            string timerLevelSave = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
 
-        // Save the formatted time string into profileData
-        profileData.Level_1_Timer = timerLevelSave;
-
-        SetUserData();
-        GetUserData();
+            // Save the formatted time string into profileData
+            profileData.Level_1_Timer = timerLevelSave;
+            SetUserData();
+            GetUserData();
+        }
+        else
+        {
+            Debug.Log("Maximum level reached");
+        }
     }
 
     //Quiz 1
