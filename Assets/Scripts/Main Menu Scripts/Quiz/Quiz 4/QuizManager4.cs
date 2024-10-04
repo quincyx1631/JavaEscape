@@ -2,93 +2,116 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class QuizManager4 : MonoBehaviour
 {
     public List<QuestionAndAnswer4> QnA4;
-    private List<QuestionAndAnswer4> originalQnA4; // Original list to reset questions
+    private List<QuestionAndAnswer4> originalQnA4;
     public GameObject[] options4;
     public int currentQuestion;
-
     public Text QuestionTxt;
-
     public GameObject QuizPanel;
     public GameObject ScorePanel;
-
     public Text scoreTxt;
     int totalQuestions = 0;
     public int score = 0;
+    private bool isRetry = false;
 
-    private void Start()
+    private void Awake()
     {
         totalQuestions = QnA4.Count;
-        PlayerPrefs.DeleteKey("QuizRetry4");
-        PlayerPrefs.DeleteKey("QuizScore4");
-        // Create a copy of the original QnA4 list
         originalQnA4 = new List<QuestionAndAnswer4>(QnA4);
+    }
 
-        // Check if there is a retry flag
-        if (PlayerPrefs.HasKey("QuizRetry4"))
+    private void OnEnable()
+    {
+        UserProfile.OnProfileDataUpdated.AddListener(UpdateQuizState);
+
+        if (UserProfile.Instance != null)
         {
-            PlayerPrefs.DeleteKey("QuizRetry4"); // Clear the retry flag
-            ScorePanel.SetActive(false);
-            generateQuestion();
+            UpdateQuizState(UserProfile.Instance.profileData);
         }
-        else if (PlayerPrefs.HasKey("QuizScore4"))
+    }
+
+    private void OnDisable()
+    {
+        UserProfile.OnProfileDataUpdated.RemoveListener(UpdateQuizState);
+    }
+
+    private void UpdateQuizState(ProfileData profileData)
+    {
+        string currentQuiz4 = profileData.QuizScore_4;
+        Debug.Log($"Raw QuizScore_4: {currentQuiz4}"); 
+
+        if (!string.IsNullOrEmpty(currentQuiz4))
         {
-            // If there is a saved score, show the ScorePanel
-            score = PlayerPrefs.GetInt("QuizScore4");
-            ShowScorePanel();
+            if (int.TryParse(currentQuiz4, out int savedScore4))
+            {
+                score = savedScore4;
+                Debug.Log($"Parsed score: {score}");
+                ShowScorePanel();
+            }
+            else
+            {
+                string[] scoreParts = currentQuiz4.Split('/');
+                if (scoreParts.Length == 2 && int.TryParse(scoreParts[0], out savedScore4))
+                {
+                    score = savedScore4;
+                    Debug.Log($"Parsed score from 'score/total' format: {score}");
+                    ShowScorePanel();
+                }
+                else
+                {
+                    Debug.LogError($"Failed to parse QuizScore_4: {currentQuiz4}");
+                    StartQuizNormally();
+                }
+            }
+        }
+        else if (isRetry)
+        {
+            Debug.Log("Retry detected, starting quiz normally");
+            StartQuizNormally();
         }
         else
         {
-            // Start quiz normally
-            ScorePanel.SetActive(false);
-            generateQuestion();
+            Debug.Log("No saved score and not a retry, starting quiz normally");
+            StartQuizNormally();
         }
     }
-    public void retry()
+
+    private void StartQuizNormally()
     {
-        // Set the retry flag and save it
-        PlayerPrefs.SetInt("QuizRetry4", 1);
-        PlayerPrefs.Save();
-
-        // Reset the score and the question list
-        score = 0;
-        QnA4 = new List<QuestionAndAnswer4>(originalQnA4); // Reset QnA4 to the original list
-        totalQuestions = QnA4.Count;
-
-        // Reset the UI elements
         ScorePanel.SetActive(false);
         QuizPanel.SetActive(true);
+        generateQuestion();
+    }
 
-        // Regenerate the first question
+    public void retry()
+    {
+        isRetry = true;
+        score = 0;
+        QnA4 = new List<QuestionAndAnswer4>(originalQnA4);
+        totalQuestions = QnA4.Count;
+        ScorePanel.SetActive(false);
+        QuizPanel.SetActive(true);
         generateQuestion();
     }
 
     void GameOver()
     {
-        PlayerPrefs.SetInt("QuizScore4", score);
-        PlayerPrefs.Save();
         StartCoroutine(GameOverRoutine());
     }
 
     IEnumerator GameOverRoutine()
     {
-        // Show the score panel
         ShowScorePanel();
-
-        // Wait for 1 second
         yield return new WaitForSecondsRealtime(1f);
 
-        UserProfile uiProfile = FindAnyObjectByType<UserProfile>();
-
-        if (uiProfile != null)
+        if (UserProfile.Instance != null)
         {
             Debug.Log("UserProfile found. Setting quiz score...");
-            uiProfile.SetQuiz4Score();
             Debug.Log("Quiz score set successfully.");
+            UserProfile.Instance.SetQuizScore();
         }
         else
         {
@@ -122,7 +145,6 @@ public class QuizManager4 : MonoBehaviour
         {
             options4[i].GetComponent<AnswerScript4>().isCorrect = false;
             options4[i].transform.GetChild(0).GetComponent<Text>().text = QnA4[currentQuestion].Answers[i];
-
             if (QnA4[currentQuestion].CorrectAnswer == i + 1)
             {
                 options4[i].GetComponent<AnswerScript4>().isCorrect = true;
@@ -130,13 +152,11 @@ public class QuizManager4 : MonoBehaviour
         }
     }
 
-
     void generateQuestion()
     {
         if (QnA4.Count > 0)
         {
             currentQuestion = Random.Range(0, QnA4.Count);
-
             QuestionTxt.text = QnA4[currentQuestion].Question;
             setAnswers();
         }

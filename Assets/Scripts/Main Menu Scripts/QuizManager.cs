@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-//NEED TO APPLY SA IBA
 public class QuizManager : MonoBehaviour
 {
     public List<QuestionAndAnswer> QnA;
@@ -19,45 +17,64 @@ public class QuizManager : MonoBehaviour
     public int score = 0;
     private bool isRetry = false;
 
-    private void Start()
+    private void Awake()
     {
         totalQuestions = QnA.Count;
         originalQnA = new List<QuestionAndAnswer>(QnA);
+    }
 
+    private void OnEnable()
+    {
         UserProfile.OnProfileDataUpdated.AddListener(UpdateQuizState);
+
         if (UserProfile.Instance != null)
         {
             UpdateQuizState(UserProfile.Instance.profileData);
         }
     }
 
+    private void OnDisable()
+    {
+        UserProfile.OnProfileDataUpdated.RemoveListener(UpdateQuizState);
+    }
+
     private void UpdateQuizState(ProfileData profileData)
     {
         string currentQuiz = profileData.QuizScore_1;
+        Debug.Log($"Raw QuizScore_1: {currentQuiz}");
 
         if (!string.IsNullOrEmpty(currentQuiz))
         {
-            // If there is a saved score, show the ScorePanel
-            string[] scoreParts = currentQuiz.Split('/');
-            if (scoreParts.Length == 2 && int.TryParse(scoreParts[0], out int savedScore))
+            if (int.TryParse(currentQuiz, out int savedScore))
             {
                 score = savedScore;
+                Debug.Log($"Parsed score: {score}");
                 ShowScorePanel();
             }
             else
             {
-                Debug.LogError("Failed to parse QuizScore_1");
-                StartQuizNormally();
+                string[] scoreParts = currentQuiz.Split('/');
+                if (scoreParts.Length == 2 && int.TryParse(scoreParts[0], out savedScore))
+                {
+                    score = savedScore;
+                    Debug.Log($"Parsed score from 'score/total' format: {score}");
+                    ShowScorePanel();
+                }
+                else
+                {
+                    Debug.LogError($"Failed to parse QuizScore_1: {currentQuiz}");
+                    StartQuizNormally();
+                }
             }
         }
         else if (isRetry)
         {
-            // If it's a retry, start the quiz
+            Debug.Log("Retry detected, starting quiz normally");
             StartQuizNormally();
         }
         else
         {
-            // Start quiz normally if no saved score and not a retry
+            Debug.Log("No saved score and not a retry, starting quiz normally");
             StartQuizNormally();
         }
     }
