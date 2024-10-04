@@ -598,6 +598,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &105274236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1592157772109261863, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1510641984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &108172241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1372,21 +1383,38 @@ MonoBehaviour:
   puzzleSets:
   - quiz:
       questions:
-      - set 1
-      - set 1
-      - set 1
-      - set 1
-      - set 1
+      - "1.\tWhat is the value of the variable a?"
+      - "2.\tWhat is the type of the variable b?"
+      - "3.\tWhat character is stored in the variable c?"
+      - "4.\tWhat is the value of result1?"
+      - "5.\tWhat is the result of Math.sqrt(a * b) before formatting?"
       answers:
       - set 1
       - set 1
       - set 1
       - set 1
       - set 1
-      correctAnswers: 0000000001000000020000000300000004000000
+      correctAnswers: 0400000003000000020000000100000000000000
     tarpulin: {fileID: 1814516208}
-    laptopPassphrase: set 1
+    laptopPassphrase: maykel kupal
     keypadPassword: 11111
+  - quiz:
+      questions:
+      - set 2
+      - set 2
+      - set 2
+      - set 2
+      - set 2
+      answers:
+      - set 2
+      - set 2
+      - set 2
+      - set 2
+      - set 2
+      correctAnswers: 0400000003000000020000000100000000000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
   - quiz:
       questions:
       - set 2
@@ -8131,6 +8159,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: finalScoreText
+      value: 
+      objectReference: {fileID: 105274236}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -9466,7 +9498,7 @@ PrefabInstance:
       objectReference: {fileID: 1124760295}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: lineLengthMultiplier
-      value: 1.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: blackboardTexts.Array.size

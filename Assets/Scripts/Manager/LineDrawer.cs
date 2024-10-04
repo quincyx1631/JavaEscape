@@ -175,36 +175,60 @@ public class LineDrawer : MonoBehaviour
                 return; // Exit the method if there's an incorrect answer
             }
         }
-        // If all answers are correct
-        CameraSwitch cameraSwitch = FindObjectOfType<CameraSwitch>();
-        if (cameraSwitch != null)
-        {
-            ClearAllLines(); // Clear the lines
 
-            if (blackboard != null)
+        // If all answers are correct, proceed to clear lines and switch cameras
+        if (allCorrect)
+        {
+            ClearAllLines(); // Clear all drawn lines
+
+            // Disable the UI elements related to line drawing
+            foreach (var button in questionButtons)
             {
-                blackboard.tag = "Untagged"; // Change the tag of the blackboard
+                button.interactable = false; // Disable question buttons
             }
 
-            if (blackboardTexts.Length > 0)
+            foreach (var button in answerButtons)
             {
-                foreach (var text in blackboardTexts)
+                button.interactable = false; // Disable answer buttons
+            }
+
+            clearButton.interactable = false; // Disable the clear button
+
+            // Optionally hide or deactivate the whole line-drawing UI if needed
+            canvas.gameObject.SetActive(false); // Disable the entire canvas (optional)
+
+            CameraSwitch cameraSwitch = FindObjectOfType<CameraSwitch>();
+            if (cameraSwitch != null)
+            {
+                // Clear the blackboard tag and hide blackboard texts
+                if (blackboard != null)
                 {
-                    if (text != null)
+                    blackboard.tag = "Untagged"; // Change the tag of the blackboard
+                }
+
+                if (blackboardTexts.Length > 0)
+                {
+                    foreach (var text in blackboardTexts)
                     {
-                        text.gameObject.SetActive(false); // Hide each text
+                        if (text != null)
+                        {
+                            text.gameObject.SetActive(false); // Hide each text
+                        }
                     }
                 }
-            }
 
-            if (clue != null)
-            {
-                clue.gameObject.SetActive(true); // Show the clue
-            }
+                // Show the clue after all correct matches
+                if (clue != null)
+                {
+                    clue.gameObject.SetActive(true); // Show the clue
+                }
 
-            cameraSwitch.SwitchToMainCamera(); // Switch back to the main camera
+                // Switch back to the main camera
+                cameraSwitch.SwitchToMainCamera();
+            }
         }
     }
+
 
     public void ClearAllLines()
     {
