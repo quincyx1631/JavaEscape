@@ -115,6 +115,7 @@ public class Interactables : MonoBehaviour
         {
             isCollected = true;
             CollectionManager.Instance.MarkAsCollected(this);
+            CorrectUIController.Instance.ShowCorrectUI();
         }
     }
 }

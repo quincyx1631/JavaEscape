@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
+using System.Collections.Generic;
 
 public class LineDrawer : MonoBehaviour
 {
@@ -25,6 +25,9 @@ public class LineDrawer : MonoBehaviour
 
     public TextMeshProUGUI[] blackboardTexts; // Array for multiple TextMeshPro components
     public TextMeshProUGUI clue; // Reference to the clue TextMeshPro component
+    public GameObject blackboardUI;
+
+    private Outline blackboardOutline; // Reference to the blackboard's Outline component
 
     [Header("Line Settings")]
     public float lineWidth = 5f; // Adjustable line width
@@ -33,6 +36,15 @@ public class LineDrawer : MonoBehaviour
     void Start()
     {
         answerAssigned = new Button[answerButtons.Length];
+
+        // Initialize the blackboardOutline reference
+        blackboardOutline = blackboard.GetComponent<Outline>();
+
+        // Ensure that the blackboard outline is disabled at the start
+        if (blackboardOutline != null)
+        {
+            blackboardOutline.enabled = false;
+        }
 
         for (int i = 0; i < questionButtons.Length; i++)
         {
@@ -46,6 +58,18 @@ public class LineDrawer : MonoBehaviour
         }
 
         clearButton.onClick.AddListener(ClearLastLine);
+    }
+
+    void Update()
+    {
+        // Check if Escape is pressed and ensure that the blackboard outline remains disabled
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (blackboardOutline != null)
+            {
+                blackboardOutline.enabled = false;
+            }
+        }
     }
 
     void SelectQuestion(int questionIndex)
@@ -176,59 +200,59 @@ public class LineDrawer : MonoBehaviour
             }
         }
 
-        // If all answers are correct, proceed to clear lines and switch cameras
+        // If all answers are correct, proceed to clear lines and handle UI
         if (allCorrect)
         {
             ClearAllLines(); // Clear all drawn lines
+            CorrectUIController.Instance.ShowCorrectUI();
 
             // Disable the UI elements related to line drawing
             foreach (var button in questionButtons)
             {
-                button.interactable = false; // Disable question buttons
+                button.interactable = false;
             }
 
             foreach (var button in answerButtons)
             {
-                button.interactable = false; // Disable answer buttons
+                button.interactable = false;
             }
 
-            clearButton.interactable = false; // Disable the clear button
+            clearButton.interactable = false;
 
             // Optionally hide or deactivate the whole line-drawing UI if needed
-            canvas.gameObject.SetActive(false); // Disable the entire canvas (optional)
+            blackboardUI.SetActive(false);
 
+            // Ensure the blackboard's Outline stays disabled after correct answer
+            if (blackboardOutline != null)
+            {
+                blackboardOutline.enabled = false;
+            }
+
+            // Handle camera switch and clue logic...
             CameraSwitch cameraSwitch = FindObjectOfType<CameraSwitch>();
             if (cameraSwitch != null)
             {
-                // Clear the blackboard tag and hide blackboard texts
-                if (blackboard != null)
-                {
-                    blackboard.tag = "Untagged"; // Change the tag of the blackboard
-                }
+                blackboard.tag = "Untagged"; // Change the tag of the blackboard
 
-                if (blackboardTexts.Length > 0)
+                // Hide blackboard texts
+                foreach (var text in blackboardTexts)
                 {
-                    foreach (var text in blackboardTexts)
+                    if (text != null)
                     {
-                        if (text != null)
-                        {
-                            text.gameObject.SetActive(false); // Hide each text
-                        }
+                        text.gameObject.SetActive(false);
                     }
                 }
 
                 // Show the clue after all correct matches
                 if (clue != null)
                 {
-                    clue.gameObject.SetActive(true); // Show the clue
+                    clue.gameObject.SetActive(true);
                 }
 
-                // Switch back to the main camera
                 cameraSwitch.SwitchToMainCamera();
             }
         }
     }
-
 
     public void ClearAllLines()
     {
@@ -267,5 +291,4 @@ public class LineDrawer : MonoBehaviour
         this.correctMatches = correctAnswers;
         Debug.Log("Correct matches updated: " + string.Join(",", correctMatches));
     }
-
 }

@@ -2150,6 +2150,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368186224}
   m_CullTransparentMesh: 1
+--- !u!114 &372107145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7515904690488149365, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1510641984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &387609235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8711485063371922361, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
@@ -8160,9 +8171,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: scoreButton
+      value: 
+      objectReference: {fileID: 1579086211}
+    - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: finalScoreText
       value: 
       objectReference: {fileID: 105274236}
+    - target: {fileID: 7044185708831584881, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: realTimeScoreText
+      value: 
+      objectReference: {fileID: 372107145}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -8571,6 +8590,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1579086211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5062455947513860837, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1510641984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1581771359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9496,6 +9520,10 @@ PrefabInstance:
       propertyPath: clearButton
       value: 
       objectReference: {fileID: 1124760295}
+    - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
+      propertyPath: blackboardUI
+      value: 
+      objectReference: {fileID: 1196737036}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: lineLengthMultiplier
       value: 1

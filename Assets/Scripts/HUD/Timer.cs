@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     public TMP_Text realTimeScoreText; // Reference to TMP_Text component for real-time score display
 
     [Header("Timer Settings")]
-    public float countdownTime = 3600f; // Set this to 60 minutes (3600 seconds)
+    public float countdownTime = 3600f; // Set this to 60 minutes (3600 seconds)    
 
     [Header("Scoring Settings")]
     public float perfectTime = 1800f; // 30 minutes remaining for perfect score
@@ -64,11 +64,17 @@ public class Timer : MonoBehaviour
             timerRunning = false; // Stop the timer
 
             float elapsedTime = countdownTime - remainingTime; // Calculate elapsed time
+
+            // Ensure the Finish UI is active
+            if (!FinishUI.Instance.gameObject.activeInHierarchy)
+            {
+                Debug.LogWarning("FinishUI GameObject is inactive! Activating it.");
+                FinishUI.Instance.gameObject.SetActive(true); // Ensure it's active
+            }
+
             FinishUI.Instance.DisplayFinalTime(elapsedTime); // Pass final time
-            FinishUI.Instance.RevealScore(remainingTime); // Pass remaining time to calculate score
         }
     }
-
 
     private void UpdateTimerText(float time)
     {
@@ -115,7 +121,6 @@ public class Timer : MonoBehaviour
             return 0;
         }
     }
-
 
     // New method to return the real-time score
     public float GetRealTimeScore()
