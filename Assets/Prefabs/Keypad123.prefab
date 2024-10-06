@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3552099901542055155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7675
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.93
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_Name
+      value: Keypad123
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      propertyPath: m_TagString
+      value: Interactables
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 373992578453763469}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8033640760231257777}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1593366828050951139}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2335131921313628110}
+  m_SourcePrefab: {fileID: 100100000, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+--- !u!1 &4434622708181893538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 596e497bded51d044932ddf86bbb0563, type: 3}
+  m_PrefabInstance: {fileID: 3552099901542055155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &373992578453763469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434622708181893538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3484085e2d74144bbd25a138fd066d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keypadUI: {fileID: 0}
+  escapeUI: {fileID: 0}
+  escapeUIAnimator: {fileID: 0}
+  door: {fileID: 0}
+  controller: {fileID: 0}
+  collectionUI: {fileID: 0}
+  alertUI: {fileID: 0}
+  playerInteraction: {fileID: 0}
+--- !u!65 &8033640760231257777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434622708181893538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.005317158, y: 0.019999994, z: 0.027669298}
+  m_Center: {x: -0.0007198408, y: 4.6566118e-10, z: -0.000000007450581}
+--- !u!114 &1593366828050951139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434622708181893538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.990566, g: 0.9567783, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2335131921313628110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4434622708181893538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32a512fc754cc04893f3bd5bc8846e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemHolder: {fileID: 0}
+  message: 
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 373992578453763469}
+        m_TargetAssemblyTypeName: KeypadOBJ, Assembly-CSharp
+        m_MethodName: EnableKeypadUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+  onInspect:
+    m_PersistentCalls:
+      m_Calls: []
+  canInteract: 1
+  canPickup: 0
+  canInspect: 0
+  collectOnInteract: 0
+  collectOnPickUp: 0
+  collectOnInspect: 0
