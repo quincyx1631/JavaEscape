@@ -13,6 +13,7 @@ public class UserProfile : MonoBehaviour
 
     [SerializeField] public ProfileData profileData;
 
+    private int maxLevel = 8;
 
     private void Awake()
     {
@@ -95,8 +96,6 @@ public class UserProfile : MonoBehaviour
     //REFERENCE FOR LEVEL PROGRESSION NI JAVEN
     public void AddLevel()
     {
-        const int maxLevel = 8;
-
         if (profileData.level < maxLevel)
         {
             profileData.level += 1;
@@ -109,9 +108,9 @@ public class UserProfile : MonoBehaviour
             // Format the TimeSpan into a string with minutes and seconds
             string timerLevelSave = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
 
-            // NEED TO BAGUHIN SINCE KAILANGAN MA SAVE PER LEVEL!
             profileData.Level_1_Timer = timerLevelSave;
-            profileData.Level_1_Score = levelScore.finalScoreText.ToString();
+            profileData.Level_1_Score = levelScore.GetFinalScore().ToString("0");
+
             SetUserData();
             GetUserData();
         }
@@ -120,6 +119,7 @@ public class UserProfile : MonoBehaviour
             Debug.Log("Maximum level reached");
         }
     }
+    //NEED MAGDAGDAG MGA ADDLEVELS PER ROOM!!!!!
 
     //Quiz 1
     public void SetQuizScore()

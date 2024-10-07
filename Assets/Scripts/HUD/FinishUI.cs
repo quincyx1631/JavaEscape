@@ -41,6 +41,7 @@ public class FinishUI : MonoBehaviour
         // Disable the other UI elements
         DisableUIElements();
         InputManager.Instance.BlockInput();
+
         // Activate the finish UI if it's not already active
         if (!gameObject.activeInHierarchy)
         {
@@ -65,11 +66,45 @@ public class FinishUI : MonoBehaviour
 
         // Ensure the score text remains hidden (opacity = 0) until the button is pressed
         finalScoreText.color = new Color(finalScoreText.color.r, finalScoreText.color.g, finalScoreText.color.b, 0);
+
+        // Get the current scene's build index
+        int sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+
+        // Call the appropriate AddLevel method based on scene index
+        CallAddLevelMethod(sceneIndex);
+    }
+
+    private void CallAddLevelMethod(int sceneIndex)
+    {
+        switch (sceneIndex)
+        {
+            case 1:
+                UserProfile.Instance.AddLevel();
+                break;
+            case 2:
+                UserProfile.Instance.AddLevel();
+                break;
+            case 3:
+                UserProfile.Instance.AddLevel();
+                break;
+            case 4:
+                UserProfile.Instance.AddLevel();
+                break;
+            // Add more cases as needed for more levels
+            default:
+                Debug.LogWarning("No AddLevel method found for this scene index.");
+                break;
+        }
+    }
+
+    public float GetFinalScore()
+    {
+        return Timer.Instance.GetRealTimeScore(); // Get the final real-time score
     }
 
     public void RevealScore()
     {
-        float score = Timer.Instance.GetRealTimeScore(); // Get the final real-time score
+        float score = GetFinalScore(); // Use the extracted method to get the score
         finalScoreText.text = "Score: " + score.ToString("0"); // Update the score text
 
         // Start the fade-in effect to reveal the score
