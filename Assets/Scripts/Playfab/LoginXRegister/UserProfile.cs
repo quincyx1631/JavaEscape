@@ -24,7 +24,9 @@ public class UserProfile : MonoBehaviour
 
             //Levels
             profileData.level = 1; // Default level value
+
             profileData.Level_1_Timer = "";
+            profileData.Level_1_Score = "";
 
             //User Informations
             //profileData.playerName = ""; // Default name
@@ -99,6 +101,7 @@ public class UserProfile : MonoBehaviour
         {
             profileData.level += 1;
             Door timerLevel = FindAnyObjectByType<Door>();
+            FinishUI levelScore = FindAnyObjectByType<FinishUI>();
 
             // Convert finalElapsedTime (which is in seconds) to TimeSpan
             TimeSpan timeSpan = TimeSpan.FromSeconds(timerLevel.finalElapsedTime);
@@ -106,8 +109,9 @@ public class UserProfile : MonoBehaviour
             // Format the TimeSpan into a string with minutes and seconds
             string timerLevelSave = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
 
-            // Save the formatted time string into profileData
+            // NEED TO BAGUHIN SINCE KAILANGAN MA SAVE PER LEVEL!
             profileData.Level_1_Timer = timerLevelSave;
+            profileData.Level_1_Score = levelScore.finalScoreText.ToString();
             SetUserData();
             GetUserData();
         }
@@ -323,7 +327,9 @@ public class ProfileData
 
     //Level & Time completion
     public int level;
+    //Level 1
     public string Level_1_Timer;
+    public string Level_1_Score;
 
     //Quiz Scores
     public string QuizScore_1;
