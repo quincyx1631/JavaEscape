@@ -1279,52 +1279,215 @@ MonoBehaviour:
   puzzleSets:
   - quiz:
       questions:
-      - "1.\tWhat is the value of the variable a?"
-      - "2.\tWhat is the type of the variable b?"
-      - "3.\tWhat character is stored in the variable c?"
-      - "4.\tWhat is the value of result1?"
-      - "5.\tWhat is the result of Math.sqrt(a * b) before formatting?"
+      - '1. What is the value of the variable a?
+
+'
+      - 2. What is the type of the variable b?
+      - 3. What character is stored in the variable c?
+      - 4. What is the value of result_1?
+      - "5. What is the result of Math.sqrt(a * b) \nbefore formatting?"
       answers:
-      - set 1
-      - set 1
-      - set 1
-      - set 1
-      - set 1
-      correctAnswers: 0400000003000000020000000100000000000000
+      - A. 'B'
+      - B. 25.00
+      - C. 5
+      - D. Aprroximately 4.18
+      - E. Double
+      correctAnswers: 0200000004000000000000000100000003000000
     tarpulin: {fileID: 1814516208}
     laptopPassphrase: maykel kupal
     keypadPassword: 11111
   - quiz:
       questions:
-      - set 2
-      - set 2
-      - set 2
-      - set 2
-      - set 2
+      - "1. What is the length of the string \n\"Java Programming\"?"
+      - '2. What substring is extracted with
+
+        str.substring(5, 16)?'
+      - "3. What will be the output of\n the following statement: System.out.println\n(\"Character:
+        \" + c);?"
+      - "4. What is the formatted output \nof Math.PI using df.format(Math.PI)?"
+      - "5. What is the output of the\n following statement: System.out.println\n(\"Absolute
+        value of -7: \"\n + Math.abs(-7));?"
       answers:
-      - set 2
-      - set 2
-      - set 2
-      - set 2
-      - set 2
+      - A. "3.14"
+      - 'B. Absolute value of -7: 7'
+      - 'C. Character: B'
+      - D. "Programming"
+      - E. 16
       correctAnswers: 0400000003000000020000000100000000000000
     tarpulin: {fileID: 617811631}
     laptopPassphrase: set 2
     keypadPassword: 22222
   - quiz:
       questions:
-      - set 2
-      - set 2
-      - set 2
-      - set 2
-      - set 2
+      - 1. What will be the output of rand.nextInt(10) + 1?
+      - "2. What method is used to round numbers \nto two decimal places in Java?"
+      - "3. What is the value of result_2 formatted \nto two decimal places?"
+      - "4. If a were 3, what would be \nthe result of Math.pow(a, 2)?"
+      - "5. What is the output of the following statement: \nSystem.out.println(\"Random
+        \nnumber between 1 and 10: \" \n+ (rand.nextInt(10) + 1));?"
       answers:
-      - set 2
-      - set 2
-      - set 2
-      - set 2
-      - set 2
-      correctAnswers: 0400000003000000020000000100000000000000
+      - "A. A random integer between \n1 and 10 (inclusive)"
+      - B. DecimalFormat
+      - C. "4.18"
+      - D. 9.00
+      - "E.  A random integer between\n 1 and 10 (inclusive)"
+      correctAnswers: 0000000001000000020000000300000004000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
+  - quiz:
+      questions:
+      - '1. What is the value of the variable a?
+
+'
+      - 2. What character is stored in the variable c?
+      - "3. What is the result of Math.sqrt(a * b)\n before formatting??"
+      - "4. What substring is extracted with \nstr.substring(5, 16)?"
+      - '5. What is the formatted output of Math.PI
+
+        using df.format(Math.PI)?'
+      answers:
+      - A. Approximately 4.18
+      - B. "Programming
+      - C. "3.14"
+      - D. 5
+      - E.  'B'
+      correctAnswers: 0200000004000000000000000100000003000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
+  - quiz:
+      questions:
+      - "1. What will be the output of the following statement: \nSystem.out.println(\"Character:
+        \" + c);?"
+      - 2. What is the type of the variable b?
+      - '3. What is the value of result1?
+
+'
+      - '4. What will be the output of
+
+        rand.nextInt(10) + 1? '
+      - '5. What is the value of result_2
+
+        formatted to two decimal places?'
+      answers:
+      - 'A. Character: B'
+      - B. "4.18"
+      - C. 25.00
+      - "D.  A random integer between\n 1 and 10 (inclusive)"
+      - E.  double
+      correctAnswers: 0000000004000000020000000300000001000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
+  - quiz:
+      questions:
+      - "1. What is the output of the following statement: \nSystem.out.println(\"Absolute
+        value of -7: \n\" + Math.abs(-7));?"
+      - 2. What character is stored in the variable c?
+      - '3. What method is used to round numbers to
+
+        two decimal places in
+        Java?'
+      - "4. What will be the output of the following statement:\nSystem.out.println(\"Character:
+        \" + c);?\r\n "
+      - 5. What is the length of the string "Java Programming"?
+      answers:
+      - A. 'B'
+      - 'B. Character: B'
+      - C. DecimalFormat
+      - D. 16
+      - 'E.  Absolute value of -7: 7)'
+      correctAnswers: 0400000000000000020000000100000003000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
+  - quiz:
+      questions:
+      - '1. What substring is extracted with
+
+        str.substring(5, 16)?'
+      - '2. What character is stored in the
+
+        variable c?'
+      - "3. What is the output of the following statement: \nSystem.out.println(\"Random
+        number between 1 and 10:\n\" + (rand.nextInt(10) + 1));?\r\n"
+      - 4. What is the value of the variable a?
+      - '5. What is the formatted output of Math.PI
+
+        using df.format(Math.PI)?'
+      answers:
+      - A. 'B'
+      - B. "3.14"
+      - 'C.  A random integer between
+
+        1 and 10 (inclusive)'
+      - D. "Programming"
+      - E.  5
+      correctAnswers: 0300000000000000020000000400000001000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
+  - quiz:
+      questions:
+      - 1. What is the value of the variable a?
+      - '2. What will be the output of rand.nextInt
+
+        (10) + 1?'
+      - "3. What is the length of the string \n\"Java Programming\"?"
+      - 4. What is the type of the variable b?
+      - "5. What is the result of Math.sqrt(a * b)\n before formatting?"
+      answers:
+      - A. 5
+      - B. double
+      - "C. A random integer between \n1 and 10 (inclusive)\r\n"
+      - D. Approximately 4.18
+      - E.  16
+      correctAnswers: 0000000002000000040000000100000003000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
+  - quiz:
+      questions:
+      - 1. What is the value of result1?
+      - "2. What is the value of result_2 formatted\n to two decimal places?"
+      - '3. What will be the output of the following statement:
+
+        System.out.println
+
+        ("Character:
+        " + c);?'
+      - "4. If a were 3, what would be the result of \nMath.pow(a, 2)?\r\n"
+      - "5. What is the output of the following statement: \nSystem.out.println(\"Absolute
+        value of -7: \"\n+ Math.abs(-7));?"
+      answers:
+      - 'A. Character: B'
+      - B. 25.00
+      - 'C. Absolute value of -7: 7'
+      - D. "4.18"
+      - E.  9.00
+      correctAnswers: 0100000003000000000000000400000002000000
+    tarpulin: {fileID: 617811631}
+    laptopPassphrase: set 2
+    keypadPassword: 22222
+  - quiz:
+      questions:
+      - "1. What is the output of the following statement: \nSystem.out.println(\"Absolute
+        value of -7: \"\n+ Math.abs(-7));?"
+      - "2. If a were 3, what would be the result of \nMath.pow(a, 2)?\r\n"
+      - "3. What is the output of the following statement: \nSystem.out.println(\"Random
+        number between 1 and 10:\n\" + (rand.nextInt(10) + 1));?\r\n"
+      - "4. What is the result of Math.sqrt(a * b)\n before formatting?"
+      - "5. What is the formatted output of \nMath.PI using df.format(Math.PI)?"
+      answers:
+      - A.  "3.14"
+      - 'B. Absolute value of -7: 7'
+      - C. Approximately 4.18
+      - 'D. A random integer between
+
+        1 and 10 (inclusive)'
+      - E.  9.00
+      correctAnswers: 0100000004000000030000000200000000000000
     tarpulin: {fileID: 617811631}
     laptopPassphrase: set 2
     keypadPassword: 22222
@@ -1703,7 +1866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1. This is the question number 1
+  m_text: 1. What is the value of the variable a?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
   m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
