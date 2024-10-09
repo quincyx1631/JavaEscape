@@ -256,8 +256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.246, y: 0.591}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.3093, y: 0.591}
+  m_SizeDelta: {x: 1.1386, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8333399
 MonoBehaviour:
@@ -281,8 +281,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A. This is the question number 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -322,9 +322,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -1294,7 +1294,7 @@ MonoBehaviour:
       - E. Double
       correctAnswers: 0200000004000000000000000100000003000000
     tarpulin: {fileID: 1814516208}
-    laptopPassphrase: maykel kupal
+    laptopPassphrase: Types Rule All
     keypadPassword: 11111
   - quiz:
       questions:
@@ -1313,9 +1313,9 @@ MonoBehaviour:
       - 'C. Character: B'
       - D. "Programming"
       - E. 16
-      correctAnswers: 0400000003000000020000000100000000000000
+      correctAnswers: 0400000001000000020000000000000003000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Operators Drive Logic
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1333,7 +1333,7 @@ MonoBehaviour:
       - "E.  A random integer between\n 1 and 10 (inclusive)"
       correctAnswers: 0000000001000000020000000300000004000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Classes Craft Magic
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1352,9 +1352,9 @@ MonoBehaviour:
       - C. "3.14"
       - D. 5
       - E.  'B'
-      correctAnswers: 0200000004000000000000000100000003000000
+      correctAnswers: 0300000004000000000000000100000002000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Variables Hold Power
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1378,7 +1378,7 @@ MonoBehaviour:
       - E.  double
       correctAnswers: 0000000004000000020000000300000001000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Strings Speak Volumes
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1400,7 +1400,7 @@ MonoBehaviour:
       - 'E.  Absolute value of -7: 7)'
       correctAnswers: 0400000000000000020000000100000003000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Booleans Rule Decisions
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1426,7 +1426,7 @@ MonoBehaviour:
       - E.  5
       correctAnswers: 0300000000000000020000000400000001000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Math Makes Moves
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1445,7 +1445,7 @@ MonoBehaviour:
       - E.  16
       correctAnswers: 0000000002000000040000000100000003000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Expressions Shape Flow
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1468,7 +1468,7 @@ MonoBehaviour:
       - E.  9.00
       correctAnswers: 0100000003000000000000000400000002000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Constants Stay Strong
     keypadPassword: 22222
   - quiz:
       questions:
@@ -1489,7 +1489,7 @@ MonoBehaviour:
       - E.  9.00
       correctAnswers: 0100000004000000030000000200000000000000
     tarpulin: {fileID: 617811631}
-    laptopPassphrase: set 2
+    laptopPassphrase: Methods Make Magic
     keypadPassword: 22222
   questionTexts:
   - {fileID: 355734165}
@@ -1835,7 +1835,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355734163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1843,8 +1843,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.322, y: 0.591}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.3816, y: 0.591}
+  m_SizeDelta: {x: 1.1461, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355734165
 MonoBehaviour:
@@ -1868,8 +1868,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1. What is the value of the variable a?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1909,9 +1909,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -2246,8 +2246,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Answer these to find the clue!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3699,7 +3699,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684281230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3707,8 +3707,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2459993, y: -0.568}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.3093, y: -0.568}
+  m_SizeDelta: {x: 1.1386, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684281232
 MonoBehaviour:
@@ -3732,8 +3732,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: E. This is the question number 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3764,7 +3764,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3773,9 +3773,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -4117,6 +4117,140 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
+--- !u!1 &793174663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793174664}
+  - component: {fileID: 793174666}
+  - component: {fileID: 793174665}
+  m_Layer: 5
+  m_Name: Title (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &793174664
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793174663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963561814}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.26, y: -0.848}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &793174665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793174663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: ps. your answer will be deleted if you pressed "ESC" :>
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.06
+  m_fontSizeBase: 0.06
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 3
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &793174666
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793174663}
+  m_CullTransparentMesh: 1
 --- !u!1001 &796854544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4228,7 +4362,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821430240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4236,8 +4370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3219999, y: 0.314}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.3816, y: 0.314}
+  m_SizeDelta: {x: 1.1461, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &821430242
 MonoBehaviour:
@@ -4261,8 +4395,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 2. This is the question number 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4293,7 +4427,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4302,9 +4436,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -4706,8 +4840,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.322, y: -0.568}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.3816, y: -0.568}
+  m_SizeDelta: {x: 1.1461, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948153483
 MonoBehaviour:
@@ -4731,8 +4865,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5. This is the question number 5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4763,7 +4897,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4772,9 +4906,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -4838,6 +4972,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 422344840}
+  - {fileID: 793174664}
   - {fileID: 355734164}
   - {fileID: 821430241}
   - {fileID: 1228059412}
@@ -5527,7 +5662,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040242835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5535,8 +5670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2459995, y: -0.26899996}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.3093, y: -0.269}
+  m_SizeDelta: {x: 1.1386, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040242837
 MonoBehaviour:
@@ -5560,8 +5695,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: D. This is the question number 4
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5592,7 +5727,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5601,9 +5736,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -6404,7 +6539,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228059411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6412,8 +6547,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3219999, y: 0.02600002}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.3816, y: 0.026}
+  m_SizeDelta: {x: 1.1461, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228059413
 MonoBehaviour:
@@ -6437,8 +6572,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3. This is the question number 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6469,7 +6604,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6478,9 +6613,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -7767,7 +7902,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647881377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7775,8 +7910,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2459995, y: 0.314}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.3093, y: 0.314}
+  m_SizeDelta: {x: 1.1386, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647881379
 MonoBehaviour:
@@ -7800,8 +7935,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: B. This is the question number 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7832,7 +7967,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7841,9 +7976,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -8598,7 +8733,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850230751}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8606,8 +8741,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3219999, y: -0.26899996}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.3816, y: -0.269}
+  m_SizeDelta: {x: 1.1461, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850230753
 MonoBehaviour:
@@ -8631,8 +8766,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 4. This is the question number 4
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8663,7 +8798,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8672,9 +8807,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -8973,7 +9108,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892993335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8981,8 +9116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2459995, y: 0.02600002}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.3093, y: 0.026}
+  m_SizeDelta: {x: 1.1386, y: 0.2324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1892993337
 MonoBehaviour:
@@ -9006,8 +9141,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: C. This is the question number 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
-  m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
+  m_sharedMaterial: {fileID: 2955472047950011988, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9038,7 +9173,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -9047,9 +9182,9 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -9516,6 +9651,34 @@ PrefabInstance:
     - target: {fileID: 2099433173149206054, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 149
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174141318642772905, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174141318642772905, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174141318642772905, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2137357498}
+    - target: {fileID: 2174141318642772905, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174141318642772905, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClearAllLines
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174141318642772905, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LineDrawer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174141318642772905, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2344030989372419013, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10208,7 +10371,7 @@ GameObject:
   - component: {fileID: 2145622008}
   - component: {fileID: 2145622007}
   m_Layer: 5
-  m_Name: Clue
+  m_Name: Clue text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10255,7 +10418,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is the Fucking Clue what the fuck?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2cea9d0827d2e24489bf9b025d3fcf1b, type: 2}
   m_sharedMaterial: {fileID: 3470899285147504028, guid: 005e28063fd85e44e9487f46aef6a9eb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10319,7 +10482,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2145622008
