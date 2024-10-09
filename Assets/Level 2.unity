@@ -356,6 +356,165 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8333397}
   m_CullTransparentMesh: 1
+--- !u!1 &11472513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11472514}
+  - component: {fileID: 11472516}
+  - component: {fileID: 11472515}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &11472514
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11472513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 683200230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0011, y: -0.0098}
+  m_SizeDelta: {x: 0.943, y: 0.9325}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &11472515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11472513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "<color=#4EC9B0>import</color> java.util.Random;\r\n<color=#4EC9B0>import</color>
+    java.text.DecimalFormat;\r\n\r\n<color=#4EC9B0>public class</color> <color=#DCDCAA>CodePuzzle</color>
+    {\r\n    <color=#4EC9B0>public static void</color> <color=#DCDCAA>main</color>(<color=#4EC9B0>String</color>[]
+    args) {\r\n        <color=#4EC9B0>DecimalFormat</color> df = <color=#4EC9B0>new</color>
+    <color=#4EC9B0>DecimalFormat</color>(<color=#CE9178>\"0.00\"</color>);\r\n       
+    <color=#4EC9B0>Random</color> rand = <color=#4EC9B0>new</color> <color=#4EC9B0>Random</color>();\r\n       
+    \r\n        <color=#4EC9B0>int</color> a = <color=#B5CEA8>5</color>;\r\n       
+    <color=#4EC9B0>double</color> b = <color=#B5CEA8>3.5</color>;\r\n        <color=#4EC9B0>char</color>
+    c = <color=#CE9178>'B'</color>;\r\n        <color=#4EC9B0>String</color> str
+    = <color=#CE9178>\"Java Programming\"</color>;\r\n        \r\n        <color=#4EC9B0>double</color>
+    result1 = <color=#DCDCAA>Math</color>.<color=#DCDCAA>pow</color>(a, <color=#B5CEA8>2</color>);\r\n       
+    <color=#4EC9B0>double</color> result2 = <color=#DCDCAA>Math</color>.<color=#DCDCAA>sqrt</color>(a
+    * b);\r\n        \r\n        <color=#DCDCAA>System</color>.<color=#DCDCAA>out</color>.<color=#DCDCAA>println</color>(<color=#CE9178>\"The
+    power result is: \"</color> + df.<color=#DCDCAA>format</color>(result1));\r\n       
+    <color=#DCDCAA>System</color>.<color=#DCDCAA>out</color>.<color=#DCDCAA>println</color>(<color=#CE9178>\"The
+    square root result is: \"</color> + df.<color=#DCDCAA>format</color>(result2));\r\n       
+    <color=#DCDCAA>System</color>.<color=#DCDCAA>out</color>.<color=#DCDCAA>println</color>(<color=#CE9178>\"Character:
+    \"</color> + c);\r\n        <color=#DCDCAA>System</color>.<color=#DCDCAA>out</color>.<color=#DCDCAA>println</color>(<color=#CE9178>\"Substring
+    (5, 16): \"</color> + str.<color=#DCDCAA>substring</color>(<color=#B5CEA8>5</color>,
+    <color=#B5CEA8>16</color>));\r\n        <color=#DCDCAA>System</color>.<color=#DCDCAA>out</color>.<color=#DCDCAA>println</color>(<color=#CE9178>\"Absolute
+    value of -7: \"</color> + <color=#DCDCAA>Math</color>.<color=#DCDCAA>abs</color>(<color=#B5CEA8>-7</color>));\r\n       
+    <color=#DCDCAA>System</color>.<color=#DCDCAA>out</color>.<color=#DCDCAA>println</color>(<color=#CE9178>\"Formatted
+    PI: \"</color> + df.<color=#DCDCAA>format</color>(<color=#DCDCAA>Math</color>.<color=#DCDCAA>PI</color>));\r\n       
+    <color=#DCDCAA>System</color>.<color=#DCDCAA>out</color>.<color=#DCDCAA>println</color>(<color=#CE9178>\"Random
+    number between 1 and 10: \"</color> + (rand.<color=#DCDCAA>nextInt</color>(<color=#B5CEA8>10</color>)
+    + <color=#B5CEA8>1</color>));\r\n    }\r\n}\r\n"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: c7914dfe8f5a27246897da4ead6f8b5c, type: 2}
+  m_sharedMaterial: {fileID: -6047255338658189998, guid: c7914dfe8f5a27246897da4ead6f8b5c, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.025
+  m_fontSizeBase: 0.025
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -0.0062644337, y: 0, z: -0.0017105042, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &11472516
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11472513}
+  m_CullTransparentMesh: 1
 --- !u!114 &23429795 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 839474185088188698, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
@@ -964,7 +1123,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4152160691027030225, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1865989482}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
 --- !u!1001 &174449252
@@ -3263,7 +3425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &683200230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3277,6 +3439,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1077186114}
+  - {fileID: 11472514}
   m_Father: {fileID: 1748084235015965450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3342,7 +3505,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -5459,7 +5622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 35bda72212ec5b348b7d38beed52202b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -5467,7 +5630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 36280100875a6b740b795fe7397e883c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8502,13 +8665,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865989481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 2.6, z: -33.9}
-  m_LocalScale: {x: 102.9, y: 0.1, z: 59.3}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -0, y: 0.0976, z: -0.1068}
+  m_LocalScale: {x: 0.2947819, y: 0.00078867516, z: 0.17491403}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1748084235015965450}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1990212006}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
 --- !u!65 &1865989483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12752,7 +12915,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 683200230}
-  - {fileID: 1865989482}
   m_Father: {fileID: 543450653040898876}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1771266951656636351

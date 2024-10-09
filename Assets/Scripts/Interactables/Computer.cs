@@ -103,6 +103,10 @@ public class Computer : MonoBehaviour
         {
             gameObject.tag = "Untagged"; // Set the computer's tag to "Untagged" after debug code is accepted
             Debug.Log("Debug code accepted for computer: " + gameObject.name);
+
+            // Mark the computer as collected in the CollectionManager
+            CollectionManager.Instance.MarkAsCollected(this.GetComponent<Interactables>());
+
             return "Debug code accepted.";
         }
         else
