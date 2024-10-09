@@ -41,10 +41,8 @@ public class UIProfile : MonoBehaviour
 
     private void CheckLoginStatus()
     {
-        // Assuming PlayFabClientAPI is used for client-side login in PlayFab
         if (IsUserLoggedIn())
         {
-            // User is already logged in, hide the login canvas
             mainMenuCanvas.SetActive(true);
             loginCanvas.SetActive(false);
             ReloadProfileData();
@@ -53,19 +51,15 @@ public class UIProfile : MonoBehaviour
 
     private bool IsUserLoggedIn()
     {
-        // Check if there is a valid session ticket or entity token
-        var authContext = PlayFabSettings.staticPlayer; // Reference to the static player object in PlayFabSettings
+        var authContext = PlayFabSettings.staticPlayer;
 
         if (authContext != null && !string.IsNullOrEmpty(authContext.ClientSessionTicket))
         {
-            // The session ticket exists, the user is logged in
             return true;
         }
 
-        // Alternatively, check for an Entity Token if applicable
         if (authContext != null && !string.IsNullOrEmpty(authContext.EntityToken))
         {
-            // The entity token exists, the user is logged in
             return true;
         }
 
@@ -74,32 +68,31 @@ public class UIProfile : MonoBehaviour
 
     void OnEnable()
     {
-        // Re-add the listener for ProfileDataUpdated
         UserProfile.OnProfileDataUpdated.AddListener(ProfileDataUpdated);
-
+        UserProfile.OnQuizzesUpdated.AddListener(QuizzesDataUpdated);
         UserAccountManager.OnSignInSuccess.AddListener(SignIn);
+        UserAccountManager.OnUserDataRecieved.AddListener(UserDataReceived);
     }
 
     void OnDisable()
     {
-        // Remove the listener to avoid memory leaks
         UserProfile.OnProfileDataUpdated.RemoveListener(ProfileDataUpdated);
-
+        UserProfile.OnQuizzesUpdated.RemoveListener(QuizzesDataUpdated);
         UserAccountManager.OnSignInSuccess.RemoveListener(SignIn);
+        UserAccountManager.OnUserDataRecieved.RemoveListener(UserDataReceived);
     }
 
-    // Function to reload profile data
     public void ReloadProfileData()
     {
         if (UserAccountManager.Instance == null)
         {
-            // Attempt to find the UserAccountManager in the scene
             UserAccountManager.Instance = FindObjectOfType<UserAccountManager>();
         }
 
         if (UserAccountManager.Instance != null)
         {
             UserAccountManager.Instance.GetUserData("ProfileData");
+            UserAccountManager.Instance.GetUserData("QuizzesScores");
         }
         else
         {
@@ -121,7 +114,6 @@ public class UIProfile : MonoBehaviour
 
     private void ReloadCurrentScene()
     {
-        // Get the current scene name and reload it
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
@@ -129,15 +121,12 @@ public class UIProfile : MonoBehaviour
     public void playerLogout()
     {
         PlayFabClientAPI.ForgetAllCredentials();
-
         ReloadCurrentScene();
-
         Debug.Log("Player logged out successfully.");
     }
 
     private void DestroyPlayFabHttpInstance()
     {
-        // Destroy the PlayFabHttp instance
         var playFabHttpInstance = PlayFab.Internal.PlayFabHttp.instance;
         if (playFabHttpInstance != null)
         {
@@ -146,47 +135,50 @@ public class UIProfile : MonoBehaviour
         }
     }
 
-    // Callback to update UI elements when profile data is updated
+    void UserDataReceived(string key, string value)
+    {
+        if (key == "ProfileData")
+        {
+            ProfileData profileData = JsonUtility.FromJson<ProfileData>(value);
+            ProfileDataUpdated(profileData);
+        }
+        else if (key == "QuizzesScores")
+        {
+            QuizzesScores quizData = JsonUtility.FromJson<QuizzesScores>(value);
+            QuizzesDataUpdated(quizData);
+        }
+    }
+
     void ProfileDataUpdated(ProfileData profileData)
     {
         if (profileData != null)
         {
-            //User Infomations
             playerNameText.text = "Player Name: " + profileData.playerName;
             playerSectionText.text = "Player Section: " + profileData.Student_Section;
-
-            //Levels
             playerLevelText.text = "Level Completed: " + profileData.level.ToString();
 
-            //Quizzes
-            playerQuiz1Text.text = "Quiz 1: " + profileData.QuizScore_1;
-            playerQuiz2Text.text = "Quiz 2: " + profileData.QuizScore_2;
-            playerQuiz3Text.text = "Quiz 3: " + profileData.QuizScore_3;
-            playerQuiz4Text.text = "Quiz 4: " + profileData.QuizScore_4;
-            playerQuiz5Text.text = "Quiz 5: " + profileData.QuizScore_5;
-            playerQuiz6Text.text = "Quiz 6: " + profileData.QuizScore_6;
-            playerQuiz7Text.text = "Quiz 7: " + profileData.QuizScore_7;
-            playerQuiz8Text.text = "Quiz 8: " + profileData.QuizScore_8;
+            NameUI.SetActive(string.IsNullOrEmpty(profileData.playerName));
+            SectionUI.SetActive(string.IsNullOrEmpty(profileData.Student_Section));
         }
+    }
 
-        // Check if the player's name is not null
-        if (!string.IsNullOrEmpty(profileData.playerName))
+    void QuizzesDataUpdated(QuizzesScores quizData)
+    {
+        if (quizData != null)
         {
-            NameUI.SetActive(false);  // Hide the Name UI
+            UpdateQuizText(playerQuiz1Text, "Quiz 1", quizData.QuizNumber1);
+            UpdateQuizText(playerQuiz2Text, "Quiz 2", quizData.QuizNumber2);
+            UpdateQuizText(playerQuiz3Text, "Quiz 3", quizData.QuizNumber3);
+            UpdateQuizText(playerQuiz4Text, "Quiz 4", quizData.QuizNumber4);
+            UpdateQuizText(playerQuiz5Text, "Quiz 5", quizData.QuizNumber5);
+            UpdateQuizText(playerQuiz6Text, "Quiz 6", quizData.QuizNumber6);
+            UpdateQuizText(playerQuiz7Text, "Quiz 7", quizData.QuizNumber7);
+            UpdateQuizText(playerQuiz8Text, "Quiz 8", quizData.QuizNumber8);
         }
-        else
-        {
-            NameUI.SetActive(true);   // Show the Name UI
-        }
+    }
 
-        // Check if the player's section is not null
-        if (!string.IsNullOrEmpty(profileData.Student_Section))
-        {
-            SectionUI.SetActive(false);  // Hide the Section UI
-        }
-        else
-        {
-            SectionUI.SetActive(true);   // Show the Section UI
-        }
+    private void UpdateQuizText(TMP_Text quizText, string quizName, string score)
+    {
+        quizText.text = string.IsNullOrEmpty(score) ? $"{quizName}: Not taken" : $"{quizName}: {score}";
     }
 }

@@ -11,7 +11,11 @@ public class UserProfile : MonoBehaviour
 
     public static UnityEvent<ProfileData> OnProfileDataUpdated = new UnityEvent<ProfileData>();
 
+    public static UnityEvent<QuizzesScores> OnQuizzesUpdated = new UnityEvent<QuizzesScores>();
+
     [SerializeField] public ProfileData profileData;
+
+    [SerializeField] public QuizzesScores quizData;
 
     private int maxLevel = 8;
 
@@ -24,24 +28,53 @@ public class UserProfile : MonoBehaviour
             profileData = new ProfileData();
 
             //Levels
-            profileData.level = 1; // Default level value
+            profileData.level = 0;
 
+            //Level 1
             profileData.Level_1_Timer = "";
             profileData.Level_1_Score = "";
 
-            //User Informations
-            //profileData.playerName = ""; // Default name
-            //profileData.Student_Section = "";
+            //Level 2
+            profileData.Level_2_Timer = "";
+            profileData.Level_2_Score = "";
 
-            //Quizzes
-            profileData.QuizScore_1 = "";
-            profileData.QuizScore_2 = "";
-            profileData.QuizScore_3 = "";
-            profileData.QuizScore_4 = "";
-            profileData.QuizScore_5 = "";
-            profileData.QuizScore_6 = "";
-            profileData.QuizScore_7 = "";
-            profileData.QuizScore_8 = "";
+            //Level 3
+            profileData.Level_3_Timer = "";
+            profileData.Level_3_Score = "";
+
+            //Level 4
+            profileData.Level_4_Timer = "";
+            profileData.Level_4_Score = "";
+
+            //Level 5
+            profileData.Level_5_Timer = "";
+            profileData.Level_5_Score = "";
+
+            //Level 6
+            profileData.Level_6_Timer = "";
+            profileData.Level_6_Score = "";
+
+            //Level 7
+            profileData.Level_7_Timer = "";
+            profileData.Level_7_Score = "";
+
+            //Level 8
+            profileData.Level_8_Timer = "";
+            profileData.Level_8_Score = "";
+        }
+
+        if (quizData == null)
+        {
+            quizData = new QuizzesScores();
+
+            quizData.QuizNumber1 = "";
+            quizData.QuizNumber2 = "";
+            quizData.QuizNumber3 = "";
+            quizData.QuizNumber4 = "";
+            quizData.QuizNumber5 = "";
+            quizData.QuizNumber6 = "";
+            quizData.QuizNumber7 = "";
+            quizData.QuizNumber8 = "";
         }
     }
 
@@ -50,6 +83,8 @@ public class UserProfile : MonoBehaviour
         UserAccountManager.OnSignInSuccess.AddListener(SignIn);
 
         UserAccountManager.OnUserDataRecieved.AddListener(UserDataRecieved);
+
+        UserAccountManager.OnUserDataRecieved.AddListener(QuizDataRecieved);
     }
 
     void OnDisable()
@@ -57,11 +92,14 @@ public class UserProfile : MonoBehaviour
         UserAccountManager.OnSignInSuccess.RemoveListener(SignIn);
 
         UserAccountManager.OnUserDataRecieved.RemoveListener(UserDataRecieved);
+
+        UserAccountManager.OnUserDataRecieved.RemoveListener(QuizDataRecieved);
     }
 
     void SignIn()
     {
         GetUserData();
+        GetQuizData();
     }
 
     [ContextMenu("Get Profile Data")]
@@ -93,8 +131,35 @@ public class UserProfile : MonoBehaviour
         UserAccountManager.Instance.SetUserData("ProfileData", JsonUtility.ToJson(profileData), OnSucess);
     }
 
-    //REFERENCE FOR LEVEL PROGRESSION NI JAVEN
-    public void AddLevel()
+    void QuizDataRecieved(string key, string value)
+    {
+        if (key == "QuizzesScores")
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                quizData = JsonUtility.FromJson<QuizzesScores>(value);
+            }
+            else
+            {
+                quizData = new QuizzesScores();
+            }
+            OnQuizzesUpdated.Invoke(quizData);
+        }
+    }
+
+    [ContextMenu("Get Quiz Scores")]
+    void GetQuizData()
+    {
+        UserAccountManager.Instance.GetUserData("QuizzesScores");
+    }
+
+    [ContextMenu("Set Quiz Data")]
+    void SetQuizData(UnityAction OnSucess = null)
+    {
+        UserAccountManager.Instance.SetQuizData("QuizzesScores", JsonUtility.ToJson(quizData), OnSucess);
+    }
+
+    public void AddLevel(int levelIndex)
     {
         if (profileData.level < maxLevel)
         {
@@ -108,8 +173,45 @@ public class UserProfile : MonoBehaviour
             // Format the TimeSpan into a string with minutes and seconds
             string timerLevelSave = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
 
-            profileData.Level_1_Timer = timerLevelSave;
-            profileData.Level_1_Score = levelScore.GetFinalScore().ToString("0");
+            // Use reflection or dynamic properties to set timer and score for the correct level
+            switch (levelIndex)
+            {
+                case 1:
+                    profileData.Level_1_Timer = timerLevelSave;
+                    profileData.Level_1_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                case 2:
+                    profileData.Level_2_Timer = timerLevelSave;
+                    profileData.Level_2_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                case 3:
+                    profileData.Level_3_Timer = timerLevelSave;
+                    profileData.Level_3_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                case 4:
+                    profileData.Level_4_Timer = timerLevelSave;
+                    profileData.Level_4_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                case 5:
+                    profileData.Level_5_Timer = timerLevelSave;
+                    profileData.Level_5_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                case 6:
+                    profileData.Level_6_Timer = timerLevelSave;
+                    profileData.Level_6_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                case 7:
+                    profileData.Level_7_Timer = timerLevelSave;
+                    profileData.Level_7_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                case 8:
+                    profileData.Level_8_Timer = timerLevelSave;
+                    profileData.Level_8_Score = levelScore.GetFinalScore().ToString();
+                    break;
+                default:
+                    Debug.LogWarning("Invalid level index.");
+                    break;
+            }
 
             SetUserData();
             GetUserData();
@@ -119,7 +221,6 @@ public class UserProfile : MonoBehaviour
             Debug.Log("Maximum level reached");
         }
     }
-    //NEED MAGDAGDAG MGA ADDLEVELS PER ROOM!!!!!
 
     //Quiz 1
     public void SetQuizScore()
@@ -128,10 +229,10 @@ public class UserProfile : MonoBehaviour
         if (quizManager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_1))
+            if (string.IsNullOrEmpty(quizData.QuizNumber1))
             {
-                profileData.QuizScore_1 = quizManager.score.ToString() + "/10";
-                SetUserData(GetUserData); 
+                quizData.QuizNumber1 = quizManager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -147,10 +248,10 @@ public class UserProfile : MonoBehaviour
         if (quiz2Manager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_2))
+            if (string.IsNullOrEmpty(quizData.QuizNumber2))
             {
-                profileData.QuizScore_2 = quiz2Manager.score.ToString() + "/10";
-                SetUserData(GetUserData); 
+                quizData.QuizNumber2 = quiz2Manager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -166,10 +267,10 @@ public class UserProfile : MonoBehaviour
         if (quiz3Manager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_3))
+            if (string.IsNullOrEmpty(quizData.QuizNumber3))
             {
-                profileData.QuizScore_3 = quiz3Manager.score.ToString() + "/10";
-                SetUserData(GetUserData); 
+                quizData.QuizNumber3 = quiz3Manager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -185,10 +286,10 @@ public class UserProfile : MonoBehaviour
         if (quiz4Manager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_4))
+            if (string.IsNullOrEmpty(quizData.QuizNumber4))
             {
-                profileData.QuizScore_4 = quiz4Manager.score.ToString() + "/10";
-                SetUserData(GetUserData); 
+                quizData.QuizNumber4 = quiz4Manager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -204,10 +305,10 @@ public class UserProfile : MonoBehaviour
         if (quiz5Manager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_5))
+            if (string.IsNullOrEmpty(quizData.QuizNumber5))
             {
-                profileData.QuizScore_5 = quiz5Manager.score.ToString() + "/10";
-                SetUserData(GetUserData); 
+                quizData.QuizNumber5 = quiz5Manager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -223,10 +324,10 @@ public class UserProfile : MonoBehaviour
         if (quiz6Manager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_6))
+            if (string.IsNullOrEmpty(quizData.QuizNumber6))
             {
-                profileData.QuizScore_6 = quiz6Manager.score.ToString() + "/10";
-                SetUserData(GetUserData); 
+                quizData.QuizNumber6 = quiz6Manager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -242,10 +343,10 @@ public class UserProfile : MonoBehaviour
         if (quiz7Manager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_7))
+            if (string.IsNullOrEmpty(quizData.QuizNumber7))
             {
-                profileData.QuizScore_7 = quiz7Manager.score.ToString() + "/10";
-                SetUserData(GetUserData); 
+                quizData.QuizNumber7 = quiz7Manager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -261,10 +362,10 @@ public class UserProfile : MonoBehaviour
         if (quiz8Manager != null)
         {
             // Check if the quiz has already been completed
-            if (string.IsNullOrEmpty(profileData.QuizScore_8))
+            if (string.IsNullOrEmpty(quizData.QuizNumber8))
             {
-                profileData.QuizScore_8 = quiz8Manager.score.ToString() + "/10";
-                SetUserData(GetUserData);
+                quizData.QuizNumber8 = quiz8Manager.score.ToString() + "/10";
+                SetQuizData(GetQuizData);
             }
             else
             {
@@ -327,17 +428,49 @@ public class ProfileData
 
     //Level & Time completion
     public int level;
-    //Level 1
+    //Level 
     public string Level_1_Timer;
     public string Level_1_Score;
 
-    //Quiz Scores
-    public string QuizScore_1;
-    public string QuizScore_2;
-    public string QuizScore_3;
-    public string QuizScore_4;
-    public string QuizScore_5;
-    public string QuizScore_6;
-    public string QuizScore_7;
-    public string QuizScore_8;
+    //Level 2
+    public string Level_2_Timer;
+    public string Level_2_Score;
+
+    //Level 3
+    public string Level_3_Timer;
+    public string Level_3_Score;
+
+    //Level 4
+    public string Level_4_Timer;
+    public string Level_4_Score;
+
+    //Level 4
+    public string Level_5_Timer;
+    public string Level_5_Score;
+
+    //Level 4
+    public string Level_6_Timer;
+    public string Level_6_Score;
+
+    //Level 4
+    public string Level_7_Timer;
+    public string Level_7_Score;
+
+    //Level 4
+    public string Level_8_Timer;
+    public string Level_8_Score;
+}
+
+[System.Serializable]
+public class QuizzesScores
+{
+    //Quizzes Scores
+    public string QuizNumber1;
+    public string QuizNumber2;
+    public string QuizNumber3;
+    public string QuizNumber4;
+    public string QuizNumber5;
+    public string QuizNumber6;
+    public string QuizNumber7;
+    public string QuizNumber8;
 }

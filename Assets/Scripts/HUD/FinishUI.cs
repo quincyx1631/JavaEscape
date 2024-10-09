@@ -76,26 +76,9 @@ public class FinishUI : MonoBehaviour
 
     private void CallAddLevelMethod(int sceneIndex)
     {
-        switch (sceneIndex)
-        {
-            case 1:
-                UserProfile.Instance.AddLevel();
-                break;
-            case 2:
-                UserProfile.Instance.AddLevel();
-                break;
-            case 3:
-                UserProfile.Instance.AddLevel();
-                break;
-            case 4:
-                UserProfile.Instance.AddLevel();
-                break;
-            // Add more cases as needed for more levels
-            default:
-                Debug.LogWarning("No AddLevel method found for this scene index.");
-                break;
-        }
+        UserProfile.Instance.AddLevel(sceneIndex);
     }
+
 
     public float GetFinalScore()
     {

@@ -9,8 +9,6 @@ public class LevelTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // Unlock the new level and update the database
-            UnlockNewLevel();
 
             // Show the level selection UI and update the UI inputs
             ShowLevelSelection();
@@ -19,22 +17,6 @@ public class LevelTrigger : MonoBehaviour
 
             // Refresh the level selection buttons
             RefreshLevelSelection();
-        }
-    }
-
-    void UnlockNewLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        // Assuming the level is properly handled in UserProfile
-        ProfileData profileData = UserProfile.Instance.profileData;
-
-        // Check if the current level is the highest one reached
-        if (currentSceneIndex >= profileData.level)
-        {
-            // Increase the level in ProfileData and update in real-time
-            UserProfile.Instance.AddLevel();
-            Debug.Log("Level unlocked: Profile level updated to " + UserProfile.Instance.profileData.level);
         }
     }
 

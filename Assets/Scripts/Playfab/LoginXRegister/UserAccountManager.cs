@@ -111,6 +111,24 @@ public class UserAccountManager : MonoBehaviour
         });
     }
 
+    public void SetQuizData(string key, string value, UnityAction OnSucess = null)
+    {
+        PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest()
+        {
+            Data = new Dictionary<string, string>()
+            {
+                { key, value }
+            }
+        },
+        response => {
+            Debug.Log($"Successful SetUserData");
+            OnSucess?.Invoke();
+        },
+        error => {
+            Debug.Log($"Unsuccessful SetUserData {error.ErrorMessage}");
+        });
+    }
+
     public void SetDisplayName(string displayName, Action<bool> callback)
     {
         PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest
@@ -168,20 +186,3 @@ public class UserAccountManager : MonoBehaviour
         }
     }
 }
-
-/*    public void SetStudentData(string key, string value, UnityAction OnSucess = null)
-{
-    PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest() {
-        Data = new Dictionary<string ,string>()
-        {
-            { key, value }
-        }
-    },
-    response => {
-        Debug.Log($"Successful SetUserData");
-        OnSucess?.Invoke();
-    }, 
-    error => {
-        Debug.Log($"Unsuccessful SetUserData {error.ErrorMessage}");
-    });
-}*/

@@ -25,22 +25,22 @@ public class QuizManager3 : MonoBehaviour
 
     private void OnEnable()
     {
-        UserProfile.OnProfileDataUpdated.AddListener(UpdateQuizState);
+        UserProfile.OnQuizzesUpdated.AddListener(UpdateQuizState);
 
         if (UserProfile.Instance != null)
         {
-            UpdateQuizState(UserProfile.Instance.profileData);
+            UpdateQuizState(UserProfile.Instance.quizData);
         }
     }
 
     private void OnDisable()
     {
-        UserProfile.OnProfileDataUpdated.RemoveListener(UpdateQuizState);
+        UserProfile.OnQuizzesUpdated.RemoveListener(UpdateQuizState);
     }
 
-    private void UpdateQuizState(ProfileData profileData)
+    private void UpdateQuizState(QuizzesScores quizData)
     {
-        string currentQuiz3 = profileData.QuizScore_3;
+        string currentQuiz3 = quizData.QuizNumber3;
         Debug.Log($"Raw QuizScore_3: {currentQuiz3}"); 
 
         if (!string.IsNullOrEmpty(currentQuiz3))
@@ -111,7 +111,7 @@ public class QuizManager3 : MonoBehaviour
         {
             Debug.Log("UserProfile found. Setting quiz score...");
             Debug.Log("Quiz score set successfully.");
-            UserProfile.Instance.SetQuizScore();
+            UserProfile.Instance.SetQuiz3Score();
         }
         else
         {
