@@ -94,7 +94,7 @@ public class Door : MonoBehaviour
         {
             FinishUI.Instance.DisplayFinalTime(finalElapsedTime); // Display the final time on the Finish UI
             finishUI.SetActive(true); // Display the Finish UI
-            UserProfile.Instance.AddLevel();
+            //UserProfile.Instance.AddLevel();
         }
     }
 }

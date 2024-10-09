@@ -13,6 +13,7 @@ public class UserProfile : MonoBehaviour
 
     [SerializeField] public ProfileData profileData;
 
+    private int maxLevel = 8;
 
     private void Awake()
     {
@@ -24,7 +25,9 @@ public class UserProfile : MonoBehaviour
 
             //Levels
             profileData.level = 1; // Default level value
+
             profileData.Level_1_Timer = "";
+            profileData.Level_1_Score = "";
 
             //User Informations
             //profileData.playerName = ""; // Default name
@@ -93,12 +96,11 @@ public class UserProfile : MonoBehaviour
     //REFERENCE FOR LEVEL PROGRESSION NI JAVEN
     public void AddLevel()
     {
-        const int maxLevel = 8;
-
         if (profileData.level < maxLevel)
         {
             profileData.level += 1;
             Door timerLevel = FindAnyObjectByType<Door>();
+            FinishUI levelScore = FindAnyObjectByType<FinishUI>();
 
             // Convert finalElapsedTime (which is in seconds) to TimeSpan
             TimeSpan timeSpan = TimeSpan.FromSeconds(timerLevel.finalElapsedTime);
@@ -106,8 +108,9 @@ public class UserProfile : MonoBehaviour
             // Format the TimeSpan into a string with minutes and seconds
             string timerLevelSave = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds);
 
-            // Save the formatted time string into profileData
             profileData.Level_1_Timer = timerLevelSave;
+            profileData.Level_1_Score = levelScore.GetFinalScore().ToString("0");
+
             SetUserData();
             GetUserData();
         }
@@ -116,6 +119,7 @@ public class UserProfile : MonoBehaviour
             Debug.Log("Maximum level reached");
         }
     }
+    //NEED MAGDAGDAG MGA ADDLEVELS PER ROOM!!!!!
 
     //Quiz 1
     public void SetQuizScore()
@@ -323,7 +327,9 @@ public class ProfileData
 
     //Level & Time completion
     public int level;
+    //Level 1
     public string Level_1_Timer;
+    public string Level_1_Score;
 
     //Quiz Scores
     public string QuizScore_1;
