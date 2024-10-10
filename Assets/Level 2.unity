@@ -1755,6 +1755,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.size
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[21].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53c369b33ef972549927999ff2581cda, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[21].name
+      value: draw
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[21].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[21].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2580487136659981168, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.542697
@@ -2361,7 +2381,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422443124}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &422443127
 Camera:
   m_ObjectHideFlags: 0
@@ -8374,7 +8394,7 @@ PrefabInstance:
       objectReference: {fileID: 1196737036}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: drawSoundName
-      value: Correct
+      value: draw
       objectReference: {fileID: 0}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: eraseSoundName
