@@ -2705,19 +2705,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b8d6a69fd39d3e4985a0e4aa8adde45, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b8d6a69fd39d3e4985a0e4aa8adde45, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b8d6a69fd39d3e4985a0e4aa8adde45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b8d6a69fd39d3e4985a0e4aa8adde45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b8d6a69fd39d3e4985a0e4aa8adde45, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2803,12 +2803,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -2854,9 +2854,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 432312399}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -2870,6 +2867,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -2885,8 +2885,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -3117,19 +3117,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c943a31e97baa7b428987839093c4cf6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c943a31e97baa7b428987839093c4cf6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c943a31e97baa7b428987839093c4cf6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c943a31e97baa7b428987839093c4cf6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c943a31e97baa7b428987839093c4cf6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3215,12 +3215,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -3266,9 +3266,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 470407001}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -3282,6 +3279,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -3297,8 +3297,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -3664,19 +3664,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dd8c2a554138c84ea7efa30e645278d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dd8c2a554138c84ea7efa30e645278d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dd8c2a554138c84ea7efa30e645278d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dd8c2a554138c84ea7efa30e645278d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8dd8c2a554138c84ea7efa30e645278d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3762,12 +3762,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -3813,9 +3813,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 494052894}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -3829,6 +3826,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -3844,8 +3844,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -5506,6 +5506,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+--- !u!114 &815216129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8599637019514383131, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+  m_PrefabInstance: {fileID: 2100848905}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &821430240
 GameObject:
   m_ObjectHideFlags: 0
@@ -7419,19 +7430,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de2765fc1e5391d478ec4fec70cc2907, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de2765fc1e5391d478ec4fec70cc2907, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de2765fc1e5391d478ec4fec70cc2907, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de2765fc1e5391d478ec4fec70cc2907, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: de2765fc1e5391d478ec4fec70cc2907, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7517,12 +7528,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -7568,9 +7579,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1136246961}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -7584,6 +7592,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -7599,8 +7610,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -7898,19 +7909,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01758f4232fa1d64bb1d051f2e424c97, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01758f4232fa1d64bb1d051f2e424c97, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01758f4232fa1d64bb1d051f2e424c97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01758f4232fa1d64bb1d051f2e424c97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 01758f4232fa1d64bb1d051f2e424c97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7996,12 +8007,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -8047,9 +8058,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1183281460}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -8063,6 +8071,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -8078,8 +8089,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -8444,19 +8455,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ff5c03468a2c1e4094e1f92616fc951, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ff5c03468a2c1e4094e1f92616fc951, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ff5c03468a2c1e4094e1f92616fc951, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ff5c03468a2c1e4094e1f92616fc951, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1ff5c03468a2c1e4094e1f92616fc951, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8542,12 +8553,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -8593,9 +8604,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1250547579}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -8609,6 +8617,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -8624,8 +8635,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -8896,19 +8907,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2b1834e4f9d3b0438a0477b0afdb3bf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2b1834e4f9d3b0438a0477b0afdb3bf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2b1834e4f9d3b0438a0477b0afdb3bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2b1834e4f9d3b0438a0477b0afdb3bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2b1834e4f9d3b0438a0477b0afdb3bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8994,12 +9005,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -9045,9 +9056,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1296925452}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -9061,6 +9069,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -9076,8 +9087,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -9578,19 +9589,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dfec8411714276d46bff7e834507018f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dfec8411714276d46bff7e834507018f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dfec8411714276d46bff7e834507018f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dfec8411714276d46bff7e834507018f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dfec8411714276d46bff7e834507018f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9676,12 +9687,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -9727,9 +9738,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1494928376}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -9743,6 +9751,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -9758,8 +9769,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -10612,19 +10623,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e7471201cd2bc84eb56d17b420c929f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e7471201cd2bc84eb56d17b420c929f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e7471201cd2bc84eb56d17b420c929f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e7471201cd2bc84eb56d17b420c929f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e7471201cd2bc84eb56d17b420c929f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10710,12 +10721,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -10761,9 +10772,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1681353477}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -10777,6 +10785,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -10792,8 +10803,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -11420,19 +11431,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6750158184de0a24c9b986f7e3768df8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0039631976
+      value: 0.0031305298
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6750158184de0a24c9b986f7e3768df8, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051942533
+      value: 0.004406285
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6750158184de0a24c9b986f7e3768df8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9896
+      value: -1.9063
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6750158184de0a24c9b986f7e3768df8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3211
+      value: 2.2423
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6750158184de0a24c9b986f7e3768df8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11518,12 +11529,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 200
+  rotationSpeed: 20
   inspectionCamera: {fileID: 290527515}
   inspectionPoint: {fileID: 353018248}
   escapeUI: {fileID: 1332631943}
   inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 0}
+  postProcessVolume: {fileID: 815216129}
   inspectStartSoundName: 
   inspectStopSoundName: 
   playerInteraction: {fileID: 2010180543}
@@ -11569,9 +11580,6 @@ MonoBehaviour:
   message: 
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
-  onPickUp:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1811763438}
         m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
@@ -11585,6 +11593,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
       m_Calls:
@@ -11600,8 +11611,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  canInteract: 0
-  canPickup: 1
+  canInteract: 1
+  canPickup: 0
   canInspect: 1
   collectOnInteract: 0
   collectOnPickUp: 0
@@ -13162,6 +13173,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2395052bdf6b344a329f4328114af1, type: 3}
+--- !u!1001 &2100848905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2258732130235837373, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_Name
+      value: InspectPPVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.137
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3770131
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451141336986668698, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46aa5a301914a3f45bbfbc768de6937e, type: 3}
 --- !u!1 &2106885379 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5347206227496487131, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
@@ -28212,3 +28280,4 @@ SceneRoots:
   - {fileID: 1183281457}
   - {fileID: 1494928373}
   - {fileID: 1296925449}
+  - {fileID: 2100848905}

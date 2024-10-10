@@ -36,6 +36,7 @@ public class LaptopTwoUI : MonoBehaviour
     }
 
     // Method to check if the answer is correct
+    // Method to check if the answer is correct
     void CheckAnswer(int index)
     {
         // If the question has already been answered, do nothing
@@ -51,6 +52,9 @@ public class LaptopTwoUI : MonoBehaviour
         // If the input matches the correct answer
         if (inputFields[index].text == correctAnswers[index])
         {
+            // Set the feedback text to the player's input (correct answer)
+            feedbackTexts[index].text = inputFields[index].text;
+
             // Enable the corresponding TextMeshPro feedback
             feedbackTexts[index].gameObject.SetActive(true);
 
@@ -61,7 +65,8 @@ public class LaptopTwoUI : MonoBehaviour
             isAnswered[index] = true;
 
             // Start spawning the item and disable further input until spawning is done
-            StartCoroutine(SpawnItemWithDelay());
+            isSpawningItem = true;
+            itemSpawner.SpawnRandomItem(OnItemSpawned);  // Pass a callback for when the item finishes spawning
         }
         else
         {
@@ -70,18 +75,9 @@ public class LaptopTwoUI : MonoBehaviour
         }
     }
 
-    // Coroutine to ensure item spawns and disable further input while spawning
-    IEnumerator SpawnItemWithDelay()
+    // Callback for when the item spawning is completed
+    void OnItemSpawned()
     {
-        // Set the flag to true to prevent further clicks
-        isSpawningItem = true;
-
-        // Call the SpawnRandomItem function from RandomItemSpawner
-        itemSpawner.SpawnRandomItem();
-
-        // Wait for a short time (or frame) to ensure item is spawned
-        yield return new WaitForSeconds(1f);  // Adjust the delay as needed
-
         // Set the flag back to false to allow input again
         isSpawningItem = false;
     }

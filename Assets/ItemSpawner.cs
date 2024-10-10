@@ -11,6 +11,9 @@ public class RandomItemSpawner : MonoBehaviour
 
     private List<GameObject> remainingItems;  // To track which items are left to spawn
     private bool isSpawning = false;          // To prevent multiple spawns at the same time
+    private Queue<int> spawnQueue = new Queue<int>(); // Queue for pending item spawns
+
+    public delegate void ItemSpawnedCallback(); // Delegate for a callback after an item is spawned
 
     void Start()
     {
@@ -31,8 +34,8 @@ public class RandomItemSpawner : MonoBehaviour
         remainingItems = new List<GameObject>(items);
     }
 
-    // Method to move a random item to the spawn point with a delay
-    public void SpawnRandomItem()
+    // Method to queue a random item to be moved to the spawn point
+    public void SpawnRandomItem(ItemSpawnedCallback callback)
     {
         if (remainingItems.Count == 0)
         {
@@ -40,31 +43,52 @@ public class RandomItemSpawner : MonoBehaviour
             return;
         }
 
-        // Prevent spawning multiple items at the same time
-        if (!isSpawning)
+        // If an item is already spawning, queue the request
+        if (isSpawning)
         {
-            StartCoroutine(SpawnItemWithDelay());
+            Debug.Log("Item is already spawning. Queueing the next spawn.");
+            spawnQueue.Enqueue(Random.Range(0, remainingItems.Count));
+        }
+        else
+        {
+            StartCoroutine(SpawnItemWithDelay(Random.Range(0, remainingItems.Count), callback));
         }
     }
 
     // Coroutine to add a delay before spawning the item
-    IEnumerator SpawnItemWithDelay()
+    IEnumerator SpawnItemWithDelay(int randomIndex, ItemSpawnedCallback callback)
     {
         isSpawning = true;
 
         // Wait for the specified delay
         yield return new WaitForSeconds(spawnDelay);
 
-        // Select a random item from the remaining items
-        int randomIndex = Random.Range(0, remainingItems.Count);
-        GameObject randomItem = remainingItems[randomIndex];
+        if (randomIndex < remainingItems.Count)
+        {
+            GameObject randomItem = remainingItems[randomIndex];
 
-        // Move the selected item to the spawn point
-        randomItem.transform.position = spawnPoint.position;
+            // Move the selected item to the spawn point
+            randomItem.transform.position = spawnPoint.position;
 
-        // Remove the item from the list so it isn't selected again
-        remainingItems.RemoveAt(randomIndex);
+            // Remove the item from the list so it isn't selected again
+            remainingItems.RemoveAt(randomIndex);
 
-        isSpawning = false;  // Allow spawning again after the delay
+            Debug.Log("Item spawned.");
+        }
+
+        // Check if there are more items in the queue to be spawned
+        if (spawnQueue.Count > 0)
+        {
+            int nextIndex = spawnQueue.Dequeue();
+            StartCoroutine(SpawnItemWithDelay(nextIndex, callback));
+        }
+        else
+        {
+            // Reset the isSpawning flag if there are no more items in the queue
+            isSpawning = false;
+
+            // Call the callback to notify that spawning is done
+            callback?.Invoke();
+        }
     }
 }
