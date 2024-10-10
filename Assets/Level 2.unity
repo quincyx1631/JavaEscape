@@ -465,8 +465,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.025
-  m_fontSizeBase: 0.025
+  m_fontSize: 0.029
+  m_fontSizeBase: 0.029
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0062644337, y: 0, z: -0.0017105042, w: 0}
+  m_margin: {x: 0.03575702, y: 0, z: -0.0017105042, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -789,9 +789,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -1186,6 +1194,202 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34343d437c3f7614eae8feaa0e98dbc2, type: 3}
+--- !u!1 &251874038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251874039}
+  - component: {fileID: 251874041}
+  - component: {fileID: 251874040}
+  m_Layer: 0
+  m_Name: Text (TMP) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &251874039
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251874038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 683200230}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.04, y: -0.007}
+  m_SizeDelta: {x: 0.943, y: 0.9325}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &251874040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251874038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '1
+
+    2
+
+    3
+
+    4
+
+    5
+
+    6
+
+    7
+
+    8
+
+    9
+
+    10
+
+    11
+
+    12
+
+    13
+
+    14
+
+    15
+
+    16
+
+    17
+
+    18
+
+    19
+
+    20
+
+    21
+
+    22
+
+    23
+
+    24
+
+    25
+
+    26
+
+    27
+
+    28
+
+    29
+
+    30
+
+    31
+
+    32'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: c7914dfe8f5a27246897da4ead6f8b5c, type: 2}
+  m_sharedMaterial: {fileID: -6047255338658189998, guid: c7914dfe8f5a27246897da4ead6f8b5c, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.029
+  m_fontSizeBase: 0.029
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0.03575702, y: 0, z: 0.8698984, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &251874041
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251874038}
+  m_CullTransparentMesh: 1
 --- !u!1001 &261512193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1279,7 +1483,8 @@ MonoBehaviour:
   puzzleSets:
   - quiz:
       questions:
-      - '1. What is the value of the variable a?
+      - '1. What is the value of the variable a? 0
+
 
 '
       - 2. What is the type of the variable b?
@@ -1298,33 +1503,30 @@ MonoBehaviour:
     keypadPassword: 11111
   - quiz:
       questions:
-      - "1. What is the length of the string \n\"Java Programming\"?"
+      - 1. What is the length of the string "Java Programming"? 1
       - '2. What substring is extracted with
 
         str.substring(5, 16)?'
-      - "3. What will be the output of\n the following statement: System.out.println\n(\"Character:
-        \" + c);?"
+      - 3. What will be the output of line 22?
       - "4. What is the formatted output \nof Math.PI using df.format(Math.PI)?"
-      - "5. What is the output of the\n following statement: System.out.println\n(\"Absolute
-        value of -7: \"\n + Math.abs(-7));?"
+      - 5. What is the output of line 25?
       answers:
       - A. "3.14"
       - 'B. Absolute value of -7: 7'
       - 'C. Character: B'
       - D. "Programming"
       - E. 16
-      correctAnswers: 0400000001000000020000000000000003000000
+      correctAnswers: 0400000003000000020000000000000001000000
     tarpulin: {fileID: 470406999}
     laptopPassphrase: Operators Drive Logic
     keypadPassword: 22222
   - quiz:
       questions:
-      - 1. What will be the output of rand.nextInt(10) + 1?
+      - 1. What will be the output of rand.nextInt(10) + 1? 2
       - "2. What method is used to round numbers \nto two decimal places in Java?"
       - "3. What is the value of result_2 formatted \nto two decimal places?"
       - "4. If a were 3, what would be \nthe result of Math.pow(a, 2)?"
-      - "5. What is the output of the following statement: \nSystem.out.println(\"Random
-        \nnumber between 1 and 10: \" \n+ (rand.nextInt(10) + 1));?"
+      - 5. What is the output of line 29?
       answers:
       - "A. A random integer between \n1 and 10 (inclusive)"
       - B. DecimalFormat
@@ -1337,7 +1539,7 @@ MonoBehaviour:
     keypadPassword: 22222
   - quiz:
       questions:
-      - '1. What is the value of the variable a?
+      - '1. What is the value of the variable a? 3
 
 '
       - 2. What character is stored in the variable c?
@@ -1358,8 +1560,7 @@ MonoBehaviour:
     keypadPassword: 22222
   - quiz:
       questions:
-      - "1. What will be the output of the following statement: \nSystem.out.println(\"Character:
-        \" + c);?"
+      - 1. What will be the output of line 22? 4
       - 2. What is the type of the variable b?
       - '3. What is the value of result1?
 
@@ -1382,15 +1583,13 @@ MonoBehaviour:
     keypadPassword: 22222
   - quiz:
       questions:
-      - "1. What is the output of the following statement: \nSystem.out.println(\"Absolute
-        value of -7: \n\" + Math.abs(-7));?"
+      - 1. What is the output of line 25? 5
       - 2. What character is stored in the variable c?
       - '3. What method is used to round numbers to
 
         two decimal places in
         Java?'
-      - "4. What will be the output of the following statement:\nSystem.out.println(\"Character:
-        \" + c);?\r\n "
+      - "4. What will be the output of line 22?\r\n "
       - 5. What is the length of the string "Java Programming"?
       answers:
       - A. 'B'
@@ -1406,12 +1605,13 @@ MonoBehaviour:
       questions:
       - '1. What substring is extracted with
 
-        str.substring(5, 16)?'
+        str.substring(5, 16)? 6'
       - '2. What character is stored in the
 
         variable c?'
-      - "3. What is the output of the following statement: \nSystem.out.println(\"Random
-        number between 1 and 10:\n\" + (rand.nextInt(10) + 1));?\r\n"
+      - '3. What is the output of line 29?
+
+'
       - 4. What is the value of the variable a?
       - '5. What is the formatted output of Math.PI
 
@@ -1430,7 +1630,7 @@ MonoBehaviour:
     keypadPassword: 22222
   - quiz:
       questions:
-      - 1. What is the value of the variable a?
+      - 1. What is the value of the variable a? 7
       - '2. What will be the output of rand.nextInt
 
         (10) + 1?'
@@ -1449,17 +1649,11 @@ MonoBehaviour:
     keypadPassword: 22222
   - quiz:
       questions:
-      - 1. What is the value of result1?
+      - 1. What is the value of result1? 8
       - "2. What is the value of result_2 formatted\n to two decimal places?"
-      - '3. What will be the output of the following statement:
-
-        System.out.println
-
-        ("Character:
-        " + c);?'
+      - 3. What will be the output of line 22?
       - "4. If a were 3, what would be the result of \nMath.pow(a, 2)?\r\n"
-      - "5. What is the output of the following statement: \nSystem.out.println(\"Absolute
-        value of -7: \"\n+ Math.abs(-7));?"
+      - 5. What is the output of line 25?
       answers:
       - 'A. Character: B'
       - B. 25.00
@@ -1472,11 +1666,11 @@ MonoBehaviour:
     keypadPassword: 22222
   - quiz:
       questions:
-      - "1. What is the output of the following statement: \nSystem.out.println(\"Absolute
-        value of -7: \"\n+ Math.abs(-7));?"
+      - 1. What is the output of line 25? 9
       - "2. If a were 3, what would be the result of \nMath.pow(a, 2)?\r\n"
-      - "3. What is the output of the following statement: \nSystem.out.println(\"Random
-        number between 1 and 10:\n\" + (rand.nextInt(10) + 1));?\r\n"
+      - '3. What is the output of line 29?
+
+'
       - "4. What is the result of Math.sqrt(a * b)\n before formatting?"
       - "5. What is the formatted output of \nMath.PI using df.format(Math.PI)?"
       answers:
@@ -1757,22 +1951,86 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.size
-      value: 22
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 53c369b33ef972549927999ff2581cda, type: 3}
+      objectReference: {fileID: 8300000, guid: 230951e517d53b043bd68eb91659cd20, type: 3}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].name
-      value: draw
+      value: Marker
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dfa4ace6cc8054241a2b31eace6e925a, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].name
+      value: Erase
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bf927b378747f674bb735ba0e668e85d, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].name
+      value: Grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6312162eabe29a0499ea6d4548d181e8, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].name
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7be2ab5aa058d00489e8db820b567f41, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].name
+      value: Click
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2580487136659981168, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
@@ -3320,9 +3578,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -4482,6 +4748,7 @@ RectTransform:
   m_Children:
   - {fileID: 1077186114}
   - {fileID: 11472514}
+  - {fileID: 251874039}
   m_Father: {fileID: 1748084235015965450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4707,9 +4974,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -4792,9 +5067,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -5151,9 +5434,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -5610,9 +5901,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -5959,9 +6258,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -6352,9 +6659,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -6686,9 +7001,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -6905,9 +7228,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -7845,9 +8176,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -8378,9 +8717,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -8463,9 +8810,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -8835,9 +9190,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -9064,9 +9427,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -10016,9 +10387,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -10792,11 +11171,11 @@ PrefabInstance:
       objectReference: {fileID: 1196737036}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: drawSoundName
-      value: draw
+      value: Marker
       objectReference: {fileID: 0}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: eraseSoundName
-      value: Incorrect
+      value: Erase
       objectReference: {fileID: 0}
     - target: {fileID: 4115581969983380886, guid: 06e9015dd600350469eed8072cea296a, type: 3}
       propertyPath: lineLengthMultiplier
@@ -10932,9 +11311,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -13094,9 +13481,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
@@ -14135,8 +14530,8 @@ Transform:
   m_Children:
   - {fileID: 1748084235015965450}
   - {fileID: 4167956232805314449}
-  - {fileID: 5055538457185093926}
   - {fileID: 3774308967326724896}
+  - {fileID: 5055538457185093926}
   - {fileID: 4790825249313279605}
   - {fileID: 4609106536558469924}
   - {fileID: 6542397087255013324}
@@ -14702,9 +15097,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 910815705981807989, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 1389964532201673621, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}
       propertyPath: m_Material
       value: 
@@ -24240,9 +24643,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1246522654}
     - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: dropSoundName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2010180546}
+    - target: {fileID: 914554283149184898, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
+      propertyPath: pickupSoundName
+      value: Grab
+      objectReference: {fileID: 0}
     - target: {fileID: 2532116709620438380, guid: b6202d367a5a86f4e8c323d21e48c762, type: 3}
       propertyPath: m_Mass
       value: 3
