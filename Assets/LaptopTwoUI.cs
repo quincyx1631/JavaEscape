@@ -12,9 +12,15 @@ public class LaptopTwoUI : MonoBehaviour
     public List<TextMeshProUGUI> feedbackTexts;  // List of TextMeshPro for feedback (displayed when correct)
 
     public RandomItemSpawner itemSpawner;        // Reference to your RandomItemSpawner script
+    public AlertUI alertUI;
+    private bool[] isAnswered;                   // Array to track if each question has been answered
+    private bool isSpawningItem = false;         // Flag to track if an item is currently spawning
 
     void Start()
     {
+        // Initialize the isAnswered array to false
+        isAnswered = new bool[inputFields.Count];
+
         // Make sure feedback texts are disabled initially
         foreach (var feedbackText in feedbackTexts)
         {
@@ -32,6 +38,16 @@ public class LaptopTwoUI : MonoBehaviour
     // Method to check if the answer is correct
     void CheckAnswer(int index)
     {
+        // If the question has already been answered, do nothing
+        if (isAnswered[index]) return;
+
+        // If an item is currently spawning, prevent further clicks
+        if (isSpawningItem)
+        {
+            alertUI.ShowAlert("Wait for the item to spawn.");
+            return;
+        }
+
         // If the input matches the correct answer
         if (inputFields[index].text == correctAnswers[index])
         {
@@ -41,12 +57,32 @@ public class LaptopTwoUI : MonoBehaviour
             // Disable and hide the input field so the player cannot edit the answer anymore
             inputFields[index].gameObject.SetActive(false);
 
-            // Call the SpawnRandomItem function from RandomItemSpawner
-            itemSpawner.SpawnRandomItem();
+            // Mark the question as answered
+            isAnswered[index] = true;
+
+            // Start spawning the item and disable further input until spawning is done
+            StartCoroutine(SpawnItemWithDelay());
         }
         else
         {
+            alertUI.ShowAlert("Wrong Answer");
             Debug.Log("Incorrect answer for question " + (index + 1));
         }
+    }
+
+    // Coroutine to ensure item spawns and disable further input while spawning
+    IEnumerator SpawnItemWithDelay()
+    {
+        // Set the flag to true to prevent further clicks
+        isSpawningItem = true;
+
+        // Call the SpawnRandomItem function from RandomItemSpawner
+        itemSpawner.SpawnRandomItem();
+
+        // Wait for a short time (or frame) to ensure item is spawned
+        yield return new WaitForSeconds(1f);  // Adjust the delay as needed
+
+        // Set the flag back to false to allow input again
+        isSpawningItem = false;
     }
 }
