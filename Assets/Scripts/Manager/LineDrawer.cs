@@ -1,7 +1,7 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections.Generic;
 
 public class LineDrawer : MonoBehaviour
 {
@@ -28,6 +28,9 @@ public class LineDrawer : MonoBehaviour
     public GameObject blackboardUI;
 
     private Outline blackboardOutline; // Reference to the blackboard's Outline component
+
+    public string drawSoundName;
+    public string eraseSoundName;
 
     [Header("Line Settings")]
     public float lineWidth = 5f; // Adjustable line width
@@ -57,7 +60,7 @@ public class LineDrawer : MonoBehaviour
             button.onClick.AddListener(() => SelectAnswer(button));
         }
 
-        clearButton.onClick.AddListener(ClearLastLine);
+        clearButton.onClick.AddListener(ClearAllLines); // Clear all lines when clearButton is clicked
     }
 
     void Update()
@@ -106,6 +109,10 @@ public class LineDrawer : MonoBehaviour
     {
         if (linePrefab != null)
         {
+            if (!string.IsNullOrEmpty(drawSoundName))
+            {
+                AudioManager.Instance.Play(drawSoundName);
+            }
             GameObject lineObject = Instantiate(linePrefab, canvas.transform);
             RectTransform lineRect = lineObject.GetComponent<RectTransform>();
 
@@ -143,33 +150,30 @@ public class LineDrawer : MonoBehaviour
         return false;
     }
 
-    void ClearLastLine()
+    // This method will clear all lines when the clear button is pressed
+    public void ClearAllLines()
     {
-        if (lineStack.Count > 0)
+        while (lineStack.Count > 0)
         {
-            GameObject lastLine = lineStack.Pop();
-            if (lastLine != null)
+            GameObject line = lineStack.Pop();
+            if (line != null)
             {
-                Destroy(lastLine);
+                if (!string.IsNullOrEmpty(eraseSoundName))
+                {
+                    AudioManager.Instance.Play(eraseSoundName);
+                }
+                Destroy(line);
             }
-
-            UndoAssignment();
         }
+
+        ResetAnswerAssignments();
     }
 
-    void UndoAssignment()
+    void ResetAnswerAssignments()
     {
-        if (lineStack.Count < answerAssigned.Length)
+        for (int i = 0; i < answerAssigned.Length; i++)
         {
-            for (int i = 0; i < answerAssigned.Length; i++)
-            {
-                if (answerAssigned[i] != null)
-                {
-                    answerAssigned[i] = null;
-                    Debug.Log($"Cleared assignment for Question {i + 1}");
-                    break;
-                }
-            }
+            answerAssigned[i] = null;
         }
 
         hasStartPosition = false;
@@ -252,31 +256,6 @@ public class LineDrawer : MonoBehaviour
                 cameraSwitch.SwitchToMainCamera();
             }
         }
-    }
-
-    public void ClearAllLines()
-    {
-        while (lineStack.Count > 0)
-        {
-            GameObject line = lineStack.Pop();
-            if (line != null)
-            {
-                Destroy(line);
-            }
-        }
-
-        ResetAnswerAssignments();
-    }
-
-    void ResetAnswerAssignments()
-    {
-        for (int i = 0; i < answerAssigned.Length; i++)
-        {
-            answerAssigned[i] = null;
-        }
-
-        hasStartPosition = false;
-        selectedQuestionIndex = -1;
     }
 
     // Public method to set correct answers from other scripts

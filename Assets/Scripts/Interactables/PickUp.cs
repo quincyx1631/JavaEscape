@@ -149,10 +149,15 @@ public class PickUp : MonoBehaviour
             // Restore the original layer
             gameObject.layer = originalLayer;
 
+            // Enable collision detection for the dropped item
+            collisionDetectionEnabled = true;
+            hasCollided = false;  // Reset the collision flag
+
             // Set itemOnHand to false to allow picking up another item
             itemOnHand = false;
         }
     }
+
 
     public void TryDropItem()
     {
@@ -207,18 +212,22 @@ public class PickUp : MonoBehaviour
         );
     }
 
-  
+
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Play the drop sound only when the item collides after being dropped
         if (!hasCollided && collisionDetectionEnabled)
         {
-            hasCollided = true;
+            hasCollided = true;  // Prevent multiple sounds on the same collision
 
             if (!string.IsNullOrEmpty(dropSoundName))
             {
                 AudioManager.Instance.Play(dropSoundName);
             }
+
+            // Optionally, disable collision detection if you only want sound on the first collision
+            collisionDetectionEnabled = false;
         }
     }
 

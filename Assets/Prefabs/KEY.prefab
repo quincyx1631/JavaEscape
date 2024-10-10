@@ -94,6 +94,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1046984636327251931}
   m_SourcePrefab: {fileID: 100100000, guid: fb323f61ee7a6e74fac43485b115d7c2, type: 3}
+--- !u!4 &6256899727754063171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fb323f61ee7a6e74fac43485b115d7c2, type: 3}
+  m_PrefabInstance: {fileID: 5863194527065017000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6746156441632290809 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb323f61ee7a6e74fac43485b115d7c2, type: 3}
@@ -230,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509e877f09310564c9093ad71498bcb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemHolder: {fileID: 0}
+  itemHolder: {fileID: 6256899727754063171}
   pickupSoundName: KeyPickup
   dropSoundName: KeyDrop
   dropForce: 5
