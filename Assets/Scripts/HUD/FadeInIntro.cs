@@ -1,10 +1,14 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using System.Collections;
 
 public class FadeInIntro : MonoBehaviour
 {
+    public bool hasVideoIntro = false; // Toggle for whether a video intro is present
+    public VideoPlayer videoPlayer; // Video player for the intro video
+    public GameObject videoPanel; // Panel or UI object holding the video
     public Image blackScreen; // Image component for the black screen
     public TMP_Text[] introTexts; // Array of texts for the intro screen
     public Dialogue dialogueSystem; // Reference to the Dialogue script
@@ -46,10 +50,37 @@ public class FadeInIntro : MonoBehaviour
         }
 
         PlayerControlManager.Instance.DisablePlayerControls();
+
+        // Check if there's a video intro to play
+        if (hasVideoIntro && videoPlayer != null)
+        {
+            StartCoroutine(PlayVideoIntro());
+        }
+        else
+        {
+            // If no video, start fade-in sequence directly
+            StartCoroutine(FadeInSequence());
+        }
+    }
+
+    private IEnumerator PlayVideoIntro()
+    {
+        videoPanel.SetActive(true); // Show the video panel (if it's a UI object)
+
+        // Wait for the video to complete playing
+        videoPlayer.Play();
+        while (videoPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
+        videoPanel.SetActive(false); // Hide the video panel after it finishes
+
+        // Proceed to fade-in sequence after the video
         StartCoroutine(FadeInSequence());
     }
 
-    private IEnumerator FadeInSequence()
+    public IEnumerator FadeInSequence()
     {
         // Ensure the dialogue system is inactive initially
         if (dialogueSystem != null)

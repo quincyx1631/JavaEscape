@@ -26,6 +26,7 @@ public class Dialogue : MonoBehaviour
     private bool isTyping = false;
     private Coroutine typingCoroutine;
     public FadeInIntro fadeInIntro;
+    public TVTutsPlayer tv;
     private void Start()
     {
         if (nextButton != null)
@@ -141,9 +142,16 @@ public class Dialogue : MonoBehaviour
         {
             timer.StartTimer(); // Start the timer with a duration of 60 seconds
         }
+        if (tv != null)
+        {
+
+        tv.PlayTVVideo();
+        
+        }
         if (fadeInIntro != null)
         {
             fadeInIntro.ShowUIElements();
+            
         }
     }
 }

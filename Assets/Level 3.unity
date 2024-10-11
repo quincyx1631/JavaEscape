@@ -5466,7 +5466,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193513921184848039, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3329012219988430992, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_text
+      value: Science Lab
       objectReference: {fileID: 0}
     - target: {fileID: 3486072758006884548, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: uiElementsToHide.Array.data[3]
@@ -5502,12 +5506,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631290037764602702, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: scoreButton
       value: 
       objectReference: {fileID: 781089052}
+    - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: finalTimeText
+      value: 
+      objectReference: {fileID: 849123140}
     - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: finalScoreText
       value: 
@@ -5544,6 +5552,17 @@ PrefabInstance:
       addedObject: {fileID: 898910631}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+--- !u!114 &849123140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2732060902450055044, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &898910630
 GameObject:
   m_ObjectHideFlags: 0
@@ -14390,7 +14409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRotation: {x: 0, y: 90, z: 0}
-  rotationSpeed: 5
+  rotationSpeed: 1
   finishUI: {fileID: 541164028}
   timer: {fileID: 2100717545}
   finalElapsedTime: 0

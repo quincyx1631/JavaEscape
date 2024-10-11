@@ -40,7 +40,7 @@ public class FinishUI : MonoBehaviour
     {
         // Disable the other UI elements
         DisableUIElements();
-        InputManager.Instance.BlockInput();
+       
 
         // Activate the finish UI if it's not already active
         if (!gameObject.activeInHierarchy)

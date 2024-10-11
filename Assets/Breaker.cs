@@ -15,7 +15,18 @@ public class Breaker : MonoBehaviour
     public GameObject key; // Reference to the key GameObject
     public GameObject itemHolder; // Reference to the player's item holder GameObject
     public AlertUI alertUI;
+    public Animator breakerAnimator; // Animator for the breaker animations
     private bool isUnlocked = false; // Flag to check if the breaker is unlocked
+    private bool IsOpen = false; // Flag for the breaker being open or closed
+    private bool breakerTurnedOn = false; // Flag to check if the breaker is already turned on
+
+    private void Start()
+    {
+        // Initially set the breaker to be closed
+        breakerAnimator.Play("BreakerClose");
+        IsOpen = false;
+        breakerTurnedOn = false; // Breaker hasn't been turned on yet
+    }
 
     public void TurnOnBreaker()
     {
@@ -25,7 +36,7 @@ public class Breaker : MonoBehaviour
             // Check if the player has the key
             if (HasKeyInItemHolder())
             {
-                UnlockBreaker();
+                UnlockAndOpenBreaker(); // Unlock and open the breaker in one step
                 HideKey(); // Hide the key after unlocking the breaker
                 return; // Exit after unlocking
             }
@@ -37,8 +48,19 @@ public class Breaker : MonoBehaviour
             }
         }
 
-        // If already unlocked, now turn on the breaker and open the computer
-        ActivateComputer();
+        // If already unlocked, check if the breaker is already turned on
+        if (!breakerTurnedOn && IsOpen)
+        {
+            // Turn on the breaker and close it only after activating the computer
+            ActivateComputer();
+            CloseBreaker(); // Play close animation after turning on the computer
+            breakerTurnedOn = true; // Mark the breaker as turned on
+        }
+        else if (breakerTurnedOn)
+        {
+            alertUI.ShowAlert("The breaker is already turned on.");
+            Debug.Log("The breaker is already turned on.");
+        }
     }
 
     private bool HasKeyInItemHolder()
@@ -47,11 +69,12 @@ public class Breaker : MonoBehaviour
         return key.transform.IsChildOf(itemHolder.transform);
     }
 
-    private void UnlockBreaker()
+    private void UnlockAndOpenBreaker()
     {
         isUnlocked = true;
         CorrectUIController.Instance.ShowCorrectUI();
-        Debug.Log("Breaker is unlocked. You can now turn it on.");
+        Debug.Log("Breaker is unlocked and opened.");
+        OpenBreaker(); // Play the open animation right after unlocking
     }
 
     private void HideKey()
@@ -73,5 +96,21 @@ public class Breaker : MonoBehaviour
         keypad.SetKeypadPassword(selectedPair.password);
 
         Debug.Log("Breaker turned on. Opened: " + selectedPair.computer.name + " with password: " + selectedPair.password);
+    }
+
+    private void OpenBreaker()
+    {
+        // Play the BreakerOpen animation and set the IsOpen flag
+        breakerAnimator.Play("BreakerOpen");
+        IsOpen = true;
+        Debug.Log("Breaker is now open.");
+    }
+
+    private void CloseBreaker()
+    {
+        // Play the BreakerClose animation and set the IsOpen flag
+        breakerAnimator.Play("BreakerClose");
+        IsOpen = false;
+        Debug.Log("Breaker is now closed.");
     }
 }
