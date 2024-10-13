@@ -15,46 +15,64 @@ public class Breaker : MonoBehaviour
     public GameObject key; // Reference to the key GameObject
     public GameObject itemHolder; // Reference to the player's item holder GameObject
     public AlertUI alertUI;
-    public Animator breakerAnimator; // Animator for the breaker animations
+
+    // Rotation settings
+    public Transform rotatingPart; // Reference to the child object you want to rotate (e.g., door or handle)
+    public Vector3 closedRotation; // Rotation for the closed state (e.g., 0,0,0)
+    public Vector3 openRotation;   // Rotation for the open state (e.g., 0,90,0)
+    public float rotationSpeed = 2f; // Speed of rotation between states
+
     private bool isUnlocked = false; // Flag to check if the breaker is unlocked
     private bool IsOpen = false; // Flag for the breaker being open or closed
     private bool breakerTurnedOn = false; // Flag to check if the breaker is already turned on
+    private bool isRotating = false; // Flag to check if the breaker is in the process of rotating
 
     private void Start()
     {
-        // Initially set the breaker to be closed
-        breakerAnimator.Play("BreakerClose");
+        // Make sure the rotatingPart is assigned in the inspector or found via code
+        if (rotatingPart == null)
+        {
+            Debug.LogError("Rotating part is not assigned!");
+        }
+
+        // Set the initial rotation to the closed state
+        rotatingPart.rotation = Quaternion.Euler(closedRotation);
         IsOpen = false;
-        breakerTurnedOn = false; // Breaker hasn't been turned on yet
+        breakerTurnedOn = false;
+    }
+
+    private void Update()
+    {
+        // Optionally, you can handle smooth rotation here if `isRotating` is true
+        if (isRotating)
+        {
+            RotatePart(IsOpen ? openRotation : closedRotation);
+        }
     }
 
     public void TurnOnBreaker()
     {
-        // If the breaker is not unlocked, check for the key
         if (!isUnlocked)
         {
-            // Check if the player has the key
             if (HasKeyInItemHolder())
             {
-                UnlockAndOpenBreaker(); // Unlock and open the breaker in one step
+                UnlockAndOpenBreaker(); // Unlock and open the breaker
                 HideKey(); // Hide the key after unlocking the breaker
-                return; // Exit after unlocking
+                return;
             }
             else
             {
                 alertUI.ShowAlert("You need the key to unlock the breaker.");
                 Debug.Log("You need the key to unlock the breaker.");
-                return; // Exit if the key is not present
+                return;
             }
         }
 
-        // If already unlocked, check if the breaker is already turned on
         if (!breakerTurnedOn && IsOpen)
         {
-            // Turn on the breaker and close it only after activating the computer
             ActivateComputer();
-            CloseBreaker(); // Play close animation after turning on the computer
-            breakerTurnedOn = true; // Mark the breaker as turned on
+            CloseBreaker(); // Rotate to the closed state after turning on the computer
+            breakerTurnedOn = true;
         }
         else if (breakerTurnedOn)
         {
@@ -65,7 +83,6 @@ public class Breaker : MonoBehaviour
 
     private bool HasKeyInItemHolder()
     {
-        // Check if the key GameObject is a child of the item holder GameObject
         return key.transform.IsChildOf(itemHolder.transform);
     }
 
@@ -73,26 +90,21 @@ public class Breaker : MonoBehaviour
     {
         isUnlocked = true;
         CorrectUIController.Instance.ShowCorrectUI();
-        Debug.Log("Breaker is unlocked and opened.");
-        OpenBreaker(); // Play the open animation right after unlocking
+        Debug.Log("Breaker is unlocked and opening.");
+        OpenBreaker(); // Rotate to the open state
     }
 
     private void HideKey()
     {
-        // Hide the key GameObject after it has been used
         key.SetActive(false);
     }
 
     private void ActivateComputer()
     {
-        // Randomly select a computer from the list
         int randomIndex = Random.Range(0, computerPasswordPairs.Count);
         ComputerPasswordPair selectedPair = computerPasswordPairs[randomIndex];
 
-        // Open the selected computer
         selectedPair.computer.OpenComputer();
-
-        // Set the keypad password to the corresponding password of the selected computer
         keypad.SetKeypadPassword(selectedPair.password);
 
         Debug.Log("Breaker turned on. Opened: " + selectedPair.computer.name + " with password: " + selectedPair.password);
@@ -100,17 +112,34 @@ public class Breaker : MonoBehaviour
 
     private void OpenBreaker()
     {
-        // Play the BreakerOpen animation and set the IsOpen flag
-        breakerAnimator.Play("BreakerOpen");
         IsOpen = true;
+        StartRotatingToTarget(openRotation); // Rotate to open position
         Debug.Log("Breaker is now open.");
     }
 
     private void CloseBreaker()
     {
-        // Play the BreakerClose animation and set the IsOpen flag
-        breakerAnimator.Play("BreakerClose");
         IsOpen = false;
+        StartRotatingToTarget(closedRotation); // Rotate to closed position
         Debug.Log("Breaker is now closed.");
+    }
+
+    private void StartRotatingToTarget(Vector3 targetRotation)
+    {
+        isRotating = true; // Start rotating
+    }
+
+    private void RotatePart(Vector3 targetRotation)
+    {
+        // Smoothly rotate the rotating part to the target rotation
+        Quaternion target = Quaternion.Euler(targetRotation);
+        rotatingPart.rotation = Quaternion.Lerp(rotatingPart.rotation, target, Time.deltaTime * rotationSpeed);
+
+        // Stop rotating if close enough to the target rotation
+        if (Quaternion.Angle(rotatingPart.rotation, target) < 0.1f)
+        {
+            rotatingPart.rotation = target; // Snap to the final rotation
+            isRotating = false; // Stop rotating
+        }
     }
 }
