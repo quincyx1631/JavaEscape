@@ -163,7 +163,6 @@ public class UserProfile : MonoBehaviour
     {
         if (profileData.level < maxLevel)
         {
-            profileData.level += 1;
             Door timerLevel = FindAnyObjectByType<Door>();
             FinishUI levelScore = FindAnyObjectByType<FinishUI>();
 
@@ -212,9 +211,17 @@ public class UserProfile : MonoBehaviour
                     Debug.LogWarning("Invalid level index.");
                     break;
             }
-
-            SetUserData();
-            GetUserData();
+            if (levelIndex > profileData.level)
+            {
+                profileData.level += 1;
+                Debug.Log("Sucessfully Added Level to Database");
+                SetUserData();
+                GetUserData();
+            }
+            else
+            {
+                Debug.Log("You already completed this level");
+            }
         }
         else
         {
