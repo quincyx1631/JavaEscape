@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 5c14233d209cdaa4fb9f09a72de63b20, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 297b5f99ac257534daf7bbc103fc03ef, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 2bea6cf68b1ea584d8cb5cb9903c520f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -4604,7 +4604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6554d44d1fc9f2469be3958df1f8779, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.9
+      value: 10.79
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a6554d44d1fc9f2469be3958df1f8779, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5056,6 +5056,10 @@ LightProbeGroup:
   - {x: 2.1801138, y: 2.7038388, z: 6.837279}
   - {x: 2.1801138, y: 2.7038388, z: -8.935621}
   - {x: -11.736289, y: 2.7038388, z: -8.935623}
+  - {x: -11.736289, y: 2.7038388, z: -1.9272326}
+  - {x: -8.141528, y: 3.0152748, z: 6.1655126}
+  - {x: -7.5362, y: 0.021627998, z: 4.747519}
+  - {x: -7.752285, y: -0.059325602, z: 1.3050443}
   m_Dering: 1
 --- !u!1001 &1286190348
 PrefabInstance:
@@ -9153,7 +9157,7 @@ GameObject:
   m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &942406032422957188
 MeshRenderer:
@@ -9894,7 +9898,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1748084235831899603
 Transform:
@@ -16943,7 +16947,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7987826915097581842
 Transform:
