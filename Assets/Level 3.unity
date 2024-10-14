@@ -2034,6 +2034,22 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 72975621}
   m_SourcePrefab: {fileID: 100100000, guid: da45fecded9852a4a8299e3be7c9b4e6, type: 3}
+--- !u!1 &237469528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8966303063572695285, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &237469530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5578686606779046397, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237469528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efecd02eccf9a8a4baabd82c45f0d955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &244203203
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10248,6 +10264,158 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2212009239438826721, guid: 5ec373d916e1f8546aa03f45e0752e39, type: 3}
+--- !u!1001 &1132560361
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.9705377
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6268456
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.2405338
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69080293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69080305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15096787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15096785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 24.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396935937281666516, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_Name
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855071847644708668, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickUpItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: alertUI
+      value: 
+      objectReference: {fileID: 1412432091}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: itemHolder
+      value: 
+      objectReference: {fileID: 1401840847}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 1038879738}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1736379511}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionPoint
+      value: 
+      objectReference: {fileID: 261243658}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1038879734}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionCamera
+      value: 
+      objectReference: {fileID: 1067218835}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1038879736}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 885539076}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookUI
+      value: 
+      objectReference: {fileID: 237469528}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1736379511}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1038879733}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookContents
+      value: 
+      objectReference: {fileID: 237469530}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36>UNIT 1: FLOW CONTROL</size></b>\r\n <size=26>\r\n<b><size=30><color=#FF0000>LESSON
+        1: Conditional Statements</color></size></b>\r\n\r\n<b><size=30><color=#E97132>Conditional
+        statements</color></size></b> are crucial in any programming language as
+        they enable decision-making processes based on Boolean expressions. These
+        expressions determine whether certain code blocks should be executed.\r\n\r\n<b><size=30><color=#E97132>The
+        if Statement</color></size></b>\r\nUsed when a program must choose between
+        two paths. The statement(s) within the if block are executed only if the
+        condition is true.\r\nif(condition) {\r\n    statement(s);\r\n}\r\n\r\n<b><size=30><color=#E97132>The
+        if-else Statement</color></size></b>\r\nProvides an alternative path if the
+        initial if condition is false.\r\nif(condition) {\r\n    statement(s);\r\n}
+        else {\r\n    statement(s); // executed if the condition is false\r\n}\r\n
+        \r\n<b><size=30><color=#E97132>Multibranch if-else or if-else-if Statement</color></size></b>\r\nTests
+        multiple conditions sequentially. The first true condition\u2019s statement(s)
+        are executed. If none are true, the else statement is executed.\r\nif(boolean_expression_1)
+        {\r\n    statement(s);\r\n} else if(boolean_expression_2) {\r\n    statement(s);\r\n}
+        \r\n...\r\nelse {\r\n    Default_Action(s);\r\n}\r\n\r\n<b><size=30><color=#E97132>Switch
+        Statement</color></size></b>\r\nSwitch statements provide a cleaner and more
+        readable alternative to nested-if-else statements for handling multiple conditions.
+        Here's a concise explanation and example.\r\n<b><color=#FF0000>Syntax: </color></b>\r\nswitch
+        (variable) {\r\n    case constant_1:\r\n        statement(s);\r\n       
+        break;\r\n    case constant_2:\r\n        statement(s);\r\n        break;\r\n   
+        case constant_3:\r\n        statement(s);\r\n        break;\r\n    default:\r\n       
+        statement(s);\r\n        break;\r\n}\r\n\r\n<b>switch(variable): </b> Starts
+        the switch statement with a test expression.\r\n<b>case constant: </b> Each
+        case checks if the test expression matches the constant.\r\n<b>break: </b>
+        Terminates the switch statement after executing a case.\r\n<b>default: </b>
+        Optionally executed if no case matches.\r\n \r\n<b><size=30><color=#E97132>Nested
+        Switch Statement</color></size></b>\r\nSwitch statements can also be nested,
+        meaning you can include one switch statement within another. Here's a concise
+        example.\r\n<b><color=#FF0000> Syntax: </color> </b>\r\nswitch (variable1)
+        {\r\n    case constant_1:\r\n        switch (variable2) {\r\n           
+        case constant_1_1:\r\n                statement(s);\r\n                break;\r\n           
+        case constant_1_2:\r\n                statement(s);\r\n                break;\r\n           
+        default:\r\n                statement(s);\r\n                break;\r\n       
+        }\r\n        break;\r\n    case constant_2:\r\n        statement(s);\r\n       
+        break;\r\n    default:\r\n        statement(s);\r\n        break;\r\n}\r\n</size>\r\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
 --- !u!1 &1138669273
 GameObject:
   m_ObjectHideFlags: 0
@@ -12417,6 +12585,211 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8058137737415051310, guid: 5ec373d916e1f8546aa03f45e0752e39, type: 3}
+--- !u!1001 &1406925495
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.9834695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6268454
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.2334456
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69080293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69080305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15096787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15096785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 24.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396935937281666516, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_Name
+      value: book (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855071847644708668, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickUpItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: alertUI
+      value: 
+      objectReference: {fileID: 1412432091}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: itemHolder
+      value: 
+      objectReference: {fileID: 1401840847}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 1038879738}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1736379511}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionPoint
+      value: 
+      objectReference: {fileID: 261243658}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1038879734}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionCamera
+      value: 
+      objectReference: {fileID: 1067218835}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1038879736}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 885539076}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookUI
+      value: 
+      objectReference: {fileID: 237469528}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1736379511}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1038879733}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookContents
+      value: 
+      objectReference: {fileID: 237469530}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36><color=#FF0000>LESSON 2: Looping and Branching Statements</color></size></b>\r\n<size=26>\r\n\r\n<b><size=30><color=#E97132>Looping
+        or Iteration Statements</color></size></b>\r\nLooping statements allow programs
+        to repeat actions, reducing repetitive tasks. For example, calculating the
+        total cost of items bought by a customer.\r\n\r\n<b><size=30><color=#E97132>Characteristics
+        of Well-behaved Loops: </color></size></b>\r\n<b>Control Variable: </b> Determines
+        the number of iterations and has an initial value (loop initialization).\r\n\r\n<b>Loop
+        Testing: </b> Tests the value of the control variable to decide if iteration
+        is necessary.\r\n\r\n<b>Loop Control: </b> Changes the control variable to
+        avoid infinite loops.\r\n \r\n\r\n<b><size=30><color=#E97132>The while Loop:
+        </color></size></b>\r\nThe while loop continues to execute as long as a controlling
+        Boolean expression is true.\r\n \r\n<b><size=30><color=#FF0000>Syntax: </color></size></b>\r\nwhile
+        (condition) {\r\n    statement(s); // executes repeatedly while the condition
+        is true\r\n}                                     \t\r\n \r\n \r\n<b><size=30><color=#FF0000>Example:
+        </color></size></b>\r\npublic class WhileLoopExample {\r\n    public static
+        void main(String[] args) {\r\n        int count = 1; // loop initialization\r\n       
+        while (count <= 5) { // loop testing\r\n            System.out.println(\"Count
+        is: \" + count);\r\n            count++; // loop control\r\n        }\r\n   
+        }\r\n}\r\nThis example demonstrates a simple while loop that prints the count
+        from 1 to 5.\r\n \r\n<b><size=30><color=#E97132>The do-while Loop</color></size></b>\r\nThe
+        do-while loop ensures that the loop executes at least once, regardless of
+        the condition.\r\n \r\n<b><size=30><color=#FF0000>Syntax: </color></size></b>\r\ndo
+        {\r\n    statement(s);\r\n} while (condition);\r\n<b>do: </b> Begins the
+        loop.\r\n<b>statement(s): </b> The body of the loop, executed at least once.\r\n<b>while
+        (condition): </b> The condition checked after the loop body is executed.
+        If true, the loop repeats.\r\n \r\n<b><size=30><color=#FF0000>Example: </color></size></b>\r\npublic
+        class DoWhileExample {\r\n    public static void main(String[] args) {\r\n       
+        int count = 1; // loop initialization\r\n        do {\r\n            System.out.println(\"Count
+        is: \" + count);\r\n            count++; // loop control\r\n        } while
+        (count <= 5); // loop testing\r\n    }\r\n}\r\nThis example demonstrates
+        a do-while loop that prints the count from 1 to 5. The loop body is executed
+        at least once, even if the condition is initially false.\r\n \r\n<b><size=30><color=#E97132>The
+        for Loop</color></size></b>\r\nThe for loop is a versatile looping construct
+        that incorporates loop initialization, condition testing, and control within
+        a single line.\r\n \r\n \r\n \r\n<b><size=30><color=#FF0000>Syntax: </color></size></b>\r\njava\r\nCopy
+        code\r\nfor (initialization; condition; control) {\r\n    statement(s);\r\n}\r\n<b>Initialization:
+        </b> Assigns an initial value to the loop control variable. Executes only
+        once at the beginning of the loop.\r\n<b>Condition: </b> Determines whether
+        the loop continues executing based on a Boolean expression.\r\n<b>Control:
+        </b> Changes the value of the loop control variable after each iteration.\r\n
+        \r\n \r\n \r\n \r\n \r\n<b><size=30><color=#FF0000>Examples of for Loop Usage:
+        </color></size></b>\r\n<b><size=30><color=#E97132>Basic Usage: </color></size></b>\r\n
+        \r\nfor (int i = 1; i <= 5; i++) {\r\n    System.out.println(\"Count is:
+        \" + i);\r\n}\r\n \r\n <b><size=30><color=#E97132>Initializing Multiple Variables:
+        </color></size></b>\r\n \r\nfor (int n = 1, prod = 1; n <= 3; n++) {\r\n   
+        prod *= n;\r\n    System.out.println(\"Product is: \" + prod);\r\n}\r\n \r\n
+        \r\n \r\n <b><size=30><color=#E97132>Performing Different Operations:\r\n</color></size></b>\r\nfor
+        (int n = 1, prod = 1; n <= 3; prod *= n, n++) {\r\n    System.out.println(\"Product
+        is: \" + prod);\r\n}\r\n \r\n<b><size=30><color=#E97132>Leaving Sections
+        Empty: </color></size></b>\r\n \r\nint n = 1, prod = 2;\r\nfor (; n <= 3;
+        prod *= n, n++) {\r\n    System.out.println(\"Product is: \" + prod);\r\n}\r\n
+        \r\nIn these examples:\r\nThe first loop prints numbers from 1 to 5.\r\nThe
+        second loop calculates the product of numbers from 1 to 3.\r\nThe third loop
+        demonstrates performing different operations (multiplication in this case)
+        within the loop.\r\nThe fourth loop omits initialization but still uses the
+        condition and control parts effectively.\r\n \r\n<b><size=30><color=#E97132>Branching
+        Statements in Java</color></size></b>\r\nJava provides several branching
+        statements (break, continue, and return) that alter the flow of control within
+        a program.\r\n \r\n\r\n<b><size=30><color=#E97132>Break Statement</color></size></b>\r\nThe
+        break statement is used to exit a loop (while, do-while, for) or terminate
+        a switch statement prematurely.\r\n \r\n\r\n<b><size=30><color=#E97132>Types
+        of break Statements</color></size></b>\r\n \r\n<b><size=30><color=#E97132>Unlabeled
+        Break: </color></size></b>\r\nUsed to terminate the innermost loop or switch
+        statement without executing any subsequent statements.\r\n \r\n<b><size=30><color=#E97132>Labeled
+        Break: </color></size></b>\r\nUsed to terminate an outer loop or switch statement
+        when nested loops or switches are present.\r\n \r\n                 \t\r\n
+        \r\n<b><size=30><color=#FF0000>Syntax: </color></size></b>\r\n \r\n<b><size=30><color=#E97132>Unlabeled
+        Break: </color></size></b>\r\nwhile (condition) {\r\n    if (conditionToBreak)
+        {\r\n        break; // exits the loop\r\n    }\r\n    // other statements\r\n}\r\ndo
+        {\r\n    // statements\r\n    if (conditionToBreak) {\r\n        break; //
+        exits the do-while loop\r\n    }\r\n    // other statements\r\n} while (condition);\r\n
+        \r\nfor (int i = 0; i < limit; i++) {\r\n    // statements\r\n    if (conditionToBreak)
+        {\r\n        break; // exits the for loop\r\n    }\r\n    // other statements\r\n}\r\nswitch
+        (expression) {\r\n    case value1:\r\n        // statements\r\n        break;
+        // exits the switch statement\r\n    case value2:\r\n        // statements\r\n       
+        break; // exits the switch statement\r\n    default:\r\n        // statements\r\n}\r\n
+        \r\n \r\n \r\n \r\n<b><size=30><color=#E97132>Labeled Break: </color></size></b>\r\nouterLoop:
+        for (int i = 0; i < 5; i++) {\r\n    innerLoop: for (int j = 0; j < 3; j++)
+        {\r\n        if (conditionToBreak) {\r\n            break outerLoop; // exits
+        the outer loop\r\n        }\r\n        // other statements\r\n    }\r\n \r\n<b><size=30><color=#E97132>Return
+        Statement in Java</color></size></b>\r\nThe return statement is used in Java
+        to exit from a method and optionally return a value to the caller. It is
+        a reserved keyword and cannot be used as a variable name.\r\n \r\n\r\n\r\n<b><size=30><color=#E97132>Forms
+        of Return Statements</color></size></b>\r\n\r\n<b><size=30><color=#E97132>Returning
+        a Value: </color></size></b>\r\nUsed when a method computes a result and
+        returns it to the caller.\r\n\r\n<b><size=30><color=#E97132>Returning Without
+        a Value</color></size></b>\r\nUsed in methods that do not return any value
+        (void methods).\r\n \r\n<b><size=30><color=#FF0000>Syntax: </color></size></b>\r\n\r\n<b><size=30><color=#E97132>Returning
+        a Value: </color></size></b>\r\n<b>return expression;</b>\r\n \r\n<b><size=30><color=#E97132>Returning
+        Without a Value: </color></size></b>\r\n<b>return;</b>\r\n</size>\r\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
 --- !u!1 &1410692634
 GameObject:
   m_ObjectHideFlags: 0
@@ -17820,3 +18193,5 @@ SceneRoots:
   - {fileID: 1568008776}
   - {fileID: 1778963351}
   - {fileID: 919584517}
+  - {fileID: 1132560361}
+  - {fileID: 1406925495}
