@@ -13,6 +13,9 @@ public class RiddleUI : MonoBehaviour
     public CollectionUI collectionUI;         // Reference to CollectionUI to mark items as collected
     public string itemToCollect;              // The name of the item to collect upon solving the riddle
 
+    public TMP_Text passwordText;             // TextMeshPro reference for displaying the password
+    public string nextTaskPassword;           // The password for the next task (set in Inspector)
+
     // Method to check if the answer is correct
     public void CheckAnswer()
     {
@@ -28,6 +31,9 @@ public class RiddleUI : MonoBehaviour
 
             // Mark the corresponding item as collected in CollectionUI
             collectionUI.OnItemCollected(itemToCollect);  // Call the method to mark item as collected
+
+            // Set the password for the next task on the Clue Screen
+            passwordText.text = nextTaskPassword;  // Display the password on the Clue Screen
         }
         else
         {
