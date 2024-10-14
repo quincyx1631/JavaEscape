@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4734638982977805681}
   - component: {fileID: 7044185708831584881}
   - component: {fileID: 9012059509591371494}
+  - component: {fileID: 8778590244903111356}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -155,6 +156,18 @@ MonoBehaviour:
   pickupImage: {fileID: 5359371793867642969}
   inspectImage: {fileID: 8578455853292314207}
   EscapeImage: {fileID: 3209569373135808258}
+--- !u!114 &8778590244903111356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15556627155219091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7d7b4a9379da24ca28fe21f62baf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &81709948654436519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2053,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd550e5ea809204b873e93cc9622b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasVideoIntro: 0
+  videoPlayer: {fileID: 0}
+  videoPanel: {fileID: 0}
   blackScreen: {fileID: 7635637189590064055}
   introTexts:
   - {fileID: 3329012219988430992}
@@ -5698,6 +5714,7 @@ MonoBehaviour:
       do great. Good luck! I\u2019ll see you in the next room.\r\n"
     voiceOverName: Voice Sample
   fadeInIntro: {fileID: 3486072758006884548}
+  tv: {fileID: 0}
 --- !u!82 &5962832606111120059
 AudioSource:
   m_ObjectHideFlags: 0
