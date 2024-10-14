@@ -88,7 +88,7 @@ public class LevelSelector : MonoBehaviour
             float actualProgress = Mathf.Clamp01(operation.progress / 0.9f);
 
             // Move fakeProgress gradually towards actualProgress
-            fakeProgress = Mathf.MoveTowards(fakeProgress, actualProgress, Time.deltaTime / 3f);  // Adjust speed by changing divisor (higher is slower)
+            fakeProgress = Mathf.MoveTowards(fakeProgress, actualProgress, Time.deltaTime / 7f);  // Adjust speed by changing divisor (higher is slower)
 
             // Update the progress bar with the fake progress
             progressBar.value = fakeProgress;
@@ -97,7 +97,7 @@ public class LevelSelector : MonoBehaviour
             timer += Time.deltaTime;
 
             // If the scene is fully loaded (operation.progress == 0.9f) and 3 seconds have passed, allow the scene to activate
-            if (operation.progress >= 0.9f && timer >= 3f)
+            if (operation.progress >= 0.9f && timer >= 7f)
             {
                 // Activate the scene after the delay
                 operation.allowSceneActivation = true;
