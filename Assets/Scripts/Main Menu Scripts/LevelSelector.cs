@@ -20,11 +20,20 @@ public class LevelSelector : MonoBehaviour
     public float messageDisplayDuration = 3f; // Duration for the floating message
 
     [Header("Loading Screen")]
-    public GameObject loadingScreen;
+    public GameObject loadingScreen; // This GameObject has the Image component
     public Slider progressBar;
+    public Sprite[] levelLoadingImages; // Array of sprites for level-specific loading screens
+    private Image loadingScreenImage; // Reference to the Image component on the loading screen
 
     private void Start()
     {
+        // Get the Image component from the loadingScreen GameObject
+        loadingScreenImage = loadingScreen.GetComponent<Image>();
+        if (loadingScreenImage == null)
+        {
+            Debug.LogError("No Image component found on loadingScreen GameObject!");
+        }
+
         // Subscribe to the profile data updated event
         UserProfile.OnProfileDataUpdated.AddListener(UpdateLevelSelection);
 
@@ -61,13 +70,23 @@ public class LevelSelector : MonoBehaviour
     public void OnLevelButtonClick(int levelIndex)
     {
         string levelName = "Level " + levelIndex;
-        StartCoroutine(LoadLevelAsync(levelName));
+        StartCoroutine(LoadLevelAsync(levelName, levelIndex - 1)); // Subtract 1 because array indices start at 0
     }
 
-    IEnumerator LoadLevelAsync(string levelName)
+    IEnumerator LoadLevelAsync(string levelName, int levelIndex)
     {
         // Activate the loading screen
         loadingScreen.SetActive(true);
+
+        // Set the loading screen image based on the level
+        if (loadingScreenImage != null && levelIndex >= 0 && levelIndex < levelLoadingImages.Length)
+        {
+            loadingScreenImage.sprite = levelLoadingImages[levelIndex];
+        }
+        else
+        {
+            Debug.LogWarning("No loading image available for level " + (levelIndex + 1));
+        }
 
         // Set the slider's value to 0 at the start
         progressBar.value = 0f;
@@ -109,8 +128,6 @@ public class LevelSelector : MonoBehaviour
         // Once loading is complete, deactivate the loading screen
         loadingScreen.SetActive(false);
     }
-
-
 
     public void BackMainMenu()
     {
