@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 
 public class LevelThreeGenerator : MonoBehaviour
@@ -8,6 +9,7 @@ public class LevelThreeGenerator : MonoBehaviour
     public LaptopTwoUI laptopTwoUI; // Reference to the LaptopTwoUI script
     public RiddleUI riddleUI; // Reference to the RiddleUI script
     public KeypadNumbers keypad; // Reference to the KeypadNumbers script
+    public TextMeshProUGUI riddleTextMesh; // Reference to the TextMeshPro component for the riddle
 
     private LevelSet selectedSet;
 
@@ -19,6 +21,7 @@ public class LevelThreeGenerator : MonoBehaviour
         public string riddleAnswer; // Correct answer for the riddle
         public string nextTaskPassword; // Password for the next task
         public string keypadPassword; // Password for the keypad
+        [TextArea] public string riddleText; // Text of the riddle to be displayed
     }
 
     private void Start()
@@ -47,16 +50,27 @@ public class LevelThreeGenerator : MonoBehaviour
             Debug.LogError("LaptopTwoUI is not assigned in LevelThreeGenerator.");
         }
 
-        // Set the correct answer for the RiddleUI
+        // Set the correct answer for the RiddleUI and next task password
         if (riddleUI != null)
         {
             riddleUI.correctAnswer = selectedSet.riddleAnswer;
-            riddleUI.nextTaskPassword = selectedSet.nextTaskPassword; // Set the password for the next task
+            riddleUI.nextTaskPassword = selectedSet.nextTaskPassword;
             Debug.Log("Correct Answer for RiddleUI Set");
         }
         else
         {
             Debug.LogError("RiddleUI is not assigned in LevelThreeGenerator.");
+        }
+
+        // Set the riddle text for the TextMeshPro component
+        if (riddleTextMesh != null)
+        {
+            riddleTextMesh.text = selectedSet.riddleText;
+            Debug.Log("Riddle Text Set");
+        }
+        else
+        {
+            Debug.LogError("Riddle TextMeshPro component is not assigned.");
         }
 
         // Set the password for the Keypad
@@ -71,7 +85,7 @@ public class LevelThreeGenerator : MonoBehaviour
         }
 
         // Introduce a slight delay before disabling unnecessary quiz papers
-        yield return new WaitForSeconds(0.5f); // Half a second delay
+        yield return new WaitForSeconds(0.5f);
 
         // Disable quiz papers that are not part of the selected set
         foreach (var set in levelSets)

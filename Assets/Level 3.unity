@@ -6674,12 +6674,14 @@ MonoBehaviour:
     - 3
     - 4
     - 5
-    riddleAnswer: Angelica
+    riddleAnswer: if-else statement
     nextTaskPassword: 252525
     keypadPassword: 252525
+    riddleText: Meow meow meow meow, meow meow meow meoew meow
   laptopTwoUI: {fileID: 1952823001}
   riddleUI: {fileID: 1182988102}
   keypad: {fileID: 705286770}
+  riddleTextMesh: {fileID: 1576879450}
 --- !u!4 &919584517
 Transform:
   m_ObjectHideFlags: 0
@@ -14317,6 +14319,17 @@ MonoBehaviour:
   collectOnInteract: 0
   collectOnPickUp: 0
   collectOnInspect: 1
+--- !u!114 &1576879450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 155385563919181024, guid: b2ed0d220d7c4b2429c254eeddaa4164, type: 3}
+  m_PrefabInstance: {fileID: 715036613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1617179122
 MeshCollider:
   m_ObjectHideFlags: 0
