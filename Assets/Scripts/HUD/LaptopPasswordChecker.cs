@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Video; // For playing video on the TV
+using UnityEngine.Video;
 
 public class LaptopPasswordChecker : MonoBehaviour
 {
@@ -18,6 +18,7 @@ public class LaptopPasswordChecker : MonoBehaviour
 
     [Header("Video Settings")]
     public VideoPlayer tvVideoPlayer; // The VideoPlayer component attached to the TV
+    public AudioSource tvAudioSource;  // The AudioSource to control the video's audio output
 
     [Header("Alert Settings")]
     public AlertUI alertScript; // Reference to the AlertScript to show messages
@@ -25,6 +26,9 @@ public class LaptopPasswordChecker : MonoBehaviour
     [Header("Laptop Settings")]
     public GameObject laptopCanvas; // The canvas that contains the laptop UI elements
     public GameObject laptopObject; // The laptop object itself (to change its tag)
+
+    [Header("Audio Fade Settings")]
+    public VideoAudioFader tvAudioFader; // Reference to the TVAudioFader script for fading the audio
 
     public void CheckPassword()
     {
@@ -50,6 +54,9 @@ public class LaptopPasswordChecker : MonoBehaviour
             if (tvVideoPlayer != null)
             {
                 tvVideoPlayer.Play(); // Start playing the video on the TV
+
+                // Start fading the audio using the new script
+                tvAudioFader.StartFading();
             }
 
             // Disable the laptop's canvas
