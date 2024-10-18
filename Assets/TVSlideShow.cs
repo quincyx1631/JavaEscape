@@ -102,4 +102,9 @@ public class TVSlideShow : MonoBehaviour
             }
         }
     }
+    public Sprite GetCurrentSlide()
+    {
+        return slides[currentSlideIndex];
+    }
+
 }

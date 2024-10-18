@@ -17,6 +17,7 @@ public class CameraSwitch : MonoBehaviour
     [Header("Item Requirement Settings")]
     public bool needItem = false;           // Flag to indicate if item is required to interact
     public CollectibleItem requiredItem;    // Reference to the required item
+    public Transform itemPlaceholder;       // Optional ItemPlaceholder for placing the item
     public AlertUI alertUI;                 // Reference to your existing AlertUI system for showing alerts
 
     private bool isSecondaryCameraActive = false; // Track if the secondary camera view is active
@@ -41,6 +42,12 @@ public class CameraSwitch : MonoBehaviour
             return; // Prevent switching cameras
         }
 
+        // If the item has been collected, check for the placeholder
+        if (requiredItem != null && requiredItem.IsCollected && itemPlaceholder != null)
+        {
+            PlaceItemInPlaceholder();
+        }
+
         // Switch between main and secondary cameras
         if (!isSecondaryCameraActive)
         {
@@ -51,6 +58,33 @@ public class CameraSwitch : MonoBehaviour
             SwitchToMainCamera();
         }
     }
+
+    // Method to place the collected item into the item placeholder
+    private void PlaceItemInPlaceholder()
+    {
+        if (requiredItem != null && itemPlaceholder != null)
+        {
+            requiredItem.transform.SetParent(itemPlaceholder);      // Set the ItemPlaceholder as the parent
+            requiredItem.transform.localPosition = Vector3.zero;    // Position it correctly in the placeholder
+            requiredItem.transform.localRotation = Quaternion.identity; // Reset rotation
+
+            // Make the item static by disabling its Rigidbody physics
+            Rigidbody itemRigidbody = requiredItem.GetComponent<Rigidbody>();
+            if (itemRigidbody != null)
+            {
+                itemRigidbody.isKinematic = true; // Disable physics so the item doesn't fall
+            }
+
+            requiredItem.gameObject.SetActive(true); // Make the item visible in the placeholder
+
+            // Change the tag of the item to "Untagged"
+            requiredItem.tag = "Untagged";
+
+            Debug.Log("Item placed in the placeholder, made static, and tag set to 'Untagged'.");
+        }
+    }
+
+
 
     public void SwitchToSecondaryCamera()
     {
