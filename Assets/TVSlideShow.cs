@@ -1,25 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro; // Add this for TextMeshPro
 
 public class TVSlideShow : MonoBehaviour
 {
-    public Image displayImage;     // Reference to the UI Image component on the canvas
-    public Sprite[] slides;        // Array of images to display
-    public Transform itemHolder;   // Reference to the player's item holder (where they hold objects)
-    public GameObject remote;      // The remote object that the player needs to turn on the TV
+    public Image displayImage;         // Reference to the UI Image component on the canvas
+    public Sprite[] slides;            // Array of images to display
+    public Transform itemHolder;       // Reference to the player's item holder (where they hold objects)
+    public GameObject remote;          // The remote object that the player needs to turn on the TV
 
+    public KeypadNumbers keypadNumbers;
     private int currentRandomIndex = 0;  // Track the index of the current random slide
     private bool isTVOn = false;         // Track if the TV is on
     private Coroutine fadeCoroutine;     // Reference to handle fade coroutine
     private int[] randomIndices;         // Array to store the randomized slide order
     private bool[] hasShown;             // Track if a slide has been shown
     public AlertUI alertUI;
+    public GameObject passwordClueDisplay; // Reference to the UI GameObject for the password clue
+    public TextMeshProUGUI passwordText; // Reference to the TextMeshPro component for the password
 
     private void Start()
     {
         SetImageAlpha(0f);               // Start with TV off (invisible)
         InitializeRandomOrder();          // Set up the randomized order of slides
+        passwordClueDisplay.SetActive(false); // Ensure the password clue is hidden at start
     }
 
     // Method to initialize the random slide order
@@ -83,10 +88,11 @@ public class TVSlideShow : MonoBehaviour
         // Move to the next random index
         currentRandomIndex++;
 
-        // If we've shown all slides, reshuffle and reset
+        // If we've shown all slides, just reshuffle without showing the password clue
         if (currentRandomIndex >= randomIndices.Length)
         {
             InitializeRandomOrder(); // Reshuffle the slides when all are shown
+            return; // Exit the function without showing the password clue
         }
 
         // Find the next slide to show that hasn't been shown yet
@@ -96,10 +102,33 @@ public class TVSlideShow : MonoBehaviour
             if (currentRandomIndex >= randomIndices.Length)
             {
                 InitializeRandomOrder(); // Reshuffle if all slides have been shown
+                return; // Exit the function without showing the password clue
             }
         }
 
         UpdateSlideImage();
+    }
+
+    public void ShowPasswordClue()
+    {
+        passwordClueDisplay.SetActive(true); // Show the password clue UI
+        GenerateRandomPassword(); // Generate and display the random password
+        Debug.Log("All slides matched! Password clue displayed.");
+
+        if (keypadNumbers != null)
+        {
+            keypadNumbers.SetKeypadPassword(passwordText.text); // Set the correct password for the keypad
+        }
+        else
+        {
+            Debug.LogError("KeypadNumbers reference is missing.");
+        }
+    }
+
+    private void GenerateRandomPassword()
+    {
+        int password = Random.Range(10000, 99999); // Generate a random 5-digit number
+        passwordText.text = password.ToString(); // Set the password text
     }
 
     // Display the current slide

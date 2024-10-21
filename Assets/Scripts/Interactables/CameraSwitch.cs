@@ -7,7 +7,7 @@ public class CameraSwitch : MonoBehaviour
     public Camera secondaryCamera;      // Reference to the secondary camera
     public GameObject[] uiToDisable;    // UI elements to disable when switching
     public GameObject[] uiToEnable;     // UI elements to enable when switching
-    public GameObject objectToHide;     // Object to hide when switching
+    public GameObject objectToHide;     // Object to hide when switching (e.g., Player)
     public LineDrawer lineDrawer;       // Optional reference to the LineDrawer component
 
     [Header("Escape UI Settings")]
@@ -19,6 +19,8 @@ public class CameraSwitch : MonoBehaviour
     public CollectibleItem requiredItem;    // Reference to the required item
     public Transform itemPlaceholder;       // Optional ItemPlaceholder for placing the item
     public AlertUI alertUI;                 // Reference to your existing AlertUI system for showing alerts
+
+    public Transform itemHolder;            // Transform to hold items
 
     private bool isSecondaryCameraActive = false; // Track if the secondary camera view is active
 
@@ -84,8 +86,6 @@ public class CameraSwitch : MonoBehaviour
         }
     }
 
-
-
     public void SwitchToSecondaryCamera()
     {
         outline.enabled = false;
@@ -96,6 +96,9 @@ public class CameraSwitch : MonoBehaviour
         {
             objectToHide.SetActive(false);
         }
+
+        // Drop interactable items from the ItemHolder
+        DropInteractableItems();
 
         foreach (var uiElement in uiToDisable)
         {
@@ -129,6 +132,9 @@ public class CameraSwitch : MonoBehaviour
             objectToHide.SetActive(true);
         }
 
+        // Drop interactable items from the ItemHolder
+        DropInteractableItems();
+
         foreach (var uiElement in uiToDisable)
         {
             uiElement.SetActive(true);
@@ -148,6 +154,40 @@ public class CameraSwitch : MonoBehaviour
             escapeUIAnimator.SetBool("IsVisible", false); // Set "isVisible" to false to hide the UI
         }
     }
+
+    // Method to drop items with the tag "Interactables" from the ItemHolder
+    private void DropInteractableItems()
+    {
+        if (itemHolder == null)
+        {
+            return; // Exit if no ItemHolder reference
+        }
+
+        foreach (Transform item in itemHolder) // Iterate through all items in the ItemHolder
+        {
+            if (item.CompareTag("Interactables"))
+            {
+                // Drop the item
+                item.SetParent(null); // Remove the item from the ItemHolder
+                item.position = itemHolder.position + Vector3.down * 1f; // Drop it slightly below the ItemHolder position
+
+                // Enable the Rigidbody and Collider to make it fall
+                Rigidbody itemRigidbody = item.GetComponent<Rigidbody>();
+                if (itemRigidbody != null)
+                {
+                    itemRigidbody.isKinematic = false; // Make it fall
+                }
+
+                // Enable the Collider
+                Collider itemCollider = item.GetComponent<Collider>();
+                if (itemCollider != null)
+                {
+                    itemCollider.enabled = true; // Enable the collider
+                }
+            }
+        }
+    }
+
 
     void Update()
     {

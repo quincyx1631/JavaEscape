@@ -1,15 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // Add this for TextMeshPro
 
 public class LaptopSlideShow : MonoBehaviour
 {
     public Image displayImage;           // Reference to the UI Image component on the canvas
     public Sprite[] slides;              // Array of images to display
     public TVSlideShow tvSlideShow;      // Reference to the TV slideshow script
-    public AlertUI alertUI;
+    public AlertUI alertUI;              // Reference to the AlertUI system for showing alerts
 
-    private int currentSlideIndex = 0;
-    private bool[] matchedSlides;        // To track which slides have been matched
+    private int currentSlideIndex = 0;   // Index of the current slide
+    private bool[] matchedSlides;         // To track which slides have been matched
 
     private void Start()
     {
@@ -70,6 +71,12 @@ public class LaptopSlideShow : MonoBehaviour
 
                 // Apply a black and white effect (grayscale) to the matched slide
                 ApplyGrayscaleEffect();
+
+                // Check if all slides have been matched
+                if (AllSlidesMatched())
+                {
+                    tvSlideShow.ShowPasswordClue(); // Call to show the password clue from TVSlideShow
+                }
             }
             else
             {
@@ -100,5 +107,15 @@ public class LaptopSlideShow : MonoBehaviour
         {
             displayImage.color = Color.white;  // Keep the normal color for unmatched slides
         }
+    }
+
+    // Method to check if all slides have been matched
+    private bool AllSlidesMatched()
+    {
+        foreach (bool matched in matchedSlides)
+        {
+            if (!matched) return false; // If any slide is not matched, return false
+        }
+        return true; // All slides have been matched
     }
 }
