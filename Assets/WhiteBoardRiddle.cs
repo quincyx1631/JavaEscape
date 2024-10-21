@@ -1,13 +1,15 @@
 using UnityEngine;
 using TMPro; // Make sure you have TextMeshPro namespace
 
-public class RiddleManager : MonoBehaviour
+public class WhiteBoardRiddle : MonoBehaviour
 {
-    public string correctAnswer;             // The correct answer to the riddle
-    public TMP_InputField answerInputField; // Reference to the TMP input field
-    public TMP_Text correctAnswerText;       // Reference to the TMP text field for displaying the correct answer
-    public GameObject blackboard;             // Reference to the blackboard GameObject
+    public string correctAnswer;               // The correct answer to the riddle
+    public TMP_InputField answerInputField;    // Reference to the TMP input field
+    public TMP_Text correctAnswerText;         // Reference to the TMP text field for displaying the correct answer
+    public GameObject blackboard;              // Reference to the blackboard GameObject
     public AlertUI alertUI;
+    public GameObject boxLid;                  // Reference to the lid of the box
+
     // Method to check the player's answer
     public void CheckAnswer()
     {
@@ -19,7 +21,7 @@ public class RiddleManager : MonoBehaviour
             Debug.Log("Correct Answer!"); // Log for debugging
 
             // Display the player's answer in the TMP text field
-            correctAnswerText.text = playerAnswer; 
+            correctAnswerText.text = playerAnswer;
 
             // Untag the blackboard
             if (blackboard != null)
@@ -27,13 +29,20 @@ public class RiddleManager : MonoBehaviour
                 blackboard.tag = "Untagged"; // Change the tag of the blackboard
                 Debug.Log("Blackboard has been untagged."); // Log for debugging
             }
+
+            // Remove the box lid (deactivate the lid GameObject)
+            if (boxLid != null)
+            {
+                boxLid.SetActive(false); // Deactivate the box lid to simulate removing it
+                Debug.Log("Box lid has been removed."); // Log for debugging
+            }
         }
         else
         {
             alertUI.ShowAlert("Incorrect Answer. Try again!!");
             Debug.Log("Incorrect Answer. Try again!"); // Log for incorrect answer
         }
-        
+
         // Clear the input field after checking
         answerInputField.text = string.Empty;
     }
