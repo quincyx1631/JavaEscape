@@ -10,11 +10,19 @@ public class LaptopSlideShow : MonoBehaviour
     public AlertUI alertUI;              // Reference to the AlertUI system for showing alerts
 
     private int currentSlideIndex = 0;   // Index of the current slide
-    private bool[] matchedSlides;         // To track which slides have been matched
+    private bool[] matchedSlides;        // To track which slides have been matched
 
     private void Start()
     {
         matchedSlides = new bool[slides.Length];  // Initialize matched slide tracking
+        if (slides.Length > 0)
+        {
+            UpdateSlideImage();  // Show the first slide as soon as the laptop is opened
+        }
+        else
+        {
+            Debug.LogWarning("No slides available to display.");
+        }
     }
 
     // Show the next slide when pressing the "Next Slide" button
@@ -52,6 +60,14 @@ public class LaptopSlideShow : MonoBehaviour
     {
         if (tvSlideShow != null)
         {
+            // Check if the TV is on before matching slides
+            if (!tvSlideShow.IsTVOn()) // Use the IsTVOn method from the TVSlideShow script
+            {
+                alertUI.ShowAlert("Please turn on the TV first.");
+                Debug.Log("TV is not turned on.");
+                return;
+            }
+
             // Check if the current slide has already been matched
             if (matchedSlides[currentSlideIndex])
             {

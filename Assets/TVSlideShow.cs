@@ -111,6 +111,9 @@ public class TVSlideShow : MonoBehaviour
 
     public void ShowPasswordClue()
     {
+        CorrectUIController.Instance.ShowCorrectUI();
+        CollectionManager.Instance.MarkAsCollected(this.GetComponent<Interactables>());
+
         passwordClueDisplay.SetActive(true); // Show the password clue UI
         GenerateRandomPassword(); // Generate and display the random password
         Debug.Log("All slides matched! Password clue displayed.");
@@ -184,5 +187,11 @@ public class TVSlideShow : MonoBehaviour
     public Sprite GetCurrentSlide()
     {
         return slides[randomIndices[currentRandomIndex]];
+    }
+
+    // Add this method to check if the TV is turned on
+    public bool IsTVOn()
+    {
+        return isTVOn;
     }
 }
