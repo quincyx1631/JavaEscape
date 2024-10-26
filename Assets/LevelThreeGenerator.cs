@@ -39,7 +39,7 @@ public class LevelThreeGenerator : MonoBehaviour
         selectedSet = levelSets[randomIndex];
         Debug.Log($"Selected Level Set: {randomIndex}");
 
-        // Set the correct answers for the LaptopTwoUI
+        // Initialize LaptopTwoUI with correct answers
         if (laptopTwoUI != null)
         {
             laptopTwoUI.correctAnswers = selectedSet.correctAnswers;
@@ -50,7 +50,7 @@ public class LevelThreeGenerator : MonoBehaviour
             Debug.LogError("LaptopTwoUI is not assigned in LevelThreeGenerator.");
         }
 
-        // Set the correct answer for the RiddleUI and next task password
+        // Initialize RiddleUI with correct answer and next task password
         if (riddleUI != null)
         {
             riddleUI.correctAnswer = selectedSet.riddleAnswer;
@@ -87,7 +87,7 @@ public class LevelThreeGenerator : MonoBehaviour
         // Introduce a slight delay before disabling unnecessary quiz papers
         yield return new WaitForSeconds(0.5f);
 
-        // Disable quiz papers that are not part of the selected set
+        // Disable all quiz papers that are not part of the selected set
         foreach (var set in levelSets)
         {
             if (set != selectedSet)
