@@ -137,8 +137,6 @@ public class FinishUI : MonoBehaviour
 
     public void LoadMainMenuNext()
     {
-        InputManager.Instance.UnblockInput();
-
         // Get all root objects in DontDestroyOnLoad
         GameObject[] rootObjects = GameObject.FindObjectsOfType<GameObject>(true)
             .Where(go => go.scene.buildIndex == -1 && go.transform.parent == null)
