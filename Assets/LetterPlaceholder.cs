@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class LetterPlaceholder : MonoBehaviour
 {
     public Transform placeholder; // Position where the cube should land
@@ -7,18 +7,24 @@ public class LetterPlaceholder : MonoBehaviour
     private GameObject placedItem; // To keep track of the placed item
     private bool isOccupied; // To track if the placeholder is currently occupied
     private string originalTag; // To store the original tag of the item
-    private Renderer placeholderRenderer; // Renderer for changing the color
-    public Color correctColor = Color.green; // Color for correct letter
-    public Color incorrectColor = Color.red; // Color for incorrect letter
-    private Color originalColor; // Original color of the placeholder
+    public Light placeholderLight; // Public Light for changing the color
+    public Color correctColor = Color.green; // Light color for correct letter
+    public Color incorrectColor = Color.red; // Light color for incorrect letter
+    private Color originalLightColor; // Original color of the light
 
     [SerializeField] private char letter; // The letter that this placeholder accepts
 
     private void Awake()
     {
-        // Get the Renderer component and store the original color
-        placeholderRenderer = GetComponent<Renderer>();
-        originalColor = placeholderRenderer.material.color; // Store the original color
+        if (placeholderLight != null)
+        {
+            originalLightColor = placeholderLight.color; // Store the original color of the light
+            placeholderLight.gameObject.SetActive(false); // Ensure the light is disabled at the start
+        }
+        else
+        {
+            Debug.LogWarning("No Light component assigned to this placeholder.");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,7 +48,7 @@ public class LetterPlaceholder : MonoBehaviour
                 placedItem = null; // Reset the placed item reference
             }
             isOccupied = false; // Mark as not occupied
-            ResetColor(); // Reset color when the item is removed
+            ResetLightColor(); // Reset light color when the item is removed
         }
     }
 
@@ -116,11 +122,11 @@ public class LetterPlaceholder : MonoBehaviour
                 // Check if the letter matches
                 if (letterBoxScript.letter == letter) // Compare with the letter in this placeholder
                 {
-                    placeholderRenderer.material.color = correctColor; // Change to green
+                    StartCoroutine(DelayedLightChange(correctColor)); // Change light to green after delay
                 }
                 else
                 {
-                    placeholderRenderer.material.color = incorrectColor; // Change to red
+                    StartCoroutine(DelayedLightChange(incorrectColor)); // Change light to red after delay
                 }
 
                 // Keep track of the placed item
@@ -138,6 +144,13 @@ public class LetterPlaceholder : MonoBehaviour
         {
             Debug.Log("No item to place.");
         }
+    }
+
+    // Coroutine to delay the light change by 0.3 seconds
+    private IEnumerator DelayedLightChange(Color color)
+    {
+        yield return new WaitForSeconds(0.3f); // Wait for 0.3 seconds before changing the light
+        ChangeLightColor(color);
     }
 
     // Remove the item from the placeholder and return it to the player's item holder
@@ -162,7 +175,7 @@ public class LetterPlaceholder : MonoBehaviour
 
             placedItem = null; // Clear the placed item reference
             isOccupied = false; // Mark as not occupied
-            ResetColor(); // Reset color when the item is removed
+            ResetLightColor(); // Reset light color when the item is removed
 
             Debug.Log("Item removed from placeholder and returned to ItemHolder.");
         }
@@ -172,10 +185,21 @@ public class LetterPlaceholder : MonoBehaviour
         }
     }
 
-    private void ResetColor()
+    private void ChangeLightColor(Color color)
     {
-        // Reset the color to the original when no item is placed
-        placeholderRenderer.material.color = originalColor;
+        if (placeholderLight != null)
+        {
+            placeholderLight.gameObject.SetActive(true); // Enable the light
+            placeholderLight.color = color; // Change the light color
+        }
+    }
+
+    private void ResetLightColor()
+    {
+        if (placeholderLight != null)
+        {
+            placeholderLight.gameObject.SetActive(false); // Disable the light when reset
+        }
     }
 
     // Update is called once per frame
@@ -186,7 +210,7 @@ public class LetterPlaceholder : MonoBehaviour
         {
             placedItem = null; // Allow placing a new item if the old one is gone
             isOccupied = false; // Also mark as not occupied since the item is gone
-            ResetColor(); // Reset color when the item is removed
+            ResetLightColor(); // Reset light color when the item is removed
             Debug.Log("Item removed from placeholder. Ready to place a new item.");
         }
     }
@@ -196,7 +220,6 @@ public class LetterPlaceholder : MonoBehaviour
     {
         letter = newLetter;
     }
-    // Inside LetterPlaceholder class
 
     // Public method to check if the placed letter is correct
     public bool HasCorrectLetter()
@@ -217,9 +240,9 @@ public class LetterPlaceholder : MonoBehaviour
     {
         tag = "Untagged"; // Set the placeholder to untagged
     }
+
     public GameObject GetPlacedItem()
     {
         return placedItem; // Return the currently placed LetterBox
     }
-
 }

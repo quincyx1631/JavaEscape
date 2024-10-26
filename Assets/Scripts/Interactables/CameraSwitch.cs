@@ -89,8 +89,14 @@ public class CameraSwitch : MonoBehaviour
     public void SwitchToSecondaryCamera()
     {
         outline.enabled = false;
+
+        // Enable secondary camera and disable main camera
         secondaryCamera.enabled = true;
         mainCamera.enabled = false;
+
+        // Enable audio listener on secondary camera and disable on main camera
+        secondaryCamera.GetComponent<AudioListener>().enabled = true;
+        mainCamera.GetComponent<AudioListener>().enabled = false;
 
         if (objectToHide != null)
         {
@@ -124,8 +130,14 @@ public class CameraSwitch : MonoBehaviour
     public void SwitchToMainCamera()
     {
         outline.enabled = true;
-        secondaryCamera.enabled = false;
+
+        // Enable main camera and disable secondary camera
         mainCamera.enabled = true;
+        secondaryCamera.enabled = false;
+
+        // Enable audio listener on main camera and disable on secondary camera
+        mainCamera.GetComponent<AudioListener>().enabled = true;
+        secondaryCamera.GetComponent<AudioListener>().enabled = false;
 
         if (objectToHide != null)
         {
@@ -187,7 +199,6 @@ public class CameraSwitch : MonoBehaviour
             }
         }
     }
-
 
     void Update()
     {
