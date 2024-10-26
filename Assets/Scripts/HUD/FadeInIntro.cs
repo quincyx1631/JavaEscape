@@ -6,22 +6,26 @@ using System.Collections;
 
 public class FadeInIntro : MonoBehaviour
 {
-    public bool hasVideoIntro = false; // Toggle for whether a video intro is present
-    public VideoPlayer videoPlayer; // Video player for the intro video
-    public GameObject videoPanel; // Panel or UI object holding the video
-    public Image blackScreen; // Image component for the black screen
-    public TMP_Text[] introTexts; // Array of texts for the intro screen
-    public Dialogue dialogueSystem; // Reference to the Dialogue script
-    public string introAudioName; // Name of the audio clip to play during the intro
-    public string outroAudioName; // Name of the audio clip to fade out after the texts
+    public bool hasVideoIntro = false;
+    public VideoPlayer videoPlayer;
+    public GameObject videoPanel;
+    public Image blackScreen;
+    public TMP_Text[] introTexts;
+    public Dialogue dialogueSystem;
+    public string introAudioName;
+    public string outroAudioName;
 
-    public float fadeDuration = 2.0f; // Duration of the fade effect
-    public float textVisibleDuration = 1.5f; // Duration for which the texts remain fully visible
-    public float textFadeDuration = 1.5f; // Duration for fade-out of the texts
-    public float audioFadeDuration = 1.5f; // Duration for fading out the audio
+    public float fadeDuration = 2.0f;
+    public float textVisibleDuration = 1.5f;
+    public float textFadeDuration = 1.5f;
+    public float audioFadeDuration = 1.5f;
 
-    // UI elements to hide and show
-    public GameObject[] uiElementsToHide; // Array of UI elements to hide during the intro
+    // New video-related variables
+    public float videoFadeInDuration = 1.0f;
+    public float videoFadeOutDuration = 1.0f;
+    public Image videoFadeOverlay; // Optional overlay for smooth video transitions
+
+    public GameObject[] uiElementsToHide;
 
     private void Start()
     {
@@ -30,12 +34,10 @@ public class FadeInIntro : MonoBehaviour
 
     private IEnumerator DelayedStart()
     {
-        // Ensure a frame delay to allow for proper UI initialization
-        yield return null; // Wait one frame
+        yield return null;
 
         Debug.Log("Starting FadeInIntro, hiding UI elements.");
 
-        // Hide specified UI elements
         foreach (GameObject uiElement in uiElementsToHide)
         {
             if (uiElement != null)
@@ -51,32 +53,84 @@ public class FadeInIntro : MonoBehaviour
 
         PlayerControlManager.Instance.DisablePlayerControls();
 
-        // Check if there's a video intro to play
         if (hasVideoIntro && videoPlayer != null)
         {
             StartCoroutine(PlayVideoIntro());
         }
         else
         {
-            // If no video, start fade-in sequence directly
             StartCoroutine(FadeInSequence());
         }
     }
 
     private IEnumerator PlayVideoIntro()
     {
-        videoPanel.SetActive(true); // Show the video panel (if it's a UI object)
+        // Prepare video and overlay
+        videoPanel.SetActive(true);
+        if (videoFadeOverlay != null)
+        {
+            videoFadeOverlay.gameObject.SetActive(true);
+            videoFadeOverlay.color = new Color(0, 0, 0, 1);
+        }
 
-        // Wait for the video to complete playing
-        videoPlayer.Play();
-        while (videoPlayer.isPlaying)
+        // Prepare the video
+        videoPlayer.Prepare();
+        while (!videoPlayer.isPrepared)
         {
             yield return null;
         }
 
-        videoPanel.SetActive(false); // Hide the video panel after it finishes
+        // Start playing the video
+        videoPlayer.Play();
 
-        // Proceed to fade-in sequence after the video
+        // Fade in the video
+        float elapsedTime = 0f;
+        while (elapsedTime < videoFadeInDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = 1 - (elapsedTime / videoFadeInDuration);
+
+            if (videoFadeOverlay != null)
+            {
+                videoFadeOverlay.color = new Color(0, 0, 0, alpha);
+            }
+            yield return null;
+        }
+
+        // Wait for video to complete
+        while (videoPlayer.isPlaying)
+        {
+            // Check if we're near the end of the video
+            if (videoPlayer.frame > 0 && videoPlayer.frame >= (long)(videoPlayer.frameCount - 30)) // 30 frames before end
+            {
+                break; // Exit early to prevent any visual hiccup
+            }
+            yield return null;
+        }
+
+        // Fade out the video
+        elapsedTime = 0f;
+        while (elapsedTime < videoFadeOutDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = elapsedTime / videoFadeOutDuration;
+
+            if (videoFadeOverlay != null)
+            {
+                videoFadeOverlay.color = new Color(0, 0, 0, alpha);
+            }
+            yield return null;
+        }
+
+        // Clean up
+        videoPlayer.Stop();
+        videoPanel.SetActive(false);
+        if (videoFadeOverlay != null)
+        {
+            videoFadeOverlay.gameObject.SetActive(false);
+        }
+
+        // Proceed with the regular fade sequence
         StartCoroutine(FadeInSequence());
     }
 
