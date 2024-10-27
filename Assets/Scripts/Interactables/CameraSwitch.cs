@@ -22,6 +22,9 @@ public class CameraSwitch : MonoBehaviour
 
     public Transform itemHolder;            // Transform to hold items
 
+    [Header("Event Camera Settings")]
+    public bool useEventCamera = true;     // Checkbox to enable or disable event camera switching
+
     private bool isSecondaryCameraActive = false; // Track if the secondary camera view is active
 
     void Start()
@@ -119,6 +122,12 @@ public class CameraSwitch : MonoBehaviour
         MouseManager.Instance.EnableMouse();
         isSecondaryCameraActive = true;
 
+        // Set the event camera for all canvases in the scene if the option is enabled
+        if (useEventCamera)
+        {
+            SetEventCamera(secondaryCamera);
+        }
+
         // Enable the escape UI and set the "isVisible" boolean to true
         if (escapeUI != null && escapeUIAnimator != null)
         {
@@ -160,10 +169,31 @@ public class CameraSwitch : MonoBehaviour
         MouseManager.Instance.DisableMouse();
         isSecondaryCameraActive = false;
 
+        // Set the event camera for all canvases in the scene if the option is enabled
+        if (useEventCamera)
+        {
+            SetEventCamera(mainCamera);
+        }
+
         // Set the "isVisible" boolean to false to hide the escape UI
         if (escapeUI != null && escapeUIAnimator != null)
         {
             escapeUIAnimator.SetBool("IsVisible", false); // Set "isVisible" to false to hide the UI
+        }
+    }
+
+    // Method to set the event camera for all canvases in the scene
+    private void SetEventCamera(Camera camera)
+    {
+        // Find all canvases in the scene
+        Canvas[] canvases = FindObjectsOfType<Canvas>();
+        foreach (Canvas canvas in canvases)
+        {
+            if (canvas.renderMode == RenderMode.WorldSpace)
+            {
+                canvas.worldCamera = camera; // Set the event camera for the canvas
+                Debug.Log($"Setting canvas {canvas.name} event camera to: {camera.name}");
+            }
         }
     }
 

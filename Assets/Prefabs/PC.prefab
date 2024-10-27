@@ -160,9 +160,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510231249094600661}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05870036, y: -0.00000007280184, z: 0.99827564, w: -0.000000039204263}
-  m_LocalPosition: {x: -10.546227, y: 3.591845, z: -20.330326}
-  m_LocalScale: {x: 0.00030668493, y: 0.00030668493, z: 0.00030668493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3164162912435398298}
@@ -349,9 +349,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2986404564268118918}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.05124507, y: -0, z: -0, w: 0.99868613}
-  m_LocalPosition: {x: -11.496815, y: 3.5796568, z: -20.758232}
-  m_LocalScale: {x: 8.058167, y: 8.058169, z: 8.058171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3164162912435398298}
@@ -512,9 +512,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5803180623286098330}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.5799678e-14, y: 1, z: 0.00000008146033, w: 0.00000019470718}
-  m_LocalPosition: {x: -11.514825, y: 3.7793407, z: -19.613552}
-  m_LocalScale: {x: 0.99171686, y: 0.99171686, z: 0.99171686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3164162912435398298}
@@ -746,9 +746,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8456971125707367540}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.5799678e-14, y: 1, z: 0.00000008146033, w: 0.00000019470718}
-  m_LocalPosition: {x: -11.514825, y: 3.7245784, z: -19.640251}
-  m_LocalScale: {x: 0.99171686, y: 0.99171686, z: 0.99171686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3164162912435398298}
@@ -1240,6 +1240,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   password: Gaddamn
+  debugCode: 
+  isLoginComplete: 0
+  isDebugAnswered: 0
+  nextComputer: {fileID: 0}
+  computerCanvas: {fileID: 0}
+  debugUI: {fileID: 0}
+  worldSpaceDebugUI: {fileID: 0}
+  debugInputField: {fileID: 0}
+  bootSound: {fileID: 0}
+  fadeDuration: 1.5
+  delayBeforeOpen: 1
+  clueUI: {fileID: 0}
 --- !u!114 &4331850923618192357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,8 +1270,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  uiToEnable:
   - {fileID: 0}
   objectToHide: {fileID: 0}
   escapeUI: {fileID: 0}

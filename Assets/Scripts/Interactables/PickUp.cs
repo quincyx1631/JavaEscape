@@ -27,8 +27,8 @@ public class PickUp : MonoBehaviour
     private bool hasCollided; // Flag to check if the item has already collided
     private bool collisionDetectionEnabled = false; // Flag to delay collision detection
 
-    // New variable to manage item pickup status
-    private static bool itemOnHand = false;
+    // Item pickup status (non-static for instance-based tracking)
+    private bool itemOnHand = false;
 
     private void Start()
     {
@@ -46,23 +46,21 @@ public class PickUp : MonoBehaviour
         originalLayer = gameObject.layer;
         originalWorldScale = transform.lossyScale; // Store the original world scale
         originalParent = transform.parent; // Store the original parent
-
-        // Initially hide the alert UI
-       
     }
 
     private void Update()
     {
         // Check for collisions continuously and update the drop status
-        if (IsCollidingWithOtherObject())
+        bool isColliding = IsCollidingWithOtherObject();
+        Debug.Log("Colliding: " + isColliding + ", canDropItem: " + canDropItem);
+
+        if (isColliding)
         {
             DisableDrop();
-           
         }
         else
         {
             EnableDrop();
-           
         }
 
         if (Input.GetKeyDown(KeyCode.G))
@@ -73,7 +71,9 @@ public class PickUp : MonoBehaviour
 
     public void PickUpItem()
     {
-        if (itemHolder != null && itemHolder.childCount == 0)
+        Debug.Log("Attempting to pick up item: " + gameObject.name);
+
+        if (itemHolder != null && itemHolder.childCount == 0 && !itemOnHand)
         {
             EnableDrop();
             Debug.Log("Picking up item: " + gameObject.name);
@@ -89,6 +89,9 @@ public class PickUp : MonoBehaviour
             // Detach from parent and store the original world scale
             transform.SetParent(null);
             originalWorldScale = transform.lossyScale;
+
+            // Set the layer to "Item" before re-parenting
+            gameObject.layer = LayerMask.NameToLayer(itemLayerName);
 
             // Re-parent to the item holder and apply the correct scale
             transform.SetParent(itemHolder);
@@ -107,7 +110,6 @@ public class PickUp : MonoBehaviour
                 itemCollider.enabled = false;
             }
             rb.isKinematic = true;
-            gameObject.layer = LayerMask.NameToLayer(itemLayerName);
 
             // Reset collision flag
             hasCollided = false;
@@ -115,8 +117,6 @@ public class PickUp : MonoBehaviour
         }
         else
         {
-            DisableDrop();
-            // If an item is already held, display a message or handle as needed
             Debug.Log("Cannot pick up item: Already holding another item.");
         }
     }
@@ -158,22 +158,16 @@ public class PickUp : MonoBehaviour
         }
     }
 
-
     public void TryDropItem()
     {
-        // First check if the item can be dropped
-        if (!canDropItem)
+        if (!canDropItem || !itemOnHand)
         {
-            Debug.Log("Cannot drop the item for some other reason.");
-            return; // Exit early since item can't be dropped
-      
+            Debug.Log("Cannot drop item right now.");
+            return;
         }
 
-        // Proceed with the drop if allowed
         Drop();
     }
-
-
 
     public bool IsCollidingWithOtherObject()
     {
@@ -193,18 +187,15 @@ public class PickUp : MonoBehaviour
     private void EnableDrop()
     {
         canDropItem = true;
-        
     }
 
     private void DisableDrop()
     {
         canDropItem = false;
-      
     }
 
     private void ApplyWorldScale(Vector3 targetWorldScale)
     {
-        // Calculate the required local scale to achieve the target world scale
         transform.localScale = new Vector3(
             targetWorldScale.x / transform.lossyScale.x * transform.localScale.x,
             targetWorldScale.y / transform.lossyScale.y * transform.localScale.y,
@@ -212,21 +203,17 @@ public class PickUp : MonoBehaviour
         );
     }
 
-
-
     private void OnCollisionEnter(Collision collision)
     {
-        // Play the drop sound only when the item collides after being dropped
         if (!hasCollided && collisionDetectionEnabled)
         {
-            hasCollided = true;  // Prevent multiple sounds on the same collision
+            hasCollided = true;
 
             if (!string.IsNullOrEmpty(dropSoundName))
             {
                 AudioManager.Instance.Play(dropSoundName);
             }
 
-            // Optionally, disable collision detection if you only want sound on the first collision
             collisionDetectionEnabled = false;
         }
     }
@@ -240,14 +227,9 @@ public class PickUp : MonoBehaviour
 
     public void AlertChecker()
     {
-        // Only check for collision if the player is holding the item (itemHolder has a child)
-        if (itemHolder.childCount >= 1)
+        if (itemHolder.childCount >= 1 && !canDropItem)
         {
-            if (!canDropItem)
-            {
-                alertUI.ShowAlert("The item shouldn't be colliding with other objects.");
-            }
+            alertUI.ShowAlert("The item shouldn't be colliding with other objects.");
         }
     }
-
 }

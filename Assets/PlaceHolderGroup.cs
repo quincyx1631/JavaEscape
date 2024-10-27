@@ -4,62 +4,90 @@ using TMPro;
 
 public class PlaceHolderGroup : MonoBehaviour
 {
-    public LetterPlaceholder[] letterPlaceholders; // Array of letter placeholders in this group
-    public Button checkButton; // Reference to the button to check answers
+    [System.Serializable]
+    public class PlaceholderGroupData
+    {
+        public string groupName; // Identifier for the group (for debugging or display)
+        public LetterPlaceholder[] letterPlaceholders; // Array of placeholders in this group
+        public Button checkButton; // Button to check this group's answers
+        public TMP_Text clueTMP; // Clue text for this group
+        public string correctClueText = "Here is your clue!"; // Clue text to display if correct
+        public GameObject[] additionalUIElements; // UI elements to activate if correct
+        public bool isAnswerCorrect = false; // Track if answer is correct
+    }
+
+    public PlaceholderGroupData[] placeholderGroups; // Array of all groups
     public AlertUI alertUI;
-    public TMP_Text clueTMP; // Reference to the Clue TMP field
-    public string correctClueText = "Here is your clue!"; // Text to display when correct
-    private bool isAnswerCorrect = false; // Track if the answer is correct
+    public string messengerNotif = "Correct";
 
     private void Start()
     {
-        // Add a listener to the button to call CheckAnswers when clicked
-        if (checkButton != null)
+        foreach (var group in placeholderGroups)
         {
-            checkButton.onClick.AddListener(CheckAnswers);
+            if (group.checkButton != null)
+            {
+                // Explicitly capture the group reference to ensure the correct one is checked
+                PlaceholderGroupData currentGroup = group;
+                group.checkButton.onClick.RemoveAllListeners(); // Remove any existing listeners to avoid duplicates
+                group.checkButton.onClick.AddListener(() => CheckAnswers(currentGroup));
+                Debug.Log($"Button for group {currentGroup.groupName} is set up to check only its own placeholders.");
+            }
         }
     }
 
-    public void CheckAnswers()
+    private void CheckAnswers(PlaceholderGroupData group)
     {
-        // Don't allow checking if the answer is already correct
-        if (isAnswerCorrect) return;
+        // Ensure only placeholders within the clicked button's group are checked
+        Debug.Log($"Button clicked for group {group.groupName}. Checking answers for this group only.");
+
+        // Only proceed if this group hasn’t already been marked correct
+        if (group.isAnswerCorrect)
+        {
+            Debug.Log($"Group {group.groupName} has already been marked as correct. Skipping check.");
+            return;
+        }
 
         bool allCorrect = true;
 
-        // Check each placeholder in the group
-        foreach (var placeholder in letterPlaceholders)
+        // Check only the placeholders in this specific group
+        foreach (var placeholder in group.letterPlaceholders)
         {
             if (!placeholder.HasCorrectLetter())
             {
-                allCorrect = false; // If any letter is incorrect, set to false
+                allCorrect = false; // Stop checking if any letter is incorrect
                 break;
             }
         }
 
         if (allCorrect)
         {
-            Debug.Log("All letters are correct!");
+            AudioManager.Instance.Play(messengerNotif);
+            Debug.Log($"All letters are correct for group {group.groupName}!");
+
             CorrectUIController.Instance.ShowCorrectUI();
 
-            foreach (var placeholder in letterPlaceholders)
+            foreach (var placeholder in group.letterPlaceholders)
             {
-                placeholder.SetToUntagged(); // Set all placeholders to "Untagged"
+                placeholder.SetToUntagged();
             }
 
-            // Display clue text in Clue TMP
-            if (clueTMP != null)
+            if (group.clueTMP != null)
             {
-                clueTMP.text = correctClueText;
+                group.clueTMP.text = group.correctClueText;
             }
 
-            isAnswerCorrect = true; // Mark the answer as correct
-            checkButton.interactable = false; // Disable the button
+            foreach (var uiElement in group.additionalUIElements)
+            {
+                uiElement.SetActive(true);
+            }
+
+            group.isAnswerCorrect = true; // Mark this group as correct
+            group.checkButton.interactable = false; // Disable the check button for this group
         }
         else
         {
             alertUI.ShowAlert("Wrong Answer", "Alert");
-            Debug.Log("Some letters are incorrect.");
+            Debug.Log($"Some letters are incorrect for group {group.groupName}.");
         }
     }
 }

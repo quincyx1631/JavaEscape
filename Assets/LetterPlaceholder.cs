@@ -139,6 +139,14 @@ public class LetterPlaceholder : MonoBehaviour
                     itemRigidbody.isKinematic = true;
                 }
 
+                // Reset item properties for re-detection
+                placedItem.layer = LayerMask.NameToLayer("Interactables"); // Ensure it's on a detectable layer
+                Collider itemCollider = placedItem.GetComponent<Collider>();
+                if (itemCollider != null)
+                {
+                    itemCollider.enabled = true; // Re-enable collider for detection
+                }
+
                 placedItem.tag = originalTag;
                 placedItem = null;
                 isOccupied = false;
