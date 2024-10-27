@@ -6183,11 +6183,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9999998, y: 2.0222373, z: 2.323265}
   m_Center: {x: 0, y: 5.381694, z: 0.16163254}
---- !u!1 &781089052 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4290670234162426104, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-  m_PrefabInstance: {fileID: 849123139}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &796846496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7021,6 +7016,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2072255303540973575, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 538863364}
+    - target: {fileID: 2072255303540973575, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RevealScore
+      objectReference: {fileID: 0}
     - target: {fileID: 3193513921184848039, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -7068,7 +7071,7 @@ PrefabInstance:
     - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: scoreButton
       value: 
-      objectReference: {fileID: 781089052}
+      objectReference: {fileID: 849123141}
     - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: finalTimeText
       value: 
@@ -7120,6 +7123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &849123141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5062455947513860837, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &853832788
 MeshCollider:
   m_ObjectHideFlags: 0
