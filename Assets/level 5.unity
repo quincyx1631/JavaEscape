@@ -1434,6 +1434,7 @@ MonoBehaviour:
   itemPlaceholder: {fileID: 0}
   alertUI: {fileID: 0}
   itemHolder: {fileID: 101369114}
+  useEventCamera: 1
 --- !u!114 &177679609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15780,6 +15781,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 708800907}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: useEventCamera
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: itemPlaceholder
       value: 
       objectReference: {fileID: 717952217}
@@ -16267,6 +16272,7 @@ MonoBehaviour:
   itemPlaceholder: {fileID: 0}
   alertUI: {fileID: 0}
   itemHolder: {fileID: 101369114}
+  useEventCamera: 1
 --- !u!114 &2027475836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16697,7 +16703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193513921184848039, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3329012219988430992, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_text

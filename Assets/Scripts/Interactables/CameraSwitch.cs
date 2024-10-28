@@ -36,6 +36,16 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwitchCamera()
     {
+        // Check if the player is holding any items
+        if (itemHolder.childCount > 0)
+        {
+            if (alertUI != null)
+            {
+                alertUI.ShowAlert("You need to drop the item before switching cameras!");
+            }
+            return; // Prevent switching cameras if the player is holding an item
+        }
+
         // Check if an item is required and if the player has collected it
         if (needItem && requiredItem != null && !requiredItem.IsCollected)
         {
@@ -63,6 +73,7 @@ public class CameraSwitch : MonoBehaviour
             SwitchToMainCamera();
         }
     }
+
 
     // Method to place the collected item into the item placeholder
     private void PlaceItemInPlaceholder()
@@ -197,6 +208,7 @@ public class CameraSwitch : MonoBehaviour
         }
     }
 
+    // Method to drop items with the tag "Interactables" from the ItemHolder
     // Method to drop items with the tag "Interactables" from the ItemHolder
     private void DropInteractableItems()
     {
