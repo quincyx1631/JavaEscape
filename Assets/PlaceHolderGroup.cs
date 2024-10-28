@@ -14,11 +14,14 @@ public class PlaceHolderGroup : MonoBehaviour
         public string correctClueText = "Here is your clue!"; // Clue text to display if correct
         public GameObject[] additionalUIElements; // UI elements to activate if correct
         public bool isAnswerCorrect = false; // Track if answer is correct
+        public GameObject phoneGameObject; // Reference to the specific phone for this group
     }
 
     public PlaceholderGroupData[] placeholderGroups; // Array of all groups
     public AlertUI alertUI;
     public string messengerNotif = "Correct";
+
+    public GameObject laptopGameObject;
 
     private void Start()
     {
@@ -83,11 +86,53 @@ public class PlaceHolderGroup : MonoBehaviour
 
             group.isAnswerCorrect = true; // Mark this group as correct
             group.checkButton.interactable = false; // Disable the check button for this group
+
+            // Mark the phone associated with this group as collected
+            if (group.phoneGameObject != null)
+            {
+                CollectionManager.Instance.MarkAsCollected(group.phoneGameObject.GetComponent<Interactables>());
+                Debug.Log($"Marked {group.phoneGameObject.name} as collected for group {group.groupName}.");
+            }
+            else
+            {
+                Debug.LogError($"Phone GameObject reference is missing for group {group.groupName}.");
+            }
         }
         else
         {
             alertUI.ShowAlert("Wrong Answer", "Alert");
             Debug.Log($"Some letters are incorrect for group {group.groupName}.");
+        }
+
+        // Check if all groups are correct after checking this group
+        CheckAllGroupsAreCorrect();
+    }
+
+    private void CheckAllGroupsAreCorrect()
+    {
+        bool allGroupsCorrect = true;
+
+        foreach (var group in placeholderGroups)
+        {
+            if (!group.isAnswerCorrect)
+            {
+                allGroupsCorrect = false;
+                break; // No need to check further if one group is incorrect
+            }
+        }
+
+        // If all groups are correct, change the tag of the laptop to "Interactables"
+        if (allGroupsCorrect)
+        {
+            if (laptopGameObject != null)
+            {
+                laptopGameObject.tag = "Interactables"; // Change tag to Interactables
+                Debug.Log("All groups are correct. Laptop tagged as Interactables.");
+            }
+            else
+            {
+                Debug.LogError("Laptop GameObject reference is missing.");
+            }
         }
     }
 }
