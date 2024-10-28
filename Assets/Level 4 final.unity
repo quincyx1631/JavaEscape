@@ -300,6 +300,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 760008a8a002544439cca52d84001db7, type: 3}
+--- !u!114 &49333548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6798806553353224405, guid: 760008a8a002544439cca52d84001db7, type: 3}
+  m_PrefabInstance: {fileID: 49333547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &49333549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5789097719872791955, guid: 760008a8a002544439cca52d84001db7, type: 3}
+  m_PrefabInstance: {fileID: 49333547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &57913386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1014,6 +1030,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2130002118454510767, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
+      propertyPath: m_Name
+      value: PC2 Clue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2130002118454510767, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1077,6 +1097,10 @@ PrefabInstance:
       propertyPath: uiToDisable.Array.data[4]
       value: 
       objectReference: {fileID: 1123908922}
+    - target: {fileID: 4150712251945410995, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
+      propertyPath: m_Name
+      value: PC 2 Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 4150712251945410995, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1166,6 +1190,10 @@ PrefabInstance:
       value: -0.0049
       objectReference: {fileID: 0}
     - target: {fileID: 7352537824616458665, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
+      propertyPath: m_Name
+      value: PC2 Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352537824616458665, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -1175,11 +1203,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7738228296268081863, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_Name
-      value: PC 1 (1)
+      value: PC 2
       objectReference: {fileID: 0}
     - target: {fileID: 7738228296268081863, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772678388405327630, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
+      propertyPath: m_Name
+      value: PC 2 Login
       objectReference: {fileID: 0}
     - target: {fileID: 7772678388405327630, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_IsActive
@@ -1188,6 +1220,10 @@ PrefabInstance:
     - target: {fileID: 7772678388405327630, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783908961816255239, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
+      propertyPath: m_Name
+      value: PC 2 Debug WS
       objectReference: {fileID: 0}
     - target: {fileID: 7783908961816255239, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_IsActive
@@ -1200,11 +1236,11 @@ PrefabInstance:
     - target: {fileID: 8404378074208426504, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: debugUI
       value: 
-      objectReference: {fileID: 1441879854}
+      objectReference: {fileID: 49333549}
     - target: {fileID: 8404378074208426504, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: debugInputField
       value: 
-      objectReference: {fileID: 632723108}
+      objectReference: {fileID: 49333548}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
