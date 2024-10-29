@@ -10,6 +10,23 @@ public class WhiteBoardRiddle : MonoBehaviour
     public AlertUI alertUI;
     public Animator boxAnimator;               // Reference to the Animator for the box lid
 
+    public string correctAnswerSound;          // Name of the sound to play for correct answer
+    public string incorrectAnswerSound;        // Name of the sound to play for incorrect answer
+    public string typingSound;                 // Name of the sound to play when typing
+
+    private void Awake()
+    {
+        answerInputField.onValueChanged.AddListener(PlayTypingSound);
+    }
+
+    private void PlayTypingSound(string text)
+    {
+        if (!string.IsNullOrEmpty(typingSound))
+        {
+            AudioManager.Instance.Play(typingSound); // Play typing sound using AudioManager
+        }
+    }
+
     // Method to check the player's answer
     public void CheckAnswer()
     {
@@ -37,11 +54,24 @@ public class WhiteBoardRiddle : MonoBehaviour
                 boxAnimator.SetTrigger("OpenLid");
                 Debug.Log("Box lid is opening.");
             }
+
+            // Play the correct answer sound
+            if (!string.IsNullOrEmpty(correctAnswerSound))
+            {
+                AudioManager.Instance.Play(correctAnswerSound);
+            }
         }
         else
         {
+            // Show alert and log for incorrect answer
             alertUI.ShowAlert("Incorrect Answer. Try again!!");
-            Debug.Log("Incorrect Answer. Try again!"); // Log for incorrect answer
+            Debug.Log("Incorrect Answer. Try again!");
+
+            // Play the incorrect answer sound
+            if (!string.IsNullOrEmpty(incorrectAnswerSound))
+            {
+                AudioManager.Instance.Play(incorrectAnswerSound);
+            }
         }
 
         // Clear the input field after checking

@@ -16,6 +16,21 @@ public class RiddleUI : MonoBehaviour
     public TMP_Text passwordText;             // TextMeshPro reference for displaying the password
     public string nextTaskPassword;           // The password for the next task (set in Inspector)
 
+    public string typingSoundName;            // Name of the typing sound in the AudioManager
+
+    private void Awake()
+    {
+        riddleInputField.onValueChanged.AddListener(PlayTypingSound);
+    }
+
+    private void PlayTypingSound(string text)
+    {
+        if (!string.IsNullOrEmpty(typingSoundName))
+        {
+            AudioManager.Instance.Play(typingSoundName); // Use AudioManager to play typing sound
+        }
+    }
+
     // Method to check if the answer is correct
     public void CheckAnswer()
     {
