@@ -20,6 +20,9 @@ public class TVSlideShow : MonoBehaviour
     public GameObject passwordClueDisplay; // Reference to the UI GameObject for the password clue
     public TextMeshProUGUI passwordText; // Reference to the TextMeshPro component for the password
 
+    public string turnOnSoundName;       // Name of the sound effect for turning on the TV
+    public string changeSlideSoundName;  // Name of the sound effect for changing slides
+
     private void Start()
     {
         SetImageAlpha(0f);               // Start with TV off (invisible)
@@ -58,6 +61,10 @@ public class TVSlideShow : MonoBehaviour
     private void TurnOnTV()
     {
         isTVOn = true;
+
+        // Play the TV turn-on sound
+        AudioManager.Instance.Play(turnOnSoundName);
+
         if (fadeCoroutine != null)
             StopCoroutine(fadeCoroutine); // Stop any existing fade coroutine
         fadeCoroutine = StartCoroutine(FadeInTV()); // Start fade-in animation
@@ -84,6 +91,9 @@ public class TVSlideShow : MonoBehaviour
 
         // Mark the current slide as shown
         hasShown[randomIndices[currentRandomIndex]] = true;
+
+        // Play the slide change sound
+        AudioManager.Instance.Play(changeSlideSoundName);
 
         // Move to the next random index
         currentRandomIndex++;
