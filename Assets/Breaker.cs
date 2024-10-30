@@ -22,6 +22,10 @@ public class Breaker : MonoBehaviour
     public Vector3 openRotation;   // Rotation for the open state (e.g., 0,90,0)
     public float rotationSpeed = 2f; // Speed of rotation between states
 
+    // Sound effects
+    public string openSound = "OpenBreaker";   // Sound for opening the breaker
+    public string closeSound = "CloseBreaker"; // Sound for closing the breaker
+
     private bool isUnlocked = false; // Flag to check if the breaker is unlocked
     private bool IsOpen = false; // Flag for the breaker being open or closed
     private bool breakerTurnedOn = false; // Flag to check if the breaker is already turned on
@@ -29,13 +33,11 @@ public class Breaker : MonoBehaviour
 
     private void Start()
     {
-        // Make sure the rotatingPart is assigned in the inspector or found via code
         if (rotatingPart == null)
         {
             Debug.LogError("Rotating part is not assigned!");
         }
 
-        // Set the initial rotation to the closed state
         rotatingPart.rotation = Quaternion.Euler(closedRotation);
         IsOpen = false;
         breakerTurnedOn = false;
@@ -43,7 +45,6 @@ public class Breaker : MonoBehaviour
 
     private void Update()
     {
-        // Optionally, you can handle smooth rotation here if `isRotating` is true
         if (isRotating)
         {
             RotatePart(IsOpen ? openRotation : closedRotation);
@@ -56,8 +57,8 @@ public class Breaker : MonoBehaviour
         {
             if (HasKeyInItemHolder())
             {
-                UnlockAndOpenBreaker(); // Unlock and open the breaker
-                HideKey(); // Hide the key after unlocking the breaker
+                UnlockAndOpenBreaker();
+                HideKey();
                 return;
             }
             else
@@ -71,7 +72,7 @@ public class Breaker : MonoBehaviour
         if (!breakerTurnedOn && IsOpen)
         {
             ActivateComputer();
-            CloseBreaker(); // Rotate to the closed state after turning on the computer
+            CloseBreaker();
             breakerTurnedOn = true;
         }
         else if (breakerTurnedOn)
@@ -91,7 +92,7 @@ public class Breaker : MonoBehaviour
         isUnlocked = true;
         CorrectUIController.Instance.ShowCorrectUI();
         Debug.Log("Breaker is unlocked and opening.");
-        OpenBreaker(); // Rotate to the open state
+        OpenBreaker();
     }
 
     private void HideKey()
@@ -113,33 +114,33 @@ public class Breaker : MonoBehaviour
     private void OpenBreaker()
     {
         IsOpen = true;
-        StartRotatingToTarget(openRotation); // Rotate to open position
+        StartRotatingToTarget(openRotation);
+        AudioManager.Instance.Play(openSound);  // Play open sound effect
         Debug.Log("Breaker is now open.");
     }
 
     private void CloseBreaker()
     {
         IsOpen = false;
-        StartRotatingToTarget(closedRotation); // Rotate to closed position
+        StartRotatingToTarget(closedRotation);
+        AudioManager.Instance.Play(closeSound); // Play close sound effect
         Debug.Log("Breaker is now closed.");
     }
 
     private void StartRotatingToTarget(Vector3 targetRotation)
     {
-        isRotating = true; // Start rotating
+        isRotating = true;
     }
 
     private void RotatePart(Vector3 targetRotation)
     {
-        // Smoothly rotate the rotating part to the target rotation
         Quaternion target = Quaternion.Euler(targetRotation);
         rotatingPart.rotation = Quaternion.Lerp(rotatingPart.rotation, target, Time.deltaTime * rotationSpeed);
 
-        // Stop rotating if close enough to the target rotation
         if (Quaternion.Angle(rotatingPart.rotation, target) < 0.1f)
         {
-            rotatingPart.rotation = target; // Snap to the final rotation
-            isRotating = false; // Stop rotating
+            rotatingPart.rotation = target;
+            isRotating = false;
         }
     }
 }

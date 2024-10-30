@@ -12,9 +12,21 @@ public class LoginUIManager : MonoBehaviour
     private string currentPassword;          // Current password to check
     private Computer currentComputer;        // Reference to the currently interacting computer
 
+    public string typingSoundName; // Sound for typing
+    public string loginSoundName;  // Sound for login button press
+    public string debugSoundName;  // Sound for debug button press
+
     private void Awake()
     {
         Instance = this; // Set the singleton instance
+    }
+
+    private void Start()
+    {
+        if (passwordInputField != null)
+        {
+            passwordInputField.onValueChanged.AddListener(OnTyping); // Add listener for typing
+        }
     }
 
     public void SetPassword(string password)
@@ -77,8 +89,15 @@ public class LoginUIManager : MonoBehaviour
         }
     }
 
+    private void OnTyping(string currentText)
+    {
+        AudioManager.Instance.Play(typingSoundName); // Play typing sound
+    }
+
     public void OnLoginButtonPressed()
     {
+        AudioManager.Instance.Play(loginSoundName); // Play login button sound
+
         if (passwordInputField.text == currentPassword)
         {
             // Password is correct
@@ -95,6 +114,8 @@ public class LoginUIManager : MonoBehaviour
 
     public void OnDebugButtonPressed()
     {
+        AudioManager.Instance.Play(debugSoundName); // Play debug button sound
+
         if (currentComputer != null)
         {
             string userCode = currentComputer.GetDebugInput(); // Get the user input from the specific debug input field
@@ -135,5 +156,4 @@ public class LoginUIManager : MonoBehaviour
             }
         }
     }
-
 }

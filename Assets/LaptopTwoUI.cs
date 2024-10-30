@@ -13,6 +13,7 @@ public class LaptopTwoUI : MonoBehaviour
 
     public RandomItemSpawner itemSpawner;        // Reference to your RandomItemSpawner script
     public AlertUI alertUI;
+    public string typingSoundName;               // Name of the sound effect for typing
     private bool[] isAnswered;                   // Array to track if each question has been answered
     private bool isSpawningItem = false;         // Flag to track if an item is currently spawning
 
@@ -33,9 +34,20 @@ public class LaptopTwoUI : MonoBehaviour
             int index = i;  // Avoid closure issue in loops
             answerButtons[i].onClick.AddListener(() => CheckAnswer(index));
         }
+
+        // Add typing sound listeners to each input field
+        foreach (var inputField in inputFields)
+        {
+            inputField.onValueChanged.AddListener(delegate { PlayTypingSound(); });
+        }
     }
 
-    // Method to check if the answer is correct
+    // Method to play the typing sound
+    private void PlayTypingSound()
+    {
+        AudioManager.Instance.Play(typingSoundName);
+    }
+
     // Method to check if the answer is correct
     void CheckAnswer(int index)
     {

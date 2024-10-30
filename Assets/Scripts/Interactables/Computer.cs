@@ -16,13 +16,13 @@ public class Computer : MonoBehaviour
     public GameObject debugUI; // Reference to this computer's specific Debug UI
     public GameObject worldSpaceDebugUI; // Reference to the World Space Debug UI
     public TMP_InputField debugInputField; // Specific debug input field for this computer
-    public AudioSource bootSound; // Boot sound for this computer
     public float fadeDuration = 1.5f; // Duration of the fade-in effect
     public float delayBeforeOpen = 1.0f; // Delay before the computer turns on
     public GameObject clueUI; // Reference to the clue UI GameObject
 
     private bool isComputerOn = false; // Track if the computer is on or off
-
+    public string typingSoundName;
+    public string bootSoundName;
     private void Start()
     {
         // Initially ensure the computer is off by setting alpha to 0
@@ -39,6 +39,12 @@ public class Computer : MonoBehaviour
         // Disable the clue UI initially
         if (clueUI != null)
             clueUI.SetActive(false);
+
+        // Add typing sound listener to the input field
+        if (debugInputField != null)
+        {
+            debugInputField.onValueChanged.AddListener(OnTyping);
+        }
     }
 
     // Method to turn on the computer
@@ -62,7 +68,7 @@ public class Computer : MonoBehaviour
         Debug.Log("Waiting before opening computer...");
         yield return new WaitForSeconds(delayBeforeOpen);
         StartCoroutine(FadeInComputerUI());
-        PlayBootSound();
+        AudioManager.Instance.Play(bootSoundName); // Use AudioManager for boot sound
     }
 
     private IEnumerator FadeInComputerUI()
@@ -88,13 +94,9 @@ public class Computer : MonoBehaviour
         }
     }
 
-    private void PlayBootSound()
+    private void OnTyping(string currentText)
     {
-        if (bootSound != null && !bootSound.isPlaying)
-        {
-            bootSound.Play();
-            Debug.Log("Playing boot sound for: " + gameObject.name);
-        }
+        AudioManager.Instance.Play(typingSoundName); // Play typing sound on each character input
     }
 
     public string ValidateDebugCode(string inputCode)
