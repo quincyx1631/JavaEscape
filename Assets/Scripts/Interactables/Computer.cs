@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
+// Ensure this is added if you're using the Universal Render Pipeline
 using System.Collections;
-
 public class Computer : MonoBehaviour
 {
     [Header("Computer Settings")]
@@ -23,8 +23,14 @@ public class Computer : MonoBehaviour
     private bool isComputerOn = false; // Track if the computer is on or off
     public string typingSoundName;
     public string bootSoundName;
+
+    private Outline outline; // Reference to the Outline component
+
     private void Start()
     {
+        // Get the Outline component
+        outline = GetComponent<Outline>();
+
         // Initially ensure the computer is off by setting alpha to 0
         SetComputerUIAlpha(0);
 
@@ -39,6 +45,10 @@ public class Computer : MonoBehaviour
         // Disable the clue UI initially
         if (clueUI != null)
             clueUI.SetActive(false);
+
+        // Disable the outline initially
+        if (outline != null)
+            outline.enabled = false;
 
         // Add typing sound listener to the input field
         if (debugInputField != null)
@@ -55,6 +65,8 @@ public class Computer : MonoBehaviour
             isComputerOn = true;
             gameObject.tag = "Interactables"; // Mark the computer as interactable
             Debug.Log("Opening computer: " + gameObject.name);
+            if (outline != null) // Enable the outline when the computer is turned on
+                
             StartCoroutine(OpenComputerWithDelay());
         }
         else
