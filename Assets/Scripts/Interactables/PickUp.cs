@@ -28,6 +28,7 @@ public class PickUp : MonoBehaviour
     private bool collisionDetectionEnabled = false;
 
     private bool itemOnHand = false;
+    private bool isBeingPickedUp = false; // New flag to prevent immediate dropping
 
     private void Start()
     {
@@ -58,16 +59,21 @@ public class PickUp : MonoBehaviour
             EnableDrop();
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        // Only process drop input if we're not in the process of picking up
+        if (Input.GetKeyDown(KeyCode.G) && !isBeingPickedUp)
         {
             TryDropItem();
         }
+
+        // Reset the pickup flag after a frame
+        isBeingPickedUp = false;
     }
 
     public void PickUpItem()
     {
         if (itemHolder != null && itemHolder.childCount == 0 && !itemOnHand)
         {
+            isBeingPickedUp = true; // Set the flag when picking up
             EnableDrop();
             if (!string.IsNullOrEmpty(pickupSoundName))
             {
@@ -96,13 +102,15 @@ public class PickUp : MonoBehaviour
             hasCollided = false;
             collisionDetectionEnabled = false;
 
-            Invoke("EnableCollisionDetection", 0.1f); // Small delay for stability
+            Invoke("EnableCollisionDetection", 0.1f);
         }
         else
         {
             Debug.Log("Cannot pick up item: Already holding another item.");
         }
     }
+
+    // Rest of the code remains the same...
 
     public void Drop()
     {
@@ -137,7 +145,6 @@ public class PickUp : MonoBehaviour
     {
         if (!canDropItem || !itemOnHand)
         {
-            Debug.Log("Cannot drop item right now.");
             return;
         }
 

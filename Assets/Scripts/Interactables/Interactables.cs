@@ -5,51 +5,49 @@ public class Interactables : MonoBehaviour
 {
     private Outline outline;
     private Inspect inspector;
-    [SerializeField] private Transform itemHolder; // Assign in Inspector if possible
-
+    private PickUp pickUpComponent;  // Reference to the PickUp component
+    [SerializeField] private Transform itemHolder;
     public string message;
-
     public UnityEvent onInteraction;
     public UnityEvent onPickUp;
     public UnityEvent onInspect;
-
     public bool canInteract = true;
     public bool canPickup = true;
     public bool canInspect = true;
-
-    public bool collectOnInteract = false; // Set true if collecting upon interaction
-    public bool collectOnPickUp = false;   // Set true if collecting upon pickup
-    public bool collectOnInspect = false;  // Set true if collecting upon inspection
-
+    public bool collectOnInteract = false;
+    public bool collectOnPickUp = false;
+    public bool collectOnInspect = false;
     private bool isCollected = false;
 
     void Start()
     {
         outline = GetComponent<Outline>();
         DisableOutline();
+        inspector = GetComponent<Inspect>();
+        pickUpComponent = GetComponent<PickUp>();
 
-        inspector = GetComponent<Inspect>(); // Get the Inspect component
+        Debug.Log($"[Interactables] Initialized {gameObject.name}");
+        Debug.Log($"[Interactables] Components - Outline: {outline != null}, Inspector: {inspector != null}, PickUp: {pickUpComponent != null}");
 
-        // If itemHolder isn't assigned via the Inspector, try to find it by name
         if (itemHolder == null)
         {
-            itemHolder = GameObject.Find("ItemHolder")?.transform; // Find by name
-
+            itemHolder = GameObject.Find("ItemHolder")?.transform;
+            Debug.Log($"[Interactables] ItemHolder {(itemHolder != null ? "found" : "not found")} by name");
             if (itemHolder == null)
             {
-                Debug.LogError("ItemHolder not assigned and not found by name. Assign it in the Inspector.");
+                Debug.LogError("[Interactables] ItemHolder not assigned and not found by name. Assign it in the Inspector.");
             }
         }
     }
 
     public void DisableOutline()
     {
-        outline.enabled = false;
+        if (outline != null) outline.enabled = false;
     }
 
     public void EnableOutline()
     {
-        outline.enabled = true;
+        if (outline != null) outline.enabled = true;
     }
 
     public void Interact()
@@ -66,29 +64,42 @@ public class Interactables : MonoBehaviour
 
     public void PickUp()
     {
-        // Debugging to check what's happening during pickup
-        if (itemHolder != null)
+        Debug.Log($"[Interactables] PickUp called for {gameObject.name}");
+        Debug.Log($"[Interactables] State - CanPickup: {canPickup}, Has PickUp component: {pickUpComponent != null}");
+
+        if (!canPickup)
         {
-            Debug.Log("ItemHolder child count: " + itemHolder.childCount);
+            Debug.Log($"[Interactables] {gameObject.name} cannot be picked up (canPickup is false)");
+            return;
         }
 
-        // Ensure the player isn't already holding an item
-        if (itemHolder != null && itemHolder.childCount == 0)
+        if (itemHolder != null && pickUpComponent != null)
         {
-            Debug.Log("Picking up item: " + gameObject.name);
+            Debug.Log($"[Interactables] Checking ItemHolder state - Child count: {itemHolder.childCount}");
 
-            if (canPickup)
+            if (itemHolder.childCount == 0)
             {
+                Debug.Log($"[Interactables] Beginning pickup sequence for {gameObject.name}");
+
                 onPickUp.Invoke();
+                Debug.Log($"[Interactables] onPickUp event invoked for {gameObject.name}");
+
+                pickUpComponent.PickUpItem();
+
                 if (collectOnPickUp)
                 {
+                    Debug.Log($"[Interactables] Collecting {gameObject.name}");
                     Collect();
                 }
+            }
+            else
+            {
+                Debug.Log($"[Interactables] Cannot pick up {gameObject.name}: Already holding another item");
             }
         }
         else
         {
-            Debug.Log("Cannot pick up item: Already holding another item.");
+            Debug.LogWarning($"[Interactables] Missing required components for pickup on: {gameObject.name} - ItemHolder: {itemHolder != null}, PickUp component: {pickUpComponent != null}");
         }
     }
 
@@ -106,7 +117,10 @@ public class Interactables : MonoBehaviour
 
     public void StopInspecting()
     {
-        inspector.StopInspection(); // Stop inspecting the item
+        if (inspector != null)
+        {
+            inspector.StopInspection();
+        }
     }
 
     private void Collect()
@@ -114,8 +128,14 @@ public class Interactables : MonoBehaviour
         if (!isCollected)
         {
             isCollected = true;
-            CollectionManager.Instance.MarkAsCollected(this);
-            CorrectUIController.Instance.ShowCorrectUI();
+            if (CollectionManager.Instance != null)
+            {
+                CollectionManager.Instance.MarkAsCollected(this);
+            }
+            if (CorrectUIController.Instance != null)
+            {
+                CorrectUIController.Instance.ShowCorrectUI();
+            }
         }
     }
 }
