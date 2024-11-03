@@ -1,36 +1,34 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using TMPro; // Add this for TextMeshPro
+using TMPro;
 
 public class TVSlideShow : MonoBehaviour
 {
-    public Image displayImage;         // Reference to the UI Image component on the canvas
-    public Sprite[] slides;            // Array of images to display
-    public Transform itemHolder;       // Reference to the player's item holder (where they hold objects)
-    public GameObject remote;          // The remote object that the player needs to turn on the TV
-
+    public Image displayImage;
+    public Slide[] slides;                // Array of Slide objects
+    public Transform itemHolder;
+    public GameObject remote;
     public KeypadNumbers keypadNumbers;
-    private int currentRandomIndex = 0;  // Track the index of the current random slide
-    private bool isTVOn = false;         // Track if the TV is on
-    private Coroutine fadeCoroutine;     // Reference to handle fade coroutine
-    private int[] randomIndices;         // Array to store the randomized slide order
-    private bool[] hasShown;             // Track if a slide has been shown
     public AlertUI alertUI;
-    public GameObject passwordClueDisplay; // Reference to the UI GameObject for the password clue
-    public TextMeshProUGUI passwordText; // Reference to the TextMeshPro component for the password
+    public GameObject passwordClueDisplay;
+    public TextMeshProUGUI passwordText;
+    public string turnOnSoundName;
+    public string changeSlideSoundName;
 
-    public string turnOnSoundName;       // Name of the sound effect for turning on the TV
-    public string changeSlideSoundName;  // Name of the sound effect for changing slides
+    private int currentRandomIndex = 0;
+    private bool isTVOn = false;
+    private Coroutine fadeCoroutine;
+    private int[] randomIndices;
+    private bool[] hasShown;
 
     private void Start()
     {
-        SetImageAlpha(0f);               // Start with TV off (invisible)
-        InitializeRandomOrder();          // Set up the randomized order of slides
-        passwordClueDisplay.SetActive(false); // Ensure the password clue is hidden at start
+        SetImageAlpha(0f);
+        InitializeRandomOrder();
+        passwordClueDisplay.SetActive(false);
     }
 
-    // Method to initialize the random slide order
     private void InitializeRandomOrder()
     {
         randomIndices = new int[slides.Length];
@@ -41,11 +39,9 @@ public class TVSlideShow : MonoBehaviour
             randomIndices[i] = i;
             hasShown[i] = false;
         }
-
-        ShuffleSlides();  // Shuffle the order of the slides
+        ShuffleSlides();
     }
 
-    // Shuffle the randomIndices array
     private void ShuffleSlides()
     {
         for (int i = 0; i < randomIndices.Length; i++)
@@ -61,58 +57,49 @@ public class TVSlideShow : MonoBehaviour
     private void TurnOnTV()
     {
         isTVOn = true;
-
-        // Play the TV turn-on sound
         AudioManager.Instance.Play(turnOnSoundName);
 
         if (fadeCoroutine != null)
-            StopCoroutine(fadeCoroutine); // Stop any existing fade coroutine
-        fadeCoroutine = StartCoroutine(FadeInTV()); // Start fade-in animation
+            StopCoroutine(fadeCoroutine);
+        fadeCoroutine = StartCoroutine(FadeInTV());
     }
 
     private IEnumerator FadeInTV()
     {
-        float duration = 1.5f; // Duration of the fade-in
+        float duration = 1.5f;
         float elapsed = 0f;
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            float alpha = Mathf.Lerp(0f, 1f, elapsed / duration); // Gradually increase alpha
+            float alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
             SetImageAlpha(alpha);
             yield return null;
         }
-        SetImageAlpha(1f); // Ensure alpha is fully set to 1
-        ShowNextSlide();   // Display the first random slide once fade is complete
+        SetImageAlpha(1f);
+        ShowNextSlide();
     }
 
     public void ShowNextSlide()
     {
-        if (slides.Length == 0) return; // Check if there are any slides
+        if (slides.Length == 0) return;
 
-        // Mark the current slide as shown
         hasShown[randomIndices[currentRandomIndex]] = true;
-
-        // Play the slide change sound
         AudioManager.Instance.Play(changeSlideSoundName);
 
-        // Move to the next random index
         currentRandomIndex++;
-
-        // If we've shown all slides, just reshuffle without showing the password clue
         if (currentRandomIndex >= randomIndices.Length)
         {
-            InitializeRandomOrder(); // Reshuffle the slides when all are shown
-            return; // Exit the function without showing the password clue
+            InitializeRandomOrder();
+            return;
         }
 
-        // Find the next slide to show that hasn't been shown yet
         while (hasShown[randomIndices[currentRandomIndex]])
         {
             currentRandomIndex++;
             if (currentRandomIndex >= randomIndices.Length)
             {
-                InitializeRandomOrder(); // Reshuffle if all slides have been shown
-                return; // Exit the function without showing the password clue
+                InitializeRandomOrder();
+                return;
             }
         }
 
@@ -121,16 +108,12 @@ public class TVSlideShow : MonoBehaviour
 
     public void ShowPasswordClue()
     {
-        CorrectUIController.Instance.ShowCorrectUI();
-        CollectionManager.Instance.MarkAsCollected(this.GetComponent<Interactables>());
-
-        passwordClueDisplay.SetActive(true); // Show the password clue UI
-        GenerateRandomPassword(); // Generate and display the random password
-        Debug.Log("All slides matched! Password clue displayed.");
+        passwordClueDisplay.SetActive(true);
+        GenerateRandomPassword();
 
         if (keypadNumbers != null)
         {
-            keypadNumbers.SetKeypadPassword(passwordText.text); // Set the correct password for the keypad
+            keypadNumbers.SetKeypadPassword(passwordText.text);
         }
         else
         {
@@ -140,20 +123,18 @@ public class TVSlideShow : MonoBehaviour
 
     private void GenerateRandomPassword()
     {
-        int password = Random.Range(10000, 99999); // Generate a random 5-digit number
-        passwordText.text = password.ToString(); // Set the password text
+        int password = Random.Range(10000, 99999);
+        passwordText.text = password.ToString();
     }
 
-    // Display the current slide
     private void UpdateSlideImage()
     {
         int slideIndex = randomIndices[currentRandomIndex];
-        displayImage.sprite = slides[slideIndex];
+        displayImage.sprite = slides[slideIndex].slideImage; // Using slideImage from Slide
     }
 
     private bool HasRemote()
     {
-        // Check if the remote is currently in the player's item holder
         return itemHolder.childCount > 0 && itemHolder.GetChild(0).gameObject == remote;
     }
 
@@ -168,38 +149,33 @@ public class TVSlideShow : MonoBehaviour
     {
         if (!isTVOn)
         {
-            // Check if the player has the remote
             if (HasRemote())
             {
-                TurnOnTV(); // Turn on the TV with fade-in effect
+                TurnOnTV();
             }
             else
             {
-                alertUI.ShowAlert("You need the remote to turn on the TV.");
-                Debug.Log("You need the remote to turn on the TV.");
+                alertUI.ShowAlert("You need a remote to turn on the TV.");
             }
         }
         else
         {
-            // Check if the player still has the remote for moving to the next slide
             if (HasRemote())
             {
-                ShowNextSlide(); // Move to the next random slide if the TV is already on
+                ShowNextSlide();
             }
             else
             {
-                alertUI.ShowAlert("You need the remote to change slide");
-                Debug.Log("You need the remote to change the slide.");
+                alertUI.ShowAlert("You need a remote to change the slide.");
             }
         }
     }
 
-    public Sprite GetCurrentSlide()
+    public string GetCurrentSlideTitle()
     {
-        return slides[randomIndices[currentRandomIndex]];
+        return slides[randomIndices[currentRandomIndex]].slideTitle; // Return the slide title from Slide
     }
 
-    // Add this method to check if the TV is turned on
     public bool IsTVOn()
     {
         return isTVOn;

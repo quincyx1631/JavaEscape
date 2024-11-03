@@ -1,23 +1,23 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Add this for TextMeshPro
+using TMPro;
 
 public class LaptopSlideShow : MonoBehaviour
 {
-    public Image displayImage;           // Reference to the UI Image component on the canvas
-    public Sprite[] slides;              // Array of images to display
-    public TVSlideShow tvSlideShow;      // Reference to the TV slideshow script
-    public AlertUI alertUI;              // Reference to the AlertUI system for showing alerts
+    public Image displayImage;         // Reference to the UI Image component
+    public Slide[] slides;             // Array of Slide objects
+    public TVSlideShow tvSlideShow;    // Reference to the TV slideshow script
+    public AlertUI alertUI;            // Reference to the AlertUI system
 
-    private int currentSlideIndex = 0;   // Index of the current slide
-    private bool[] matchedSlides;        // To track which slides have been matched
+    private int currentSlideIndex = 0; // Index of the current slide
+    private bool[] matchedSlides;       // To track matched slides
 
     private void Start()
     {
-        matchedSlides = new bool[slides.Length];  // Initialize matched slide tracking
+        matchedSlides = new bool[slides.Length];
         if (slides.Length > 0)
         {
-            UpdateSlideImage();  // Show the first slide as soon as the laptop is opened
+            UpdateSlideImage();
         }
         else
         {
@@ -25,113 +25,74 @@ public class LaptopSlideShow : MonoBehaviour
         }
     }
 
-    // Show the next slide when pressing the "Next Slide" button
     public void ShowNextSlide()
     {
         if (slides.Length == 0) return;
 
-        currentSlideIndex++;
-
-        if (currentSlideIndex >= slides.Length)
-        {
-            currentSlideIndex = 0; // Loop back to the first slide
-        }
-
+        currentSlideIndex = (currentSlideIndex + 1) % slides.Length;
         UpdateSlideImage();
     }
 
-    // Show the previous slide when pressing the "Previous Slide" button
     public void ShowPreviousSlide()
     {
         if (slides.Length == 0) return;
 
-        currentSlideIndex--;
-
-        if (currentSlideIndex < 0)
-        {
-            currentSlideIndex = slides.Length - 1; // Loop back to the last slide
-        }
-
+        currentSlideIndex = (currentSlideIndex - 1 + slides.Length) % slides.Length;
         UpdateSlideImage();
     }
 
-    // Method to check if the current laptop slide matches the current TV slide
     public void CheckIfSlidesMatch()
     {
         if (tvSlideShow != null)
         {
-            // Check if the TV is on before matching slides
-            if (!tvSlideShow.IsTVOn()) // Use the IsTVOn method from the TVSlideShow script
+            if (!tvSlideShow.IsTVOn())
             {
                 alertUI.ShowAlert("Please turn on the TV first.");
-                Debug.Log("TV is not turned on.");
                 return;
             }
 
-            // Check if the current slide has already been matched
             if (matchedSlides[currentSlideIndex])
             {
                 alertUI.ShowAlert("This slide has already been matched.");
-                Debug.Log("This slide has already been matched.");
                 return;
             }
 
-            // Compare the laptop's current slide sprite with the TV's current slide sprite
-            if (slides[currentSlideIndex] == tvSlideShow.GetCurrentSlide())
+            // Compare slide titles instead of images
+            if (slides[currentSlideIndex].slideTitle == tvSlideShow.GetCurrentSlideTitle())
             {
-                Debug.Log("The slides match!");
                 alertUI.ShowAlert("Correct Match!");
-
-                // Mark this slide as matched
                 matchedSlides[currentSlideIndex] = true;
-
-                // Apply a black and white effect (grayscale) to the matched slide
                 ApplyGrayscaleEffect();
 
-                // Check if all slides have been matched
                 if (AllSlidesMatched())
                 {
-                    tvSlideShow.ShowPasswordClue(); // Call to show the password clue from TVSlideShow
+                    tvSlideShow.ShowPasswordClue();
                 }
             }
             else
             {
                 alertUI.ShowAlert("Wrong Code Match");
-                Debug.Log("The slides do not match.");
             }
         }
     }
 
-    // Apply a grayscale effect to the matched slide
     private void ApplyGrayscaleEffect()
     {
-        Color grayscaleColor = new Color(0.3f, 0.3f, 0.3f); // Grayscale color
-        displayImage.color = grayscaleColor;  // Change the color to simulate black and white
+        displayImage.color = new Color(0.3f, 0.3f, 0.3f);
     }
 
-    // Method to update the displayed slide image and reset color if not matched
     private void UpdateSlideImage()
     {
-        displayImage.sprite = slides[currentSlideIndex];
-
-        // Apply grayscale only if the slide has been matched
-        if (matchedSlides[currentSlideIndex])
-        {
-            ApplyGrayscaleEffect();  // Apply grayscale effect if already matched
-        }
-        else
-        {
-            displayImage.color = Color.white;  // Keep the normal color for unmatched slides
-        }
+        displayImage.sprite = slides[currentSlideIndex].slideImage; // Accessing slideImage correctly
+        displayImage.color = matchedSlides[currentSlideIndex] ? new Color(0.3f, 0.3f, 0.3f) : Color.white;
     }
 
-    // Method to check if all slides have been matched
     private bool AllSlidesMatched()
     {
         foreach (bool matched in matchedSlides)
         {
-            if (!matched) return false; // If any slide is not matched, return false
+            if (!matched) return false;
         }
-        return true; // All slides have been matched
+        return true;
     }
 }
