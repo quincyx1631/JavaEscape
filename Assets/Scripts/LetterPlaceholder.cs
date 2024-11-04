@@ -139,20 +139,20 @@ public class LetterPlaceholder : MonoBehaviour
                     itemRigidbody.isKinematic = true;
                 }
 
-                // Reset item properties for re-detection
-                placedItem.layer = LayerMask.NameToLayer("Interactables"); // Ensure it's on a detectable layer
+                // Set the layer to "Item" for re-detection
+                placedItem.layer = LayerMask.NameToLayer("Item"); // Ensure it's on the "Item" layer
                 Collider itemCollider = placedItem.GetComponent<Collider>();
                 if (itemCollider != null)
                 {
                     itemCollider.enabled = true; // Re-enable collider for detection
                 }
 
-                placedItem.tag = originalTag;
+                placedItem.tag = originalTag; // Restore original tag if needed
                 placedItem = null;
                 isOccupied = false;
                 ResetLightColor();
 
-                Debug.Log("Item removed from placeholder and returned to ItemHolder.");
+                Debug.Log("Item removed from placeholder and returned to ItemHolder with layer 'Item'.");
             }
         }
         else
@@ -161,6 +161,8 @@ public class LetterPlaceholder : MonoBehaviour
             Debug.Log("Cannot remove item: Player's ItemHolder is already occupied.");
         }
     }
+
+
 
     private void ChangeLightColor(Color color)
     {
