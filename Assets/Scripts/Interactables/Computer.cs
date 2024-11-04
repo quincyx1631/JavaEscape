@@ -57,16 +57,14 @@ public class Computer : MonoBehaviour
         }
     }
 
-    // Method to turn on the computer
     public void OpenComputer()
     {
         if (!isComputerOn)
         {
             isComputerOn = true;
-            gameObject.tag = "Interactables"; // Mark the computer as interactable
             Debug.Log("Opening computer: " + gameObject.name);
-            if (outline != null) // Enable the outline when the computer is turned on
-                
+
+            // Start the coroutine to handle the delayed opening
             StartCoroutine(OpenComputerWithDelay());
         }
         else
@@ -79,8 +77,12 @@ public class Computer : MonoBehaviour
     {
         Debug.Log("Waiting before opening computer...");
         yield return new WaitForSeconds(delayBeforeOpen);
+
+        // Set the computer as interactable after the delay
+        gameObject.tag = "Interactables";
+
         StartCoroutine(FadeInComputerUI());
-        AudioManager.Instance.Play(bootSoundName); // Use AudioManager for boot sound
+        AudioManager.Instance.Play(bootSoundName); // Play boot sound
     }
 
     private IEnumerator FadeInComputerUI()
