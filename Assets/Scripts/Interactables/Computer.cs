@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
-// Ensure this is added if you're using the Universal Render Pipeline
 using System.Collections;
+
 public class Computer : MonoBehaviour
 {
     [Header("Computer Settings")]
@@ -25,11 +25,15 @@ public class Computer : MonoBehaviour
     public string bootSoundName;
 
     private Outline outline; // Reference to the Outline component
+    private string originalDebugInput; // Variable to store the original debug input
 
     private void Start()
     {
         // Get the Outline component
         outline = GetComponent<Outline>();
+
+        // Store the original debug input field value
+        originalDebugInput = debugInputField != null ? debugInputField.text : string.Empty;
 
         // Initially ensure the computer is off by setting alpha to 0
         SetComputerUIAlpha(0);
@@ -78,8 +82,7 @@ public class Computer : MonoBehaviour
         Debug.Log("Waiting before opening computer...");
         yield return new WaitForSeconds(delayBeforeOpen);
 
-        // Set the computer as interactable after the delay
-        gameObject.tag = "Interactables";
+        
 
         StartCoroutine(FadeInComputerUI());
         AudioManager.Instance.Play(bootSoundName); // Play boot sound
@@ -93,8 +96,11 @@ public class Computer : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
             SetComputerUIAlpha(alpha);
+            
             yield return null;
         }
+        // Set the computer as interactable after the delay
+        gameObject.tag = "Interactables";
         SetComputerUIAlpha(1);
     }
 
@@ -128,6 +134,10 @@ public class Computer : MonoBehaviour
         else
         {
             Debug.Log("Invalid debug code entered for computer: " + gameObject.name);
+
+            // Reset the input field to the original input
+            debugInputField.text = originalDebugInput;
+
             return "Invalid debug code.";
         }
     }

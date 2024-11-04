@@ -21,6 +21,7 @@ public class ColorMixer : MonoBehaviour
     public Color redPurple;           // Red + Purple
     public Color yellowGreen;         // Yellow + Green
     public Color greenPurple;         // Green + Purple
+    public Color yellowPurple;        // Yellow + Purple
 
     [Header("Color Setup")]
     public Image[] colorPlaceholders; // Assign the placeholder images in the Inspector
@@ -94,7 +95,6 @@ public class ColorMixer : MonoBehaviour
 
     Color MixColors(Color color1, Color color2)
     {
-        // Determine the mixed color based on combinations
         if ((color1 == redColor && color2 == yellowColor) || (color1 == yellowColor && color2 == redColor))
             return redYellow;
         if ((color1 == blueColor && color2 == yellowColor) || (color1 == yellowColor && color2 == blueColor))
@@ -113,9 +113,12 @@ public class ColorMixer : MonoBehaviour
             return yellowGreen;
         if ((color1 == greenColor && color2 == purpleColor) || (color1 == purpleColor && color2 == greenColor))
             return greenPurple;
+        if ((color1 == yellowColor && color2 == purpleColor) || (color1 == purpleColor && color2 == yellowColor))
+            return yellowPurple;
 
         return Color.clear; // Return clear if no match
     }
+
 
     void ClearColors()
     {

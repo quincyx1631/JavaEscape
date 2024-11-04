@@ -9,21 +9,42 @@ public class ColorCombinationDevice : MonoBehaviour
     public GameObject[] colorObjects;  // Five 3D objects for color-changing
     public GameObject checkObject;      // Object to check the combination
     public TextMeshProUGUI displayText; // TMP for displaying results and password
+    public TextMeshProUGUI clueText;    // TMP for displaying clues
 
     [Header("Combination Settings")]
     public Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow, Color.magenta };
+
     private List<int> currentCombination = new List<int>();
-    public int[] correctCombination; // Set this in the Inspector
+
+    // Struct to hold a combination and its associated clue
+    [System.Serializable]
+    public struct CombinationData
+    {
+        public int[] combination; // Correct combination
+        [TextArea] public string clue;       // Associated clue
+    }
+
+    public CombinationData[] combinations; // Array to hold multiple combinations
 
     private string generatedPassword = "";
     private bool isAnimating = false;
     private bool hasGeneratedPassword = false; // Flag to prevent multiple generations
     private List<Color> originalColors = new List<Color>();
 
+    private CombinationData selectedCombination; // Randomly selected combination and clue
+
     public KeypadNumbers keypadNumbers; // Reference to KeypadNumbers script
 
     void Start()
     {
+        // Randomly select one combination and display its clue
+        if (combinations.Length > 0)
+        {
+            int randomIndex = Random.Range(0, combinations.Length);
+            selectedCombination = combinations[randomIndex];
+            clueText.text = selectedCombination.clue;
+        }
+
         // Store original colors and initialize combination
         foreach (var obj in colorObjects)
         {
@@ -51,18 +72,8 @@ public class ColorCombinationDevice : MonoBehaviour
     {
         if (isAnimating || hasGeneratedPassword) return; // Skip if animation is running or password already generated
 
-        // Verify if the current combination matches the correct one
-        bool isCorrect = true;
-        for (int i = 0; i < correctCombination.Length; i++)
-        {
-            if (currentCombination[i] != correctCombination[i])
-            {
-                isCorrect = false;
-                break;
-            }
-        }
-
-        if (isCorrect)
+        // Check if the current combination matches the selected correct combination
+        if (CheckIfCorrect(currentCombination, selectedCombination.combination))
         {
             // Start the password generation animation
             StartCoroutine(GeneratePasswordAnimation());
@@ -83,6 +94,19 @@ public class ColorCombinationDevice : MonoBehaviour
         {
             DisplayWrongMessage();
         }
+    }
+
+    private bool CheckIfCorrect(List<int> current, int[] correct)
+    {
+        if (current.Count != correct.Length) return false;
+        for (int i = 0; i < correct.Length; i++)
+        {
+            if (current[i] != correct[i])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     void SetColor(int index, int colorIndex)

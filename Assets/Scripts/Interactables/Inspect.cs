@@ -11,7 +11,6 @@ public class Inspect : MonoBehaviour
     private bool isRotating = false;
 
     public float rotationSpeed = 200f;
-
     public Camera inspectionCamera;
     public Transform inspectionPoint;
     private Collider itemCollider;
@@ -24,15 +23,20 @@ public class Inspect : MonoBehaviour
     public string inspectStopSoundName;
 
     public PlayerInteraction playerInteraction;
-    public Transform playerTransform; // Reference to the player's transform
+    public Transform playerTransform;
 
-    // Public field for initial rotation
-    public Vector3 initialRotationEulerAngles; // Allows setting initial rotation in degrees via the Inspector
+    public Vector3 initialRotationEulerAngles;
+
+    // Zoom variables
+    public float zoomedFOV = 30f;  // Field of View when zoomed in
+    public float zoomSpeed = 10f;  // Speed of FOV adjustment
+    private float defaultFOV;      // Original FOV to revert back to after zooming
 
     void Start()
     {
         if (inspectionCamera != null)
         {
+            defaultFOV = inspectionCamera.fieldOfView;
             inspectionCamera.enabled = false;
             inspectionCamera.gameObject.SetActive(false);
         }
@@ -54,6 +58,7 @@ public class Inspect : MonoBehaviour
         if (isInspecting)
         {
             HandleRotation();
+            HandleZoom();
 
             transform.position = inspectionPoint.position;
 
@@ -79,7 +84,6 @@ public class Inspect : MonoBehaviour
             float angleX = mouseDelta.y * rotationSpeed * Time.deltaTime;
             float angleY = -mouseDelta.x * rotationSpeed * Time.deltaTime;
 
-            // Rotate based on camera's local up and right vectors
             transform.Rotate(inspectionCamera.transform.up, angleY, Space.World);
             transform.Rotate(inspectionCamera.transform.right, angleX, Space.World);
 
@@ -92,15 +96,24 @@ public class Inspect : MonoBehaviour
         }
     }
 
+    private void HandleZoom()
+    {
+        if (Input.GetMouseButton(1))  // Right-click held for zooming in
+        {
+            inspectionCamera.fieldOfView = Mathf.Lerp(inspectionCamera.fieldOfView, zoomedFOV, zoomSpeed * Time.deltaTime);
+        }
+        else
+        {
+            inspectionCamera.fieldOfView = Mathf.Lerp(inspectionCamera.fieldOfView, defaultFOV, zoomSpeed * Time.deltaTime);
+        }
+    }
+
     private Quaternion CalculateInitialRotation()
     {
-        // Calculate rotation based on the player's position relative to the item
         Vector3 directionToPlayer = playerTransform.position - transform.position;
-        directionToPlayer.y = 0; // Ignore vertical difference
+        directionToPlayer.y = 0;
 
         Quaternion playerRotation = Quaternion.LookRotation(-directionToPlayer, Vector3.up);
-
-        // Combine the player's rotation with the manually set initial rotation
         return playerRotation * Quaternion.Euler(initialRotationEulerAngles);
     }
 
@@ -121,7 +134,6 @@ public class Inspect : MonoBehaviour
             originalRotation = transform.rotation;
             originalPosition = transform.position;
 
-            // Calculate and apply the initial rotation
             initialRotation = CalculateInitialRotation();
             transform.rotation = initialRotation;
 
@@ -197,6 +209,7 @@ public class Inspect : MonoBehaviour
             {
                 inspectionCamera.enabled = false;
                 inspectionCamera.gameObject.SetActive(false);
+                inspectionCamera.fieldOfView = defaultFOV; // Reset FOV when inspection ends
             }
 
             if (inspectionPoint != null)

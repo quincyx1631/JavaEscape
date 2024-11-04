@@ -97,8 +97,15 @@ public class Breaker : MonoBehaviour
 
     private void HideKey()
     {
+        // Remove the key from the item holder by detaching it from its parent
+        key.transform.SetParent(null);
+
+        // Disable the key GameObject to hide it
         key.SetActive(false);
+
+        Debug.Log("Key has been removed from the item holder and hidden.");
     }
+
 
     private void ActivateComputer()
     {

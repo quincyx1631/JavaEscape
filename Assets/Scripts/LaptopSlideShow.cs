@@ -67,6 +67,9 @@ public class LaptopSlideShow : MonoBehaviour
                 if (AllSlidesMatched())
                 {
                     tvSlideShow.ShowPasswordClue();
+
+                    // Mark as collected when all slides are matched
+                    CollectionManager.Instance.MarkAsCollected(this.GetComponent<Interactables>());
                 }
             }
             else
