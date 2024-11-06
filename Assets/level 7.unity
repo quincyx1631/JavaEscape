@@ -9027,6 +9027,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7738228296268081863, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
   m_PrefabInstance: {fileID: 593810102}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1266033196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9107809802925643740, guid: 760008a8a002544439cca52d84001db7, type: 3}
+  m_PrefabInstance: {fileID: 351896373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1266033198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5719778280777713364, guid: 760008a8a002544439cca52d84001db7, type: 3}
+  m_PrefabInstance: {fileID: 351896373}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266033196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efecd02eccf9a8a4baabd82c45f0d955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1266489755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 148af8af08d36ff43866bc3410d991fe, type: 3}
@@ -9258,6 +9274,312 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0833ca215709fe144a729626acc009a5, type: 3}
+--- !u!1001 &1322490549
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.0352926
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.183
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.683224
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69080293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69080305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15096787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15096785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 24.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396935937281666516, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_Name
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855071847644708668, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickUpItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: alertUI
+      value: 
+      objectReference: {fileID: 746621771}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: itemHolder
+      value: 
+      objectReference: {fileID: 1853507505}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 1695920888}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1936583781}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionPoint
+      value: 
+      objectReference: {fileID: 875655365}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1695920889}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionCamera
+      value: 
+      objectReference: {fileID: 574140127}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 1262055571}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 1283338806}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookUI
+      value: 
+      objectReference: {fileID: 1266033196}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1936583781}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1262055568}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookContents
+      value: 
+      objectReference: {fileID: 1266033198}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36><color=#FF0000>LESSON 3: SWING DIALOG</color></size></b>\r\n<size=26><color=#000000>\r\n\r\n<b><size=30><color=#FF0000>JOption
+        Pane Dialogs</color></size></b>\r\nA dialog box is a temporary window for
+        user input, notifications, or confirmations. The `JOptionPane` class in Swing
+        creates four standard dialog boxes: message, confirmation, input, and option
+        dialogs.\r\n\r\n\r\n<b><size=30><color=#FF0000>The four standard dialogs
+        of JOptionPane class</color></size></b>\r\n1.\t<b><size=30><color=#FF0000>Message
+        Dialog</color></size></b> Displays an error, information, warning message
+        with an OK button. \r\n\r\n<b><size=30><color=#E97132>The syntax for the
+        message dialog</color></size></b>   \r\n\r\nJOptionPane.showMessageDialog(\r\nComponent
+        parentComponent, \r\nObject message, \r\nString title,\r\n int messageType,\r\nIcon
+        icon);\r\n\r\n\r\n\u2022\t<b><size=30><color=#E97132>parentComponent</color></size></b>   
+        \u2013 This parameter can be any component or null that determines which
+        JFrame would be the parent of the dialog box. \r\n\r\n\u2022\t<b><size=30><color=#E97132>message</color></size></b>   
+        \u2013 The second parameter is used to place any objects. But often, a String
+        is used to display a message to the dialog. NOTE: The message dialog will
+        work as long as the two given parameters are supplied (i.e Parent component
+        and Object). \r\n\r\n\u2022\t<b><size=30><color=#E97132>title</color></size></b>   
+        \u2013 The title is a string displayed in the title bar of the dialog with
+        the default value \"Message\". \r\n\r\n\u2022\t<b><size=30><color=#E97132>messageType</color></size></b>   
+        \u2013 This parameter can be a number or a constant value that determines
+        the type of message dialog to be used. See the table below for the list of
+        message dialog types:\r\n\r\nMessage Dialog Type\tInt value\tIcon\tDescription\r\nPLAIN_MESSAGE\t-1\tBlank\tA
+        message that \r\nContains a message but no icon.\r\nERROR_MESSAGE\t0\tx\tA
+        dialog that indicates a program error.\r\nINFORMATION_MESSAGE\t1\ti\tThis
+        dialog indicates an informational message.\r\nWARNING_MESSAGE\t2\t!\tThis
+        message dialog warns for potential problem in a program.\r\nQUESTION_MESSAGE\t3\t?\tThis
+        dialog displays a question. This dialog usually requires a button for a response\r\n\r\n\r\n\u2022\t<b><size=30><color=#E97132>icon</color></size></b>   
+        \u2013 The icon to display in a message dialog. An Icon in the dialog boxes
+        can be specified using the ImageIcon class. ImageIcon class supports JPEG,
+        PNG and GIF files.\r\n\r\nimport javax.swing.*;\r\n\r\npublic class InformationDialogExample
+        {\r\n    public static void main(String[] args) {\r\n        JFrame frame
+        = new JFrame(\"Information Dialog Example\");\r\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n       
+        frame.setSize(400, 300);\r\n\r\n        JOptionPane.showMessageDialog(frame,
+        \"This is an information message\", \"Information\", JOptionPane.INFORMATION_MESSAGE);\r\n\r\n       
+        frame.setVisible(true);\r\n    }\r\n}\r\n\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\tA
+        JFrame is created with the title \"Information Dialog Example.\"\r\n\u2022\tJOptionPane.showMessageDialog
+        is used to display an information message dialog with the message \"This
+        is an information message\" and the title \"Information.\"\r\n\u2022\tThe
+        JOptionPane.INFORMATION_MESSAGE constant specifies that the dialog is an
+        information message.\r\n\u2022\tThe frame is made visible. Note that the
+        frame is not necessary for displaying the dialog, but it serves as the parent
+        component. The dialog will be displayed in the center of the screen if the
+        frame is not visible.\r\n\r\n2.\t<b><size=30><color=#FF0000>Confirmation
+        Dialog</color></size></b> Displays a question and asks for the user\u2019s
+        confirmation from the list of default options (OK/YES/NO/CANCEL).\r\n\r\n<b><size=30><color=#E97132>Syntax
+        for the confirmation dialog</color></size></b>   \r\n\r\nJOptionPane.showConfirmDialog(Component
+        parentComponent, Object message, \r\nString title, \r\nint optionType, \r\nint
+        messageType,\r\nIcon icon);\r\n\r\n \r\n\u2022\t<b><size=30><color=#E97132>parentComponent</color></size></b>  
+        \u2013 This parameter can be any component or null that determines which
+        JFrame would be the parent of the dialog box. \r\n\r\n\u2022\t<b><size=30><color=#E97132>message</color></size></b>   
+        \u2013 The second parameter is used to place any objects.But often, a String
+        is used to display a message to the dialog. \r\n\r\n\u2022\t<b><size=30><color=#E97132>title</color></size></b>  
+        \u2013 The title is a string displayed in the title bar of the dialog with
+        the default value \"Select an option\". \r\n\r\n\u2022\t<b><size=30><color=#E97132>optionType</color></size></b>  
+        \u2013 The optionType determines which buttons are displayed in the dialog.
+        The possible values of the optionType can be one of the following:\r\n\r\n<b><size=30><color=#E97132>Types
+        of option supported by Java</color></size></b>  \r\n\u2022\tYES_NO_OPTION
+        An option type to be used to display a YES and NO options.\r\n\u2022\tYES_NO_CANCEL_OPTION
+        An option type to be used to display a YES, NO and CANCEL options. \r\n\u2022\tOK_CANCEL_OPTION
+        An option type to be used to display an OK and CANCEL options.\r\n\r\n<b><size=30><color=#E97132>Value
+        of each button in the dialog box</color></size></b>  \r\n\u2022\tCLOSED (When
+        the user closed the dialog box instead of choosing an option) -1 \r\n\u2022\tOK
+        0 \r\n\u2022\tYES 0 \r\n\u2022\tNO 1 \r\n\u2022\tCANCEL 2\r\n\r\n\r\n\u2022\t<b><size=30><color=#E97132>messageType</color></size></b>  
+        \u2013 This parameter can be a number or a constant value that determines
+        the type of message dialog to be used. \r\n\r\nNOTE: The default messageType
+        for confirm dialog is QUESTION_MESSAGE. \r\n\u2022\t<b><size=30><color=#E97132>icon</color></size></b>  
+        - The icon to display in a confirmation dialog\r\n<b><size=30><color=#FF0000>CODE</color></size></b>  
+        \r\nimport javax.swing.*;\r\nimport java.awt.event.*;\r\n\r\npublic class
+        ConfirmExitExample {\r\n    public static void main(String[] args) {\r\n       
+        JFrame frame = new JFrame(\"Confirm Exit Example\");\r\n        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);\r\n       
+        frame.setSize(400, 300);\r\n        \r\n        frame.addWindowListener(new
+        WindowAdapter() {\r\n            @Override\r\n            public void windowClosing(WindowEvent
+        e) {\r\n                int result = JOptionPane.showConfirmDialog(\r\n                       
+        frame,\r\n                        \"Are you sure you want to exit?\",\r\n                       
+        \"Exit Confirmation\",\r\n                        JOptionPane.YES_NO_OPTION,\r\n                       
+        JOptionPane.QUESTION_MESSAGE\r\n                );\r\n                \r\n               
+        if (result == JOptionPane.YES_OPTION) {\r\n                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n               
+        }\r\n            }\r\n        });\r\n\r\n        frame.setVisible(true);\r\n   
+        }\r\n}\r\n\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\tCreate
+        a JFrame with title \"Confirm Exit Example\".\r\n\u2022\tSet DO_NOTHING_ON_CLOSE
+        to prevent immediate closing.\r\n\u2022\tAdd a WindowListener to handle window
+        closing.\r\n\u2022\tOverride windowClosing to show a confirmation dialog
+        using JOptionPane.showConfirmDialog.\r\n\u2022\tDisplay a dialog with \"Yes\"
+        and \"No\" options.\r\n\u2022\tClose the frame if \"Yes\" is selected.\r\n\u2022\tMake
+        the frame visible with setVisible(true).\r\n\r\n3.\t<b><size=30><color=#FF0000>Input
+        Dialog</color></size></b> Displays a question and gets the user\u2019s input
+        from the text field, combo box or list \r\n\r\n<b><size=30><color=#E97132>Syntax
+        for the input dialog</color></size></b>  \r\n\r\nJOptionPane.showInputDialog(Component
+        parentComponent, \r\nObject message\r\nString title, \r\nint messageType,
+        \r\nIcon icon,\r\nObjectp[] selectionValues,\r\nObject initialSelectedValue);\r\n\r\n\u2022\t<b><size=30><color=#E97132>parentComponent</color></size></b> 
+        \u2013 This parameter can be any component or null that determines which
+        JFrame would be the parent of the dialog box. \r\n\u2022\t<b><size=30><color=#E97132>message</color></size></b> 
+        \u2013 The second parameter is used to place any objects. But often, a String
+        is used to display a message to the dialog. \r\n\u2022\t<b><size=30><color=#E97132>title</color></size></b> 
+        \u2013 This parameter is a String used as a title displayed in the title
+        bar of the message dialog. \r\n\u2022\t<b><size=30><color=#E97132>messageType</color></size></b> 
+        \u2013 This parameter can be a number or a constant value that determines
+        the type of message dialog to be used. \r\n\u2022\t<b><size=30><color=#E97132>icon</color></size></b>  
+        - The icon to display in an input dialog.\r\n\u2022\t<b><size=30><color=#E97132>selectionValues</color></size></b>
+        \u2013 This parameter is an array of Objects that store the possible options
+        of the input dialog. \r\n\u2022\t<b><size=30><color=#E97132>initialSelectedValue</color></size></b>
+        \u2013 This parameter sets which index in the array would be the initial
+        value of the input dialog.\r\n\r\nimport javax.swing.*;\r\n\r\npublic class
+        InputDialogExample {\r\n    public static void main(String[] args) {\r\n       
+        String userInput = JOptionPane.showInputDialog(null, \"Enter your name:\");\r\n\r\n       
+        if (userInput != null) {\r\n            JOptionPane.showMessageDialog(null,
+        \"Hello, \" + userInput + \"!\");\r\n        } else {\r\n            JOptionPane.showMessageDialog(null,
+        \"No name entered.\");\r\n        }\r\n    }\r\n}\r\n\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\tThe
+        program shows an input dialog asking for the user's name.\r\n\u2022\tIf the
+        user enters a name, it displays a greeting message; if canceled, it informs
+        that no name was entered.\r\n\r\n\r\n4.\t<b><size=30><color=#FF0000>Option
+        Dialog </color></size></b>Displays a question and get the user\u2019s response
+        from the set of customized options.\r\n\r\n<b><size=30><color=#E97132>Syntax
+        for the Option dialog</color></size></b>\r\n\r\nJOptionPane.showOptionDialog(Component
+        parentComponent, \r\nObject message, \r\nString title, \r\nint messageType,\r\nIcon
+        icon,\r\nObjectp[] selectionValues,\r\nObject initialSelectedValue);\r\n\r\n\r\n\u2022\t<b><size=30><color=#E97132>parentComponent</color></size></b>
+        \u2013 This parameter can be any component or null that determines which
+        JFrame would be the parent of the dialog box. \r\n\u2022\t<b><size=30><color=#E97132>message</color></size></b>
+        \u2013 The second parameter is used to place any objects. But often, a String
+        is used to display a message to the dialog. \r\n\u2022\t<b><size=30><color=#E97132>title</color></size></b>
+        \u2013 This parameter is a String used as a title displayed in the title
+        bar of the option dialog. \r\n\u2022\t<b><size=30><color=#E97132>messageType</color></size></b>
+        \u2013 This parameter can be a number or a constant value that determines
+        the type of message dialog to be used. \r\n\u2022\t<b><size=30><color=#E97132>icon</color></size></b>
+        - The icon to display in an option dialog. \r\n\u2022\t<b><size=30><color=#E97132>selectionValues</color></size></b>
+        \u2013 This parameter is an array of Objects that store the possible options
+        of the option dialog. \r\n\u2022\t<b><size=30><color=#E97132>initialSelectedValue</color></size></b>
+        \u2013 This parameter sets which index in the array would be the initial
+        value of the option dialog.\r\n\r\nimport javax.swing.*;\r\n\r\npublic class
+        OptionDialogExample {\r\n    public static void main(String[] args) {\r\n       
+        Object[] options = {\"Yes, please!\", \"No, thanks!\", \"Maybe later\"};\r\n\r\n       
+        int choice = JOptionPane.showOptionDialog(null,\r\n                \"Would
+        you like to continue?\",\r\n                \"Choose an Option\",\r\n               
+        JOptionPane.YES_NO_CANCEL_OPTION,\r\n                JOptionPane.QUESTION_MESSAGE,\r\n               
+        null,\r\n                options,\r\n                options[0]);\r\n\r\n       
+        if (choice == 0) {\r\n            JOptionPane.showMessageDialog(null, \"You
+        chose: Yes, please!\");\r\n        } else if (choice == 1) {\r\n           
+        JOptionPane.showMessageDialog(null, \"You chose: No, thanks!\");\r\n       
+        } else if (choice == 2) {\r\n            JOptionPane.showMessageDialog(null,
+        \"You chose: Maybe later!\");\r\n        } else {\r\n            JOptionPane.showMessageDialog(null,
+        \"No option selected.\");\r\n        }\r\n    }\r\n}\r\n\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\tThe
+        program defines custom options for the dialog.\r\n\u2022\tIt shows an option
+        dialog and captures the user's choice.\r\n\u2022\tBased on the selection,
+        it displays a corresponding message.\r\n\r\n<b><size=30><color=#FF0000>JColorChooser
+        Class</color></size></b>\r\nColor dialogs allow users to select colors for
+        customizing applications. The JColorChooser class from java.awt.Dialog is
+        used for this purpose, enabling changes to background and foreground colors
+        of UI controls.\r\n\r\n<b><size=30><color=#FF0000>Syntax for creating color
+        dialog</color></size></b>\r\n\r\nJColorChooser.showDialog(Component parentComponent,
+        \r\nString title, \r\nColor initialColor);\r\n\r\n\r\n\r\n\u2022\t<b><size=30><color=#E97132>parentComponent</color></size></b>
+        \u2013 This parameter can be any component or null that determines which
+        JFrame would be the parent of the dialog box. \r\n\u2022\t<b><size=30><color=#E97132>title</color></size></b>
+        \u2013 This parameter is a String used as a title displayed in the title
+        bar of the color dialog. \r\n\u2022\t<b><size=30><color=#E97132>initialColor</color></size></b>
+        \u2013 This parameter sets which color in the palette would be the initial
+        value of the color dialog.\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport
+        java.awt.event.*;\r\n\r\npublic class ColorDialogExample {\r\n    public
+        static void main(String[] args) {\r\n        JFrame frame = new JFrame(\"Color
+        Dialog Example\");\r\n        JButton button = new JButton(\"Choose Color\");\r\n\r\n       
+        button.addActionListener(new ActionListener() {\r\n            public void
+        actionPerformed(ActionEvent e) {\r\n                Color selectedColor =
+        JColorChooser.showDialog(frame, \"Choose a Color\", Color.WHITE);\r\n               
+        if (selectedColor != null) {\r\n                    button.setBackground(selectedColor);\r\n               
+        }\r\n            }\r\n        });\r\n\r\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n       
+        frame.setSize(300, 200);\r\n        frame.setLayout(new FlowLayout());\r\n       
+        frame.add(button);\r\n        frame.setVisible(true);\r\n    }\r\n}\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\tThis
+        program creates a simple window with a button.\r\n\u2022\tWhen the button
+        is clicked, a color dialog appears, allowing the user to choose a color.\r\n\u2022\tThe
+        selected color changes the button's background color.\r\n\r\n\r\n<b><size=30><color=#FF0000>JFileChooser
+        Class</color></size></b>\r\nJFileChooser is a class that opens a dialog for
+        navigating the filesystem to select files for opening or saving.\r\n\r\n<b><size=30><color=#FF0000>Syntax
+        for creating file dialog</color></size></b>\r\nJFileChooser fileChooser =
+        new JFileChooser();\r\nfileChooser.showDialogType(Component parentComponent);
+        // For opening\r\nfileChooser.showDialogType Component parentComponent);
+        // For saving\r\n\r\n\r\n\u2022\t<b><size=30><color=#E97132>parentComponent</color></size></b>
+        \u2013 This parameter can be any component or null that determines which
+        JFrame would be the parent of the dialog box\r\n\r\nimport javax.swing.*;\r\nimport
+        java.io.File;\r\n\r\npublic class FileOpenDialogExample {\r\n    public static
+        void main(String[] args) {\r\n        JFileChooser fileChooser = new JFileChooser();\r\n       
+        \r\n        fileChooser.setDialogTitle(\"Open a File\");\r\n        \r\n       
+        int userSelection = fileChooser.showOpenDialog(null);\r\n        \r\n       
+        if (userSelection == JFileChooser.APPROVE_OPTION) {\r\n            File fileToOpen
+        = fileChooser.getSelectedFile();\r\n            System.out.println(\"Selected
+        file: \" + fileToOpen.getAbsolutePath());\r\n        } else {\r\n           
+        System.out.println(\"Open command cancelled by user.\");\r\n        }\r\n   
+        }\r\n}\r\n\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\tThe
+        program creates a JFileChooser instance to open a file dialog.\r\n\u2022\tIt
+        sets a title for the dialog.\r\n\u2022\tIt displays the dialog, allowing
+        the user to select a file.\r\n\u2022\tIf a file is selected, it prints the
+        file's path; otherwise, it notifies the user that the command was canceled.\r\n</color></size>\r\n\r\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
 --- !u!1 &1327403684
 GameObject:
   m_ObjectHideFlags: 0
@@ -13455,3 +13777,4 @@ SceneRoots:
   - {fileID: 1170836413}
   - {fileID: 88149510}
   - {fileID: 67455694}
+  - {fileID: 1322490549}

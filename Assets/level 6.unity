@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3351128291583626262, guid: dbe003f5025d6174d929a403c4257177, type: 3}
       propertyPath: letter
-      value: 68
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 5025902408027708678, guid: dbe003f5025d6174d929a403c4257177, type: 3}
       propertyPath: escapeUI
@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6293377480719597425, guid: dbe003f5025d6174d929a403c4257177, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8603391464742919686, guid: dbe003f5025d6174d929a403c4257177, type: 3}
       propertyPath: m_Name
       value: D 4
@@ -230,7 +234,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2423829490021507191, guid: 7dddcf8b085e2b141bbf7ad52f35dd28, type: 3}
       propertyPath: letter
-      value: 78
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 7075131787380953314, guid: 7dddcf8b085e2b141bbf7ad52f35dd28, type: 3}
       propertyPath: m_Name
@@ -312,6 +316,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8515065359543543213, guid: 7dddcf8b085e2b141bbf7ad52f35dd28, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -804,7 +812,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.size
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].clip
@@ -895,6 +903,14 @@ PrefabInstance:
       value: S5
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bf927b378747f674bb735ba0e668e85d, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].name
+      value: pick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -939,6 +955,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].volume
       value: 1
       objectReference: {fileID: 0}
@@ -980,6 +1000,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[31].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2580487136659981168, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
@@ -1634,7 +1658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502363009648537839, guid: bac60e3ed76ba314d9abbdf343819e32, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8188667366160967308, guid: bac60e3ed76ba314d9abbdf343819e32, type: 3}
       propertyPath: alertUI
@@ -1648,6 +1672,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8188667366160967308, guid: bac60e3ed76ba314d9abbdf343819e32, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8364651009576628011, guid: bac60e3ed76ba314d9abbdf343819e32, type: 3}
       propertyPath: escapeUI
       value: 
@@ -1697,9 +1725,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 692851030548207050, guid: b4ea54ee236eeba4bbeafafcf1a02d50, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3768881441339134415, guid: b4ea54ee236eeba4bbeafafcf1a02d50, type: 3}
       propertyPath: letter
-      value: 65
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3883463177022415035, guid: b4ea54ee236eeba4bbeafafcf1a02d50, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1968,7 +2000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7964670541096254963, guid: 09632ae6e91edcd4fac51a68f983356f, type: 3}
       propertyPath: letter
-      value: 68
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8486633599153427352, guid: 09632ae6e91edcd4fac51a68f983356f, type: 3}
       propertyPath: alertUI
@@ -1982,6 +2014,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8486633599153427352, guid: 09632ae6e91edcd4fac51a68f983356f, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3070,7 +3106,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 5158478093012788036, guid: 25cdf278171c2314cb76b63fcedb30c2, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8178439247138799588, guid: 25cdf278171c2314cb76b63fcedb30c2, type: 3}
       propertyPath: alertUI
@@ -3084,6 +3120,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8178439247138799588, guid: 25cdf278171c2314cb76b63fcedb30c2, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3447,6 +3487,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3188898968833188433, guid: 08c4394a065e1b747865693d79c67ed4, type: 3}
+      propertyPath: letter
+      value: 79
+      objectReference: {fileID: 0}
     - target: {fileID: 4390311875849984198, guid: 08c4394a065e1b747865693d79c67ed4, type: 3}
       propertyPath: escapeUI
       value: 
@@ -3483,6 +3527,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6834313237355788995, guid: 08c4394a065e1b747865693d79c67ed4, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7327694845135002028, guid: 08c4394a065e1b747865693d79c67ed4, type: 3}
       propertyPath: m_Name
       value: T 2
@@ -3914,6 +3962,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 2425455066278011398, guid: 7b97671784679db4a8e0eedda79c2101, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3853912844074821039, guid: 7b97671784679db4a8e0eedda79c2101, type: 3}
       propertyPath: escapeUI
       value: 
@@ -3940,7 +3992,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 6338479519980442246, guid: 7b97671784679db4a8e0eedda79c2101, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3957,7 +4009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 80297755932706286, guid: d526c9d874d80cc41a9b6f17437f01ef, type: 3}
       propertyPath: letter
-      value: 76
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 621203632720153060, guid: d526c9d874d80cc41a9b6f17437f01ef, type: 3}
       propertyPath: alertUI
@@ -3971,6 +4023,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 621203632720153060, guid: d526c9d874d80cc41a9b6f17437f01ef, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 4585647100173911219, guid: d526c9d874d80cc41a9b6f17437f01ef, type: 3}
       propertyPath: escapeUI
       value: 
@@ -4263,6 +4319,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 2355820329847142984, guid: 27b4450059b338044801bc013944a2ba, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3538549585919713048, guid: 27b4450059b338044801bc013944a2ba, type: 3}
       propertyPath: escapeUI
       value: 
@@ -4287,6 +4347,10 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 5908628740138782448, guid: 27b4450059b338044801bc013944a2ba, type: 3}
+      propertyPath: letter
+      value: 79
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4530,7 +4594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7190778864129934009, guid: b0451371402bebf439476650fbc38619, type: 3}
       propertyPath: letter
-      value: 83
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8881903863720353151, guid: b0451371402bebf439476650fbc38619, type: 3}
       propertyPath: alertUI
@@ -4544,6 +4608,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8881903863720353151, guid: b0451371402bebf439476650fbc38619, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8898500765855673459, guid: b0451371402bebf439476650fbc38619, type: 3}
       propertyPath: escapeUI
       value: 
@@ -4816,7 +4884,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 3401032339711142322, guid: ed3df64cea3b04240a1271395934c8f0, type: 3}
       propertyPath: letter
-      value: 66
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8316186886129159628, guid: ed3df64cea3b04240a1271395934c8f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4874,6 +4942,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 9112638939043035837, guid: ed3df64cea3b04240a1271395934c8f0, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4933,7 +5005,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2259078894579744458, guid: d6822cbc712508744b9ddf162c5ed53c, type: 3}
       propertyPath: letter
-      value: 76
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 2827154643407513802, guid: d6822cbc712508744b9ddf162c5ed53c, type: 3}
       propertyPath: alertUI
@@ -4947,6 +5019,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 2827154643407513802, guid: d6822cbc712508744b9ddf162c5ed53c, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3110908879674325273, guid: d6822cbc712508744b9ddf162c5ed53c, type: 3}
       propertyPath: escapeUI
       value: 
@@ -5298,6 +5374,250 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4753330505722287323, guid: eae569a96cb3c9e4090e7cc7e01ab5e2, type: 3}
+--- !u!1001 &267781719
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5943823
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08401966
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.769064
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69080293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69080305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15096787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15096785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 24.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396935937281666516, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_Name
+      value: book (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855071847644708668, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickUpItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: alertUI
+      value: 
+      objectReference: {fileID: 115239908}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: itemHolder
+      value: 
+      objectReference: {fileID: 811844957}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 324053546}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 2070724857}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionPoint
+      value: 
+      objectReference: {fileID: 2061513010}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 324053542}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionCamera
+      value: 
+      objectReference: {fileID: 2099267729}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 324053544}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 800548099}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookUI
+      value: 
+      objectReference: {fileID: 1955162305}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 2070724857}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 324053541}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookContents
+      value: 
+      objectReference: {fileID: 1955162304}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36><color=#FF0000>JList </color></size></b>\r\n<size=26><color=#000000>\r\nA
+        set of items that forms a list for single or multiple selections.\r\n\r\n<b><size=30><color=#FF0000>JList
+        Constructors</color></size></b>\r\n\u2022\t<b>JList()</b> Constructs an empty
+        List.\r\n\u2022\t<b>JList(ListModel listModel)</b> Constructs a list from
+        a given model.\r\n\u2022\t<b>JList(Object[] arr)</b> Constructs a list that
+        displays elements of a given array.\r\n\u2022\t<b>JList(Vector vector)</b>
+        Constructs a list that displays elements of a given vector.                    
+        \r\n\u2022\t\r\n      <b><size=30><color=#E97132>JList Common Methods</color></size></b>\r\n\u2022\t<b>getSelectedIndex(int
+        index)</b> Returns the index of the first item selected.\r\n\u2022\t<b>setSelectedIndex(int
+        index)</b> Selects the cell at a specified index.\r\n\u2022\t<b>getSelectedIndices(int[])</b>
+        Returns an array of all selected indices.\r\n\u2022\t<b>setSelectedIndices(int[])</b>
+        Selects the cells at specified indices.\r\n\u2022\t<b>getSelectedValue(Object
+        obj)</b> Returns the first item selected in the list.\r\n\u2022\t<b>getVisibleRowCount(int
+        count)</b> Returns the number of visible rows displayed.\r\n\u2022\t<b>setVisibleRowCount(int
+        count)</b> Sets the preferred number of visible rows displayed.\r\n\u2022\t<b>getSelectionMode(int
+        mode)</b> Returns the selection mode for the list (SINGLE_SELECTION, SINGLE_INTERVAL_SELECTION,
+        MULTIPLE_INTERVAL_SELECTION).\r\n\u2022\t<b>setSelectionMode(int mode)</b>
+        Sets the selection mode for the list.\r\n \r\n<b><size=30><color=#FF0000>JtextField</color></size></b>\r\nA
+        component for the display, input, and editing of a single line of plain text.\r\n\r\n<b><size=30><color=#E97132>JTextField
+        Constructors</color></size></b>\r\n\u2022\t<b>JTextField()</b> Creates a
+        text field.\r\n\u2022\t<b>JTextField(Doc doc, String text, int col)</b> Creates
+        a text field with document and number of columns.\r\n\u2022\t<b>JTextField(String
+        text)</b> Creates a text field with text.\r\n\u2022\t<b>JTextField(int col)</b>
+        Creates a text field with columns count.\r\n\u2022\t<b>JTextField(String
+        text, int col)</b> Creates a text field with text and number of columns.\r\n\r\n       
+        <b><size=30><color=#E97132>  JTextField Common Methods</color></size></b>\r\n\u2022\t<b>setText(String
+        text)</b> Sets the text field\u2019s text.\r\n\u2022\t<b>setIcon(Icon icon)</b>
+        Sets the label\u2019s default icon.\r\n\u2022\t<b>setHorizontalAlignment(int
+        h)</b> Sets the positioning of the text and icon on the label horizontally.\r\n\u2022\t<b>setVerticalAlignment(int
+        v)</b> Sets the vertical alignment of the text and icon on the label.\r\n\u2022\t<b>setHorizontalTextPosition(int
+        h)</b> Sets the location of the text relative to the icon horizontally.\r\n\u2022\t<b>setVerticalTextPosition(int
+        v)</b> Sets the location of the text relative to the icon vertically.\r\n\u2022\t<b>setIconGap(int
+        gap)</b> Sets the gap between the text and the icon.\r\n\r\n\r\n<b><size=30><color=#FF0000>JTextArea</color></size></b>
+        \r\n\u2022\tA component for the display, input, and editing of multiple lines
+        of text. \r\n\r\n<b><size=30><color=#E97132>JTextArea Constructors</color></size></b>\r\n\u2022\t<b>JTextArea()</b>
+        Sets a default model where rows and columns are set to 0.\r\n\u2022\t<b>JTextArea(Doc
+        doc, String text, int rows, int col)</b> Text area with the document, number
+        of columns, and rows.\r\n\u2022\t<b>JTextArea(String text)</b> Text area
+        with a given text, with rows and columns set to default values.\r\n\u2022\t<b>JTextArea(int
+        rows, int col)</b> Constructs a new text area with a given number of rows
+        and columns.\r\n\u2022\t<b>JTextArea(String text, int col)</b> Constructs
+        a new text area with a given text and number of columns.\r\n\r\n<b><size=30><color=#E97132>JTextArea
+        Common Methods</color></size></b>\r\n\u2022\t<b>setRows(int r)</b> Sets the
+        number of rows in the text area.\r\n\u2022\t<b>setColumns(int c)</b> Sets
+        the number of columns in the text area.\r\n\u2022\t<b>setLineWrap(boolean
+        b)</b> Sets whether the text in the area should wrap at the line boundary.\r\n\u2022\t<b>setWrapStyleWord(boolean
+        b)</b> Sets whether the line wrap occurs at word boundaries (true) or character
+        boundaries (false).\r\n\u2022\t<b>append(String text)</b> Appends the specified
+        text to the end of the text area.\r\n\u2022\t<b>insert(String text)</b> Inserts
+        the specified text at a given position in the text area.\r\n\u2022\t<b>getLineCount()</b>
+        Returns the number of lines currently in the text area.\r\n\r\n\r\n<b><size=30><color=#FF0000>JPasswordField
+        </color></size></b>\r\n\u2022\tA lightweight component that replaces the
+        user\u2019s input into a different character so that it doesn\u2019t show
+        its actual characters. \r\n\r\n<b><size=30><color=#E97132>JPasswordField
+        Constructors</color></size></b>\r\n\u2022\t<b>JPasswordField()</b> Constructs
+        a password field.\r\n\u2022\t<b>JPasswordField(Doc doc, String text, int
+        columns)</b> Constructs a password field with the document and the specified
+        number of columns.\r\n\u2022\t<b>JPasswordField(String text)</b> Constructs
+        a password field with the specified text.\r\n\u2022\t<b>JPasswordField(int
+        col)</b> Constructs a password field with the specified number of columns.\r\n\u2022\t<b>JPasswordField(String
+        text, int col)</b> Constructs a password field with the specified text and
+        number of columns.\r\n\r\n\r\n                     <b><size=30><color=#E97132>
+        JPasswordField Common Methods</color></size></b>\r\n\u2022\t<b>setEchoChar(Char
+        c)</b> Sets the echo character for the JPasswordField.\r\n\u2022\t<b>getEchoChar()</b>
+        Returns the character used for echoing.\r\n\u2022\t<b>getPassword()</b> Returns
+        the content of the password field as a string.\r\n\u2022\t<b>echoCharIsSet(boolean)</b>
+        Returns true if the JPasswordField has a character set for echoing.\r\n\r\n\r\n<b><size=30><color=#FF0000>JScrollBar
+        </color></size></b>\r\n\u2022\tA component that regulates the portion of
+        the viewing area. \r\n\r\n<b><size=30><color=#E97132>JScrollBar Constructors</color></size></b>\r\n\u2022\t<b>JScrollBar()</b>
+        Constructs a vertical scrollbar.\r\n\u2022\t<b>JScrollBar(int orientation)</b>
+        Constructs a scrollbar with a given orientation.\r\n\u2022\t<b>JScrollBar(int
+        orientation, int value, int extent, int min, int max)</b> Constructs a scrollbar
+        with a given orientation, along with the scrollbar\u2019s properties: value,
+        extent, minimum, and maximum.\r\n\r\n                    <b><size=30><color=#E97132>
+        JScrollBar Common Methods</color></size></b>\r\n\u2022\t<b>setOrientation(int
+        o)</b> Sets the horizontal or vertical style (default is horizontal).\r\n\u2022\t<b>setMaximum(int
+        max)</b> Sets the maximum value of the scroll bar when it reaches the end.\r\n\u2022\t<b>setMinimum(int
+        min)</b> Sets the minimum value of the scroll bar when it reaches the end.\r\n\u2022\t<b>setValue(int
+        value)</b> Sets the current value of the JScrollBar.\r\n\r\n<b><size=30><color=#FF0000>JSlider</color></size></b>
+        \r\n\u2022\tA sliding knob with a corresponding value interval for the user\u2019s
+        selection. \r\n\r\n<b><size=30><color=#E97132>JSlider Constructors</color></size></b>\r\n\u2022\t<b>JSlider()</b>
+        Constructs a horizontal slider in a range of 0 and 100 with an initial value
+        of 50.\r\n\u2022\t<b>JSlider(int o)</b> Constructs a horizontal slider with
+        orientation.\r\n\u2022\t<b>JSlider(int o)</b> Constructs a progress bar with
+        orientation (JSlider.VERTICAL, JSlider.HORIZONTAL).\r\n\u2022\t<b>JSlider(int
+        min, int max)</b> Constructs a horizontal slider with a minimum and maximum
+        values, and the initial value is an average of min plus max.\r\n\u2022\t<b>JSlider(int
+        o, int min, int max, int value)</b> Constructs a slider with the orientation
+        and the initialized minimum, maximum, and initial values.\r\n\u2022\t<b>JSlider(BoundedRangeModel
+        model)</b> Create a horizontal slider with an instance of BoundedRangeModel.\r\n\r\n
+        <b><size=30><color=#E97132>       JSlider Common Methods</color></size></b>\r\n\u2022\t<b>setOrientation(int
+        o)</b> Sets the horizontal or vertical style (default is JSlider.HORIZONTAL).\r\n\u2022\t<b>setMaximum(int
+        max)</b> Sets the maximum value of the slider (default is 100).\r\n\u2022\t<b>setMinimum(int
+        min)</b> Sets the minimum value of the slider (default is 0).\r\n\u2022\t<b>setValue(int
+        value)</b> Sets the current value of the slider.\r\n\u2022\t<b>setPaintLabels(boolean)</b>
+        Returns true if labels are painted at tick marks (default is false).\r\n\u2022\t<b>setPaintTicks(boolean)</b>
+        Returns true if the ticks are painted on the slider (default is false).\r\n\u2022\t<b>setPaintTrack(boolean)</b>
+        Returns true if the track is painted on the slider (default is true).\r\n\r\n<b><size=30><color=#FF0000>JSpinner</color></size></b>
+        \r\n\u2022\tA single-line field that allows users to select from an ordered
+        series of values.\r\n\r\n<b><size=30><color=#E97132>JSpinner Constructors</color></size></b>\r\n\u2022\t<b>JSpinner()</b>
+        Constructs an empty spinner with an initial value of zero.\r\n\u2022\t<b>JSpinner(SpinnerModel
+        model)</b> Constructs a spinner with a specific spinner model.\r\n\r\n                 
+        <b><size=30><color=#E97132>  JSpinner Common Methods</color></size></b>\r\n\u2022\t<b>SpinnerNumberModel(int
+        value, int min, int max, int step)</b> Returns a spinner model with a specific
+        initial value, minimum and maximum values, and defined step value.\r\n\u2022\t<b>setValue(Object
+        v)</b> Sets the value in the spinner.\r\n\u2022\t<b>getValue()</b> Returns
+        the current value of the spinner.\r\n\u2022\t<b>getPreviousValue()</b> Returns
+        the previous value of the spinner.\r\n\r\n\r\n<b><size=30><color=#FF0000>ImageIcon</color></size></b>
+        \r\nAn implementation that converts an image into an icon. \r\n\r\n\r\n<b><size=30><color=#FF0000>
+        JProgressBar </color></size></b>\r\nA bar that displays the progress of completion
+        of a specific task through percentage.\r\n\r\n<b><size=30><color=#E97132>JProgressBar
+        Constructors</color></size></b>\r\n\u2022\t<b>JProgressBar()</b> Constructs
+        a horizontal progress bar with the border but without a text or a progress
+        string.\r\n\u2022\t<b>JProgressBar(int orientation)</b> Constructs a progress
+        bar with a specific orientation that can be SwingConstants.HORIZONTAL or
+        SwingConstants.VERTICAL.\r\n\u2022\t<b>JProgressBar(int min, int max)</b>
+        Constructs a horizontal progress bar with a specific minimum and maximum
+        value.\r\n\u2022\t<b>JProgressBar(int orientation, int min, int max)</b>
+        Constructs a progress bar with a specific orientation (SwingConstants.HORIZONTAL
+        or SwingConstants.VERTICAL) and a minimum and maximum value.\r\n\u2022\t\r\n<b><size=30><color=#E97132>JProgressBar
+        Common Methods</color></size></b>\r\n\u2022\t<b>getMaximum()</b> Returns
+        the progress bar\u2019s maximum value.\r\n\u2022\t<b>getMinimum()</b> Returns
+        the progress bar\u2019s minimum value.\r\n\u2022\t<b>getString()</b> Returns
+        a String representation of the current value.\r\n\u2022\t<b>setMaximum(int
+        n)</b> Sets the progress bar\u2019s maximum value.\r\n\u2022\t<b>setMinimum(int
+        n)</b> Sets the progress bar\u2019s minimum value.\r\n\u2022\t<b>setValue(int
+        n)</b> Sets the progress bar\u2019s value.\r\n\u2022\t<b>setString(String
+        s)</b> Sets the value of the progress String to String s.\r\n</color></size>\r\n\r\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
 --- !u!1001 &274468638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7136,7 +7456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2622480121492135157, guid: 450236bd78f76024a93b9538d2583bdd, type: 3}
       propertyPath: letter
-      value: 68
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3898398356280523899, guid: 450236bd78f76024a93b9538d2583bdd, type: 3}
       propertyPath: m_Name
@@ -7218,6 +7538,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 9101089862715286148, guid: 450236bd78f76024a93b9538d2583bdd, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10732,9 +11056,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 1785980765315572282, guid: 1155a3fe32ff5614981386667dd2155d, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6234474644457628746, guid: 1155a3fe32ff5614981386667dd2155d, type: 3}
       propertyPath: letter
-      value: 77
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8737384413979896785, guid: 1155a3fe32ff5614981386667dd2155d, type: 3}
       propertyPath: escapeUI
@@ -56965,9 +57293,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 5448263490464905198, guid: 0b95435bf97007045b2587c701e14a55, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 9018879711081360871, guid: 0b95435bf97007045b2587c701e14a55, type: 3}
       propertyPath: letter
-      value: 74
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57069,6 +57401,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 439834070703555561, guid: 826345837942b544187dcc475faf9262, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 460389892827677981, guid: 826345837942b544187dcc475faf9262, type: 3}
       propertyPath: m_Name
       value: N 5
@@ -57139,7 +57475,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 8859848834646052542, guid: 826345837942b544187dcc475faf9262, type: 3}
       propertyPath: letter
-      value: 78
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57598,6 +57934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: T 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5580609926587493050, guid: ed5207fbf5126e445bcbe985307df4a2, type: 3}
+      propertyPath: letter
+      value: 79
+      objectReference: {fileID: 0}
     - target: {fileID: 7042584938439530007, guid: ed5207fbf5126e445bcbe985307df4a2, type: 3}
       propertyPath: alertUI
       value: 
@@ -57610,6 +57950,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7042584938439530007, guid: ed5207fbf5126e445bcbe985307df4a2, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57635,9 +57979,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 721283194706042365, guid: a1c28934672615846b49f8d0ff775dfe, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3885962477297447217, guid: a1c28934672615846b49f8d0ff775dfe, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 5869271165696357263, guid: a1c28934672615846b49f8d0ff775dfe, type: 3}
       propertyPath: escapeUI
@@ -58521,6 +58869,14 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 1825851450371892880, guid: 2e59514155a66634db7a83bc0035d5e6, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456284788127142162, guid: 2e59514155a66634db7a83bc0035d5e6, type: 3}
+      propertyPath: letter
+      value: 79
+      objectReference: {fileID: 0}
     - target: {fileID: 8619127475244610197, guid: 2e59514155a66634db7a83bc0035d5e6, type: 3}
       propertyPath: escapeUI
       value: 
@@ -58967,7 +59323,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 5238128964546773604, guid: 8382645664127684290194ec1c3e859f, type: 3}
       propertyPath: letter
-      value: 65
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 5264591373444600944, guid: 8382645664127684290194ec1c3e859f, type: 3}
       propertyPath: alertUI
@@ -58981,6 +59337,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 5264591373444600944, guid: 8382645664127684290194ec1c3e859f, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7109535682427280352, guid: 8382645664127684290194ec1c3e859f, type: 3}
       propertyPath: m_Name
       value: A 3
@@ -59118,9 +59478,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6443874894414846732, guid: 98c071e51aa9b1e4f9abcf57b5aa5dae, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7547719589249551248, guid: 98c071e51aa9b1e4f9abcf57b5aa5dae, type: 3}
       propertyPath: letter
-      value: 78
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -59412,6 +59776,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4654872727233031724, guid: a08c623c5b92a354aa0ed3b9fa8c872a, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6048884371318091190, guid: a08c623c5b92a354aa0ed3b9fa8c872a, type: 3}
       propertyPath: letter
       value: 79
@@ -60072,6 +60440,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 75222958595367078, guid: 9d7d96dfc38736b4bad94568ad4b428f, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 1307760823042176622, guid: 9d7d96dfc38736b4bad94568ad4b428f, type: 3}
       propertyPath: m_Name
       value: X 2
@@ -60142,7 +60514,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 8009908136620795536, guid: 9d7d96dfc38736b4bad94568ad4b428f, type: 3}
       propertyPath: letter
-      value: 88
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -60349,6 +60721,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7212139949670167228, guid: 51611db1445dadb43affbde87dd78dc3, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7567142917695507351, guid: 51611db1445dadb43affbde87dd78dc3, type: 3}
       propertyPath: letter
       value: 79
@@ -61807,6 +62183,256 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6451c45a96d80c4aacb06c931384aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &757236225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.590658
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12919706
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.91204
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69080293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69080305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15096787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15096785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 24.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396935937281666516, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_Name
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855071847644708668, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickUpItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: alertUI
+      value: 
+      objectReference: {fileID: 115239908}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: itemHolder
+      value: 
+      objectReference: {fileID: 811844957}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 324053546}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 2070724857}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionPoint
+      value: 
+      objectReference: {fileID: 2061513010}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 324053542}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionCamera
+      value: 
+      objectReference: {fileID: 2099267729}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 324053544}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 800548099}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookUI
+      value: 
+      objectReference: {fileID: 1955162305}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 2070724857}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 324053541}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookContents
+      value: 
+      objectReference: {fileID: 1955162304}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36><color=#FF0000>LESSON 2: SWING COMPONENTS</color></size></b>\r\n<size=26><color=#000000>\r\n\r\n<b><size=30><color=#FF0000>Swing
+        Components</color></size></b>\r\nThe JPA graphical user interface is made
+        up of components from the javax.swing package, including labels, buttons,
+        images, scrollbars, lists, radio buttons, text boxes, checkboxes, and drop-down
+        menus. These are commonly referred to as components in Java.\r\n\r\n<b><size=30><color=#FF0000>JLabel
+        </color></size></b>\r\nA JLabel displays read-only text, an image, or both.
+        It is created using the JLabel class, which is a subclass of JComponent.\r\n\r\n\r\n<b><size=30><color=#E97132>JLabel
+        Constructors</color></size></b>\r\n\u2022\t<b>JLabel()</b> \u2013 Constructs
+        a blank label.\r\n\u2022\t<b>JLabel(Icon image)</b> \u2013 Constructs a label
+        with an icon.\r\n\u2022\t<b>JLabel(Icon image, int h)</b> \u2013 Constructs
+        a label with an icon and horizontal alignment.\r\n\u2022\t<b>JLabel(String
+        text)</b> \u2013 Constructs a label with text.\r\n\u2022\t<b>JLabel(String
+        text, Icon icon, int h)</b> \u2013 Constructs a label with text, an icon,
+        and horizontal alignment.\r\n\u2022\t<b>JLabel(String text, int h)</b> \u2013
+        Constructs a label with text and horizontal alignment.\r\n\r\n<b><size=30><color=#E97132>JLabel
+        Common Methods</color></size></b>\r\n\u2022\t<b>setText(String text)</b>
+        \u2013 Sets the label\u2019s text.\r\n\u2022\t<b>setIcon(Icon icon)</b> \u2013
+        Sets the label\u2019s default icon.\r\n\u2022\t<b>setHorizontalAlignment(int
+        h)</b> \u2013 Sets the positioning of the text and icon on the label horizontally.\r\n\u2022\t<b>setVerticalAlignment(int
+        v)</b> \u2013 Sets the vertical alignment of the text and icon on the label.\r\n\u2022\t<b>setHorizontalTextPosition(int
+        h)</b> \u2013 Sets the location of the text parallel to the icon horizontally.\r\n\u2022\t<b>setVerticalTextPosition(int
+        v)</b> \u2013 Sets the position of the text relative to the icon vertically.\r\n\u2022\t<b>setIconGap(int
+        gap)</b> \u2013 Sets the space in the middle of a text and an icon.\r\n\r\nimport
+        javax.swing.*;\r\nimport java.awt.*;\r\npublic class JLabelExample {\r\n   
+        public static void main(String[] args) {\r\n        JFrame frame = new JFrame(\"JLabel
+        Example\");\r\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n       
+        frame.setSize(300, 200);\r\n        JLabel label = new JLabel(\"Hello, bhie!\");\r\n       
+        label.setFont(new Font(\"Arial\", Font.PLAIN, 18)); \r\n        label.setHorizontalAlignment(JLabel.CENTER);\r\n       
+        frame.add(label);\r\n        frame.setVisible(true);\r\n    }\r\n}\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\tThis
+        code creates a JFrame and adds a JLabel to it.\r\n\u2022\tThe JLabel displays
+        the text \"Hello, bhie!\" and is centered in the frame.\r\n\u2022\tThe font
+        of the label is set to Arial with a size of 18.\r\n\r\n\r\n<b><size=30><color=#FF0000>JButton
+        </color></size></b>\r\nThe JButton component triggers an action event when
+        clicked and can display text, images, or both. It also supports rollover
+        effects. Common methods for buttons, including checkboxes and radio buttons,
+        are found in the javax.swing.AbstractButton package.\r\n\r\n<b><size=30><color=#E97132>JButton
+        Constructors</color></size></b>\r\n\u2022\t<b>JButton()</b> \u2013 Constructs
+        a button.\r\n\u2022\t<b>JButton(Icon icon)</b> \u2013 Constructs a button
+        with an icon.\r\n\u2022\t<b>JButton(Icon icon, boolean selected)</b> \u2013
+        Constructs a button with an icon and an initialized state.\r\n\u2022\t<b>JButton(String
+        text)</b> \u2013 Constructs a button with text.\r\n\u2022\t<b>JButton(String
+        text, boolean selected)</b> \u2013 Constructs a button with text and an initialized
+        state.\r\n\u2022\t<b>JButton(String text, Icon icon)</b> \u2013 Constructs
+        a button with both text and an icon.\r\n\u2022\t<b>JButton(String text, Icon
+        icon, boolean selected)</b> \u2013 Constructs a button with both text and
+        an icon, including an initialized state.\r\n\r\n<b><size=30><color=#E97132>JButton
+        Common Methods</color></size></b>\r\n\u2022\t<b>setText(String text)</b>
+        \u2013 Sets the button\u2019s text.\r\n\u2022\t<b>setIcon(Icon icon)</b>
+        \u2013 Sets the button\u2019s default icon.\r\n\u2022\t<b>setPressedIcon(Icon
+        icon)</b> \u2013 Sets the icon displayed when the button is pressed.\r\n\u2022\t<b>setRolloverIcon(Icon
+        icon)</b> \u2013 Sets the icon displayed when the mouse is placed over the
+        button.\r\n\u2022\t<b>setHorizontalAlignment(int h)</b> \u2013 The default
+        alignment is CENTER (options: LEADING, LEFT, CENTER, RIGHT, TRAILING).\r\n\u2022\t<b>setVerticalAlignment(int
+        v)</b> \u2013 The default alignment is CENTER (options: TOP, CENTER, BOTTOM).\r\n\u2022\t<b>setHorizontalTextPosition(int
+        h)</b> \u2013 Specifies the location of the text relative to the icon horizontally
+        (options: LEADING, LEFT, CENTER, RIGHT, TRAILING).\r\n\u2022\t<b>setVerticalTextPosition(int
+        v)</b> \u2013 Specifies the location of the text relative to the icon vertically
+        (options: TOP, CENTER, BOTTOM).\r\n\u2022\t<b>setIconGap(int gap)</b> \u2013
+        Sets the space between the text and the icon.\r\n\u2022\t<b>setMnemonic(int
+        m)</b> \u2013 Sets the mnemonic key value for the button.\r\n\u2022\t<b>isBorderPainted(boolean)</b>
+        \u2013 Indicates whether the border of the button is painted.\r\n\r\n\r\nimport
+        javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic
+        class Swing {\r\n    public static void main(String[] args) {\r\n       
+        JFrame frame = new JFrame(\"JButton Example\");\r\n        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n       
+        frame.setSize(300, 200);\r\n        JButton button = new JButton(\"Sino bading?\");\r\n       
+        button.addActionListener(new ActionListener() {\r\n            @Override\r\n           
+        public void actionPerformed(ActionEvent e) {\r\n                JOptionPane.showMessageDialog(frame,
+        \"Si Lance!\");\r\n            }\r\n        });\r\n        frame.add(button);\r\n       
+        frame.setVisible(true);\r\n    }\r\n}\r\n\r\n<b><size=30><color=#FF0000>EXPLANATION</color></size></b>\r\n\u2022\t<b>JFrame
+        Creation:</b> A new window titled \"JButton Example\" is created.\r\n\u2022\t<b>JButton
+        Creation:</b> A button labeled \"Click Me!\" is created.\r\n\u2022\t<b>Action
+        Listener:</b> When the button is clicked, a message dialog appears saying
+        \"Button was clicked!\".\r\n\u2022\t<b>Adding the Button:</b> The button
+        is added to the frame, and the frame is made visible.\r\n\r\n\r\n\r\n\r\n\r\n<b><size=30><color=#FF0000>JCheckBox
+        </color></size></b>\r\nA toggle button that displays choices that are not
+        exclusive and have a Boolean value.\r\nJCheckBox, a subclass of AbstractButton,
+        inherits properties like setText, setIcon, setMnemonic, setVerticalAlignment,
+        setHorizontalAlignment, setHorizontalTextPosition, setVerticalTextPosition,
+        and isSelected. A checkbox displays a box that can be either checked (true/on)
+        or unchecked (false/off).\r\n\r\n<b><size=30><color=#E97132>JCheckBox Constructors</color></size></b>\r\n\u2022\t<b>JCheckBox()</b>
+        Constructs a default checkbox\r\n\u2022\t<b>JCheckBox(Icon icon)</b> Constructs
+        a checkbox with an icon\r\n\u2022\t<b>JCheckBox(Icon icon, boolean selected)</b>
+        Constructs a checkbox with icon and initialized state of the checkbox\r\n\u2022\t<b>JCheckBox(String
+        text)</b> Constructs a checkbox with text\r\n\u2022\t<b>JCheckBox(String
+        text, boolean selected)</b> Constructs a checkbox with text and initialized
+        state of the checkbox\r\n\u2022\t<b>JCheckBox(String text, Icon icon)</b>
+        Constructs a checkbox with both text and icon\r\n\u2022\t<b>JCheckBox(String
+        text, Icon icon, boolean selected)</b> Constructs a checkbox with both text
+        and icon, including the initialized state of the checkbox\r\n\r\n\r\n\r\n<b><size=30><color=#E97132>JCheckBox
+        Common Methods</color></size></b>\r\n\u2022\t<b>setBorderPaintedFlat(boolean)</b>
+        Sets the borderPaintedFlat property based on the checkbox border.\r\n\u2022\t<b>isBorderPaintedFlat()</b>
+        Determines the value of the borderPaintedFlat property.\r\n\u2022\t<b>setLineWrap(boolean)</b>
+        Sets line wrapping for the text.\r\n\u2022\t<b>setWrapStyleWord(boolean)</b>
+        Sets line wrapping on words or characters.\r\n\u2022\t<b>append(String text)</b>
+        Appends the specified string to the text area.\r\n\u2022\t<b>insert(String
+        text)</b> Inserts the specified string at a specified position in the text
+        area.\r\n\u2022\t<b>getLineCount()</b> Returns the number of lines in the
+        text area.\r\n \r\n<b><size=30><color=#FF0000>JComboBox </color></size></b>\r\n\u2022\tA
+        drop-down list of choices with a combination of a text entry field. The user
+        can type a selection or choose one from the list. \r\n\r\n<b><size=30><color=#E97132>JComboBox
+        Constructors</color></size></b>\r\n\u2022\t<b>JComboBox()</b> Constructs
+        a JComboBox with a default data model.\r\n\u2022\t<b>JComboBox(Model model)</b>
+        Constructs a JComboBox with elements from a specified ComboBoxModel instance.\r\n\u2022\t<b>JComboBox(Object[]
+        arr)</b> Constructs a JComboBox with elements from a given array.\r\n\u2022\t<b>JComboBox(Vector
+        vector)</b> Constructs a JComboBox that displays elements from a given vector.\r\n\r\n<b><size=30><color=#E97132>JComboBox
+        Common Methods</color></size></b>\r\n\u2022\t<b>addItem(Object obj)</b> Adds
+        an additional item to the combo box.\r\n\u2022\t<b>getItemAt(int index)</b>
+        Returns the item at a specified index location.\r\n\u2022\t<b>getItemCount()</b>
+        Returns the total count of items in the combo box.\r\n\u2022\t<b>getSelectedIndex()</b>
+        Returns the index number of the selected item.\r\n\u2022\t<b>getSelectedItem()</b>
+        Returns the selected item.\r\n\u2022\t<b>setSelectedItem(Object obj)</b>
+        Sets the chosen item in the combo box.\r\n\u2022\t<b>removeItem(Object obj)</b>
+        Removes a specific item from the component.\r\n\u2022\t<b>removeItemAt(int
+        index)</b> Removes the item at a specified index location in the combo box.\r\n\u2022\t<b>removeAllItems()</b>
+        Removes all items from the combo box.\r\n\r\n<b><size=30><color=#FF0000>JradioButton</color></size></b>\r\n\u2022\tA
+        toggle button for displaying mutually exclusive choices and have a Boolean
+        value. \r\n\r\n<b><size=30><color=#E97132>JRadioButton Constructors</color></size></b>\r\n\u2022\t<b>JRadioButton()</b>
+        Constructs a radio button.\r\n\u2022\t<b>JRadioButton(Icon icon)</b> Constructs
+        a radio button with an icon.\r\n\u2022\t<b>JRadioButton(Icon icon, boolean
+        selected)</b> Constructs a radio button with an icon and initialized state
+        of the radio button.\r\n\u2022\t<b>JRadioButton(String text)</b> Creates
+        a radio button with text.\r\n\u2022\t<b>JRadioButton(String text, boolean
+        selected)</b> Creates a radio button with text and initialized state of the
+        radio button.\r\n\u2022\t<b>JRadioButton(String text, Icon icon)</b> Constructs
+        a radio button with both text and icon.\r\n\u2022\t<b>JRadioButton(String
+        text, Icon icon, boolean selected)</b> Constructs a radio button with text
+        and icon and initialized state of the radio button.\r\n\r\n<b><size=30><color=#E97132>
+        JRadioButton Common Methods</color></size></b>\r\n\u2022\t<b>setText(String
+        s)</b> Sets a specific text on the button.\r\n\u2022\t<b>setEnabled(Boolean
+        b)</b> Enables or disables the radio button.\r\n\u2022\t<b>setIcon(Icon b)</b>
+        Sets the specific icon on the radio button.\r\n\u2022\t<b>setMnemonic(int
+        a)</b> Sets the mnemonic on the radio button.\r\n\u2022\t<b>getText()</b>
+        Returns the text of the radio button.\r\n\u2022\t<b>getIcon()</b> Gets the
+        icon of the radio button.\r\n</color></size>\r\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
 --- !u!1 &766297544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5181636233148510503, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
@@ -61987,7 +62613,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2748138211058737620, guid: 3bd69cf9324c79d45a10b21b552c0c09, type: 3}
       propertyPath: letter
-      value: 85
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3659098228007135106, guid: 3bd69cf9324c79d45a10b21b552c0c09, type: 3}
       propertyPath: m_Name
@@ -62069,6 +62695,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6533712354388341056, guid: 3bd69cf9324c79d45a10b21b552c0c09, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62196,6 +62826,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 2585779864762390088, guid: 61e9b72668ca05d4986ad91fa35428e5, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7563821031585061066, guid: 61e9b72668ca05d4986ad91fa35428e5, type: 3}
       propertyPath: escapeUI
       value: 
@@ -62220,6 +62854,10 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 7704656277118595663, guid: 61e9b72668ca05d4986ad91fa35428e5, type: 3}
+      propertyPath: letter
+      value: 79
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -63734,9 +64372,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4988026301987213714, guid: 419463c06124dde4c9cf8b47116ea48f, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 5564596307057177875, guid: 419463c06124dde4c9cf8b47116ea48f, type: 3}
       propertyPath: letter
-      value: 73
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 5913968437492443907, guid: 419463c06124dde4c9cf8b47116ea48f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63886,7 +64528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2338619499112350829, guid: f4f52ad1441a4324b81fb1402f536c42, type: 3}
       propertyPath: letter
-      value: 80
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 5574487554297940973, guid: f4f52ad1441a4324b81fb1402f536c42, type: 3}
       propertyPath: alertUI
@@ -63900,6 +64542,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 5574487554297940973, guid: f4f52ad1441a4324b81fb1402f536c42, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6113445003662923591, guid: f4f52ad1441a4324b81fb1402f536c42, type: 3}
       propertyPath: escapeUI
       value: 
@@ -64852,7 +65498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2232700891172747480, guid: d54736589eb22ba43b8f00b35cbd06ab, type: 3}
       propertyPath: letter
-      value: 83
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 2263321053098783888, guid: d54736589eb22ba43b8f00b35cbd06ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64930,6 +65576,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6204640022933259566, guid: d54736589eb22ba43b8f00b35cbd06ab, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64989,7 +65639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6280767710547222417, guid: 9e5fb508e0682fc448e80a07ca8c7b6a, type: 3}
       propertyPath: letter
-      value: 67
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 7056409787216959614, guid: 9e5fb508e0682fc448e80a07ca8c7b6a, type: 3}
       propertyPath: alertUI
@@ -65003,6 +65653,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7056409787216959614, guid: 9e5fb508e0682fc448e80a07ca8c7b6a, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7738048538184495609, guid: 9e5fb508e0682fc448e80a07ca8c7b6a, type: 3}
       propertyPath: escapeUI
       value: 
@@ -65178,7 +65832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573078610435698732, guid: b7cd77fdb544c0a439ced5e2851294f6, type: 3}
       propertyPath: letter
-      value: 66
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 9128227292691721160, guid: b7cd77fdb544c0a439ced5e2851294f6, type: 3}
       propertyPath: alertUI
@@ -65192,6 +65846,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 9128227292691721160, guid: b7cd77fdb544c0a439ced5e2851294f6, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65483,7 +66141,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2808138192770778535, guid: d7eee014478b9b94ab7a2ef7648e0633, type: 3}
       propertyPath: letter
-      value: 82
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3621296531992319741, guid: d7eee014478b9b94ab7a2ef7648e0633, type: 3}
       propertyPath: m_Name
@@ -65541,6 +66199,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4128810430961476197, guid: d7eee014478b9b94ab7a2ef7648e0633, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 9083288847840032256, guid: d7eee014478b9b94ab7a2ef7648e0633, type: 3}
       propertyPath: escapeUI
       value: 
@@ -66749,6 +67411,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 507120096663796270, guid: ea9517ea8c908a44ca09b270a420e052, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 1537522220078720966, guid: ea9517ea8c908a44ca09b270a420e052, type: 3}
       propertyPath: m_Name
       value: N 4
@@ -66795,7 +67461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2453529176233002257, guid: ea9517ea8c908a44ca09b270a420e052, type: 3}
       propertyPath: letter
-      value: 78
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 2959414779773341670, guid: ea9517ea8c908a44ca09b270a420e052, type: 3}
       propertyPath: escapeUI
@@ -67531,7 +68197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3736693274721098544, guid: 7c1c7d55c0c759f4581e139c352d24c2, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8626037919562051111, guid: 7c1c7d55c0c759f4581e139c352d24c2, type: 3}
       propertyPath: alertUI
@@ -67545,6 +68211,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8626037919562051111, guid: 7c1c7d55c0c759f4581e139c352d24c2, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -67947,6 +68617,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 1508205310182973908, guid: 6caaed2e47ef5cf4fa7dc2068f98c785, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 4716964392275956796, guid: 6caaed2e47ef5cf4fa7dc2068f98c785, type: 3}
       propertyPath: m_Name
       value: M
@@ -68017,7 +68691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6765404763480228284, guid: 6caaed2e47ef5cf4fa7dc2068f98c785, type: 3}
       propertyPath: letter
-      value: 77
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68058,7 +68732,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 6273970060174216360, guid: 30e17c752f4253642a9d2e7dfd3dc66a, type: 3}
       propertyPath: letter
-      value: 83
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8532763217545132084, guid: 30e17c752f4253642a9d2e7dfd3dc66a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68112,6 +68786,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8929881900076677551, guid: 30e17c752f4253642a9d2e7dfd3dc66a, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 9016670845404947086, guid: 30e17c752f4253642a9d2e7dfd3dc66a, type: 3}
       propertyPath: m_Name
       value: S 4
@@ -68131,7 +68809,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3420655596058769250, guid: 36ecb81987816e54fbcc4d1fb70d1903, type: 3}
       propertyPath: letter
-      value: 73
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 6512500830036783652, guid: 36ecb81987816e54fbcc4d1fb70d1903, type: 3}
       propertyPath: alertUI
@@ -68145,6 +68823,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6512500830036783652, guid: 36ecb81987816e54fbcc4d1fb70d1903, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8347790053468969657, guid: 36ecb81987816e54fbcc4d1fb70d1903, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.42
@@ -68967,7 +69649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5141895782260163554, guid: dc931b997e9fd444b8b005230cb26e38, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 6088765193444997236, guid: dc931b997e9fd444b8b005230cb26e38, type: 3}
       propertyPath: alertUI
@@ -68981,6 +69663,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6088765193444997236, guid: dc931b997e9fd444b8b005230cb26e38, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -69460,6 +70146,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 3833710532663784127, guid: 730fd23d3c024e240a4ec3cbc60a9a3d, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 5032755885060022392, guid: 730fd23d3c024e240a4ec3cbc60a9a3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.5725565
@@ -69506,7 +70196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7115216905486974824, guid: 730fd23d3c024e240a4ec3cbc60a9a3d, type: 3}
       propertyPath: letter
-      value: 70
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69916,7 +70606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1773830497801903506, guid: b7e16766bcfd9ca418da92a3823bcb9e, type: 3}
       propertyPath: letter
-      value: 83
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 1978712327535609719, guid: b7e16766bcfd9ca418da92a3823bcb9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -69994,6 +70684,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7056743723756920777, guid: b7e16766bcfd9ca418da92a3823bcb9e, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -70025,7 +70719,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 342505616708685576, guid: ea261f6a289265741a2e9c1161d61f10, type: 3}
       propertyPath: letter
-      value: 67
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3195105578569068061, guid: ea261f6a289265741a2e9c1161d61f10, type: 3}
       propertyPath: escapeUI
@@ -70107,6 +70801,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6668284409245684051, guid: ea261f6a289265741a2e9c1161d61f10, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -70615,7 +71313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3192543298979239977, guid: e00341aac79113747bf781ba7ff82da4, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 4830887086263543983, guid: e00341aac79113747bf781ba7ff82da4, type: 3}
       propertyPath: alertUI
@@ -70629,6 +71327,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4830887086263543983, guid: e00341aac79113747bf781ba7ff82da4, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6383942465928247646, guid: e00341aac79113747bf781ba7ff82da4, type: 3}
       propertyPath: escapeUI
       value: 
@@ -70746,9 +71448,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7748281760330260723, guid: e34a72a88818cf649bf8a88cb89d33f0, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7945567337774646989, guid: e34a72a88818cf649bf8a88cb89d33f0, type: 3}
       propertyPath: letter
-      value: 73
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -70885,6 +71591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: T 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2171255201096046064, guid: 584af8b950c83064381cc9a2a6900f0a, type: 3}
+      propertyPath: letter
+      value: 79
+      objectReference: {fileID: 0}
     - target: {fileID: 7294800564529295813, guid: 584af8b950c83064381cc9a2a6900f0a, type: 3}
       propertyPath: alertUI
       value: 
@@ -70897,6 +71607,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7294800564529295813, guid: 584af8b950c83064381cc9a2a6900f0a, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8071960161776041552, guid: 584af8b950c83064381cc9a2a6900f0a, type: 3}
       propertyPath: escapeUI
       value: 
@@ -70936,7 +71650,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 294394565179745435, guid: ed7102bac539fff4991bc603b02d6432, type: 3}
       propertyPath: letter
-      value: 68
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3526317385025898310, guid: ed7102bac539fff4991bc603b02d6432, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70994,6 +71708,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7244413029930148621, guid: ed7102bac539fff4991bc603b02d6432, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 9019520324194187863, guid: ed7102bac539fff4991bc603b02d6432, type: 3}
       propertyPath: escapeUI
       value: 
@@ -71649,7 +72367,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 6555620118419082859, guid: 2523197ec6bcd1947a8bca7ad1acc60e, type: 3}
       propertyPath: letter
-      value: 67
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 7074103335287107350, guid: 2523197ec6bcd1947a8bca7ad1acc60e, type: 3}
       propertyPath: alertUI
@@ -71663,6 +72381,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7074103335287107350, guid: 2523197ec6bcd1947a8bca7ad1acc60e, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -71704,9 +72426,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 607141792954935832, guid: 73f1b22dcb9276d45ad679ed2faaa745, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 723129079342500276, guid: 73f1b22dcb9276d45ad679ed2faaa745, type: 3}
       propertyPath: letter
-      value: 73
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 1169496874096460184, guid: 73f1b22dcb9276d45ad679ed2faaa745, type: 3}
       propertyPath: m_Name
@@ -72177,6 +72903,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 1614445371070027171, guid: 6cd5d06ac21db9a4eaf79682ff53f9e8, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3692240527360454784, guid: 6cd5d06ac21db9a4eaf79682ff53f9e8, type: 3}
       propertyPath: escapeUI
       value: 
@@ -72247,7 +72977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7324087620004555256, guid: 6cd5d06ac21db9a4eaf79682ff53f9e8, type: 3}
       propertyPath: letter
-      value: 88
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -72605,9 +73335,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 2409269939431607563, guid: 776b3665097c0e44396473473e4cd7b8, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 2756706375281015667, guid: 776b3665097c0e44396473473e4cd7b8, type: 3}
       propertyPath: letter
-      value: 77
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3456053603583853608, guid: 776b3665097c0e44396473473e4cd7b8, type: 3}
       propertyPath: escapeUI
@@ -73404,9 +74138,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 3625668463480886028, guid: 319955e8a9ef3c34290184c5aab27226, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 5785407851067726095, guid: 319955e8a9ef3c34290184c5aab27226, type: 3}
       propertyPath: letter
-      value: 77
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8176422162562226901, guid: 319955e8a9ef3c34290184c5aab27226, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74101,9 +74839,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 3357382343647212353, guid: 07e7b82947ac5c44ab5bc8d553a59df6, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3536794387656609058, guid: 07e7b82947ac5c44ab5bc8d553a59df6, type: 3}
       propertyPath: letter
-      value: 68
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -74209,7 +74951,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 525903983210521088, guid: a58e2f7876438b345add54c2ce2a559e, type: 3}
       propertyPath: letter
-      value: 85
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 1514717867068705676, guid: a58e2f7876438b345add54c2ce2a559e, type: 3}
       propertyPath: alertUI
@@ -74223,6 +74965,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 1514717867068705676, guid: a58e2f7876438b345add54c2ce2a559e, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 4524178365938375440, guid: a58e2f7876438b345add54c2ce2a559e, type: 3}
       propertyPath: escapeUI
       value: 
@@ -74811,9 +75557,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6323202225267404682, guid: f6e94c648456c8643872f6c77749e13a, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8460393936467584677, guid: f6e94c648456c8643872f6c77749e13a, type: 3}
       propertyPath: letter
-      value: 82
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8715519986070947869, guid: f6e94c648456c8643872f6c77749e13a, type: 3}
       propertyPath: escapeUI
@@ -75158,9 +75908,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 3444430336962349793, guid: 220c6fdccac24934b9b17c9ba99646e8, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6395786769653046583, guid: 220c6fdccac24934b9b17c9ba99646e8, type: 3}
       propertyPath: letter
-      value: 83
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -75486,9 +76240,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 604291131408325664, guid: 479861a08b161804aa068f4d98ed9d61, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8904737950581349201, guid: 479861a08b161804aa068f4d98ed9d61, type: 3}
       propertyPath: letter
-      value: 78
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -75755,7 +76513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193513921184848039, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3329012219988430992, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_text
@@ -76296,6 +77054,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 162544155411616611, guid: e9ec94706e471a641b70712365159ffc, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 2394863074267081071, guid: e9ec94706e471a641b70712365159ffc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.458289
@@ -76342,7 +77104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6820109609562697673, guid: e9ec94706e471a641b70712365159ffc, type: 3}
       propertyPath: letter
-      value: 65
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 8462014030141846368, guid: e9ec94706e471a641b70712365159ffc, type: 3}
       propertyPath: escapeUI
@@ -77086,6 +77848,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 5348178966370544419, guid: ac7f53730c409da45b0d081a8b63c823, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 5952138134308879228, guid: ac7f53730c409da45b0d081a8b63c823, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.639131
@@ -77156,7 +77922,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 8569163057945977750, guid: ac7f53730c409da45b0d081a8b63c823, type: 3}
       propertyPath: letter
-      value: 68
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77323,6 +78089,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4306446592145690805, guid: 3005fbb8e79b98c4d9992c569552ceb9, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6267009282896136311, guid: 3005fbb8e79b98c4d9992c569552ceb9, type: 3}
       propertyPath: m_Name
       value: E 7
@@ -77369,7 +78139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7383443751274778308, guid: 3005fbb8e79b98c4d9992c569552ceb9, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77475,7 +78245,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2765899437405296656, guid: 315c49a0aedbbed43b3bf28cb2d6c617, type: 3}
       propertyPath: letter
-      value: 83
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 4281008044382576224, guid: 315c49a0aedbbed43b3bf28cb2d6c617, type: 3}
       propertyPath: escapeUI
@@ -77513,6 +78283,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 8289101741688402543, guid: 315c49a0aedbbed43b3bf28cb2d6c617, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 8354993857390484582, guid: 315c49a0aedbbed43b3bf28cb2d6c617, type: 3}
       propertyPath: m_Name
       value: S 3
@@ -78979,6 +79753,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 1109248361052988672, guid: 9276d383122203242b543834b6163ad8, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 1925043924174064722, guid: 9276d383122203242b543834b6163ad8, type: 3}
       propertyPath: escapeUI
       value: 
@@ -79005,7 +79783,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 4837462905569723147, guid: 9276d383122203242b543834b6163ad8, type: 3}
       propertyPath: letter
-      value: 76
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 5885275725009555039, guid: 9276d383122203242b543834b6163ad8, type: 3}
       propertyPath: m_Name
@@ -80062,6 +80840,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 3383691853303103339, guid: b976bc93acf71d346b6d4d35b40598b6, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6395137193429657905, guid: b976bc93acf71d346b6d4d35b40598b6, type: 3}
       propertyPath: escapeUI
       value: 
@@ -80132,7 +80914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764285256278809573, guid: b976bc93acf71d346b6d4d35b40598b6, type: 3}
       propertyPath: letter
-      value: 65
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -80723,6 +81505,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 5881148842160364149, guid: 8d801dc85b0583f498adaaac4234ec70, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 5979527084069853619, guid: 8d801dc85b0583f498adaaac4234ec70, type: 3}
       propertyPath: m_Name
       value: O
@@ -81125,6 +81911,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 2952078618831349180, guid: 5b8e32b67ad47dd46a4108ae94e7007a, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3644491642946277979, guid: 5b8e32b67ad47dd46a4108ae94e7007a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.52
@@ -81721,6 +82511,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4109988084893963457, guid: 6c8463991b6cdd94b96e56680ffdd497, type: 3}
+      propertyPath: letter
+      value: 79
+      objectReference: {fileID: 0}
     - target: {fileID: 5954005286369206404, guid: 6c8463991b6cdd94b96e56680ffdd497, type: 3}
       propertyPath: alertUI
       value: 
@@ -81733,6 +82527,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 5954005286369206404, guid: 6c8463991b6cdd94b96e56680ffdd497, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6307670628022958570, guid: 6c8463991b6cdd94b96e56680ffdd497, type: 3}
       propertyPath: escapeUI
       value: 
@@ -81870,6 +82668,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6079834309467984879, guid: 572ead4f05d9c0c41a2903129a0a4452, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6640785412105492892, guid: 572ead4f05d9c0c41a2903129a0a4452, type: 3}
       propertyPath: escapeUI
       value: 
@@ -81896,7 +82698,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 6698400134889194036, guid: 572ead4f05d9c0c41a2903129a0a4452, type: 3}
       propertyPath: letter
-      value: 87
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82264,7 +83066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139826949730682336, guid: fd0a4cebe67c89c40be544b0e78d021d, type: 3}
       propertyPath: letter
-      value: 74
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 6449299981714475339, guid: fd0a4cebe67c89c40be544b0e78d021d, type: 3}
       propertyPath: alertUI
@@ -82278,6 +83080,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6449299981714475339, guid: fd0a4cebe67c89c40be544b0e78d021d, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7634037026735455726, guid: fd0a4cebe67c89c40be544b0e78d021d, type: 3}
       propertyPath: escapeUI
       value: 
@@ -82723,7 +83529,7 @@ PrefabInstance:
       objectReference: {fileID: 800548099}
     - target: {fileID: 5974725986763649817, guid: 434189dc3b96b424b88cc4dde57033c7, type: 3}
       propertyPath: letter
-      value: 73
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 6702440815007238523, guid: 434189dc3b96b424b88cc4dde57033c7, type: 3}
       propertyPath: alertUI
@@ -82737,6 +83543,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 6702440815007238523, guid: 434189dc3b96b424b88cc4dde57033c7, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7191769721033097921, guid: 434189dc3b96b424b88cc4dde57033c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.724773
@@ -83292,6 +84102,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca16c5351598c144282fe66e82fbe518, type: 3}
   m_PrefabInstance: {fileID: 234264930}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1955162304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5578686606779046397, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955162305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efecd02eccf9a8a4baabd82c45f0d955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1955162305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8966303063572695285, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1956629300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83603,6 +84429,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4933153265231655254, guid: 81d5b1dbd26686649bfd75ca65bf09ac, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 7060989209322146576, guid: 81d5b1dbd26686649bfd75ca65bf09ac, type: 3}
       propertyPath: letter
       value: 79
@@ -83946,7 +84776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3929290780390458414, guid: e7e9c2bdb00253a4caf16559d8e18023, type: 3}
       propertyPath: letter
-      value: 66
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 4862212888736983126, guid: e7e9c2bdb00253a4caf16559d8e18023, type: 3}
       propertyPath: alertUI
@@ -83960,6 +84790,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4862212888736983126, guid: e7e9c2bdb00253a4caf16559d8e18023, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 6855537905801145017, guid: e7e9c2bdb00253a4caf16559d8e18023, type: 3}
       propertyPath: escapeUI
       value: 
@@ -84095,7 +84929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2614420710710493871, guid: 97f5a484317236b4c8fbc23ef0e07530, type: 3}
       propertyPath: letter
-      value: 69
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 6633136292642245252, guid: 97f5a484317236b4c8fbc23ef0e07530, type: 3}
       propertyPath: escapeUI
@@ -84133,6 +84967,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 7851319074232886790, guid: 97f5a484317236b4c8fbc23ef0e07530, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84231,6 +85069,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 86430000494252591, guid: 8e2638140d7edf14b88f78ee2191dbd4, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 2682476353448766550, guid: 8e2638140d7edf14b88f78ee2191dbd4, type: 3}
       propertyPath: escapeUI
       value: 
@@ -84301,7 +85143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5816969216083398835, guid: 8e2638140d7edf14b88f78ee2191dbd4, type: 3}
       propertyPath: letter
-      value: 82
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85607,6 +86449,10 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 4405049761910630201, guid: e888fe6998b3f5f4d8314623d8b676c7, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 5100693878832122084, guid: e888fe6998b3f5f4d8314623d8b676c7, type: 3}
       propertyPath: escapeUI
       value: 
@@ -85677,7 +86523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7543437680066253315, guid: e888fe6998b3f5f4d8314623d8b676c7, type: 3}
       propertyPath: letter
-      value: 86
+      value: 79
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -86505,9 +87351,13 @@ PrefabInstance:
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 324053546}
+    - target: {fileID: 561869113273030718, guid: 7900b5c35d7c100449c762826fe3e859, type: 3}
+      propertyPath: pickupSoundName
+      value: pick
+      objectReference: {fileID: 0}
     - target: {fileID: 3706184420861678290, guid: 7900b5c35d7c100449c762826fe3e859, type: 3}
       propertyPath: letter
-      value: 85
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3758723488353045189, guid: 7900b5c35d7c100449c762826fe3e859, type: 3}
       propertyPath: escapeUI
@@ -95093,3 +95943,5 @@ SceneRoots:
   - {fileID: 1903241563}
   - {fileID: 1337186903}
   - {fileID: 657751012}
+  - {fileID: 757236225}
+  - {fileID: 267781719}
