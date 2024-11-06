@@ -54,15 +54,17 @@ public class Dialogue : MonoBehaviour
             characterNameUI.text = entry.characterName;
             characterImageUI.sprite = entry.characterImage;
 
-            // Clear previous text and stop any ongoing typing coroutine
+            // Reset dialogue text and stop any ongoing typing coroutine
             if (typingCoroutine != null)
             {
                 StopCoroutine(typingCoroutine);
                 typingCoroutine = null;
             }
-            dialogueTextUI.text = ""; // Ensure text starts blank
 
-            // Start typing the new dialogue text
+            // Clear the text before typing animation starts
+            dialogueTextUI.text = "";
+
+            // Start typing animation with a small enforced delay
             typingCoroutine = StartCoroutine(TypeText(entry.dialogueText));
 
             // Play the voice-over using the AudioManager
@@ -78,9 +80,15 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+
+
     private IEnumerator TypeText(string text)
     {
         isTyping = true;
+        dialogueTextUI.text = ""; // Ensure text starts blank each time
+
+        // Adding a small delay at the beginning to enforce reset
+        yield return new WaitForSeconds(0.1f);
 
         foreach (char letter in text.ToCharArray())
         {
@@ -90,7 +98,6 @@ public class Dialogue : MonoBehaviour
 
         isTyping = false;
     }
-
     public void NextDialogue()
     {
         if (isTyping)
@@ -129,7 +136,6 @@ public class Dialogue : MonoBehaviour
             EndDialogue();
         }
     }
-
     private void EndDialogue()
     {
         // End of dialogue, hide the UI, enable player controls, and hide the cursor

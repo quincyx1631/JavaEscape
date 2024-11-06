@@ -4,13 +4,15 @@ using TMPro;
 
 public class LaptopSlideShow : MonoBehaviour
 {
-    public Image displayImage;         // Reference to the UI Image component
-    public Slide[] slides;             // Array of Slide objects
-    public TVSlideShow tvSlideShow;    // Reference to the TV slideshow script
-    public AlertUI alertUI;            // Reference to the AlertUI system
+    public Image displayImage;             // Reference to the UI Image component
+    public Slide[] slides;                 // Array of Slide objects
+    public TVSlideShow tvSlideShow;        // Reference to the TV slideshow script
+    public AlertUI alertUI;                // Reference to the AlertUI system
+    public string slideChangeSoundName;    // Sound for changing slides
+    public string checkMatchSoundName;     // Sound for checking match
 
-    private int currentSlideIndex = 0; // Index of the current slide
-    private bool[] matchedSlides;       // To track matched slides
+    private int currentSlideIndex = 0;     // Index of the current slide
+    private bool[] matchedSlides;          // To track matched slides
 
     private void Start()
     {
@@ -31,6 +33,9 @@ public class LaptopSlideShow : MonoBehaviour
 
         currentSlideIndex = (currentSlideIndex + 1) % slides.Length;
         UpdateSlideImage();
+
+        // Play sound effect for changing slides
+        AudioManager.Instance.Play(slideChangeSoundName);
     }
 
     public void ShowPreviousSlide()
@@ -39,6 +44,9 @@ public class LaptopSlideShow : MonoBehaviour
 
         currentSlideIndex = (currentSlideIndex - 1 + slides.Length) % slides.Length;
         UpdateSlideImage();
+
+        // Play sound effect for changing slides
+        AudioManager.Instance.Play(slideChangeSoundName);
     }
 
     public void CheckIfSlidesMatch()
@@ -64,6 +72,9 @@ public class LaptopSlideShow : MonoBehaviour
                 matchedSlides[currentSlideIndex] = true;
                 ApplyGrayscaleEffect();
 
+                // Play sound effect for a successful match
+                AudioManager.Instance.Play(checkMatchSoundName);
+
                 if (AllSlidesMatched())
                 {
                     tvSlideShow.ShowPasswordClue();
@@ -75,6 +86,9 @@ public class LaptopSlideShow : MonoBehaviour
             else
             {
                 alertUI.ShowAlert("Wrong Code Match");
+
+                // Play sound effect for a failed match
+                AudioManager.Instance.Play(checkMatchSoundName);
             }
         }
     }
