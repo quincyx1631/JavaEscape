@@ -25,6 +25,8 @@ public class FadeInIntro : MonoBehaviour
     public float videoFadeOutDuration = 1.0f;
     public Image videoFadeOverlay; // Optional overlay for smooth video transitions
 
+   public bool isInFadeInSequence = false;
+
     public GameObject[] uiElementsToHide;
 
     private void Start()
@@ -53,6 +55,7 @@ public class FadeInIntro : MonoBehaviour
 
         PlayerControlManager.Instance.DisablePlayerControls();
 
+        isInFadeInSequence = true;
         if (hasVideoIntro && videoPlayer != null)
         {
             StartCoroutine(PlayVideoIntro());
@@ -61,6 +64,7 @@ public class FadeInIntro : MonoBehaviour
         {
             StartCoroutine(FadeInSequence());
         }
+        isInFadeInSequence = false;
     }
 
     private IEnumerator PlayVideoIntro()
@@ -136,6 +140,8 @@ public class FadeInIntro : MonoBehaviour
 
     public IEnumerator FadeInSequence()
     {
+        isInFadeInSequence = true;
+
         // Ensure the dialogue system is inactive initially
         if (dialogueSystem != null)
         {
@@ -237,6 +243,7 @@ public class FadeInIntro : MonoBehaviour
             dialogueSystem.gameObject.SetActive(true);
             dialogueSystem.StartDialogue(); // Ensure StartDialogue method exists and is accessible
         }
+        isInFadeInSequence = false;
     }
 
     // Method to show the hidden UI elements

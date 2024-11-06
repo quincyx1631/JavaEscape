@@ -56,7 +56,7 @@ public class PauseMenuController : MonoBehaviour
     {
         if (isPaused)
             Resume();
-        else if (fadeInIntro == null || !fadeInIntro.isActiveAndEnabled)
+        else if (fadeInIntro == null || !fadeInIntro.isActiveAndEnabled || !fadeInIntro.isInFadeInSequence)
             Pause();
     }
 
