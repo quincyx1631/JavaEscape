@@ -75524,7 +75524,7 @@ PrefabInstance:
       propertyPath: dialogueEntries.Array.data[2].dialogueText
       value: ' I''m happy to hear that. So, are you ready for this level?
 
-        
+
 
 '
       objectReference: {fileID: 0}
@@ -75836,8 +75836,65 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 765303100930388167, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 406991945}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1828081604}
   m_SourcePrefab: {fileID: 100100000, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+--- !u!114 &1518685194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 766818003016603108, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1518685195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1848996460489342483, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1518685196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3990777736282075298, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1518685197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1310451644307688038, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1518685198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5533906489100415329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1518685199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1534016828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
@@ -80092,12 +80149,30 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7044185708831584881, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 1518685193}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1518685199}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad395421447229a46b4a291be6f0310c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1828081604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518685199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a538f7e618dbf2a49a15aa20a197b6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1518685198}
+  volumeSlider: {fileID: 1518685197}
+  sensitivitySlider: {fileID: 1518685196}
+  resumeButton: {fileID: 1518685194}
+  mainMenuButton: {fileID: 1518685195}
+  firstPersonController: {fileID: 324053541}
 --- !u!1001 &1828422225
 PrefabInstance:
   m_ObjectHideFlags: 0

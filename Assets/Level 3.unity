@@ -454,6 +454,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &42125407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +645,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &50905989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,6 +829,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 0, y: 0, z: 0}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &72975623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,6 +1287,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &95209286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,6 +2035,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &142847395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,6 +2202,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3541629673168548286, guid: 5ec373d916e1f8546aa03f45e0752e39, type: 3}
+--- !u!114 &149811243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1848996460489342483, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &166866641
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,6 +3485,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 0, y: 0, z: 0}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &311078673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4318,6 +4341,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 0, y: 0, z: 0}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &532431478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6078,6 +6103,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9999998, y: 2.0222373, z: 2.323265}
   m_Center: {x: 0, y: 5.381694, z: 0.16163254}
+--- !u!1 &783544127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &796846496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,7 +7246,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2562770240033932247, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 898910631}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2100717546}
   m_SourcePrefab: {fileID: 100100000, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
 --- !u!114 &849123140 stripped
 MonoBehaviour:
@@ -7927,6 +7960,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928861919}
   m_CullTransparentMesh: 1
+--- !u!114 &930418245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1310451644307688038, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &930607759
 GameObject:
   m_ObjectHideFlags: 0
@@ -11133,6 +11177,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 0, y: 0, z: 0}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1103234885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11867,6 +11913,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1186410470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12275,6 +12323,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1270186941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13333,6 +13383,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1375311110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13708,6 +13760,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1386130991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 766818003016603108, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1392423325
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14496,6 +14559,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1436908589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15844,6 +15909,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1569015498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16779,6 +16846,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1719326765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17483,6 +17552,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3537709356157935800, guid: 5ec373d916e1f8546aa03f45e0752e39, type: 3}
+--- !u!1 &1795015418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5533906489100415329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1810272189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17602,6 +17676,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1810272192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17886,6 +17962,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1818637220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18576,6 +18654,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1867271075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19236,6 +19316,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &1929480171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19637,6 +19719,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7208539155126182133, guid: 5ec373d916e1f8546aa03f45e0752e39, type: 3}
+--- !u!114 &2005228164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3990777736282075298, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2016821082
 GameObject:
   m_ObjectHideFlags: 0
@@ -20128,6 +20221,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1038879736}
   playerTransform: {fileID: 1038879734}
   initialRotationEulerAngles: {x: 1, y: -105, z: 1}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &2073607338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20437,12 +20532,30 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7044185708831584881, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 849123139}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 783544127}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad395421447229a46b4a291be6f0310c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2100717546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783544127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a538f7e618dbf2a49a15aa20a197b6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1795015418}
+  volumeSlider: {fileID: 930418245}
+  sensitivitySlider: {fileID: 2005228164}
+  resumeButton: {fileID: 1386130991}
+  mainMenuButton: {fileID: 149811243}
+  firstPersonController: {fileID: 1038879733}
 --- !u!1001 &2112563247
 PrefabInstance:
   m_ObjectHideFlags: 0
