@@ -58906,6 +58906,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e59514155a66634db7a83bc0035d5e6, type: 3}
+--- !u!114 &595983941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3486072758006884548, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1518685193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd550e5ea809204b873e93cc9622b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596260285
 GameObject:
   m_ObjectHideFlags: 0
@@ -76513,7 +76524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193513921184848039, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3329012219988430992, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_text
@@ -80954,6 +80965,7 @@ MonoBehaviour:
   sensitivitySlider: {fileID: 1518685196}
   resumeButton: {fileID: 1518685194}
   mainMenuButton: {fileID: 1518685195}
+  fadeInIntro: {fileID: 595983941}
   firstPersonController: {fileID: 324053541}
 --- !u!1001 &1828422225
 PrefabInstance:

@@ -10,6 +10,7 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
+    [SerializeField] private FadeInIntro fadeInIntro;
 
     [Header("Player Reference")]
     [SerializeField] private FirstPersonController firstPersonController;
@@ -55,12 +56,15 @@ public class PauseMenuController : MonoBehaviour
     {
         if (isPaused)
             Resume();
-        else
+        else if (fadeInIntro == null || !fadeInIntro.isActiveAndEnabled)
             Pause();
     }
 
     public void Pause()
     {
+        if (fadeInIntro != null && fadeInIntro.isActiveAndEnabled)
+            return; // Don't pause if FadeInIntro is active
+
         isPaused = true;
         pauseMenuUI.SetActive(true);
 
