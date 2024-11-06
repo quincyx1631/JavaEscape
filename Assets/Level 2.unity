@@ -1376,15 +1376,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5495684005867827900, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0012
+      value: -0.0000001
       objectReference: {fileID: 0}
     - target: {fileID: 5495684005867827900, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0082
+      value: -0.008
       objectReference: {fileID: 0}
     - target: {fileID: 5495684005867827900, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0276
+      value: -0.028
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722915119788639822, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722915119788639822, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1061
       objectReference: {fileID: 0}
     - target: {fileID: 7722915119788639822, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28396,13 +28404,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRotation: {x: 0, y: 0, z: 0}
-  rotationSpeed: 10
+  rotationSpeed: 20
   finishUI: {fileID: 1187764824}
   timer: {fileID: 1249427627}
   finalElapsedTime: 0
   alertUI: {fileID: 2017052624}
-  doorOpenSoundName: 
-  doorLockedSoundName: 
+  doorOpenSoundName: DoorOpen
+  doorLockedSoundName: DoorClose
 --- !u!1 &8316794819478558658
 GameObject:
   m_ObjectHideFlags: 0

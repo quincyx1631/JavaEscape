@@ -1024,9 +1024,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3632928632585975789, guid: 760008a8a002544439cca52d84001db7, type: 3}
+      propertyPath: uiElementsToHide.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632928632585975789, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: uiElementsToHide.Array.data[3]
       value: 
       objectReference: {fileID: 1123908922}
+    - target: {fileID: 3632928632585975789, guid: 760008a8a002544439cca52d84001db7, type: 3}
+      propertyPath: uiElementsToHide.Array.data[5]
+      value: 
+      objectReference: {fileID: 849806989}
     - target: {fileID: 3638957354343499903, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4825,7 +4833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[33].volume
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[34].volume
@@ -6959,7 +6967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRotation: {x: 0, y: 0, z: 0}
-  rotationSpeed: 100
+  rotationSpeed: 20
   finishUI: {fileID: 1694748469}
   timer: {fileID: 1780019676}
   finalElapsedTime: 0
