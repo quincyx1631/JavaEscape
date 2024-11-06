@@ -4634,53 +4634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412f202ba77a6ad499533495d40f73c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &708800908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708800905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8c30f3a33dd3f04ba8b25f33445a490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 10
-  inspectionCamera: {fileID: 2004609528}
-  inspectionPoint: {fileID: 335222904}
-  escapeUI: {fileID: 1799764290}
-  inspectionLight: {fileID: 0}
-  postProcessVolume: {fileID: 1165048850}
-  inspectStartSoundName: 
-  inspectStopSoundName: 
-  playerInteraction: {fileID: 1030880636}
-  playerTransform: {fileID: 1030880633}
-  initialRotationEulerAngles: {x: 0, y: 0, z: 0}
---- !u!114 &708800909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708800905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 509e877f09310564c9093ad71498bcb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemHolder: {fileID: 101369114}
-  pickupSoundName: 
-  dropSoundName: 
-  dropForce: 5
-  dropTorque: 10
-  checkBoxSize: {x: 0.5, y: 0.5, z: 0.5}
-  checkBoxCenter: {x: 0, y: 0, z: 0}
-  playerCollider: {fileID: 1030880638}
-  itemLayerName: Item
-  desiredRotation: {x: 0, y: 0, z: 0}
-  positionOffset: {x: 0, y: 0, z: 0}
-  alertUI: {fileID: 1053925704}
 --- !u!114 &708800910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4712,37 +4665,13 @@ MonoBehaviour:
         m_CallState: 2
   onPickUp:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 708800909}
-        m_TargetAssemblyTypeName: PickUp, Assembly-CSharp
-        m_MethodName: PickUpItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onInspect:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 708800908}
-        m_TargetAssemblyTypeName: Inspect, Assembly-CSharp
-        m_MethodName: StartInspection
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   canInteract: 1
-  canPickup: 1
-  canInspect: 1
+  canPickup: 0
+  canInspect: 0
   collectOnInteract: 1
   collectOnPickUp: 0
   collectOnInspect: 0
@@ -5015,6 +4944,8 @@ MonoBehaviour:
   playerInteraction: {fileID: 1030880636}
   playerTransform: {fileID: 1030880633}
   initialRotationEulerAngles: {x: 0, y: 90, z: 0}
+  zoomedFOV: 30
+  zoomSpeed: 10
 --- !u!114 &738501988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6140,19 +6071,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.01239
+      value: 0.0159
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.01239
+      value: 0.0159
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.01239
+      value: 0.0159
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -53.255
+      value: -53.936
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6192,7 +6123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       propertyPath: m_Name
@@ -6218,12 +6149,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 708800910}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 708800909}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 708800908}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: afe6c72088764054e98a6c470b5612e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 708800907}
@@ -8321,10 +8246,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 235052833}
   slides:
-  - slideImage: {fileID: 21300000, guid: c35741329ef1c044aaafd1637fb57791, type: 3}
+  - slideImage: {fileID: 21300000, guid: 429db731039b6774591ee858dad12a18, type: 3}
     slideTitle: 1
-  - slideImage: {fileID: 21300000, guid: 99718e4e4beda724aa9e8216e9d2ba0f, type: 3}
+  - slideImage: {fileID: 21300000, guid: 6d647aa30c24d0c449f1030a85fb4497, type: 3}
     slideTitle: 2
+  - slideImage: {fileID: 21300000, guid: aeb69f373a843c04381915273eff8a7d, type: 3}
+    slideTitle: 3
+  - slideImage: {fileID: 21300000, guid: 35c40b9e176b5a04caf6338c988f4e37, type: 3}
+    slideTitle: 4
+  - slideImage: {fileID: 21300000, guid: 305fc2fa24377ed4699051a24a9f76ae, type: 3}
+    slideTitle: 5
+  - slideImage: {fileID: 21300000, guid: 1c5a619b83ccd42458132f41fc0b6bb6, type: 3}
+    slideTitle: 6
+  - slideImage: {fileID: 21300000, guid: d67f724ebf4fe224cb596fa6d017bd89, type: 3}
+    slideTitle: 7
+  - slideImage: {fileID: 21300000, guid: db375ffe0c5418041b39caa43c67fd85, type: 3}
+    slideTitle: 8
+  - slideImage: {fileID: 21300000, guid: 99375221dde10de489c980e5e7a53455, type: 3}
+    slideTitle: 9
+  - slideImage: {fileID: 21300000, guid: c2e0366b55ef84e4f93af116d0404f7e, type: 3}
+    slideTitle: 10
   itemHolder: {fileID: 101369114}
   remote: {fileID: 738501985}
   keypadNumbers: {fileID: 1853445640}
@@ -16577,10 +16518,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayImage: {fileID: 1380861915}
   slides:
-  - slideImage: {fileID: 21300000, guid: 4ea000c0130f5c84b9bf68ef7f4881dc, type: 3}
+  - slideImage: {fileID: 21300000, guid: db5b71330afbcbd4bbacdc74b0cced81, type: 3}
     slideTitle: 1
-  - slideImage: {fileID: 21300000, guid: ec0e49a4f62d9174aba69ac4cdecd7ec, type: 3}
+  - slideImage: {fileID: 21300000, guid: ec09d98de793204448873f2ec4737dfc, type: 3}
     slideTitle: 2
+  - slideImage: {fileID: 21300000, guid: 20a620c2777e80447916b0cd2ee5067b, type: 3}
+    slideTitle: 3
+  - slideImage: {fileID: 21300000, guid: e1b852a162eebce4fb33a6c1d48a2a00, type: 3}
+    slideTitle: 4
+  - slideImage: {fileID: 21300000, guid: 61e66af87ef5f1145b530c8b7382375c, type: 3}
+    slideTitle: 5
+  - slideImage: {fileID: 21300000, guid: 673e678b6c1bda441adb1bc62bd2d86f, type: 3}
+    slideTitle: 6
+  - slideImage: {fileID: 21300000, guid: 3d076513d2cf70648aaededc97012651, type: 3}
+    slideTitle: 7
+  - slideImage: {fileID: 21300000, guid: f86b86a3f14aba84f96a5c17e7f074fc, type: 3}
+    slideTitle: 8
+  - slideImage: {fileID: 21300000, guid: fb1a0e052eeb34c4b8d3464b72894800, type: 3}
+    slideTitle: 9
+  - slideImage: {fileID: 21300000, guid: 5931ac00ee2fe0e45b124cce76bbd60a, type: 3}
+    slideTitle: 10
   tvSlideShow: {fileID: 984398027}
   alertUI: {fileID: 1053925704}
 --- !u!1 &2053377333 stripped

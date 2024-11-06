@@ -60,7 +60,7 @@ public class LaptopSlideShow : MonoBehaviour
             // Compare slide titles instead of images
             if (slides[currentSlideIndex].slideTitle == tvSlideShow.GetCurrentSlideTitle())
             {
-                alertUI.ShowAlert("Correct Match!");
+                CorrectUIController.Instance.ShowCorrectUI();
                 matchedSlides[currentSlideIndex] = true;
                 ApplyGrayscaleEffect();
 
