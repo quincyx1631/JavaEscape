@@ -102,6 +102,9 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwitchToSecondaryCamera()
     {
+        //FOR PAUSE DONT CHANGE -- NEIL
+        PauseMenuController.Instance.disableTab();
+
         outline.enabled = false;
 
         // Enable secondary camera and disable main camera
@@ -149,6 +152,10 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwitchToMainCamera()
     {
+
+        //FOR PAUSE DONT CHANGE -- NEIL
+        PauseMenuController.Instance.canClickTab();
+
         outline.enabled = true;
 
         // Enable main camera and disable secondary camera

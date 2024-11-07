@@ -119,6 +119,7 @@ public class Inspect : MonoBehaviour
 
     public void StartInspection()
     {
+
         if (!isInspecting)
         {
             if (HUDController.instance != null)
@@ -136,6 +137,9 @@ public class Inspect : MonoBehaviour
 
             initialRotation = CalculateInitialRotation();
             transform.rotation = initialRotation;
+
+            //FOR PAUSE DONT CHANGE -- NEIL
+            PauseMenuController.Instance.disableTab();
 
             if (!string.IsNullOrEmpty(inspectStartSoundName))
             {
@@ -196,6 +200,9 @@ public class Inspect : MonoBehaviour
             }
 
             isInspecting = false;
+
+            //FOR PAUSE DONT CHANGE -- NEIL
+            PauseMenuController.Instance.canClickTab();
 
             if (!string.IsNullOrEmpty(inspectStopSoundName))
             {

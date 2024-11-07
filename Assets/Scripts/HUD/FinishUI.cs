@@ -73,6 +73,9 @@ public class FinishUI : MonoBehaviour
 
         // Call the appropriate AddLevel method based on scene index
         CallAddLevelMethod(sceneIndex);
+
+        //FOR PAUSE DONT CHANGE -- NEIL
+        PauseMenuController.Instance.disableTab();
     }
 
     private void CallAddLevelMethod(int sceneIndex)
@@ -150,7 +153,7 @@ public class FinishUI : MonoBehaviour
                 Destroy(obj);
             }
         }
-
+    
         SceneManager.LoadScene("Main Menu Final");
     }
 

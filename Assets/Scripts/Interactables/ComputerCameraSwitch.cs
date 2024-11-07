@@ -26,10 +26,16 @@ public class ComputerCameraSwitch : MonoBehaviour
         if (!isComputerCameraActive)
         {
             SwitchToSecondaryCamera();
+
+            //FOR PAUSE DONT CHANGE -- NEIL
+            PauseMenuController.Instance.disableTab();
         }
         else
         {
             SwitchToMainCamera();
+
+            //FOR PAUSE DONT CHANGE -- NEIL
+            PauseMenuController.Instance.canClickTab();
         }
     }
 

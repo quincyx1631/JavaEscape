@@ -1,23 +1,57 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class PauseMenuController : MonoBehaviour
 {
+    private static PauseMenuController instance;
+    public static PauseMenuController Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<PauseMenuController>();
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject("PauseMenuController");
+                    instance = obj.AddComponent<PauseMenuController>();
+                }
+            }
+            return instance;
+        }
+    }
+
     [Header("Menu Objects")]
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private Slider volumeSlider;
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
-    [SerializeField] private FadeInIntro fadeInIntro;
 
     [Header("Player Reference")]
     [SerializeField] private FirstPersonController firstPersonController;
 
+    [Header("Settings")]
+    [SerializeField] private bool canPauseWithTab = false;
+
     private bool isPaused = false;
     private float defaultVolume = 1f;
     private float defaultSensitivity = 2f;  // Changed to match FirstPersonController default
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -36,17 +70,27 @@ public class PauseMenuController : MonoBehaviour
         if (resumeButton != null)
             resumeButton.onClick.AddListener(Resume);
         if (mainMenuButton != null)
-            mainMenuButton.onClick.AddListener(ReturnToMainMenu);
+            mainMenuButton.onClick.AddListener(LoadMainMenu);
 
         // Apply initial volume and sensitivity
         UpdateVolume(volumeSlider.value);
         UpdateSensitivity(sensitivitySlider.value);
     }
 
+    public void canClickTab()
+    {
+        canPauseWithTab = true;
+    }
+
+    public void disableTab()
+    {
+        canPauseWithTab = false;
+    }
+
     private void Update()
     {
-        // Check for Tab key
-        if (Input.GetKeyDown(KeyCode.Tab))
+        // Check for Tab key if canPauseWithTab is true
+        if (canPauseWithTab && Input.GetKeyDown(KeyCode.Tab))
         {
             TogglePause();
         }
@@ -56,15 +100,12 @@ public class PauseMenuController : MonoBehaviour
     {
         if (isPaused)
             Resume();
-        else if (fadeInIntro == null || !fadeInIntro.isActiveAndEnabled || !fadeInIntro.isInFadeInSequence)
+        else
             Pause();
     }
 
     public void Pause()
     {
-        if (fadeInIntro != null && fadeInIntro.isActiveAndEnabled)
-            return; // Don't pause if FadeInIntro is active
-
         isPaused = true;
         pauseMenuUI.SetActive(true);
 
@@ -113,23 +154,26 @@ public class PauseMenuController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void ReturnToMainMenu()
-    {
-        // Show a confirmation dialog before returning to main menu
-        ShowMainMenuConfirmation();
-    }
-
-    private void ShowMainMenuConfirmation()
-    {
-        // You can implement your own confirmation dialog UI here
-        // For now, we'll just return to menu directly
-        LoadMainMenu();
-    }
-
     private void LoadMainMenu()
     {
+        // Get all root objects in DontDestroyOnLoad
+        GameObject[] rootObjects = GameObject.FindObjectsOfType<GameObject>(true)
+            .Where(go => go.scene.buildIndex == -1 && go.transform.parent == null)
+            .ToArray();
+
+        // Destroy everything except PlayFab
+        foreach (GameObject obj in rootObjects)
+        {
+            if (!obj.name.Contains("PlayFabHttp"))  // Adjust this condition based on your PlayFab object's name
+            {
+                Destroy(obj);
+            }
+        }
+
         // Reset pause state
         isPaused = false;
+
+        disableTab();
 
         // Reset cursor state
         Cursor.lockState = CursorLockMode.None;

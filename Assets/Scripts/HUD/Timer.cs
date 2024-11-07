@@ -43,6 +43,7 @@ public class Timer : MonoBehaviour
     {
         timerRunning = true;
         StartCoroutine(UpdateTimer());
+        PauseMenuController.Instance.canClickTab();
     }
 
     private IEnumerator UpdateTimer()
