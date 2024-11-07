@@ -15,6 +15,9 @@ public class LetterPlaceholder : MonoBehaviour
     public AlertUI alertUI;
     [SerializeField] private char letter; // The letter that this placeholder accepts
 
+    public string placeSound;
+    public string removeSound;
+
     private void Awake()
     {
         if (placeholderLight != null)
@@ -120,6 +123,7 @@ public class LetterPlaceholder : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         ChangeLightColor(color);
+        AudioManager.Instance.Play(placeSound);
     }
 
     private void RemoveItem()
@@ -175,6 +179,8 @@ public class LetterPlaceholder : MonoBehaviour
 
     private void ResetLightColor()
     {
+        AudioManager.Instance.Play(removeSound);
+
         if (placeholderLight != null)
         {
             placeholderLight.gameObject.SetActive(false);
