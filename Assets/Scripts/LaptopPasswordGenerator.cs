@@ -12,13 +12,22 @@ public class LaptopPasswordGenerator : MonoBehaviour
     [SerializeField] private TMP_Text[] answerTextFields;     // Array of 10 text fields to display correct answers
     public AlertUI alertUI;                                   // Reference to Alert UI for incorrect attempts
     public KeypadNumbers keypadNumbers;                       // Reference to KeypadNumbers to set the password
+    public string typeSound;                                  // Name of the typing sound
+    public string clickSound;                                 // Name of the button click sound
+    public string generateSound;                              // Name of the generate sound
 
     private string finalPassword;                             // Holds the final 5-digit password
 
     private void Start()
     {
         passwordDisplay.text = "";                            // Ensure password display starts blank
-        generateButton.onClick.AddListener(GeneratePassword);
+        generateButton.onClick.AddListener(OnGenerateButtonClick);
+
+        // Add typing sound to each input field
+        foreach (var inputField in inputFields)
+        {
+            inputField.onValueChanged.AddListener(delegate { PlayTypeSound(); });
+        }
 
         // Check if correctAnswers array matches inputFields array length
         if (correctAnswers.Length != inputFields.Length || answerTextFields.Length != inputFields.Length)
@@ -27,12 +36,22 @@ public class LaptopPasswordGenerator : MonoBehaviour
         }
     }
 
+    private void OnGenerateButtonClick()
+    {
+        AudioManager.Instance.Play(clickSound);               // Play click sound
+        GeneratePassword();
+    }
+
     private void GeneratePassword()
     {
         if (CheckAnswers())
         {
             CorrectUIController.Instance.ShowCorrectUI();
             Debug.Log("All answers are correct. Generating password...");
+
+            // Play generate sound at the start of password generation
+            AudioManager.Instance.Play(generateSound);
+
             finalPassword = Generate5DigitPassword();
             StartCoroutine(AnimatePassword());
 
@@ -53,6 +72,12 @@ public class LaptopPasswordGenerator : MonoBehaviour
         {
             Debug.Log("One or more answers are incorrect. Please try again.");
         }
+    }
+
+    // Plays typing sound
+    private void PlayTypeSound()
+    {
+        AudioManager.Instance.Play(typeSound);
     }
 
     // Checks if all input fields contain correct answers
