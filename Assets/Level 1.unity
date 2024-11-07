@@ -619,17 +619,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &29759169 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3486072758006884548, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-  m_PrefabInstance: {fileID: 2121717448}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd550e5ea809204b873e93cc9622b99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &41732790
 GameObject:
   m_ObjectHideFlags: 0
@@ -20888,8 +20877,8 @@ MonoBehaviour:
   sensitivitySlider: {fileID: 2121717451}
   resumeButton: {fileID: 2121717449}
   mainMenuButton: {fileID: 2121717450}
-  fadeInIntro: {fileID: 29759169}
   firstPersonController: {fileID: 1034097636}
+  canPauseWithTab: 0
 --- !u!1 &7055028700841192489 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7055028699162084772, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
