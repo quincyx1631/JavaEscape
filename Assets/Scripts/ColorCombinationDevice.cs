@@ -10,6 +10,10 @@ public class ColorCombinationDevice : MonoBehaviour
     public GameObject checkObject;      // Object to check the combination
     public TextMeshProUGUI displayText; // TMP for displaying results and password
     public TextMeshProUGUI clueText;    // TMP for displaying clues
+    public string clickSoundName;       // Sound for color button clicks
+    public string checkSoundName;       // Sound for check button click
+    public string wrongSoundName;       // Sound for wrong answer
+    public string generateSoundName;    // Sound for password generation
 
     [Header("Combination Settings")]
     public Color[] availableColors = { Color.red, Color.blue, Color.green, Color.yellow, Color.magenta };
@@ -63,6 +67,9 @@ public class ColorCombinationDevice : MonoBehaviour
     {
         if (isAnimating || hasGeneratedPassword) return; // Skip if animation is running or password already generated
 
+        // Play click sound
+        AudioManager.Instance.Play(clickSoundName);
+
         // Cycle through colors for the specified object
         currentCombination[objectIndex] = (currentCombination[objectIndex] + 1) % availableColors.Length;
         SetColor(objectIndex, currentCombination[objectIndex]);
@@ -71,6 +78,9 @@ public class ColorCombinationDevice : MonoBehaviour
     public void CheckCombination()
     {
         if (isAnimating || hasGeneratedPassword) return; // Skip if animation is running or password already generated
+
+        // Play check button sound
+        AudioManager.Instance.Play(checkSoundName);
 
         // Check if the current combination matches the selected correct combination
         if (CheckIfCorrect(currentCombination, selectedCombination.combination))
@@ -135,6 +145,10 @@ public class ColorCombinationDevice : MonoBehaviour
     IEnumerator GeneratePasswordAnimation()
     {
         isAnimating = true;
+
+        // Play password generation sound
+        AudioManager.Instance.Play(generateSoundName);
+
         displayText.color = Color.black;
 
         // Generate a random 5-digit password
@@ -163,6 +177,9 @@ public class ColorCombinationDevice : MonoBehaviour
 
     void DisplayWrongMessage()
     {
+        // Play wrong answer sound
+        AudioManager.Instance.Play(wrongSoundName);
+
         displayText.text = "W R O N G";
         displayText.color = Color.red;
     }
