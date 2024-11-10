@@ -14773,6 +14773,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9197171162935681516}
     - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: dialogueEntries.Array.data[0].dialogueText
       value: "Welcome to JavaEscape! Today, we\u2019re going to see just how good
         you are at coding! I\u2019m the Hackathon Master, and you\u2019re about to
@@ -14791,13 +14795,20 @@ PrefabInstance:
       propertyPath: dialogueEntries.Array.data[6].dialogueText
       value: "Alright! In this level,  find 5 papers around the room, each paper
         contains one question. Answer them all correctly. Once that\u2019s done,
-        look for a key to unlocked a object that will help you for your task. After
-        that, you\u2019ll discover a piece of paper with clues that will help you
-        move forward. Use the clue to unlock the door and move to the next room.
-        Now, are you ready to start searching?\r\n"
+        look for a key to unlocked a object that will help you for your task. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[7].dialogueText
+      value: "After that, you\u2019ll discover a piece of paper with clues that will
+        help you move forward. Use the clue to unlock the door and move to the next
+        room. Now, are you ready to start searching?"
       objectReference: {fileID: 0}
     - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: dialogueEntries.Array.data[8].dialogueText
+      value: "Yes, I\u2019m ready!\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[9].dialogueText
       value: "Awesome! Before we start, a tutorial video will play to guide you through
         the game. Also,  you can rewatch the tutorial video anytime. Remember, this
         is all about learning and applying what you\u2019ve learned. Take your time,
@@ -14846,20 +14857,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: dialogueEntries.Array.data[6].voiceOverName
-      value: HM4-1
+      value: newt1
       objectReference: {fileID: 0}
     - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: dialogueEntries.Array.data[7].voiceOverName
-      value: S4-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-      propertyPath: dialogueEntries.Array.data[8].characterName
+      propertyPath: dialogueEntries.Array.data[7].characterName
       value: Hackathon Master
       objectReference: {fileID: 0}
     - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[7].voiceOverName
+      value: newt2
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[8].characterName
+      value: Student
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: dialogueEntries.Array.data[8].voiceOverName
+      value: S4-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[9].characterName
+      value: Hackathon Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[9].voiceOverName
       value: HM5-1
       objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[7].characterImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 0bf325fca3c164e4fa3e9bb19ea900c6, type: 3}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[8].characterImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1917472f76106b74b94a795e0daebb14, type: 3}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[9].characterImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 0bf325fca3c164e4fa3e9bb19ea900c6, type: 3}
     - target: {fileID: 765303100930388167, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17535,7 +17570,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.size
-      value: 30
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].clip
@@ -17610,6 +17645,22 @@ PrefabInstance:
       value: S4-1
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b561fbb6ec7bd5941967c73dffd3ffaf, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].name
+      value: newt1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: db0c1f9b7baad754093e9af81e90a8ec, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].name
+      value: newt2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -17646,6 +17697,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].volume
       value: 1
       objectReference: {fileID: 0}
@@ -17679,6 +17738,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[29].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2580487136659981168, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
