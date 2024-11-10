@@ -26,6 +26,11 @@ public class Radio : MonoBehaviour
     // Delay time for the AudioSource to play after radioInteractSound
     public float audioSourceDelay = 1f; // You can change this in the Inspector
 
+    // Volume slider based on the Y-axis
+    public Transform volumeSlider;  // The UI element (e.g., a slider) to move on the Y-axis
+    public float minYPosition = 0f;  // Minimum Y position (for min volume)
+    public float maxYPosition = 1f;  // Maximum Y position (for max volume)
+
     private void Start()
     {
         if (audioSource == null)
@@ -93,6 +98,9 @@ public class Radio : MonoBehaviour
             float distanceFactor = Mathf.Clamp01(1 - (distance / maxDistance));
             audioSource.volume = currentVolume * distanceFactor;
         }
+
+        // Update the volume slider based on the current volume
+        UpdateVolumeSlider();
     }
 
     public void AdjustVolume()
@@ -123,6 +131,20 @@ public class Radio : MonoBehaviour
 
         // Play the sound effect when volume changes
         AudioManager.Instance.Play(radioChangeSound);
+    }
+
+    // Update the volume slider based on current volume
+    private void UpdateVolumeSlider()
+    {
+        if (volumeSlider != null)
+        {
+            // Map the volume to the Y position range
+            float normalizedVolume = Mathf.InverseLerp(minVolume, maxVolume, currentVolume);
+            float newYPosition = Mathf.Lerp(minYPosition, maxYPosition, normalizedVolume);
+
+            // Update the Y position of the slider
+            volumeSlider.position = new Vector3(volumeSlider.position.x, newYPosition, volumeSlider.position.z);
+        }
     }
 
     // Coroutine to briefly show the volume indicator
