@@ -19,6 +19,13 @@ public class Radio : MonoBehaviour
     public GameObject volumeDownIndicator;
     private float indicatorDisplayTime = 0.5f;
 
+    // Sound effects
+    public string radioInteractSound; // Sound when the radio is turned on
+    public string radioChangeSound;   // Sound when the volume is changed
+
+    // Delay time for the AudioSource to play after radioInteractSound
+    public float audioSourceDelay = 1f; // You can change this in the Inspector
+
     private void Start()
     {
         if (audioSource == null)
@@ -45,12 +52,27 @@ public class Radio : MonoBehaviour
             battery.SetActive(false);
 
             isRadioOn = true;
-            audioSource.Play();
+
+            // Play the radio interaction sound first
+            AudioManager.Instance.Play(radioInteractSound);
+
+            // Start the coroutine to play the AudioSource sound after the delay
+            StartCoroutine(PlayRadioAfterDelay());
         }
         else
         {
             Debug.Log("Battery is not in the ItemHolder. Radio cannot play.");
         }
+    }
+
+    // Coroutine to wait for the delay before playing the AudioSource
+    private IEnumerator PlayRadioAfterDelay()
+    {
+        // Wait for the set delay time
+        yield return new WaitForSeconds(audioSourceDelay);
+
+        // Play the audio source sound after the delay
+        audioSource.Play();
     }
 
     private void Update()
@@ -88,6 +110,9 @@ public class Radio : MonoBehaviour
         {
             StartCoroutine(ShowVolumeIndicator(volumeDownIndicator));
         }
+
+        // Play the sound effect when volume changes
+        AudioManager.Instance.Play(radioChangeSound);
     }
 
     // Coroutine to briefly show the volume indicator
