@@ -35,7 +35,7 @@ public class Radio : MonoBehaviour
 
         currentVolume = minVolume;
         audioSource.volume = currentVolume;
-        audioSource.loop = true;
+        audioSource.loop = false;  // Make sure loop is unchecked in the Inspector
         audioSource.spatialBlend = 1f; // Set to 3D sound
     }
 
@@ -57,7 +57,7 @@ public class Radio : MonoBehaviour
             AudioManager.Instance.Play(radioInteractSound);
 
             // Start the coroutine to play the AudioSource sound after the delay
-            StartCoroutine(PlayRadioAfterDelay());
+            StartCoroutine(PlayRadioWithDelay());
         }
         else
         {
@@ -65,14 +65,24 @@ public class Radio : MonoBehaviour
         }
     }
 
-    // Coroutine to wait for the delay before playing the AudioSource
-    private IEnumerator PlayRadioAfterDelay()
+    // Coroutine to play the radio sound with a 5-second delay in between each play
+    private IEnumerator PlayRadioWithDelay()
     {
-        // Wait for the set delay time
+        // Wait for the initial delay before starting the audio
         yield return new WaitForSeconds(audioSourceDelay);
 
-        // Play the audio source sound after the delay
-        audioSource.Play();
+        // Keep playing the radio sound with a 5-second delay between each loop
+        while (isRadioOn)
+        {
+            // Play the audio source sound
+            audioSource.Play();
+
+            // Wait until the audio finishes playing
+            yield return new WaitForSeconds(audioSource.clip.length);
+
+            // Wait for an additional 5 seconds after the audio finishes
+            yield return new WaitForSeconds(5f);
+        }
     }
 
     private void Update()
