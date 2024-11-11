@@ -11771,6 +11771,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 1941452932984206989, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2072255303540973575, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11779,6 +11783,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RevealScore
       objectReference: {fileID: 0}
+    - target: {fileID: 2636722467758781920, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f12819b93ebc4c0408b62b4ed66a1987, type: 3}
     - target: {fileID: 2732060902450055044, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4284950553
@@ -11935,6 +11943,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9022625039602195207, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -11964,17 +11976,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baa8af5bd506e714ca25a23d7614bf4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1510641986 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3486072758006884548, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
-  m_PrefabInstance: {fileID: 1510641984}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd550e5ea809204b873e93cc9622b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1519200903
@@ -12935,8 +12936,8 @@ MonoBehaviour:
   sensitivitySlider: {fileID: 1064194321}
   resumeButton: {fileID: 556386156}
   mainMenuButton: {fileID: 2144162963}
-  fadeInIntro: {fileID: 1510641986}
   firstPersonController: {fileID: 2010180541}
+  canPauseWithTab: 0
 --- !u!4 &1689095530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4373934541990005228, guid: 89540c9e72f483449a20ecf892098ae2, type: 3}

@@ -931,6 +931,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 230
       objectReference: {fileID: 0}
+    - target: {fileID: 2782170131680651977, guid: 760008a8a002544439cca52d84001db7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f12819b93ebc4c0408b62b4ed66a1987, type: 3}
     - target: {fileID: 2818394497348591105, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_text
       value: "if (score = 75) {\u200B"
@@ -7236,17 +7240,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7620889061227917520, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
---- !u!114 &996003188 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3632928632585975789, guid: 760008a8a002544439cca52d84001db7, type: 3}
-  m_PrefabInstance: {fileID: 49333547}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdd550e5ea809204b873e93cc9622b99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1027726496 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6587006583450291036, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
@@ -11348,8 +11341,8 @@ MonoBehaviour:
   sensitivitySlider: {fileID: 849806987}
   resumeButton: {fileID: 849806985}
   mainMenuButton: {fileID: 849806986}
-  fadeInIntro: {fileID: 996003188}
   firstPersonController: {fileID: 434458124}
+  canPauseWithTab: 0
 --- !u!1 &1785438132 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8963677080762350746, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
