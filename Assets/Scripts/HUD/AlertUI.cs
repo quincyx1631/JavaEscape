@@ -19,10 +19,11 @@ public class AlertUI : MonoBehaviour
 
     private void Start()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
-        // Ensure the alert starts invisible
+        // Ensure the alert starts invisible and disabled
         SetAlpha(0f);
+        gameObject.SetActive(false);
 
         // Get the main camera
         mainCamera = Camera.main;
@@ -31,6 +32,7 @@ public class AlertUI : MonoBehaviour
     // Call this method to show an alert with a specific message and an optional sound name
     public void ShowAlert(string message, string alertSoundName = null)
     {
+        gameObject.SetActive(true); // Enable the UI when showing the alert
         alertText.text = message;
         StopAllCoroutines(); // Stop any existing fade out
 
@@ -57,7 +59,6 @@ public class AlertUI : MonoBehaviour
         if (!string.IsNullOrEmpty(soundName))
         {
             AudioManager.Instance.Play(soundName);
-            
         }
         else
         {
@@ -113,6 +114,7 @@ public class AlertUI : MonoBehaviour
 
         // Ensure the alert is fully hidden at the end
         SetAlpha(0f);
+        gameObject.SetActive(false); // Disable the UI after it finishes fading out
     }
 
     // Sets the alpha of both the text and the background image

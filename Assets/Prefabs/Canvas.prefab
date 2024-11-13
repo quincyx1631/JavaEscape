@@ -2174,10 +2174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alertText: {fileID: 8048328116837654762}
   alertBackground: {fileID: 6876156919370664808}
-  fadeDuration: 0.5
-  displayDuration: 0.5
+  fadeDuration: 1
+  displayDuration: 1.5
   defaultAlertSoundName: AlertSound
-  shakeDuration: 0.1
+  shakeDuration: 0.15
   shakeMagnitude: 0.01
 --- !u!82 &7863841991954698708
 AudioSource:
@@ -2382,6 +2382,7 @@ MonoBehaviour:
   videoFadeInDuration: 1
   videoFadeOutDuration: 1
   videoFadeOverlay: {fileID: 0}
+  isInFadeInSequence: 0
   uiElementsToHide:
   - {fileID: 3295705087857284140}
   - {fileID: 5347206227496487131}

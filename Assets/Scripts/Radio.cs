@@ -20,16 +20,18 @@ public class Radio : MonoBehaviour
     private float indicatorDisplayTime = 0.5f;
 
     // Sound effects
-    public string radioInteractSound; // Sound when the radio is turned on
-    public string radioChangeSound;   // Sound when the volume is changed
+    public string radioInteractSound;
+    public string radioChangeSound;
 
     // Delay time for the AudioSource to play after radioInteractSound
-    public float audioSourceDelay = 1f; // You can change this in the Inspector
+    public float audioSourceDelay = 1f;
 
     // Volume slider based on the Y-axis
-    public Transform volumeSlider;  // The UI element (e.g., a slider) to move on the Y-axis
-    public float minYPosition = 0f;  // Minimum Y position (for min volume)
-    public float maxYPosition = 1f;  // Maximum Y position (for max volume)
+    public Transform volumeSlider;
+    public float minYPosition = 0f;
+    public float maxYPosition = 1f;
+
+    public AlertUI alertUI;
 
     private void Start()
     {
@@ -38,10 +40,13 @@ public class Radio : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
         }
 
+        // Initially disable the AudioSource
+        audioSource.enabled = false;
+
         currentVolume = minVolume;
         audioSource.volume = currentVolume;
-        audioSource.loop = false;  // Make sure loop is unchecked in the Inspector
-        audioSource.spatialBlend = 1f; // Set to 3D sound
+        audioSource.loop = false;
+        audioSource.spatialBlend = 1f;
     }
 
     private bool IsBatteryInHolder()
@@ -58,19 +63,21 @@ public class Radio : MonoBehaviour
 
             isRadioOn = true;
 
-            // Play the radio interaction sound first
+            // Play the radio interaction sound
             AudioManager.Instance.Play(radioInteractSound);
 
-            // Start the coroutine to play the AudioSource sound after the delay
+            // Enable the audio source and start the coroutine to play it after a delay
+            audioSource.enabled = true;
             StartCoroutine(PlayRadioWithDelay());
+            gameObject.tag = "Untagged";
         }
         else
         {
+            alertUI.ShowAlert("The radio needs a battery");
             Debug.Log("Battery is not in the ItemHolder. Radio cannot play.");
         }
     }
 
-    // Coroutine to play the radio sound with a 5-second delay in between each play
     private IEnumerator PlayRadioWithDelay()
     {
         // Wait for the initial delay before starting the audio
@@ -79,13 +86,8 @@ public class Radio : MonoBehaviour
         // Keep playing the radio sound with a 5-second delay between each loop
         while (isRadioOn)
         {
-            // Play the audio source sound
             audioSource.Play();
-
-            // Wait until the audio finishes playing
             yield return new WaitForSeconds(audioSource.clip.length);
-
-            // Wait for an additional 5 seconds after the audio finishes
             yield return new WaitForSeconds(5f);
         }
     }
@@ -99,7 +101,6 @@ public class Radio : MonoBehaviour
             audioSource.volume = currentVolume * distanceFactor;
         }
 
-        // Update the volume slider based on the current volume
         UpdateVolumeSlider();
     }
 
@@ -112,14 +113,12 @@ public class Radio : MonoBehaviour
 
         float previousVolume = currentVolume;
 
-        // Cycle volume up with each click
         currentVolume += volumeStep;
         if (currentVolume > maxVolume)
         {
             currentVolume = minVolume;
         }
 
-        // Show appropriate volume indicator
         if (currentVolume > previousVolume)
         {
             StartCoroutine(ShowVolumeIndicator(volumeUpIndicator));
@@ -129,29 +128,31 @@ public class Radio : MonoBehaviour
             StartCoroutine(ShowVolumeIndicator(volumeDownIndicator));
         }
 
-        // Play the sound effect when volume changes
         AudioManager.Instance.Play(radioChangeSound);
     }
 
-    // Update the volume slider based on current volume
     private void UpdateVolumeSlider()
     {
         if (volumeSlider != null)
         {
-            // Map the volume to the Y position range
             float normalizedVolume = Mathf.InverseLerp(minVolume, maxVolume, currentVolume);
             float newYPosition = Mathf.Lerp(minYPosition, maxYPosition, normalizedVolume);
-
-            // Update the Y position of the slider
             volumeSlider.position = new Vector3(volumeSlider.position.x, newYPosition, volumeSlider.position.z);
         }
     }
 
-    // Coroutine to briefly show the volume indicator
     private IEnumerator ShowVolumeIndicator(GameObject indicator)
     {
         indicator.SetActive(true);
         yield return new WaitForSeconds(indicatorDisplayTime);
         indicator.SetActive(false);
+    }
+
+    // Optional function to turn off the radio and disable the AudioSource
+    public void CloseRadio()
+    {
+        isRadioOn = false;
+        audioSource.Stop();
+        audioSource.enabled = false;
     }
 }

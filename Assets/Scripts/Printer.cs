@@ -89,11 +89,11 @@ public class Printer : MonoBehaviour
     {
         float timeElapsed = 0f;
         Vector3 startingPosition = paper.transform.position;
-        Quaternion startingRotation = paper.transform.rotation;
+        Quaternion startingRotation = paperSpawnPoint.rotation; // Use the spawn point's rotation as starting rotation
 
-        // Define target position and rotation (to move forward and slightly rotate)
-        Vector3 targetPosition = startingPosition + paperSpawnPoint.forward * 0.3f; // Even shorter movement distance (0.3f)
-        Quaternion targetRotation = Quaternion.Euler(0, 180, 0); // Rotate to simulate printing motion
+        // Define target position and rotation for correct orientation
+        Vector3 targetPosition = startingPosition + paperSpawnPoint.forward * 0.4f;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, 0); // Adjust to the correct orientation as needed
 
         // Move and rotate the paper sideward
         while (timeElapsed < 1f)
@@ -104,6 +104,6 @@ public class Printer : MonoBehaviour
             yield return null;
         }
 
-        // After the paper finishes printing, we can set additional logic or tag changes here if needed
+        // After the paper finishes printing, you can set additional logic or tag changes here if needed
     }
 }
