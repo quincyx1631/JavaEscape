@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class LevelEightGenerator : MonoBehaviour
 {
@@ -8,20 +7,26 @@ public class LevelEightGenerator : MonoBehaviour
     {
         public GameObject newspaper;
         public AudioClip radioSound;
+        public string lockerPassword; // Password for the LockerBox for this set
+        public string keypadPassword; // Password for the keypad for this set
     }
 
-    public NewspaperSet[] newspaperSets;
-    public AudioSource radioSource;
+    public NewspaperSet[] newspaperSets; // Array of newspaper-sound-password sets
+    public AudioSource radioSource;      // The radio’s AudioSource component
+    public LockerBox lockerBox;          // Reference to the LockerBox
+    public KeypadNumbers keypad;         // Reference to the KeypadNumbers component
 
-    private int currentSet = 0;
+    private int currentSet = 0;          // Keeps track of the current active set
 
     void Start()
     {
-        ActivateNewspaperSet(0);
+        ActivateRandomNewspaperSet(); // Start by activating a random newspaper set
     }
 
+    // Function to activate the chosen set
     public void ActivateNewspaperSet(int setIndex)
     {
+        // Validate the index
         if (setIndex < 0 || setIndex >= newspaperSets.Length)
         {
             Debug.LogWarning("Set index out of range");
@@ -34,29 +39,27 @@ public class LevelEightGenerator : MonoBehaviour
             set.newspaper.SetActive(false);
         }
 
-        // Stop and clear the audio source completely before setting the new clip
-        radioSource.Stop();
-        radioSource.clip = null;
-
-        // Activate the selected newspaper
+        // Activate the chosen newspaper, play its corresponding radio sound, and set the locker password
         newspaperSets[setIndex].newspaper.SetActive(true);
+        radioSource.clip = newspaperSets[setIndex].radioSound;
+        radioSource.Play();
 
-        // Start a coroutine to safely set the audio clip with a slight delay
-        StartCoroutine(SetRadioClipDelayed(newspaperSets[setIndex].radioSound));
+        // Update the password in the LockerBox for this set
+        lockerBox.correctPassword = newspaperSets[setIndex].lockerPassword;
 
-        currentSet = setIndex;
+        // Set the keypad password for the current set
+        if (keypad != null)
+        {
+            keypad.SetKeypadPassword(newspaperSets[setIndex].keypadPassword);
+        }
+
+        currentSet = setIndex; // Update the current set index
     }
 
-    // Coroutine to add a slight delay when assigning the new clip
-    private IEnumerator SetRadioClipDelayed(AudioClip newClip)
+    // Function to activate a random newspaper set
+    public void ActivateRandomNewspaperSet()
     {
-        yield return new WaitForEndOfFrame(); // Delay for one frame
-        radioSource.clip = newClip;
-    }
-
-    public void NextNewspaperSet()
-    {
-        int nextSet = (currentSet + 1) % newspaperSets.Length;
-        ActivateNewspaperSet(nextSet);
+        int randomIndex = Random.Range(0, newspaperSets.Length); // Get a random index
+        ActivateNewspaperSet(randomIndex); // Activate the set at the random index
     }
 }

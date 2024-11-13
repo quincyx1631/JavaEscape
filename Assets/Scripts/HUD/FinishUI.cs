@@ -140,8 +140,20 @@ public class FinishUI : MonoBehaviour
 
     public void LoadMainMenuNext()
     {
-        LoadingScreenManager.Instance.StartLoading();
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentSceneIndex == 8) // Check if it's the final level
+        {
+            // Load the video scene (scene 9)
+            SceneManager.LoadScene(9);
+        }
+        else
+        {
+            // Load the main menu directly if it's not the final level
+            LoadingScreenManager.Instance.StartLoading();
+        }
     }
+
 
     public void NextLevel()
     {

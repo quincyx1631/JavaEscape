@@ -5,23 +5,25 @@ using UnityEngine;
 public class CrosswordPuzzle : MonoBehaviour
 {
     public List<CrosswordGroup> crosswordGroups;  // List of crossword groups
-    public List<GameObject> imagesToHighlight;  // List of images to highlight when completed
-    public float delayBeforeHighlight = 1.5f;   // Delay before starting the highlight (activation + fade-in)
-    public float fadeDuration = 1f;              // Duration for the fade-in effect
+    public List<GameObject> imagesToHighlight;    // List of images to highlight when completed
+    public float delayBeforeHighlight = 1.5f;     // Delay before starting the highlight (activation + fade-in)
+    public float fadeDuration = 1f;               // Duration for the fade-in effect
 
-    private bool allGroupsComplete = false;      // Flag to check if all groups are complete
+    private bool allGroupsComplete = false;       // Flag to check if all groups are complete
+
+    private string allGroupsCompleteSound = "BookTurnPage"; // Sound for all groups completion
+    private string revealCluesSound = "Try Intro";             // Sound for revealing clues
 
     private void Update()
     {
         bool tempAllGroupsComplete = true;  // Temporary flag to check if all groups are complete
 
-        // Loop through each group to check if it is complete
         for (int i = 0; i < crosswordGroups.Count; i++)
         {
             var group = crosswordGroups[i];
             if (group.IsGroupComplete())  // If the group is complete
             {
-                group.LockGroup();  // Lock the group to prevent further input
+                group.LockGroup();        // Lock the group to prevent further input
             }
             else
             {
@@ -32,14 +34,18 @@ public class CrosswordPuzzle : MonoBehaviour
         // If all groups are complete, start activating and fading in images
         if (tempAllGroupsComplete && !allGroupsComplete)
         {
-            allGroupsComplete = true;  // Mark that all groups are complete
+            allGroupsComplete = true;
+            CollectionManager.Instance.MarkAsCollected(this.GetComponent<Interactables>());// Mark that all groups are complete
+            AudioManager.Instance.Play(allGroupsCompleteSound);  // Play sound for all groups completion
             StartCoroutine(ActivateImagesAndFadeIn());
         }
     }
 
     private IEnumerator ActivateImagesAndFadeIn()
     {
-        // First, set all images to active at once
+        // Play sound effect for revealing clues
+        AudioManager.Instance.Play(revealCluesSound);
+
         for (int i = 0; i < imagesToHighlight.Count; i++)
         {
             if (i < crosswordGroups.Count)
@@ -59,13 +65,10 @@ public class CrosswordPuzzle : MonoBehaviour
             }
         }
 
-        // Wait for the specified delay before starting the fade-in
         yield return new WaitForSeconds(delayBeforeHighlight);
 
-        // Fade all images in at the same time
         float startTime = Time.time;
 
-        // Keep fading until all images are fully visible
         while (Time.time - startTime < fadeDuration)
         {
             foreach (var image in imagesToHighlight)
@@ -82,7 +85,6 @@ public class CrosswordPuzzle : MonoBehaviour
             yield return null;
         }
 
-        // Ensure all images are fully faded in
         foreach (var image in imagesToHighlight)
         {
             if (image.activeSelf)

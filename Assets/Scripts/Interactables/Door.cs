@@ -3,8 +3,11 @@ using System.Collections;
 
 public class Door : MonoBehaviour
 {
-    public Vector3 targetRotation = new Vector3(90f, 90f, -90f); // Desired final rotation angles
-    public float rotationSpeed = 100f; // Speed of rotation
+    public bool isSliderDoor = false; // Set to true if the door is a slider
+
+    public Vector3 targetRotation = new Vector3(90f, 90f, -90f); // Desired final rotation angles for rotating doors
+    public Vector3 targetPosition; // Desired final position for sliding doors
+    public float openSpeed = 1f; // Speed of rotation or sliding
     public GameObject finishUI; // Reference to the Finish UI GameObject
     public Timer timer; // Reference to the Timer component
     public float finalElapsedTime; // Variable to store the final elapsed time
@@ -17,7 +20,6 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-
         isLocked = true;
         isOpened = false;
 
@@ -56,29 +58,53 @@ public class Door : MonoBehaviour
     {
         if (isOpened) yield break;
 
-        Quaternion initialRotation = transform.rotation;
-        Quaternion targetRotationQuaternion = Quaternion.Euler(targetRotation);
-        float elapsedTime = 0f;
-
-        Debug.Log($"Opening Door: Initial Rotation: {initialRotation.eulerAngles}, Target Rotation: {targetRotationQuaternion.eulerAngles}");
-
         // Play the door open sound
         if (!string.IsNullOrEmpty(doorOpenSoundName))
         {
             AudioManager.Instance.Play(doorOpenSoundName);
         }
 
-        while (elapsedTime < 1f)
+        if (isSliderDoor)
         {
-            transform.rotation = Quaternion.Slerp(initialRotation, targetRotationQuaternion, elapsedTime);
-            elapsedTime += Time.deltaTime * rotationSpeed;
-            yield return null;
+            // Sliding door logic (only X-axis position changes)
+            Vector3 initialPosition = transform.position;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < 1f)
+            {
+                // Modify only the X-axis
+                Vector3 newPosition = new Vector3(
+                    Mathf.Lerp(initialPosition.x, targetPosition.x, elapsedTime), // Only interpolate the X position
+                    initialPosition.y, // Keep the Y position unchanged
+                    initialPosition.z  // Keep the Z position unchanged
+                );
+
+                transform.position = newPosition; // Update the position with only the X-axis change
+                elapsedTime += Time.deltaTime * openSpeed;
+                yield return null;
+            }
+
+            // Ensure the door ends exactly at the target position (only X-axis)
+            transform.position = new Vector3(targetPosition.x, initialPosition.y, initialPosition.z);
+        }
+        else
+        {
+            // Rotating door logic
+            Quaternion initialRotation = transform.rotation;
+            Quaternion targetRotationQuaternion = Quaternion.Euler(targetRotation);
+            float elapsedTime = 0f;
+
+            while (elapsedTime < 1f)
+            {
+                transform.rotation = Quaternion.Slerp(initialRotation, targetRotationQuaternion, elapsedTime);
+                elapsedTime += Time.deltaTime * openSpeed;
+                yield return null;
+            }
+
+            transform.rotation = targetRotationQuaternion; // Ensure the door ends exactly at the target rotation
         }
 
-        // Ensure the door ends exactly at the target rotation
-        transform.rotation = targetRotationQuaternion;
         isOpened = true;
-        Debug.Log($"Door opened: Final Rotation: {transform.rotation.eulerAngles}");
 
         // Stop the timer and store the elapsed time
         if (timer != null)
@@ -94,7 +120,6 @@ public class Door : MonoBehaviour
         {
             FinishUI.Instance.DisplayFinalTime(finalElapsedTime); // Display the final time on the Finish UI
             finishUI.SetActive(true); // Display the Finish UI
-            //UserProfile.Instance.AddLevel();
         }
     }
 }

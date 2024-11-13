@@ -7,6 +7,8 @@ public class CrosswordInputField : MonoBehaviour
     public string correctLetter; // The correct letter for this input field
     private bool isLocked = false;
 
+    private string soundName = "KeyPress"; // Private sound name, set to a default sound (you can change this to your preferred sound)
+
     private void Start()
     {
         inputField.onValueChanged.AddListener(OnInputChanged);
@@ -25,7 +27,11 @@ public class CrosswordInputField : MonoBehaviour
         }
         inputField.text = enteredText.ToUpper(); // Update the input field to uppercase
 
-        // Do not lock the input yet; only check correctness for now
+        // Play the sound effect when a letter is entered
+        if (!string.IsNullOrEmpty(enteredText)) // Only play sound if there is a letter entered
+        {
+            AudioManager.Instance.Play(soundName); // Play the sound
+        }
     }
 
     // Check if the current letter is correct

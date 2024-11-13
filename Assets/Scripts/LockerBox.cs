@@ -19,6 +19,8 @@ public class LockerBox : MonoBehaviour
     // Array to hold the button GameObjects
     public GameObject[] numberButtons;
 
+    public string openSound;
+
     void Start()
     {
         UpdatePasswordDisplay();
@@ -66,7 +68,8 @@ public class LockerBox : MonoBehaviour
     public void OpenBox()
     {
         Debug.Log("Password correct. Opening box...");
-        lockerAnimator.SetTrigger("OpenBox"); // Trigger the animation
+        lockerAnimator.SetTrigger("OpenBox");
+        AudioManager.Instance.Play(openSound);// Trigger the animation
 
         // Set each button's tag to "Untagged" after the box is opened
         foreach (GameObject button in numberButtons)

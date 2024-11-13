@@ -6970,8 +6970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eadce11160fe64390d35d04051edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSliderDoor: 0
   targetRotation: {x: 0, y: 0, z: 0}
-  rotationSpeed: 20
+  targetPosition: {x: 0, y: 0, z: 0}
+  openSpeed: 1
   finishUI: {fileID: 1694748469}
   timer: {fileID: 1780019676}
   finalElapsedTime: 0
@@ -11127,6 +11129,10 @@ PrefabInstance:
       propertyPath: uiToDisable.Array.data[5]
       value: 
       objectReference: {fileID: 438798586}
+    - target: {fileID: 4579968738232601311, guid: 5ccc23b8631339e4ca22529fc2a70dee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff6b68fa506672e4eb215dbed0d5e1b7, type: 3}
     - target: {fileID: 5924380481514474989, guid: 5ccc23b8631339e4ca22529fc2a70dee, type: 3}
       propertyPath: m_fontColor.a
       value: 0.6745098
@@ -13034,6 +13040,10 @@ PrefabInstance:
       propertyPath: uiToDisable.Array.data[5]
       value: 
       objectReference: {fileID: 438798586}
+    - target: {fileID: 4918745999191932163, guid: 036c827070505784687e7712611a1178, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff6b68fa506672e4eb215dbed0d5e1b7, type: 3}
     - target: {fileID: 5480892824240184703, guid: 036c827070505784687e7712611a1178, type: 3}
       propertyPath: m_fontSize
       value: 0.03
@@ -13774,6 +13784,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 9166417607256593708, guid: 61ab3b6858bcd4f4b8e92f9f99882f46, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff6b68fa506672e4eb215dbed0d5e1b7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8146788891625794933, guid: 61ab3b6858bcd4f4b8e92f9f99882f46, type: 3}
@@ -13876,6 +13890,10 @@ PrefabInstance:
       propertyPath: uiToDisable.Array.data[5]
       value: 
       objectReference: {fileID: 438798586}
+    - target: {fileID: 4866415505681867826, guid: 79f4ecb4928a78b4f81749206ba90b7b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff6b68fa506672e4eb215dbed0d5e1b7, type: 3}
     - target: {fileID: 5465703700560954446, guid: 79f4ecb4928a78b4f81749206ba90b7b, type: 3}
       propertyPath: m_fontSize
       value: 0.03

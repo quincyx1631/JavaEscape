@@ -38,6 +38,7 @@ public class Printer : MonoBehaviour
         {
             if (IsInkInHolder())
             {
+                CollectionManager.Instance.MarkAsCollected(this.GetComponent<Interactables>());
                 ink.transform.SetParent(null); // Remove ink from holder
                 ink.SetActive(false); // Hide ink to simulate usage
 

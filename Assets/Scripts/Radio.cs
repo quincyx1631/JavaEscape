@@ -65,6 +65,7 @@ public class Radio : MonoBehaviour
 
             // Play the radio interaction sound
             AudioManager.Instance.Play(radioInteractSound);
+            CollectionManager.Instance.MarkAsCollected(this.GetComponent<Interactables>());
 
             // Enable the audio source and start the coroutine to play it after a delay
             audioSource.enabled = true;

@@ -4,6 +4,7 @@ public class NumberButton : MonoBehaviour
 {
     public LockerBox lockerBox;
     public int digitIndex; // 1, 2, or 3 to determine which digit to change
+    public string clicksound;
 
     public void OnButtonPress()
     {
@@ -14,12 +15,15 @@ public class NumberButton : MonoBehaviour
             {
                 case 1:
                     lockerBox.ChangeDigit1();
+                    AudioManager.Instance.Play(clicksound);
                     break;
                 case 2:
                     lockerBox.ChangeDigit2();
+                    AudioManager.Instance.Play(clicksound);
                     break;
                 case 3:
                     lockerBox.ChangeDigit3();
+                    AudioManager.Instance.Play(clicksound);
                     break;
                 default:
                     Debug.LogWarning("Invalid digit index assigned to NumberButton.");
