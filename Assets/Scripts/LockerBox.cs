@@ -3,68 +3,82 @@ using TMPro;
 
 public class LockerBox : MonoBehaviour
 {
-    // Define the TMP texts where the password will be displayed
     public TMP_Text passwordDigit1;
     public TMP_Text passwordDigit2;
     public TMP_Text passwordDigit3;
 
-    // Define the correct password (now settable in the Inspector)
     [Header("Password Settings")]
-    public string correctPassword = "123"; // Set your desired password here
+    public string correctPassword = "123";
 
-    // Store the current entered password
-    private string currentPassword = "";
+    private string currentPassword = "000";
 
-    // Reference to the LockerBox to rotate
+    public Animator lockerAnimator;
     public Transform lockerBoxTransform;
-
-    // Set the desired rotation when the box is opened
     public Vector3 openRotation;
 
-    // Initialize the TMP texts with default values
+    // Array to hold the button GameObjects
+    public GameObject[] numberButtons;
+
     void Start()
     {
-        passwordDigit1.text = "_";
-        passwordDigit2.text = "_";
-        passwordDigit3.text = "_";
+        UpdatePasswordDisplay();
     }
 
-    // Function to change the number when a button is clicked
-    public void ChangeNumber(string number)
+    public void ChangeDigit1()
     {
-        if (currentPassword.Length < 3) // Ensure we only have 3 digits
-        {
-            currentPassword += number;
+        int digit = (int.Parse(passwordDigit1.text) + 1) % 10;
+        passwordDigit1.text = digit.ToString();
+        UpdateCurrentPassword();
+    }
 
-            // Update the TMP texts based on the entered digits
-            if (currentPassword.Length == 1)
-                passwordDigit1.text = currentPassword[0].ToString();
-            else if (currentPassword.Length == 2)
-                passwordDigit2.text = currentPassword[1].ToString();
-            else if (currentPassword.Length == 3)
-                passwordDigit3.text = currentPassword[2].ToString();
+    public void ChangeDigit2()
+    {
+        int digit = (int.Parse(passwordDigit2.text) + 1) % 10;
+        passwordDigit2.text = digit.ToString();
+        UpdateCurrentPassword();
+    }
+
+    public void ChangeDigit3()
+    {
+        int digit = (int.Parse(passwordDigit3.text) + 1) % 10;
+        passwordDigit3.text = digit.ToString();
+        UpdateCurrentPassword();
+    }
+
+    private void UpdateCurrentPassword()
+    {
+        currentPassword = passwordDigit1.text + passwordDigit2.text + passwordDigit3.text;
+        CheckPassword();
+    }
+
+    private void CheckPassword()
+    {
+        if (currentPassword == correctPassword)
+        {
+            OpenBox();
         }
-
-        // Check if the password is complete and matches the correct password
-        if (currentPassword.Length == 3)
+        else
         {
-            if (currentPassword == correctPassword)
-            {
-                OpenBox();
-            }
-            else
-            {
-                Debug.Log("Incorrect password.");
-            }
+            Debug.Log("Incorrect password.");
         }
     }
 
-    // This function opens the locker box with a custom rotation
     public void OpenBox()
     {
         Debug.Log("Password correct. Opening box...");
+        lockerAnimator.SetTrigger("OpenBox"); // Trigger the animation
 
-        // Set the rotation of the locker box to the specified open rotation
-        lockerBoxTransform.rotation = Quaternion.Euler(openRotation);
+        // Set each button's tag to "Untagged" after the box is opened
+        foreach (GameObject button in numberButtons)
+        {
+            button.tag = "Untagged";
+        }
+    }
+
+    private void UpdatePasswordDisplay()
+    {
+        passwordDigit1.text = "0";
+        passwordDigit2.text = "0";
+        passwordDigit3.text = "0";
     }
 }

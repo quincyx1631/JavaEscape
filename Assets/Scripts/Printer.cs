@@ -5,10 +5,12 @@ public class Printer : MonoBehaviour
 {
     public GameObject paperPrefab; // Reference to the paper prefab
     public Transform paperSpawnPoint; // The point where paper comes out of the printer
+    public Transform itemHolder; // Player's item holder (for checking ink)
+    public GameObject ink; // Ink item required for printing
     public float paperSpeed = 2f; // Speed at which paper moves forward
     public float rotationSpeed = 1f; // Rotation speed to the target rotation
-    public Vector3 printForce = new Vector3(5f, 0f, 20f); // Horizontal sideward and forward force (adjust to your needs)
-    public float cooldownTime = 5f; // Time in seconds for the cooldown before the printer becomes interactable again
+    public Vector3 printForce = new Vector3(5f, 0f, 20f); // Horizontal sideward and forward force
+    public float cooldownTime = 5f; // Cooldown time before the printer becomes interactable again
 
     public string printPressSound; // Sound effect for pressing the print button
     public string printingSound;   // Sound effect for printing process
@@ -16,10 +18,17 @@ public class Printer : MonoBehaviour
     private bool isPrinting = false;
     private bool isPaperPrinted = false; // Track if paper has been printed
 
+    public AlertUI alertUI;
+
     private void Start()
     {
         // Initially set the printer as interactable
         gameObject.tag = "Interactables";
+    }
+
+    private bool IsInkInHolder()
+    {
+        return ink != null && ink.transform.parent == itemHolder;
     }
 
     // Start printing process
@@ -27,12 +36,23 @@ public class Printer : MonoBehaviour
     {
         if (!isPrinting && !isPaperPrinted && gameObject.CompareTag("Interactables"))
         {
-            gameObject.tag = "Printing"; // Change printer's tag to show it's printing
+            if (IsInkInHolder())
+            {
+                ink.transform.SetParent(null); // Remove ink from holder
+                ink.SetActive(false); // Hide ink to simulate usage
 
-            // Play sound when the user presses the print button
-            AudioManager.Instance.Play(printPressSound);
+                gameObject.tag = "Printing"; // Change printer's tag to show it's printing
 
-            StartCoroutine(PrintPaper());
+                // Play sound when the user presses the print button
+                AudioManager.Instance.Play(printPressSound);
+
+                StartCoroutine(PrintPaper());
+            }
+            else
+            {
+                alertUI.ShowAlert("The printer needs ink to operate");
+                Debug.Log("The printer needs ink to operate.");
+            }
         }
     }
 
@@ -103,7 +123,5 @@ public class Printer : MonoBehaviour
             timeElapsed += Time.deltaTime * paperSpeed;
             yield return null;
         }
-
-        // After the paper finishes printing, you can set additional logic or tag changes here if needed
     }
 }
