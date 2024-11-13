@@ -140,7 +140,21 @@ public class FinishUI : MonoBehaviour
 
     public void LoadMainMenuNext()
     {
-        LoadingScreenManager.Instance.StartLoading();
+        // Get all root objects in DontDestroyOnLoad
+        GameObject[] rootObjects = GameObject.FindObjectsOfType<GameObject>(true)
+            .Where(go => go.scene.buildIndex == -1 && go.transform.parent == null)
+            .ToArray();
+
+        // Destroy everything except PlayFab
+        foreach (GameObject obj in rootObjects)
+        {
+            if (!obj.name.Contains("PlayFabHttp"))  // Adjust this condition based on your PlayFab object's name
+            {
+                Destroy(obj);
+            }
+        }
+    
+        SceneManager.LoadScene("Main Menu Final");
     }
 
     public void NextLevel()
