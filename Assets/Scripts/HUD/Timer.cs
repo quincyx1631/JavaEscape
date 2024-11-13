@@ -20,6 +20,7 @@ public class Timer : MonoBehaviour
 
     private float remainingTime;
     private bool timerRunning = false;
+    private float lastUpdateTime;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         timerRunning = true;
+        lastUpdateTime = Time.time;
         StartCoroutine(UpdateTimer());
         PauseMenuController.Instance.canClickTab();
     }
@@ -50,30 +52,38 @@ public class Timer : MonoBehaviour
     {
         while (timerRunning && remainingTime > 0)
         {
+            // Calculate actual elapsed time since last update
+            float currentTime = Time.time;
+            float deltaTime = currentTime - lastUpdateTime;
+            lastUpdateTime = currentTime;
+
+            // Update remaining time based on actual elapsed time
+            remainingTime -= deltaTime;
+
+            // Ensure remainingTime doesn't go below 0
+            remainingTime = Mathf.Max(0f, remainingTime);
+
             UpdateTimerText(remainingTime);
             UpdateRealTimeScore();
 
-            yield return new WaitForSeconds(1f); // Wait for one second
-            remainingTime -= 1f; // Decrease remaining time by 1 second
+            yield return new WaitForSecondsRealtime(1f); // Use WaitForSecondsRealtime instead
         }
 
-        // Stop the timer when it reaches 0
         if (remainingTime <= 0)
         {
             remainingTime = 0;
-            UpdateTimerText(remainingTime); // Update the final text to 00:00
-            timerRunning = false; // Stop the timer
+            UpdateTimerText(remainingTime);
+            timerRunning = false;
 
-            float elapsedTime = countdownTime - remainingTime; // Calculate elapsed time
+            float elapsedTime = countdownTime - remainingTime;
 
-            // Ensure the Finish UI is active
             if (!FinishUI.Instance.gameObject.activeInHierarchy)
             {
                 Debug.LogWarning("FinishUI GameObject is inactive! Activating it.");
-                FinishUI.Instance.gameObject.SetActive(true); // Ensure it's active
+                FinishUI.Instance.gameObject.SetActive(true);
             }
 
-            FinishUI.Instance.DisplayFinalTime(elapsedTime); // Pass final time
+            FinishUI.Instance.DisplayFinalTime(elapsedTime);
         }
     }
 
