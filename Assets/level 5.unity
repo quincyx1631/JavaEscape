@@ -6487,6 +6487,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839578517}
   m_CullTransparentMesh: 1
+--- !u!114 &845384228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1438022033562840320, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 2074415047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &849523845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17760,7 +17771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[0].total
@@ -17772,7 +17783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[2].total
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[0].itemText
@@ -17785,7 +17796,7 @@ PrefabInstance:
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[2].itemText
       value: 
-      objectReference: {fileID: 790686901}
+      objectReference: {fileID: 845384228}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[0].collectedText
       value: Riddle Items
@@ -17796,7 +17807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[2].collectedText
-      value: TV
+      value: Books
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[0].itemNames.Array.size
@@ -17808,7 +17819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[2].itemNames.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[0].itemNames.Array.data[0]
@@ -17824,7 +17835,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[2].itemNames.Array.data[0]
-      value: TV
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
+      propertyPath: collectionItems.Array.data[2].itemNames.Array.data[1]
+      value: book (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
+      propertyPath: collectionItems.Array.data[2].itemNames.Array.data[2]
+      value: book (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8093262539189106902, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: m_LocalPosition.x
