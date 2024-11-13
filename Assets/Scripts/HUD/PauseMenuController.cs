@@ -156,21 +156,6 @@ public class PauseMenuController : MonoBehaviour
 
     private void LoadMainMenu()
     {
-        // Get all root objects in DontDestroyOnLoad
-        GameObject[] rootObjects = GameObject.FindObjectsOfType<GameObject>(true)
-            .Where(go => go.scene.buildIndex == -1 && go.transform.parent == null)
-            .ToArray();
-
-        // Destroy everything except PlayFab
-        foreach (GameObject obj in rootObjects)
-        {
-            if (!obj.name.Contains("PlayFabHttp"))  // Adjust this condition based on your PlayFab object's name
-            {
-                Destroy(obj);
-            }
-        }
-
-        // Reset pause state
         isPaused = false;
 
         disableTab();
@@ -179,8 +164,7 @@ public class PauseMenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Load main menu scene
-        SceneManager.LoadScene("Main Menu Final");
+        LoadingScreenManager.Instance.StartLoading();
     }
 
     public bool IsPaused()
