@@ -63956,7 +63956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.014433265
+      value: -0.10500002
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -64777,7 +64777,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1613895861452316590, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: letter
-      value: 69
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 1613895861452316590, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: alertUI
@@ -64805,7 +64805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.014433265
+      value: -0.10500002
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65164,7 +65164,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1613895861452316590, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: letter
-      value: 78
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 1613895861452316590, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: alertUI
@@ -65192,7 +65192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.014433265
+      value: -0.105
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -70938,7 +70938,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1613895861452316590, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: letter
-      value: 65
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 1613895861452316590, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: alertUI
@@ -70966,7 +70966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.014433265
+      value: -0.10500002
       objectReference: {fileID: 0}
     - target: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -96415,8 +96415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eadce11160fe64390d35d04051edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSliderDoor: 0
   targetRotation: {x: 0, y: -15, z: 0}
-  rotationSpeed: 100
+  targetPosition: {x: 0, y: 0, z: 0}
+  openSpeed: 1
   finishUI: {fileID: 1880374637}
   timer: {fileID: 1828081603}
   finalElapsedTime: 0
