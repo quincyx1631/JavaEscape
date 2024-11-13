@@ -63,6 +63,7 @@ public class Book : MonoBehaviour
             isUIActive = true;
             MouseManager.Instance.EnableMouse();
             PlayerControlManager.Instance.DisablePlayerControls();
+            PauseMenuController.Instance.disableTab();
 
             if (itemCollider != null)
             {
@@ -97,6 +98,7 @@ public class Book : MonoBehaviour
             isUIActive = false;
             MouseManager.Instance.DisableMouse();
             PlayerControlManager.Instance.EnablePlayerControls();
+            PauseMenuController.Instance.canClickTab();
 
             if (bookContents != null)
             {

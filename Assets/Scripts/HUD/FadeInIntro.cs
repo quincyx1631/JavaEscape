@@ -65,6 +65,7 @@ public class FadeInIntro : MonoBehaviour
             StartCoroutine(FadeInSequence());
         }
         isInFadeInSequence = false;
+        PauseMenuController.Instance.disableTab();
     }
 
     private IEnumerator PlayVideoIntro()

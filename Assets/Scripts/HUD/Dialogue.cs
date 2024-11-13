@@ -44,6 +44,7 @@ public class Dialogue : MonoBehaviour
     {
         currentDialogueIndex = 0; // Reset index
         DisplayDialogue();
+        PauseMenuController.Instance.disableTab();
     }
 
     private void DisplayDialogue()
