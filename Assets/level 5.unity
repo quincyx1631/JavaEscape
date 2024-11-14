@@ -1432,7 +1432,7 @@ MonoBehaviour:
   needItem: 0
   requiredItem: {fileID: 0}
   itemPlaceholder: {fileID: 0}
-  alertUI: {fileID: 0}
+  alertUI: {fileID: 1053925704}
   itemHolder: {fileID: 101369114}
   useEventCamera: 1
 --- !u!114 &177679609
@@ -8542,7 +8542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -639.1, y: 367.6}
+  m_AnchoredPosition: {x: -631, y: 365}
   m_SizeDelta: {x: 84.809814, y: 84.809814}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &976825116 stripped
@@ -17016,7 +17016,7 @@ MonoBehaviour:
   needItem: 0
   requiredItem: {fileID: 0}
   itemPlaceholder: {fileID: 0}
-  alertUI: {fileID: 0}
+  alertUI: {fileID: 1053925704}
   itemHolder: {fileID: 101369114}
   useEventCamera: 1
 --- !u!114 &2027475836
@@ -17562,6 +17562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1027886469465184238, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1281790400917808443, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_text
       value: Hackathon Master
@@ -17606,6 +17610,10 @@ PrefabInstance:
       propertyPath: realTimeScoreText
       value: 
       objectReference: {fileID: 1642959834}
+    - target: {fileID: 7523173993415041217, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7781883119414825713, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
       value: 0

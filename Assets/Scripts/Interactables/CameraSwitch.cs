@@ -89,9 +89,9 @@ public class CameraSwitch : MonoBehaviour
 
     private void PerformTransition()
     {
+        PauseMenuController.Instance.disableTab();
         if (isTransitioning)
         {
-            PauseMenuController.Instance.disableTab();
             transitionProgress += Time.deltaTime / transitionDuration;
             float blend = Mathf.SmoothStep(0, 1, transitionProgress);
 
@@ -100,6 +100,7 @@ public class CameraSwitch : MonoBehaviour
 
             if (transitionProgress >= 1f)
             {
+
                 EndTransition();
             }
         }
@@ -107,6 +108,8 @@ public class CameraSwitch : MonoBehaviour
 
     private void EndTransition()
     {
+        PauseMenuController.Instance.canClickTab();
+        outline.enabled = false;    
         activeCamera.enabled = false;
         targetCamera.enabled = true;
 
