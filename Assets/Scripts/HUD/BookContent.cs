@@ -103,5 +103,15 @@ namespace ChristinaCreatesGames.Typography.Book
             content = string.Empty;
             UpdatePagination();
         }
+
+        public void ResetPages()
+        {
+            leftSide.pageToDisplay = 1;
+            rightSide.pageToDisplay = 2;
+            UpdatePagination();
+        }
+
     }
+
+
 }

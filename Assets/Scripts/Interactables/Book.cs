@@ -94,16 +94,18 @@ public class Book : MonoBehaviour
                 HUDController.instance.DisableEscapeImage();
             }
 
+            // Reset pages before hiding the UI
+            if (bookContents != null)
+            {
+                bookContents.ResetPages();
+                bookContents.ClearContent();
+            }
+
             bookUI.SetActive(false);
             isUIActive = false;
             MouseManager.Instance.DisableMouse();
             PlayerControlManager.Instance.EnablePlayerControls();
             PauseMenuController.Instance.canClickTab();
-
-            if (bookContents != null)
-            {
-                bookContents.ClearContent();
-            }
 
             // Restore the book object's position and rotation
             transform.position = originalPosition;
@@ -125,7 +127,6 @@ public class Book : MonoBehaviour
             }
         }
     }
-
 
     public void SetBookContent(string content)
     {

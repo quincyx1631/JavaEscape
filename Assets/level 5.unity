@@ -7613,6 +7613,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2674951466746616315, guid: 107a47a124af73546852c56f43e6c36c, type: 3}
+      propertyPath: m_Name
+      value: Door5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674951466746616315, guid: 107a47a124af73546852c56f43e6c36c, type: 3}
       propertyPath: m_TagString
       value: Interactables
       objectReference: {fileID: 0}
@@ -8032,6 +8036,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2674951466746616315, guid: 107a47a124af73546852c56f43e6c36c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1082589118}
+    - targetCorrespondingSourceObject: {fileID: 2674951466746616315, guid: 107a47a124af73546852c56f43e6c36c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1082589122}
     - targetCorrespondingSourceObject: {fileID: 2550463727306718371, guid: 107a47a124af73546852c56f43e6c36c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 929237072}
@@ -9598,14 +9605,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eadce11160fe64390d35d04051edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRotation: {x: 0, y: 90, z: 0}
-  rotationSpeed: 100
   finishUI: {fileID: 858887290}
   timer: {fileID: 1040751435}
   finalElapsedTime: 0
   alertUI: {fileID: 1053925704}
   doorOpenSoundName: DoorOpen
   doorLockedSoundName: DoorLockedw
+  doorAnimator: {fileID: 1082589122}
 --- !u!65 &1082589119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9686,6 +9692,27 @@ MonoBehaviour:
   collectOnInteract: 0
   collectOnPickUp: 0
   collectOnInspect: 0
+--- !u!95 &1082589122
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082589114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b20320eaac4479428d7eacb2b0efc4b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1086461290
 GameObject:
   m_ObjectHideFlags: 0

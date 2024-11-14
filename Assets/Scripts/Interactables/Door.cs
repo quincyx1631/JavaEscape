@@ -3,11 +3,6 @@ using System.Collections;
 
 public class Door : MonoBehaviour
 {
-    public bool isSliderDoor = false; // Set to true if the door is a slider
-
-    public Vector3 targetRotation = new Vector3(90f, 90f, -90f); // Desired final rotation angles for rotating doors
-    public Vector3 targetPosition; // Desired final position for sliding doors
-    public float openSpeed = 1f; // Speed of rotation or sliding
     public GameObject finishUI; // Reference to the Finish UI GameObject
     public Timer timer; // Reference to the Timer component
     public float finalElapsedTime; // Variable to store the final elapsed time
@@ -18,6 +13,8 @@ public class Door : MonoBehaviour
     private bool isLocked = true; // Track if the door is locked
     private bool isOpened = false; // Track if the door is already opened
 
+    public Animator doorAnimator; // Reference to the door's Animator component
+
     private void Start()
     {
         isLocked = true;
@@ -26,6 +23,11 @@ public class Door : MonoBehaviour
         if (finishUI != null)
         {
             finishUI.SetActive(false); // Ensure Finish UI is hidden initially
+        }
+
+        if (doorAnimator == null)
+        {
+            doorAnimator = GetComponent<Animator>(); // Get the Animator component if not already set
         }
     }
 
@@ -64,44 +66,10 @@ public class Door : MonoBehaviour
             AudioManager.Instance.Play(doorOpenSoundName);
         }
 
-        if (isSliderDoor)
+        // Trigger the animation to open the door
+        if (doorAnimator != null)
         {
-            // Sliding door logic (only X-axis position changes)
-            Vector3 initialPosition = transform.position;
-            float elapsedTime = 0f;
-
-            while (elapsedTime < 1f)
-            {
-                // Modify only the X-axis
-                Vector3 newPosition = new Vector3(
-                    Mathf.Lerp(initialPosition.x, targetPosition.x, elapsedTime), // Only interpolate the X position
-                    initialPosition.y, // Keep the Y position unchanged
-                    initialPosition.z  // Keep the Z position unchanged
-                );
-
-                transform.position = newPosition; // Update the position with only the X-axis change
-                elapsedTime += Time.deltaTime * openSpeed;
-                yield return null;
-            }
-
-            // Ensure the door ends exactly at the target position (only X-axis)
-            transform.position = new Vector3(targetPosition.x, initialPosition.y, initialPosition.z);
-        }
-        else
-        {
-            // Rotating door logic
-            Quaternion initialRotation = transform.rotation;
-            Quaternion targetRotationQuaternion = Quaternion.Euler(targetRotation);
-            float elapsedTime = 0f;
-
-            while (elapsedTime < 1f)
-            {
-                transform.rotation = Quaternion.Slerp(initialRotation, targetRotationQuaternion, elapsedTime);
-                elapsedTime += Time.deltaTime * openSpeed;
-                yield return null;
-            }
-
-            transform.rotation = targetRotationQuaternion; // Ensure the door ends exactly at the target rotation
+            doorAnimator.SetTrigger("OpenDoor");
         }
 
         isOpened = true;

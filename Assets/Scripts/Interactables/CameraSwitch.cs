@@ -91,6 +91,7 @@ public class CameraSwitch : MonoBehaviour
     {
         if (isTransitioning)
         {
+            PauseMenuController.Instance.disableTab();
             transitionProgress += Time.deltaTime / transitionDuration;
             float blend = Mathf.SmoothStep(0, 1, transitionProgress);
 

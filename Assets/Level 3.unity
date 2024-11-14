@@ -21404,6 +21404,7 @@ GameObject:
   - component: {fileID: 6281213812139056284}
   - component: {fileID: 1411576350622994967}
   - component: {fileID: 4135591056618656897}
+  - component: {fileID: 6281213812139056285}
   m_Layer: 0
   m_Name: Door Handle.001
   m_TagString: Untagged
@@ -21426,8 +21427,9 @@ GameObject:
   - component: {fileID: 8918280150246830508}
   - component: {fileID: 8918280150246830507}
   - component: {fileID: 8918280150246830506}
+  - component: {fileID: 8918280150246830509}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door3
   m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21591,6 +21593,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652473152671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6281213812139056285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152289522643174677}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 21.32119, y: 3.8549738, z: 37.13337}
+  m_Center: {x: 10.660618, y: 0.33647162, z: -0.0000076293936}
 --- !u!23 &6630141423198522202
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21832,14 +21855,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eadce11160fe64390d35d04051edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRotation: {x: 0, y: 90, z: 0}
-  rotationSpeed: 1
   finishUI: {fileID: 541164028}
   timer: {fileID: 2100717545}
   finalElapsedTime: 0
   alertUI: {fileID: 1412432091}
   doorOpenSoundName: DoorOpen
   doorLockedSoundName: DoorLocked
+  doorAnimator: {fileID: 8918280150246830509}
 --- !u!65 &8918280150246830506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21897,8 +21919,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   canInteract: 1
-  canPickup: 1
-  canInspect: 1
+  canPickup: 0
+  canInspect: 0
   collectOnInteract: 0
   collectOnPickUp: 0
   collectOnInspect: 0
@@ -21920,6 +21942,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &8918280150246830509
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155298509448176025}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 281a8cc609ee84740a88e2b0fd07162c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

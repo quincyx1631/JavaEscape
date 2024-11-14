@@ -25,9 +25,11 @@ public class LoginUIManager : MonoBehaviour
     {
         if (passwordInputField != null)
         {
+            passwordInputField.contentType = TMP_InputField.ContentType.Password; // Set input field to password mode
             passwordInputField.onValueChanged.AddListener(OnTyping); // Add listener for typing
         }
     }
+
 
     public void SetPassword(string password)
     {
@@ -74,7 +76,9 @@ public class LoginUIManager : MonoBehaviour
     public void HideLoginUI()
     {
         loginUI.SetActive(false); // Hide the login UI
+        passwordInputField.text = ""; // Clear the input field
     }
+
 
     public void HideDebugUI()
     {

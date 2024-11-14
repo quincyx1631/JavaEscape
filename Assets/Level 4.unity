@@ -6970,16 +6970,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eadce11160fe64390d35d04051edd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSliderDoor: 0
-  targetRotation: {x: 0, y: 0, z: 0}
-  targetPosition: {x: 0, y: 0, z: 0}
-  openSpeed: 1
   finishUI: {fileID: 1694748469}
   timer: {fileID: 1780019676}
   finalElapsedTime: 0
   alertUI: {fileID: 1461382876}
   doorOpenSoundName: DoorOpen
-  doorLockedSoundName: DoorLockedw
+  doorLockedSoundName: DoorLocked
+  doorAnimator: {fileID: 0}
 --- !u!114 &900276835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6998,6 +6995,27 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &900276837
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900276825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 147eb718138c05e4da2f933afdb4376a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &940803935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8343248219658952724, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
@@ -8122,6 +8140,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8300898977466441627, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
+      propertyPath: m_Name
+      value: Door4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300898977466441627, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
       propertyPath: m_TagString
       value: Interactables
       objectReference: {fileID: 0}
@@ -8467,6 +8489,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8300898977466441627, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
       insertIndex: -1
       addedObject: {fileID: 900276835}
+    - targetCorrespondingSourceObject: {fileID: 8300898977466441627, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 900276837}
     - targetCorrespondingSourceObject: {fileID: 4539999476001179886, guid: deec7ef258bd4664db8bf4e535c04e16, type: 3}
       insertIndex: -1
       addedObject: {fileID: 348730268}
