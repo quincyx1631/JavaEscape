@@ -25573,7 +25573,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5002834577527338481, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
   m_PrefabInstance: {fileID: 8617221841227216766}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1354289891}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65eadce11160fe64390d35d04051edd2, type: 3}
@@ -65926,6 +65926,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347138069}
   m_CullTransparentMesh: 1
+--- !u!1 &1354289891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7702973053742791380, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+  m_PrefabInstance: {fileID: 8617221841227216766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1354289892
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354289891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb12e459cf86f76428bfccc3a85067df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1356021640
 GameObject:
   m_ObjectHideFlags: 0
@@ -112527,6 +112553,22 @@ PrefabInstance:
       propertyPath: finishUI
       value: 
       objectReference: {fileID: 2083735479}
+    - target: {fileID: 5002834577527338481, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+      propertyPath: doorAnimator
+      value: 
+      objectReference: {fileID: 1354289892}
+    - target: {fileID: 5002834577527338481, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+      propertyPath: doorOpenSoundName
+      value: DoorOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5002834577527338481, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+      propertyPath: doorLockedSoundName
+      value: DoorLocked
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702973053742791380, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+      propertyPath: m_Name
+      value: Door8
+      objectReference: {fileID: 0}
     - target: {fileID: 8069975154751634211, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -112570,7 +112612,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7702973053742791380, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1354289892}
   m_SourcePrefab: {fileID: 100100000, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
