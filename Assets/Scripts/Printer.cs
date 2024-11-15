@@ -42,7 +42,7 @@ public class Printer : MonoBehaviour
                 ink.transform.SetParent(null); // Remove ink from holder
                 ink.SetActive(false); // Hide ink to simulate usage
 
-                gameObject.tag = "Printing"; // Change printer's tag to show it's printing
+                gameObject.tag = "Untagged"; // Change printer's tag to show it's printing
 
                 // Play sound when the user presses the print button
                 AudioManager.Instance.Play(printPressSound);
