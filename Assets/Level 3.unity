@@ -5642,6 +5642,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1736379511}
     - target: {fileID: 5174293132605286628, guid: 24f409acdd32751489ee97e3a982f412, type: 3}
+      propertyPath: zoomInFOV
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174293132605286628, guid: 24f409acdd32751489ee97e3a982f412, type: 3}
       propertyPath: itemHolder
       value: 
       objectReference: {fileID: 1401840847}
@@ -5661,6 +5665,10 @@ PrefabInstance:
       propertyPath: escapeUIAnimator
       value: 
       objectReference: {fileID: 1736379513}
+    - target: {fileID: 5174293132605286628, guid: 24f409acdd32751489ee97e3a982f412, type: 3}
+      propertyPath: transitionCanvasGroup
+      value: 
+      objectReference: {fileID: 849123142}
     - target: {fileID: 5174293132605286628, guid: 24f409acdd32751489ee97e3a982f412, type: 3}
       propertyPath: uiToDisable.Array.size
       value: 6
@@ -7246,7 +7254,7 @@ PrefabInstance:
     - target: {fileID: 3486072758006884548, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: uiElementsToHide.Array.data[3]
       value: 
-      objectReference: {fileID: 1086751522}
+      objectReference: {fileID: 171873583}
     - target: {fileID: 4858656269640660210, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -7348,6 +7356,11 @@ MonoBehaviour:
 --- !u!1 &849123141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5062455947513860837, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 849123139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &849123142 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4064796285192266147, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 849123139}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &853832788
@@ -21146,6 +21159,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1736379511}
     - target: {fileID: 7334981497022396480, guid: ec8077d5d9d556d4e8c4397196463534, type: 3}
+      propertyPath: zoomInFOV
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334981497022396480, guid: ec8077d5d9d556d4e8c4397196463534, type: 3}
       propertyPath: itemHolder
       value: 
       objectReference: {fileID: 1401840847}
@@ -21165,6 +21182,10 @@ PrefabInstance:
       propertyPath: escapeUIAnimator
       value: 
       objectReference: {fileID: 1736379513}
+    - target: {fileID: 7334981497022396480, guid: ec8077d5d9d556d4e8c4397196463534, type: 3}
+      propertyPath: transitionCanvasGroup
+      value: 
+      objectReference: {fileID: 849123142}
     - target: {fileID: 7334981497022396480, guid: ec8077d5d9d556d4e8c4397196463534, type: 3}
       propertyPath: uiToEnable.Array.data[0]
       value: 

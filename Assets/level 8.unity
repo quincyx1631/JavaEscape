@@ -4594,6 +4594,10 @@ MonoBehaviour:
   alertUI: {fileID: 1529776499}
   itemHolder: {fileID: 149995309}
   useEventCamera: 1
+  transitionCanvasGroup: {fileID: 1721455531}
+  fadeDuration: 1
+  zoomInFOV: 60
+  zoomSpeed: 2
 --- !u!114 &110595308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86695,6 +86699,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Registrar
       objectReference: {fileID: 0}
+    - target: {fileID: 3486072758006884548, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: uiElementsToHide.Array.data[3]
+      value: 
+      objectReference: {fileID: 685961224}
     - target: {fileID: 5533906489100415329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -86775,6 +86783,11 @@ PrefabInstance:
       addedObject: {fileID: 594409879}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+--- !u!225 &1721455531 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4064796285192266147, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1726305016
 GameObject:
   m_ObjectHideFlags: 0
@@ -96841,6 +96854,10 @@ MonoBehaviour:
   alertUI: {fileID: 1529776499}
   itemHolder: {fileID: 149995309}
   useEventCamera: 1
+  transitionCanvasGroup: {fileID: 1721455531}
+  fadeDuration: 1
+  zoomInFOV: 60
+  zoomSpeed: 2
 --- !u!114 &1937635606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96996,6 +97013,10 @@ MonoBehaviour:
   alertUI: {fileID: 1529776499}
   itemHolder: {fileID: 149995309}
   useEventCamera: 1
+  transitionCanvasGroup: {fileID: 1721455531}
+  fadeDuration: 1
+  zoomInFOV: 60
+  zoomSpeed: 2
 --- !u!114 &1939614295
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1047,6 +1047,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4746534683939452771, guid: 107a47a124af73546852c56f43e6c36c, type: 3}
+--- !u!225 &120649671 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4064796285192266147, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 2074415047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &137062293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1435,6 +1440,10 @@ MonoBehaviour:
   alertUI: {fileID: 1053925704}
   itemHolder: {fileID: 101369114}
   useEventCamera: 1
+  transitionCanvasGroup: {fileID: 120649671}
+  fadeDuration: 1
+  zoomInFOV: 60
+  zoomSpeed: 2
 --- !u!114 &177679609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2708,7 +2717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &403268642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16511,6 +16520,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: zoomInFOV
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: itemHolder
       value: 
       objectReference: {fileID: 101369114}
@@ -16538,6 +16551,10 @@ PrefabInstance:
       propertyPath: escapeUIAnimator
       value: 
       objectReference: {fileID: 1799764292}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: transitionCanvasGroup
+      value: 
+      objectReference: {fileID: 120649671}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: uiToDisable.Array.size
       value: 5
@@ -17019,6 +17036,10 @@ MonoBehaviour:
   alertUI: {fileID: 1053925704}
   itemHolder: {fileID: 101369114}
   useEventCamera: 1
+  transitionCanvasGroup: {fileID: 120649671}
+  fadeDuration: 1
+  zoomInFOV: 60
+  zoomSpeed: 2
 --- !u!114 &2027475836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17615,6 +17636,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7781883119414825713, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848980948373367949, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

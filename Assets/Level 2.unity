@@ -1223,6 +1223,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1332631943}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: zoomInFOV
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: zoomSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: itemHolder
       value: 
       objectReference: {fileID: 1246522654}
@@ -1238,6 +1246,10 @@ PrefabInstance:
       propertyPath: escapeUIAnimator
       value: 
       objectReference: {fileID: 1332631945}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: transitionCanvasGroup
+      value: 
+      objectReference: {fileID: 585845110}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: uiToEnable.Array.data[0]
       value: 
@@ -4639,6 +4651,10 @@ MonoBehaviour:
   alertUI: {fileID: 2017052624}
   itemHolder: {fileID: 1246522654}
   useEventCamera: 0
+  transitionCanvasGroup: {fileID: 585845110}
+  fadeDuration: 1
+  zoomInFOV: 60
+  zoomSpeed: 2
 --- !u!114 &523147627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5033,6 +5049,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &585845110 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4064796285192266147, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1510641984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &608645681
 GameObject:
   m_ObjectHideFlags: 0
@@ -11940,6 +11961,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7781883119414825713, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848980948373367949, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
