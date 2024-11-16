@@ -39,9 +39,11 @@ public class FinishUI : MonoBehaviour
 
     public void DisplayFinalTime(float finalTime)
     {
+        // Stop all active AudioSources
+        StopAllAudioSources();
+
         // Disable the other UI elements
         DisableUIElements();
-       
 
         // Activate the finish UI if it's not already active
         if (!gameObject.activeInHierarchy)
@@ -74,8 +76,23 @@ public class FinishUI : MonoBehaviour
         // Call the appropriate AddLevel method based on scene index
         CallAddLevelMethod(sceneIndex);
 
-        //FOR PAUSE DONT CHANGE -- NEIL
+        // FOR PAUSE DONT CHANGE -- NEIL
         PauseMenuController.Instance.disableTab();
+    }
+
+    private void StopAllAudioSources()
+    {
+        // Find all active AudioSources in the scene
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+
+        // Stop each AudioSource
+        foreach (AudioSource audioSource in audioSources)
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
     }
 
     private void CallAddLevelMethod(int sceneIndex)
