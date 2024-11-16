@@ -161,6 +161,18 @@ public class FinishUI : MonoBehaviour
 
         if (currentSceneIndex == 8) // Check if it's the final level
         {
+            GameObject[] rootObjects = GameObject.FindObjectsOfType<GameObject>(true)
+           .Where(go => go.scene.buildIndex == -1 && go.transform.parent == null)
+           .ToArray();
+
+            foreach (GameObject obj in rootObjects)
+            {
+                if (!obj.name.Contains("PlayFabHttp"))
+                {
+                    Destroy(obj);
+                }
+            }
+
             // Load the video scene (scene 9)
             SceneManager.LoadScene(9);
         }
