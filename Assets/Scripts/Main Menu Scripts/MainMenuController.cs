@@ -181,44 +181,75 @@ public class MainMenuController : MonoBehaviour
     {
         if (MenuType == "Audio")
         {
-            AudioListener.volume = defaultVolume;
-            volumeSlider.value = defaultVolume;
-            volumeTextValue.text = defaultVolume.ToString("0.0");
+            // Add null checks for each component
+            if (volumeSlider != null && volumeTextValue != null)
+            {
+                AudioListener.volume = defaultVolume;
+                volumeSlider.value = defaultVolume;
+                volumeTextValue.text = defaultVolume.ToString("0.0");
+            }
 
-            _musicSlider.value = defaultMusicVolume;
-            MenuAudioManager.Instance.MusicVolume(defaultMusicVolume); 
-            musicTextValue.text = defaultMusicVolume.ToString("0.0");
+            if (_musicSlider != null && musicTextValue != null && MenuAudioManager.Instance != null)
+            {
+                _musicSlider.value = defaultMusicVolume;
+                MenuAudioManager.Instance.MusicVolume(defaultMusicVolume);
+                musicTextValue.text = defaultMusicVolume.ToString("0.0");
+            }
 
-            _sfxSlider.value = defaultSfxVolume;
-            MenuAudioManager.Instance.SFXVolume(defaultSfxVolume); 
-            sfxTextValue.text = defaultSfxVolume.ToString("0.0");
+            if (_sfxSlider != null && sfxTextValue != null && MenuAudioManager.Instance != null)
+            {
+                _sfxSlider.value = defaultSfxVolume;
+                MenuAudioManager.Instance.SFXVolume(defaultSfxVolume);
+                sfxTextValue.text = defaultSfxVolume.ToString("0.0");
+            }
 
             VolumeApply();
         }
 
-        if(MenuType == "Gameplay")
+        if (MenuType == "Gameplay")
         {
-            controllerSenTextValue.text = defaultSen.ToString("0");
-            controllerSenSlider.value = defaultSen;
-            mainControllerSen = defaultSen;
-            invertYToggle.isOn = false;
+            if (controllerSenTextValue != null && controllerSenSlider != null)
+            {
+                controllerSenTextValue.text = defaultSen.ToString("0");
+                controllerSenSlider.value = defaultSen;
+                mainControllerSen = defaultSen;
+            }
+
+            if (invertYToggle != null)
+            {
+                invertYToggle.isOn = false;
+            }
+
             GameplayApply();
         }
 
-        if(MenuType == "Graphics")
+        if (MenuType == "Graphics")
         {
-            brightnessSlider.value = defaultBrightness;
-            brightnessTextValue.text = defaultBrightness.ToString("0.0");
+            if (brightnessSlider != null && brightnessTextValue != null)
+            {
+                brightnessSlider.value = defaultBrightness;
+                brightnessTextValue.text = defaultBrightness.ToString("0.0");
+            }
 
-            qualityDropdown.value = 1;
-            QualitySettings.SetQualityLevel(1);
+            if (qualityDropdown != null)
+            {
+                qualityDropdown.value = 1;
+                QualitySettings.SetQualityLevel(1);
+            }
 
-            fullScreenToggle.isOn = true;
-            Screen.fullScreen = true;
+            if (fullScreenToggle != null)
+            {
+                fullScreenToggle.isOn = true;
+                Screen.fullScreen = true;
+            }
 
-            Resolution currentResolution = Screen.currentResolution;
-            Screen.SetResolution(currentResolution.width, currentResolution.height, Screen.fullScreen);
-            resolutionDropdown.value = resolutions.Length;
+            if (resolutionDropdown != null)
+            {
+                Resolution currentResolution = Screen.currentResolution;
+                Screen.SetResolution(currentResolution.width, currentResolution.height, Screen.fullScreen);
+                resolutionDropdown.value = resolutions.Length;
+            }
+
             GraphicsApply();
         }
     }

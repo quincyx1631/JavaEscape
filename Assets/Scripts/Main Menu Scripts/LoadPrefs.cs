@@ -38,8 +38,33 @@ public class LoadPrefs : MonoBehaviour
 
     private void Awake()
     {
-        if (canUse)
+        if (!canUse) return;
+
+        if (menuController == null)
         {
+            Debug.LogError("MainMenuController reference not set in LoadPrefs!");
+            return;
+        }
+
+        // Check for audio settings
+        bool hasAudioSettings = PlayerPrefs.HasKey("masterVolume") &&
+                               PlayerPrefs.HasKey("musicVolume") &&
+                               PlayerPrefs.HasKey("sfxVolume");
+
+        if (!hasAudioSettings)
+        {
+            try
+            {
+                menuController.ResetButton("Audio");
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Error resetting audio settings: {e.Message}");
+            }
+        }
+        else
+        {
+            // Load existing audio settings...
             if (PlayerPrefs.HasKey("masterVolume"))
             {
                 float localVolume = PlayerPrefs.GetFloat("masterVolume");
