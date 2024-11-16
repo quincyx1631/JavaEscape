@@ -11,8 +11,8 @@ public class CrosswordPuzzle : MonoBehaviour
 
     private bool allGroupsComplete = false;       // Flag to check if all groups are complete
 
-    private string allGroupsCompleteSound = "BookTurnPage"; // Sound for all groups completion
-    private string revealCluesSound = "Try Intro";             // Sound for revealing clues
+    private string allGroupsCompleteSound = "correct2"; // Sound for all groups completion
+    private string revealCluesSound = "highlight";             // Sound for revealing clues
 
     private void Update()
     {

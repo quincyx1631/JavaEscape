@@ -3693,6 +3693,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34343d437c3f7614eae8feaa0e98dbc2, type: 3}
+--- !u!114 &86779063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7479456918210983273, guid: 34343d437c3f7614eae8feaa0e98dbc2, type: 3}
+  m_PrefabInstance: {fileID: 86779062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &93245209
 GameObject:
   m_ObjectHideFlags: 0
@@ -30318,6 +30329,194 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627247843}
   m_CullTransparentMesh: 1
+--- !u!1001 &627693605
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1741574
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.195
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.7014418
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69080293
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.69080305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.15096787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.15096785
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625466160876812142, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 24.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396935937281666516, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: m_Name
+      value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855071847644708668, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickUpItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: alertUI
+      value: 
+      objectReference: {fileID: 1529776499}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: itemHolder
+      value: 
+      objectReference: {fileID: 149995309}
+    - target: {fileID: 4516611615810292600, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 2102948226}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1806975386}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionPoint
+      value: 
+      objectReference: {fileID: 1224641209}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2102948222}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: inspectionCamera
+      value: 
+      objectReference: {fileID: 1032123551}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: playerInteraction
+      value: 
+      objectReference: {fileID: 2102948228}
+    - target: {fileID: 7366943075206265157, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 86779063}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookUI
+      value: 
+      objectReference: {fileID: 1721455533}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: escapeUI
+      value: 
+      objectReference: {fileID: 1806975386}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2102948221}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: bookContents
+      value: 
+      objectReference: {fileID: 1721455532}
+    - target: {fileID: 8311819394800361599, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
+      propertyPath: initialContent
+      value: "<b><size=36><color=#FF0000>LESSON 4: SWING EVENTS AND LISTENER</color></size></b>\r\n<size=26><color=#000000>\r\n\r\nProcedural
+        programming follows a sequential top-to-bottom execution of code using procedures
+        or subroutines. In contrast, event-driven programming bases the program flow
+        on user actions that generate events, such as clicks, typing, or selections,
+        which dictate the program's execution. Events signal that something has occurred
+        and are essential in GUI applications, which respond to various events like
+        action, window, component, mouse, and key events.\r\n\r\n<b><size=30><color=#FF0000>Different
+        components of Events</color></size></b>\r\n\u2022\t<b>Event Object When the
+        user interacts with the program such as clicking a mouse button or pressing
+        a key. Those events belong to a particular event object. \r\n\u2022\t<b>Event
+        Source It is an object that generated the event \r\n\u2022\t<b>Event Class
+        (Handler) It is a method that receives the event and processes it. The listener
+        interface contains the method, known as the handler, invoked by the source
+        object to process the event.\r\n\r\n\r\n<b><size=30><color=#FF0000>Types
+        of event in java. </color></size></b>\r\n<b>User Action</b>\r\n1.\tClicking
+        a button\r\n2.\tPressing return on text field\r\n3.\tSelecting an item\r\n4.\tSelecting
+        item(s)\r\n5.\tClicking a check box\r\n6.\tClicking a radio button\r\n7.\tSelecting
+        a menu item\r\n8.\tMoving the scroll bar\r\n9.\tWhen window opened, closed,
+        iconified, deiconified, or closing\r\n10.\tWhen mouse pressed, released,
+        clicked, entered, or exited\r\n11.\tWhen mouse is moved or dragged\r\n12.\tWhen
+        key is released or pressed\r\n13.\tWhen a component got or lost focus\r\n\r\n<b>Source
+        Object</b>\r\n1.\tJButton \r\n2.\tJTextField \r\n3.\tJComboBox \r\n4.\tJList
+        \r\n5.\tJCheckBox \r\n6.\tJRadioButton \r\n7.\tJMenuItem \r\n8.\tJScrollBar
+        \r\n9.\tWindow \r\n10.\tComponent \r\n11.\tComponent \r\n12.\tComponent \r\n13.\tComponent
+        \r\n\r\n<b>Event Type</b>\r\n1.\tActionEvent \r\n2.\tActionEvent \r\n3.\tItemEvent,
+        ActionEvent \r\n4.\tListSelectionEvent \r\n5.\tItemEvent, ActionEvent \r\n6.\tItemEvent,
+        ActionEvent \r\n7.\tActionEvent \r\n8.\tAdjustmentEvent \r\n9.\tWindowEvent
+        \r\n10.\tMouseEvent \r\n11.\tMouseEvent \r\n12.\tKeyEvent \r\n13.\tFocusEvent
+        \r\n\r\n\r\n\r\n\r\n\r\n<b><size=30><color=#FF0000>Event classes in Java</color></size></b>\r\n<b>Event
+        Class</b>\r\n1.\tActionEvent \r\n2.\tItemEvent \r\n3.\tMouseEvent \r\n4.\tKeyEvent
+        \r\n5.\tWindowEvent \r\n6.\tContainerEvent \r\n7.\tComponentEvent \r\n8.\tFocusEvent
+        \r\n9.\tAdjustmentEvent \r\n\r\n<b>Listener Interface</b>\r\n1.\tActionListener
+        \r\n2.\tItemListener \r\n3.\tMouseListener \r\n4.\tMouseMotionListener \r\n5.\tKeyListener
+        \r\n6.\tWindowListener \r\n7.\tContainerListener \r\n8.\tComponentListener
+        \r\n9.\tFocusListener \r\n10.\tAdjustmentListener \r\n\r\n<b>Listener Methods</b>\r\n1.\tactionPerformed(ActionEvent\r\n2.\titemStateChanged(ItemEvent)\r\n3.\tmousePressed(MouseEvent)
+        mouseReleased(MouseEvent) mouseEntered(MouseEvent) mouseExited(MouseEvent)
+        mouseClicked(MouseEvent) mouseDragged(MouseEvent) mouseMoved(MouseEvent)\r\n4.\tkeyPressed(KeyEvent)
+        keyReleased(KeyEvent) keyTyped(KeyEvent)\r\n5.\twindowClosing(WindowEvent)
+        windowOpened(WindowEvent) windowIconified(WindowEvent) windowDeiconified(WindowEvent)\r\n\r\n\r\n\r\n<b><size=30><color=#FF0000>Action
+        Listener</color></size></b>\r\nThe ActionListener interface is used to receive
+        action events. When creating an event-driven class, implement this interface
+        to handle these events. Register GUI components with the addActionListener
+        method. A class implementing ActionListener must also implement the actionPerformed()
+        method, which is called when an action event occurs.\r\n\r\n<b><size=30><color=#FF0000>Template
+        for implementing ActionListener</color></size></b>\r\n\r\nImport java.awt.event.*;\r\nImport
+        java.swing.*;\r\n\r\npublic class ActionListenerTemplate extends Jframe<color=#FF0000>
+        implements</color> ActionListener\r\n{\r\n Jbutton btnAdd;\r\n\r\nPublic
+        ActionListnerTemplate()\r\n{\r\n      btnAdd.addActionListener<color=#FF0000>
+        (this); </color>\r\n}\r\n\r\n\r\n@Override\r\n<color=#FF0000>Public void
+        actionPerformed(ActionEvent e){ </color>\r\n      If(e.getSource()==btnAdd){\r\n      
+        ____\r\n}\r\n}\r\n}\r\n\r\nA. Implement the ActionListener interface \r\nB.
+        Register the component(s) to be the listener (or source) of an event \r\nC.
+        This method will be invoked whenever a listener executes an event \r\nD.
+        getSource() method will return which object fired an event \r\nE. This is
+        the part where you will place the statements to be executed when the button
+        is clicked\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<b><size=30><color=#FF0000>Item
+        Listener</color></size></b>\r\nThe `ItemListener` interface handles item
+        events. Implement this interface in programs that need to respond to item
+        selections or changes, such as checkbox clicks, list item selections, or
+        checkable menu item toggles. Register GUI components with the `addItemListener`
+        method. When changes occur, the `itemStateChanged()` method is called.\r\n\r\n<b><size=30><color=#FF0000>Template
+        for implementing ItemListener</color></size></b>\r\n\r\nImport java.awt.event.*;\r\nImport
+        java.swing.*;\r\n\r\npublic class ItemListenerTemplate extends Jframe <color=#FF0000>implements</color>
+        ItemListener\r\n{\r\n JcheckBox cboxAgree;\r\n\r\nPublic ItemListnerTemplate()\r\n{\r\n     
+        cboxAgree.addItemListener<color=#FF0000> (this); </color>\r\n}\r\n\r\n\r\n@Override\r\n<color=#FF0000>Public
+        void itemStateChanged(ItemEvent e){ </color>\r\n      If(<color=#FF0000>cboxAgree.isSelected()</color>==
+        true){\r\n       ____\r\n}\r\n}\r\n}\r\n\r\nA. Implement the ItemListener
+        interface \r\nB. Register the component(s) to be the listener (or source)
+        of an event \r\nC. This method will be invoked whenever a listener executes
+        an event\r\nD. isSelected() method will return true if the radio button or
+        check box is selected or checked E. This is the part where you will place
+        the statements to be executed when the check box is checked\r\n</color></size>\r\n\r\n"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 44f89eac7c0dbcb438d95ba0c9c9dd24, type: 3}
 --- !u!1 &631351731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cab5b84524bc42747bff1cc18a0342a2, type: 3}
@@ -86599,6 +86798,89 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[0].dialogueText
+      value: "Welcome to the final level. You\u2019ve come so far, but the real test
+        begins here. In the registrar\u2019s office, there\u2019s an old newspaper,
+        hiding a crossword puzzle. You\u2019ll need a pen to solve the problem.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[1].dialogueText
+      value: "A puzzle\u2026 what secrets does it hold?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[2].dialogueText
+      value: "Solve it, and watch closely\u2014certain letters will reveal themselves.
+        Those letters form a password, unlocking a hidden drawer. Inside, two essential
+        objects will be revealed that you'll need.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[3].dialogueText
+      value: And what do I do with those?
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[4].dialogueText
+      value: ' Those two essential objects will be used either in the radio or the
+        printer. Both will reveal cipher codes. Align them carefully, and the final
+        password will emerge.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[5].dialogueText
+      value: "The final password\u2026 my way out?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[6].dialogueText
+      value: "Exactly. This is your last challenge, hidden in shadows. Solve it,
+        and you\u2019ll be free. Good luck!\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[0].characterName
+      value: Hackathon Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[0].voiceOverName
+      value: hm1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[1].voiceOverName
+      value: s1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[2].characterName
+      value: Hackathon Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[2].voiceOverName
+      value: hm2
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[3].voiceOverName
+      value: s2
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[4].characterName
+      value: Hackathon Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[4].voiceOverName
+      value: hm3
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[5].voiceOverName
+      value: s3
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[6].characterName
+      value: Hackathon Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 594310877748994099, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: dialogueEntries.Array.data[6].voiceOverName
+      value: hm4
+      objectReference: {fileID: 0}
     - target: {fileID: 765303100930388167, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -86682,6 +86964,18 @@ PrefabInstance:
     - target: {fileID: 1027886469465184238, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281790400917808443, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_text
+      value: Hackathon Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281790400917808443, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281790400917808443, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1592157772109261863, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: m_fontColor.a
@@ -86788,6 +87082,33 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 4064796285192266147, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 1721455530}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721455532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5578686606779046397, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721455533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efecd02eccf9a8a4baabd82c45f0d955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1721455533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8966303063572695285, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721455534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1438022033562840320, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1726305016
 GameObject:
   m_ObjectHideFlags: 0
@@ -89695,7 +90016,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.size
-      value: 22
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].clip
@@ -89706,11 +90027,203 @@ PrefabInstance:
       value: RadioIntro
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ac423f6d0126e5648bf94468103a7187, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].name
+      value: hm1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e02ac2bd11027c34499e5bdf58c60e35, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].name
+      value: hm2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b66556a973681c14ea94416e974c4326, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].name
+      value: hm3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f2b0e8f50ef88be4dad3a6001323ddfe, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].name
+      value: hm4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[26].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ad22ec995f278645bfc671bb71baffd, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[26].name
+      value: s1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[27].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 248fbde54d1e2114a8eec44634765b8f, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[27].name
+      value: s2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[28].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 23ec3ef8f1c0f894f9ad6ca7dee7ade8, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[28].name
+      value: s3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[29].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 142cd5e90fcc1814896232402ee43323, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[29].name
+      value: pclick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6597d845892224c49a0b920c1c5351ab, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].name
+      value: print
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b21130fe4946754eb310c08bbaf3789, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].name
+      value: correct2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 231714cc1abb22a4589a2834724b392c, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].name
+      value: highlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[33].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f78e3019100c01a4799a0b1a9578e692, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[33].name
+      value: ppickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[26].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[27].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[28].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[29].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[33].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[22].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[23].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[24].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[25].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[26].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[27].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[28].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[29].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[30].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[31].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[32].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[33].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2580487136659981168, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
@@ -108086,7 +108599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[0].total
@@ -108102,7 +108615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[3].total
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[4].total
@@ -108129,6 +108642,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 594409880}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
+      propertyPath: collectionItems.Array.data[3].itemText
+      value: 
+      objectReference: {fileID: 1721455534}
+    - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[0].collectedText
       value: Radio
       objectReference: {fileID: 0}
@@ -108142,7 +108659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[3].collectedText
-      value: Paper
+      value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[4].collectedText
@@ -108170,7 +108687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[3].itemNames.Array.size
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[4].itemNames.Array.size
@@ -108238,7 +108755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[3].itemNames.Array.data[0]
-      value: paper1
+      value: book
       objectReference: {fileID: 0}
     - target: {fileID: 1852428280650673511, guid: eeec11b950a33ea4c840e5748f511b58, type: 3}
       propertyPath: collectionItems.Array.data[3].itemNames.Array.data[1]
@@ -112526,9 +113043,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 149995309}
     - target: {fileID: 7949904020598042806, guid: 949978003feb84a44a3b8cb62e8d9ca2, type: 3}
+      propertyPath: dropSoundName
+      value: PaperDrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949904020598042806, guid: 949978003feb84a44a3b8cb62e8d9ca2, type: 3}
       propertyPath: playerCollider
       value: 
       objectReference: {fileID: 2102948226}
+    - target: {fileID: 7949904020598042806, guid: 949978003feb84a44a3b8cb62e8d9ca2, type: 3}
+      propertyPath: pickupSoundName
+      value: PaperPickup
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -112562,6 +113087,14 @@ PrefabInstance:
       propertyPath: paperPrefab
       value: 
       objectReference: {fileID: 1363750111}
+    - target: {fileID: 3275491046717179528, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+      propertyPath: printingSound
+      value: print
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275491046717179528, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
+      propertyPath: printPressSound
+      value: pclick
+      objectReference: {fileID: 0}
     - target: {fileID: 5002834577527338481, guid: eee5c9b262d51c242ae6f3af304a8fee, type: 3}
       propertyPath: timer
       value: 
@@ -112665,3 +113198,4 @@ SceneRoots:
   - {fileID: 2040570866}
   - {fileID: 798194496}
   - {fileID: 221039202}
+  - {fileID: 627693605}
