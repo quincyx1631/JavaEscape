@@ -104,14 +104,26 @@ public class MainMenuController : MonoBehaviour
 
     public void SetMusicVolume(float musicVolume)
     {
-        MenuAudioManager.Instance.MusicVolume(musicVolume); 
-        musicTextValue.text = musicVolume.ToString("0.0"); 
+        if (MenuAudioManager.Instance != null)  // Add null check
+        {
+            MenuAudioManager.Instance.MusicVolume(musicVolume);
+            if (musicTextValue != null)  // Add null check for UI
+            {
+                musicTextValue.text = musicVolume.ToString("0.0");
+            }
+        }
     }
 
     public void SetSFXVolume(float sfxVolume)
     {
-        MenuAudioManager.Instance.SFXVolume(sfxVolume); 
-        sfxTextValue.text = sfxVolume.ToString("0.0");
+        if (MenuAudioManager.Instance != null)  // Add null check
+        {
+            MenuAudioManager.Instance.SFXVolume(sfxVolume);
+            if (sfxTextValue != null)  // Add null check for UI
+            {
+                sfxTextValue.text = sfxVolume.ToString("0.0");
+            }
+        }
     }
 
     public void SetControllerSen(float sensitivity)
