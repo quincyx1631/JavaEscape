@@ -13,6 +13,11 @@ public class LoadPrefs : MonoBehaviour
     [Header("Volume Setting")]
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
+    [SerializeField] private TMP_Text musicTextValue = null;  
+    [SerializeField] private Slider musicSlider = null;     
+    [SerializeField] private TMP_Text sfxTextValue = null;   
+    [SerializeField] private Slider sfxSlider = null;        
+
 
     [Header("Brightness Setting")]
     [SerializeField] private Slider brightnessSlider = null;
@@ -38,15 +43,34 @@ public class LoadPrefs : MonoBehaviour
             if (PlayerPrefs.HasKey("masterVolume"))
             {
                 float localVolume = PlayerPrefs.GetFloat("masterVolume");
-
                 volumeTextValue.text = localVolume.ToString("0.0");
                 volumeSlider.value = localVolume;
                 AudioListener.volume = localVolume;
             }
-            else
+
+            if (PlayerPrefs.HasKey("musicVolume") && MenuAudioManager.Instance != null)
+            {
+                float localMusicVolume = PlayerPrefs.GetFloat("musicVolume");
+                musicTextValue.text = localMusicVolume.ToString("0.0");
+                musicSlider.value = localMusicVolume;
+                MenuAudioManager.Instance.MusicVolume(localMusicVolume);
+            }
+
+            if (PlayerPrefs.HasKey("sfxVolume") && MenuAudioManager.Instance != null)
+            {
+                float localSfxVolume = PlayerPrefs.GetFloat("sfxVolume");
+                sfxTextValue.text = localSfxVolume.ToString("0.0");
+                sfxSlider.value = localSfxVolume;
+                MenuAudioManager.Instance.SFXVolume(localSfxVolume);
+            }
+
+            if (!PlayerPrefs.HasKey("masterVolume") ||
+                !PlayerPrefs.HasKey("musicVolume") ||
+                !PlayerPrefs.HasKey("sfxVolume"))
             {
                 menuController.ResetButton("Audio");
             }
+
             if (PlayerPrefs.HasKey("masterQuality"))
             {
                 int localQuality = PlayerPrefs.GetInt("masterQuality");
@@ -57,33 +81,20 @@ public class LoadPrefs : MonoBehaviour
             if (PlayerPrefs.HasKey("masterFullscreen"))
             {
                 int localFullscreen = PlayerPrefs.GetInt("masterFullscreen");
-
-                if(localFullscreen == 1)
-                {
-                    Screen.fullScreen = true;
-                    fullScreenToggle.isOn = true;
-                }
-                else
-                {
-                    Screen.fullScreen = false;
-                    fullScreenToggle.isOn = false;
-                }
+                Screen.fullScreen = localFullscreen == 1;
+                fullScreenToggle.isOn = localFullscreen == 1;
             }
 
             if (PlayerPrefs.HasKey("masterBrightness"))
             {
                 float localBrightness = PlayerPrefs.GetFloat("masterBrightness");
-
                 brightnessTextValue.text = localBrightness.ToString("0.0");
                 brightnessSlider.value = localBrightness;
-
-                //change the brightness
             }
 
             if (PlayerPrefs.HasKey("masterSen"))
             {
                 float localSensitivity = PlayerPrefs.GetFloat("masterSen");
-
                 controllerSenTextValue.text = localSensitivity.ToString("0.0");
                 controllerSenSlider.value = localSensitivity;
                 menuController.mainControllerSen = Mathf.RoundToInt(localSensitivity);
@@ -91,14 +102,7 @@ public class LoadPrefs : MonoBehaviour
 
             if (PlayerPrefs.HasKey("masterInvertY"))
             {
-                if(PlayerPrefs.GetInt("masterInvertY") == 1)
-                {
-                    invertYToggle.isOn = true;
-                }
-                else
-                {
-                    invertYToggle.isOn = false;
-                }
+                invertYToggle.isOn = PlayerPrefs.GetInt("masterInvertY") == 1;
             }
         }
     }
