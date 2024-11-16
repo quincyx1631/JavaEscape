@@ -19,8 +19,8 @@ public class Inspect : MonoBehaviour
     public Light inspectionLight;
     public PostProcessVolume postProcessVolume;
 
-    public string inspectStartSoundName;
-    public string inspectStopSoundName;
+    public string inspectStartSoundName = "InspectIn";
+    public string inspectStopSoundName = "InspectOut";
 
     public PlayerInteraction playerInteraction;
     public Transform playerTransform;

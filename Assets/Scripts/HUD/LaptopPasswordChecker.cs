@@ -30,8 +30,34 @@ public class LaptopPasswordChecker : MonoBehaviour
     [Header("Audio Fade Settings")]
     public VideoAudioFader tvAudioFader; // Reference to the TVAudioFader script for fading the audio
 
+    [Header("Sound Settings")]
+    public string typingSound; // Sound to play for typing
+    public string loginClickSound; // Sound to play for login click
+    
+
+    private void Start()
+    {
+        // Add a listener to play typing sound when text is entered
+        passwordInputField.onValueChanged.AddListener(OnPasswordInput);
+    }
+
+    private void OnDestroy()
+    {
+        // Remove the listener to avoid memory leaks
+        passwordInputField.onValueChanged.RemoveListener(OnPasswordInput);
+    }
+
+    private void OnPasswordInput(string text)
+    {
+        // Play typing sound
+        AudioManager.Instance.Play(typingSound);
+    }
+
     public void CheckPassword()
     {
+        // Play login click sound
+        AudioManager.Instance.Play(loginClickSound);
+
         // Get the entered password from the input field
         string enteredPassword = passwordInputField.text;
 
@@ -79,7 +105,9 @@ public class LaptopPasswordChecker : MonoBehaviour
             Debug.Log("Incorrect password, try again.");
 
             // Show an alert message for incorrect password using the AlertScript
-            alertScript.ShowAlert("Incorrect password, please try again!");
+            alertScript.ShowAlert("Incorrect password, please try again!", "Error");
+
+        
         }
     }
 }

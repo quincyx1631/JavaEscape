@@ -14,6 +14,8 @@ public class LaptopTwoUI : MonoBehaviour
     public RandomItemSpawner itemSpawner;        // Reference to your RandomItemSpawner script
     public AlertUI alertUI;
     public string typingSoundName;               // Name of the sound effect for typing
+    public string spawnDropSoundName;            // Name of the sound effect for item spawn/drop
+
     private bool[] isAnswered;                   // Array to track if each question has been answered
     private bool isSpawningItem = false;         // Flag to track if an item is currently spawning
 
@@ -57,7 +59,7 @@ public class LaptopTwoUI : MonoBehaviour
         // If an item is currently spawning, prevent further clicks
         if (isSpawningItem)
         {
-            alertUI.ShowAlert("Wait for the item to spawn.");
+            alertUI.ShowAlert("Wait for the item to spawn.","Alert");
             return;
         }
 
@@ -78,7 +80,12 @@ public class LaptopTwoUI : MonoBehaviour
 
             // Start spawning the item and disable further input until spawning is done
             isSpawningItem = true;
-            itemSpawner.SpawnRandomItem(OnItemSpawned);  // Pass a callback for when the item finishes spawning
+
+            // Play the spawn/drop sound effect
+            AudioManager.Instance.Play(spawnDropSoundName);
+
+            // Start spawning the item and pass a callback for when the item finishes spawning
+            itemSpawner.SpawnRandomItem(OnItemSpawned);
         }
         else
         {
@@ -90,7 +97,7 @@ public class LaptopTwoUI : MonoBehaviour
     // Callback for when the item spawning is completed
     void OnItemSpawned()
     {
-        // Set the flag back to false to allow input again
+        // Reset the flag to allow input again
         isSpawningItem = false;
     }
 }

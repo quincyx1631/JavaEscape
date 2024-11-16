@@ -32,7 +32,10 @@ public class CameraSwitch : MonoBehaviour
     public float zoomSpeed = 2f;             // Speed of zoom-in transition
 
     private bool isSecondaryCameraActive = false; // Track if the secondary camera view is active
-    private bool isFading = false;               // Track if fade is ongoing
+    private bool isFading = false;
+
+    public string soundName = "Alert"; // Default sound name
+                                      
 
     void Start()
     {
@@ -47,7 +50,7 @@ public class CameraSwitch : MonoBehaviour
         {
             if (alertUI != null)
             {
-                alertUI.ShowAlert("You need to drop the item before switching cameras!");
+                alertUI.ShowAlert("You need to drop the item before switching cameras!", soundName);
             }
             return;
         }
@@ -56,7 +59,7 @@ public class CameraSwitch : MonoBehaviour
         {
             if (alertUI != null)
             {
-                alertUI.ShowAlert("You need to collect the required item first!");
+                alertUI.ShowAlert("You need to collect the required item first!", soundName);
             }
             return;
         }
@@ -75,6 +78,7 @@ public class CameraSwitch : MonoBehaviour
             SwitchToMainCamera();
         }
     }
+
 
     private void PlaceItemInPlaceholder()
     {
