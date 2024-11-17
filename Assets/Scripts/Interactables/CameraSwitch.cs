@@ -103,6 +103,7 @@ public class CameraSwitch : MonoBehaviour
 
     private IEnumerator SwitchToSecondaryCameraWithFade()
     {
+        PlayerControlManager.Instance.DisablePlayerControls();
         PauseMenuController.Instance.disableTab();
         isFading = true;
         transitionCanvasGroup.alpha = 0f;
@@ -139,7 +140,6 @@ public class CameraSwitch : MonoBehaviour
     public void SwitchToSecondaryCamera()
     {
         PauseMenuController.Instance.disableTab();
-
         outline.enabled = false;
         secondaryCamera.enabled = true;
         mainCamera.enabled = false;
@@ -182,7 +182,7 @@ public class CameraSwitch : MonoBehaviour
     public void SwitchToMainCamera()
     {
         PauseMenuController.Instance.canClickTab();
-
+        PlayerControlManager.Instance.EnablePlayerControls();
         outline.enabled = true;
         mainCamera.enabled = true;
         secondaryCamera.enabled = false;

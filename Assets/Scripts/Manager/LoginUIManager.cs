@@ -112,7 +112,7 @@ public class LoginUIManager : MonoBehaviour
         else
         {
             // Password is incorrect
-            alertUI.ShowAlert("Incorrect password, try again!");
+            alertUI.ShowAlert("Incorrect password, try again!", "Error");
         }
     }
 

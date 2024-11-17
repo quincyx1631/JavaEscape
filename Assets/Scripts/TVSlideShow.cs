@@ -15,6 +15,7 @@ public class TVSlideShow : MonoBehaviour
     public TextMeshProUGUI passwordText;
     public string turnOnSoundName;
     public string changeSlideSoundName;
+    public string alertSoundName;
 
     private int currentRandomIndex = 0;
     private bool isTVOn = false;
@@ -155,7 +156,7 @@ public class TVSlideShow : MonoBehaviour
             }
             else
             {
-                alertUI.ShowAlert("You need a remote to turn on the TV.");
+                alertUI.ShowAlert("You need a remote to turn on the TV.", alertSoundName);
             }
         }
         else
@@ -166,7 +167,7 @@ public class TVSlideShow : MonoBehaviour
             }
             else
             {
-                alertUI.ShowAlert("You need a remote to change the slide.");
+                alertUI.ShowAlert("You need a remote to change the slide.",alertSoundName);
             }
         }
     }

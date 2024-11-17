@@ -10,6 +10,7 @@ public class LaptopSlideShow : MonoBehaviour
     public AlertUI alertUI;                // Reference to the AlertUI system
     public string slideChangeSoundName;    // Sound for changing slides
     public string checkMatchSoundName;     // Sound for checking match
+    public string errorSound;
 
     private int currentSlideIndex = 0;     // Index of the current slide
     private bool[] matchedSlides;          // To track matched slides
@@ -55,13 +56,13 @@ public class LaptopSlideShow : MonoBehaviour
         {
             if (!tvSlideShow.IsTVOn())
             {
-                alertUI.ShowAlert("Please turn on the TV first.");
+                alertUI.ShowAlert("Please turn on the TV first.", errorSound);
                 return;
             }
 
             if (matchedSlides[currentSlideIndex])
             {
-                alertUI.ShowAlert("This slide has already been matched.");
+                alertUI.ShowAlert("This slide has already been matched.", errorSound);
                 return;
             }
 
@@ -85,10 +86,10 @@ public class LaptopSlideShow : MonoBehaviour
             }
             else
             {
-                alertUI.ShowAlert("Wrong Code Match");
+                alertUI.ShowAlert("Wrong Code Match", errorSound);
 
-                // Play sound effect for a failed match
-                AudioManager.Instance.Play(checkMatchSoundName);
+                
+                
             }
         }
     }
