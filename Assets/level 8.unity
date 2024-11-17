@@ -4609,6 +4609,7 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 60
   zoomSpeed: 2
+  soundName: Alert
 --- !u!114 &110595308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53170,7 +53171,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7044185708831584881, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 1721455530}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1721455540}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad395421447229a46b4a291be6f0310c, type: 3}
@@ -87075,7 +87076,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2562770240033932247, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 594409879}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1721455541}
   m_SourcePrefab: {fileID: 100100000, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
 --- !u!225 &1721455531 stripped
 CanvasGroup:
@@ -87109,6 +87113,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1721455535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 766818003016603108, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1721455536 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1848996460489342483, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1721455537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3990777736282075298, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1721455538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1310451644307688038, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1721455539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5533906489100415329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1721455540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1721455530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721455541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721455540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a538f7e618dbf2a49a15aa20a197b6b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1721455539}
+  volumeSlider: {fileID: 1721455538}
+  sensitivitySlider: {fileID: 1721455537}
+  resumeButton: {fileID: 1721455535}
+  mainMenuButton: {fileID: 1721455536}
+  firstPersonController: {fileID: 2102948221}
+  canPauseWithTab: 0
 --- !u!1 &1726305016
 GameObject:
   m_ObjectHideFlags: 0
@@ -97371,6 +97448,7 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 60
   zoomSpeed: 2
+  soundName: Alert
 --- !u!114 &1937635606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97530,6 +97608,7 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 60
   zoomSpeed: 2
+  soundName: Alert
 --- !u!114 &1939614295
 MonoBehaviour:
   m_ObjectHideFlags: 0
