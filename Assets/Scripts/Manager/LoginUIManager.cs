@@ -128,7 +128,7 @@ public class LoginUIManager : MonoBehaviour
             // Show alert for incorrect feedback
             if (feedback != "Debug code accepted.")
             {
-                alertUI.ShowAlert(feedback); // Show alert for feedback if debug code is incorrect
+                alertUI.ShowAlert(feedback, "Error"); // Show alert for feedback if debug code is incorrect
             }
             else
             {

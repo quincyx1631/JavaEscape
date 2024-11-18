@@ -74,7 +74,7 @@ public class Radio : MonoBehaviour
         }
         else
         {
-            alertUI.ShowAlert("The radio needs a battery");
+            alertUI.ShowAlert("The radio needs a battery", "Tap");
             Debug.Log("Battery is not in the ItemHolder. Radio cannot play.");
         }
     }

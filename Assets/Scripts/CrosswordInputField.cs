@@ -7,7 +7,7 @@ public class CrosswordInputField : MonoBehaviour
     public string correctLetter; // The correct letter for this input field
     private bool isLocked = false;
 
-    private string soundName = "KeyPress"; // Private sound name, set to a default sound (you can change this to your preferred sound)
+    private string soundName = "highlight"; // Private sound name, set to a default sound (you can change this to your preferred sound)
 
     private void Start()
     {

@@ -9,6 +9,8 @@ public class ComputerCameraSwitch : MonoBehaviour
     public GameObject objectToHide; // Object to hide when switching (e.g., player's body)
     public GameObject escapeUI; // Escape UI for showing when in computer mode
     public Animator escapeUIAnimator; // Animator for escape UI
+    public Transform itemHolder; // Item holder to check for child objects
+    public AlertUI alert;
 
     private bool isComputerCameraActive = false; // Track if the computer camera is active
     private Computer currentComputer; // Current computer reference
@@ -21,6 +23,14 @@ public class ComputerCameraSwitch : MonoBehaviour
 
     public void SwitchToComputerCamera(Computer computer)
     {
+        // Check if the ItemHolder has any child objects
+        if (itemHolder.childCount > 0)
+        {
+            alert.ShowAlert("Drop the item you are holding", "PcAlert");
+            Debug.Log("Cannot switch to computer camera. ItemHolder is not empty.");
+            return;
+        }
+
         currentComputer = computer; // Set the current computer
 
         if (!isComputerCameraActive)

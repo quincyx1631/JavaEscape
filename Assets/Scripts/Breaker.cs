@@ -63,7 +63,7 @@ public class Breaker : MonoBehaviour
             }
             else
             {
-                alertUI.ShowAlert("You need the key to unlock the breaker.");
+                alertUI.ShowAlert("You need the key to unlock the breaker.", "BreakerAlert");
                 Debug.Log("You need the key to unlock the breaker.");
                 return;
             }

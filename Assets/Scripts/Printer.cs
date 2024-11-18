@@ -51,7 +51,7 @@ public class Printer : MonoBehaviour
             }
             else
             {
-                alertUI.ShowAlert("The printer needs ink to operate");
+                alertUI.ShowAlert("The printer needs ink to operate", "Tap");
                 Debug.Log("The printer needs ink to operate.");
             }
         }
@@ -69,7 +69,7 @@ public class Printer : MonoBehaviour
         SpawnPaper();
 
         // Wait for the paper animation to finish before allowing another print
-        yield return new WaitForSeconds(2f); // Adjust timing to match paper print duration
+        yield return new WaitForSeconds(4f); // Adjust timing to match paper print duration
 
         // Set the printer to "Untagged" after printing
         gameObject.tag = "Untagged"; // Stop printing process after paper has finished printing
