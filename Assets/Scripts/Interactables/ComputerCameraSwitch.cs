@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class ComputerCameraSwitch : MonoBehaviour
 {
@@ -15,8 +16,14 @@ public class ComputerCameraSwitch : MonoBehaviour
     private bool isComputerCameraActive = false; // Track if the computer camera is active
     private Computer currentComputer; // Current computer reference
 
+    public PostProcessVolume postProcessVolume;
+
     void Start()
     {
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = false;
+        }
         outline = GetComponent<Outline>();
         SwitchToMainCamera(); // Start with the main camera active
     }
@@ -68,6 +75,10 @@ public class ComputerCameraSwitch : MonoBehaviour
 
     public void SwitchToSecondaryCamera()
     {
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = true;
+        }
         outline.enabled = false;
         computerCamera.enabled = true;
         mainCamera.enabled = false;
@@ -96,6 +107,10 @@ public class ComputerCameraSwitch : MonoBehaviour
 
     public void SwitchToMainCamera()
     {
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = false;
+        }
         outline.enabled = true;
         computerCamera.enabled = false;
         mainCamera.enabled = true;

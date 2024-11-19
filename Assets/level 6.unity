@@ -159,6 +159,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 5025902408027708678, guid: dbe003f5025d6174d929a403c4257177, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025902408027708678, guid: dbe003f5025d6174d929a403c4257177, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6293377480719597425, guid: dbe003f5025d6174d929a403c4257177, type: 3}
       propertyPath: alertUI
       value: 
@@ -268,6 +276,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 7297484911196309456, guid: 7dddcf8b085e2b141bbf7ad52f35dd28, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297484911196309456, guid: 7dddcf8b085e2b141bbf7ad52f35dd28, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7594259138983152216, guid: 7dddcf8b085e2b141bbf7ad52f35dd28, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.66646
@@ -820,7 +836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.size
-      value: 39
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].clip
@@ -967,6 +983,14 @@ PrefabInstance:
       value: thud
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[39].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a54750c96d6bc09439265b103407fe82, type: 3}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[39].name
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[21].pitch
       value: 1
       objectReference: {fileID: 0}
@@ -1036,6 +1060,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[38].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[39].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
@@ -1109,6 +1137,10 @@ PrefabInstance:
     - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: sounds.Array.data[38].volume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007169349950622120, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
+      propertyPath: sounds.Array.data[39].volume
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2580487136659981168, guid: 466d48c95da397f448251bf20e91ae35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1816,6 +1848,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8364651009576628011, guid: bac60e3ed76ba314d9abbdf343819e32, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364651009576628011, guid: bac60e3ed76ba314d9abbdf343819e32, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1921,6 +1961,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8071648630624019673, guid: b4ea54ee236eeba4bbeafafcf1a02d50, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071648630624019673, guid: b4ea54ee236eeba4bbeafafcf1a02d50, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2074,6 +2122,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4526416715770471201, guid: 09632ae6e91edcd4fac51a68f983356f, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4526416715770471201, guid: 09632ae6e91edcd4fac51a68f983356f, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6170070477026286256, guid: 09632ae6e91edcd4fac51a68f983356f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.005697
@@ -2158,6 +2214,7 @@ GameObject:
   - component: {fileID: 84797024}
   - component: {fileID: 84797022}
   - component: {fileID: 84797023}
+  - component: {fileID: 84797025}
   m_Layer: 0
   m_Name: Camera5
   m_TagString: Untagged
@@ -2239,6 +2296,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1113376948}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!114 &84797025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84797021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 84797024}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &97306267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,6 +2954,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &129273474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,6 +3367,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3896156312162037880, guid: 25cdf278171c2314cb76b63fcedb30c2, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896156312162037880, guid: 25cdf278171c2314cb76b63fcedb30c2, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5158478093012788036, guid: 25cdf278171c2314cb76b63fcedb30c2, type: 3}
       propertyPath: letter
       value: 69
@@ -3663,6 +3790,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4390311875849984198, guid: 08c4394a065e1b747865693d79c67ed4, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390311875849984198, guid: 08c4394a065e1b747865693d79c67ed4, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6834313237355788995, guid: 08c4394a065e1b747865693d79c67ed4, type: 3}
       propertyPath: alertUI
       value: 
@@ -4154,6 +4289,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3853912844074821039, guid: 7b97671784679db4a8e0eedda79c2101, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853912844074821039, guid: 7b97671784679db4a8e0eedda79c2101, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6338479519980442246, guid: 7b97671784679db4a8e0eedda79c2101, type: 3}
       propertyPath: letter
       value: 69
@@ -4294,6 +4437,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4585647100173911219, guid: d526c9d874d80cc41a9b6f17437f01ef, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585647100173911219, guid: d526c9d874d80cc41a9b6f17437f01ef, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 4731773300538572511, guid: d526c9d874d80cc41a9b6f17437f01ef, type: 3}
       propertyPath: m_Name
       value: L 3
@@ -4594,6 +4745,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3538549585919713048, guid: 27b4450059b338044801bc013944a2ba, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3538549585919713048, guid: 27b4450059b338044801bc013944a2ba, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5908628740138782448, guid: 27b4450059b338044801bc013944a2ba, type: 3}
       propertyPath: letter
       value: 84
@@ -4907,6 +5066,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8898500765855673459, guid: b0451371402bebf439476650fbc38619, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898500765855673459, guid: b0451371402bebf439476650fbc38619, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5153,6 +5320,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 1037566054586937938, guid: ed3df64cea3b04240a1271395934c8f0, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037566054586937938, guid: ed3df64cea3b04240a1271395934c8f0, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3401032339711142322, guid: ed3df64cea3b04240a1271395934c8f0, type: 3}
       propertyPath: letter
       value: 66
@@ -5326,6 +5501,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3110908879674325273, guid: d6822cbc712508744b9ddf162c5ed53c, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110908879674325273, guid: d6822cbc712508744b9ddf162c5ed53c, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6332520907337547423, guid: d6822cbc712508744b9ddf162c5ed53c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.027616
@@ -7691,6 +7874,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &336775283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7833,6 +8018,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4731782244677749867, guid: 450236bd78f76024a93b9538d2583bdd, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731782244677749867, guid: 450236bd78f76024a93b9538d2583bdd, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 9101089862715286148, guid: 450236bd78f76024a93b9538d2583bdd, type: 3}
       propertyPath: alertUI
       value: 
@@ -8623,6 +8816,7 @@ GameObject:
   - component: {fileID: 389314884}
   - component: {fileID: 389314882}
   - component: {fileID: 389314883}
+  - component: {fileID: 389314885}
   m_Layer: 0
   m_Name: Camera2
   m_TagString: Untagged
@@ -8704,6 +8898,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 858918645}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!114 &389314885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389314881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 389314884}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!4 &396001331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
@@ -8945,6 +9199,7 @@ GameObject:
   - component: {fileID: 419825464}
   - component: {fileID: 419825466}
   - component: {fileID: 419825465}
+  - component: {fileID: 419825467}
   m_Layer: 0
   m_Name: Camera6
   m_TagString: Untagged
@@ -9026,6 +9281,66 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &419825467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419825463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 419825464}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &422597711
 GameObject:
   m_ObjectHideFlags: 0
@@ -9589,6 +9904,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &435888170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11333,6 +11650,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8737384413979896785, guid: 1155a3fe32ff5614981386667dd2155d, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737384413979896785, guid: 1155a3fe32ff5614981386667dd2155d, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57526,6 +57851,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 1258017992730859546, guid: 0b95435bf97007045b2587c701e14a55, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258017992730859546, guid: 0b95435bf97007045b2587c701e14a55, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5448263490464905198, guid: 0b95435bf97007045b2587c701e14a55, type: 3}
       propertyPath: alertUI
       value: 
@@ -57726,6 +58059,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8248372459971688968, guid: 826345837942b544187dcc475faf9262, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248372459971688968, guid: 826345837942b544187dcc475faf9262, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 8859848834646052542, guid: 826345837942b544187dcc475faf9262, type: 3}
       propertyPath: letter
       value: 78
@@ -58159,6 +58500,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 2755042544314480410, guid: ed5207fbf5126e445bcbe985307df4a2, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755042544314480410, guid: ed5207fbf5126e445bcbe985307df4a2, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3764074389446401967, guid: ed5207fbf5126e445bcbe985307df4a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.115702
@@ -58288,6 +58637,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 5869271165696357263, guid: a1c28934672615846b49f8d0ff775dfe, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869271165696357263, guid: a1c28934672615846b49f8d0ff775dfe, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6107014926361419471, guid: a1c28934672615846b49f8d0ff775dfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.413542
@@ -59210,6 +59567,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8619127475244610197, guid: 2e59514155a66634db7a83bc0035d5e6, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619127475244610197, guid: 2e59514155a66634db7a83bc0035d5e6, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59630,6 +59995,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3057375910072385005, guid: 8382645664127684290194ec1c3e859f, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057375910072385005, guid: 8382645664127684290194ec1c3e859f, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5238128964546773604, guid: 8382645664127684290194ec1c3e859f, type: 3}
       propertyPath: letter
       value: 65
@@ -59775,6 +60148,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 2783369058309131696, guid: 98c071e51aa9b1e4f9abcf57b5aa5dae, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2783369058309131696, guid: 98c071e51aa9b1e4f9abcf57b5aa5dae, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 2960654254526926742, guid: 98c071e51aa9b1e4f9abcf57b5aa5dae, type: 3}
       propertyPath: m_Name
       value: N 2
@@ -60089,6 +60470,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 1238203072675040556, guid: a08c623c5b92a354aa0ed3b9fa8c872a, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238203072675040556, guid: a08c623c5b92a354aa0ed3b9fa8c872a, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 4654872727233031724, guid: a08c623c5b92a354aa0ed3b9fa8c872a, type: 3}
       propertyPath: alertUI
       value: 
@@ -60306,6 +60695,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 0}
 --- !u!114 &637127608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60857,6 +61248,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 2571146044794926846, guid: 9d7d96dfc38736b4bad94568ad4b428f, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571146044794926846, guid: 9d7d96dfc38736b4bad94568ad4b428f, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 8009908136620795536, guid: 9d7d96dfc38736b4bad94568ad4b428f, type: 3}
       propertyPath: letter
       value: 88
@@ -61129,6 +61528,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4636010636745689012, guid: 51611db1445dadb43affbde87dd78dc3, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636010636745689012, guid: 51611db1445dadb43affbde87dd78dc3, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7212139949670167228, guid: 51611db1445dadb43affbde87dd78dc3, type: 3}
       propertyPath: alertUI
       value: 
@@ -62429,6 +62836,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &744372767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63103,6 +63512,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4142905554295952223, guid: 3bd69cf9324c79d45a10b21b552c0c09, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142905554295952223, guid: 3bd69cf9324c79d45a10b21b552c0c09, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 4146806862979808568, guid: 3bd69cf9324c79d45a10b21b552c0c09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.747858
@@ -63322,6 +63739,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 7563821031585061066, guid: 61e9b72668ca05d4986ad91fa35428e5, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563821031585061066, guid: 61e9b72668ca05d4986ad91fa35428e5, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7704656277118595663, guid: 61e9b72668ca05d4986ad91fa35428e5, type: 3}
       propertyPath: letter
       value: 84
@@ -65043,6 +65468,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8352300666715487682, guid: 419463c06124dde4c9cf8b47116ea48f, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352300666715487682, guid: 419463c06124dde4c9cf8b47116ea48f, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65169,6 +65602,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6113445003662923591, guid: f4f52ad1441a4324b81fb1402f536c42, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113445003662923591, guid: f4f52ad1441a4324b81fb1402f536c42, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65314,6 +65755,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &858918643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66183,6 +66626,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3620967763085681874, guid: d54736589eb22ba43b8f00b35cbd06ab, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620967763085681874, guid: d54736589eb22ba43b8f00b35cbd06ab, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6204640022933259566, guid: d54736589eb22ba43b8f00b35cbd06ab, type: 3}
       propertyPath: alertUI
       value: 
@@ -66308,6 +66759,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 7738048538184495609, guid: 9e5fb508e0682fc448e80a07ca8c7b6a, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7738048538184495609, guid: 9e5fb508e0682fc448e80a07ca8c7b6a, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66413,6 +66872,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 573277248782991271, guid: b7cd77fdb544c0a439ced5e2851294f6, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 573277248782991271, guid: b7cd77fdb544c0a439ced5e2851294f6, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3591621664413140832, guid: b7cd77fdb544c0a439ced5e2851294f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.272
@@ -66862,6 +67329,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 9083288847840032256, guid: d7eee014478b9b94ab7a2ef7648e0633, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 9083288847840032256, guid: d7eee014478b9b94ab7a2ef7648e0633, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -67803,6 +68278,7 @@ GameObject:
   - component: {fileID: 983816543}
   - component: {fileID: 983816545}
   - component: {fileID: 983816544}
+  - component: {fileID: 983816546}
   m_Layer: 0
   m_Name: Camera9
   m_TagString: Untagged
@@ -67884,6 +68360,66 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &983816546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983816542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 983816543}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &990358935
 GameObject:
   m_ObjectHideFlags: 0
@@ -68133,6 +68669,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 2959414779773341670, guid: ea9517ea8c908a44ca09b270a420e052, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959414779773341670, guid: ea9517ea8c908a44ca09b270a420e052, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -68809,6 +69353,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 236943110004201065, guid: 7c1c7d55c0c759f4581e139c352d24c2, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 236943110004201065, guid: 7c1c7d55c0c759f4581e139c352d24c2, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 1445575595309209359, guid: 7c1c7d55c0c759f4581e139c352d24c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.765892
@@ -69315,6 +69867,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4919919838133667511, guid: 6caaed2e47ef5cf4fa7dc2068f98c785, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919919838133667511, guid: 6caaed2e47ef5cf4fa7dc2068f98c785, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5349667996966456966, guid: 6caaed2e47ef5cf4fa7dc2068f98c785, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.142863
@@ -69396,6 +69956,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4430643313564522557, guid: 30e17c752f4253642a9d2e7dfd3dc66a, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430643313564522557, guid: 30e17c752f4253642a9d2e7dfd3dc66a, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6273970060174216360, guid: 30e17c752f4253642a9d2e7dfd3dc66a, type: 3}
       propertyPath: letter
       value: 83
@@ -69569,6 +70137,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8902247340182923198, guid: 36ecb81987816e54fbcc4d1fb70d1903, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8902247340182923198, guid: 36ecb81987816e54fbcc4d1fb70d1903, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -70285,6 +70861,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 2453672378288223935, guid: dc931b997e9fd444b8b005230cb26e38, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453672378288223935, guid: dc931b997e9fd444b8b005230cb26e38, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3510698784807945234, guid: dc931b997e9fd444b8b005230cb26e38, type: 3}
       propertyPath: m_Name
       value: E 4
@@ -70741,6 +71325,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &1113376946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70840,6 +71426,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 1306853232235099047, guid: 730fd23d3c024e240a4ec3cbc60a9a3d, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1306853232235099047, guid: 730fd23d3c024e240a4ec3cbc60a9a3d, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3833710532663784127, guid: 730fd23d3c024e240a4ec3cbc60a9a3d, type: 3}
       propertyPath: alertUI
       value: 
@@ -71422,6 +72016,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6661167854262286262, guid: b7e16766bcfd9ca418da92a3823bcb9e, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6661167854262286262, guid: b7e16766bcfd9ca418da92a3823bcb9e, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7056743723756920777, guid: b7e16766bcfd9ca418da92a3823bcb9e, type: 3}
       propertyPath: alertUI
       value: 
@@ -71499,6 +72101,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3195105578569068061, guid: ea261f6a289265741a2e9c1161d61f10, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195105578569068061, guid: ea261f6a289265741a2e9c1161d61f10, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3870449810659460268, guid: ea261f6a289265741a2e9c1161d61f10, type: 3}
       propertyPath: m_Name
       value: C 2
@@ -72133,6 +72743,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6383942465928247646, guid: e00341aac79113747bf781ba7ff82da4, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6383942465928247646, guid: e00341aac79113747bf781ba7ff82da4, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72214,6 +72832,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3658208384447610976, guid: e34a72a88818cf649bf8a88cb89d33f0, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658208384447610976, guid: e34a72a88818cf649bf8a88cb89d33f0, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7748281760330260723, guid: e34a72a88818cf649bf8a88cb89d33f0, type: 3}
       propertyPath: alertUI
       value: 
@@ -72421,6 +73047,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8071960161776041552, guid: 584af8b950c83064381cc9a2a6900f0a, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071960161776041552, guid: 584af8b950c83064381cc9a2a6900f0a, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72526,6 +73160,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 9019520324194187863, guid: ed7102bac539fff4991bc603b02d6432, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019520324194187863, guid: ed7102bac539fff4991bc603b02d6432, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72697,6 +73339,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &1273748822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73234,6 +73878,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 5163726199015239185, guid: 2523197ec6bcd1947a8bca7ad1acc60e, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163726199015239185, guid: 2523197ec6bcd1947a8bca7ad1acc60e, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6555620118419082859, guid: 2523197ec6bcd1947a8bca7ad1acc60e, type: 3}
       propertyPath: letter
       value: 67
@@ -73379,6 +74031,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 7742281464244058727, guid: 73f1b22dcb9276d45ad679ed2faaa745, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742281464244058727, guid: 73f1b22dcb9276d45ad679ed2faaa745, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -73887,6 +74547,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3692240527360454784, guid: 6cd5d06ac21db9a4eaf79682ff53f9e8, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692240527360454784, guid: 6cd5d06ac21db9a4eaf79682ff53f9e8, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5907606566419675748, guid: 6cd5d06ac21db9a4eaf79682ff53f9e8, type: 3}
       propertyPath: m_Name
       value: X
@@ -73951,6 +74619,7 @@ GameObject:
   - component: {fileID: 1338853511}
   - component: {fileID: 1338853509}
   - component: {fileID: 1338853510}
+  - component: {fileID: 1338853512}
   m_Layer: 0
   m_Name: Camera4
   m_TagString: Untagged
@@ -74032,6 +74701,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1953767835}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!114 &1338853512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338853508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1338853511}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1340788144
 GameObject:
   m_ObjectHideFlags: 0
@@ -74410,6 +75139,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3456053603583853608, guid: 776b3665097c0e44396473473e4cd7b8, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456053603583853608, guid: 776b3665097c0e44396473473e4cd7b8, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7278707221875531582, guid: 776b3665097c0e44396473473e4cd7b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.1684384
@@ -75188,6 +75925,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 786912859852859670, guid: 319955e8a9ef3c34290184c5aab27226, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 786912859852859670, guid: 319955e8a9ef3c34290184c5aab27226, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3625668463480886028, guid: 319955e8a9ef3c34290184c5aab27226, type: 3}
       propertyPath: alertUI
       value: 
@@ -75542,6 +76287,7 @@ GameObject:
   - component: {fileID: 1424850508}
   - component: {fileID: 1424850506}
   - component: {fileID: 1424850507}
+  - component: {fileID: 1424850509}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -75623,6 +76369,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 637127606}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!114 &1424850509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424850505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1424850508}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1428082477
 GameObject:
   m_ObjectHideFlags: 0
@@ -75731,6 +76537,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 645475416966478264, guid: 07e7b82947ac5c44ab5bc8d553a59df6, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 645475416966478264, guid: 07e7b82947ac5c44ab5bc8d553a59df6, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 2563425657551989917, guid: 07e7b82947ac5c44ab5bc8d553a59df6, type: 3}
       propertyPath: m_Name
       value: D 3
@@ -75957,6 +76771,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4524178365938375440, guid: a58e2f7876438b345add54c2ce2a559e, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524178365938375440, guid: a58e2f7876438b345add54c2ce2a559e, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5897250571392781532, guid: a58e2f7876438b345add54c2ce2a559e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.9552894
@@ -76292,6 +77114,7 @@ GameObject:
   - component: {fileID: 1472969822}
   - component: {fileID: 1472969820}
   - component: {fileID: 1472969821}
+  - component: {fileID: 1472969823}
   m_Layer: 0
   m_Name: Camera7
   m_TagString: Untagged
@@ -76373,6 +77196,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1273748824}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!114 &1472969823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472969819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1472969822}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1474426474
 GameObject:
   m_ObjectHideFlags: 0
@@ -76565,6 +77448,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8715519986070947869, guid: f6e94c648456c8643872f6c77749e13a, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715519986070947869, guid: f6e94c648456c8643872f6c77749e13a, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76872,6 +77763,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 2689689299982295803, guid: 220c6fdccac24934b9b17c9ba99646e8, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689689299982295803, guid: 220c6fdccac24934b9b17c9ba99646e8, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 3444430336962349793, guid: 220c6fdccac24934b9b17c9ba99646e8, type: 3}
       propertyPath: alertUI
       value: 
@@ -77164,6 +78063,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 192997649554813637, guid: 479861a08b161804aa068f4d98ed9d61, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 192997649554813637, guid: 479861a08b161804aa068f4d98ed9d61, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 242376914290124980, guid: 479861a08b161804aa068f4d98ed9d61, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.566136
@@ -77653,6 +78560,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 1518685193}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1530901771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667081341762901633, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+  m_PrefabInstance: {fileID: 2060601254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1534016828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
@@ -78209,6 +79127,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 8462014030141846368, guid: e9ec94706e471a641b70712365159ffc, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462014030141846368, guid: e9ec94706e471a641b70712365159ffc, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -78865,6 +79791,76 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -584620815839500945, guid: eae569a96cb3c9e4090e7cc7e01ab5e2, type: 3}
+--- !u!1 &1647248386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7380507426222478020, guid: d5b6c2ad9f1b21048917f6e47db70039, type: 3}
+  m_PrefabInstance: {fileID: 1405884089736141754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1647248388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647248386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1647248390}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!4 &1647248390 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6623186058682721255, guid: d5b6c2ad9f1b21048917f6e47db70039, type: 3}
+  m_PrefabInstance: {fileID: 1405884089736141754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1661099943
 GameObject:
   m_ObjectHideFlags: 0
@@ -79094,6 +80090,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 7899546197091761739, guid: ac7f53730c409da45b0d081a8b63c823, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899546197091761739, guid: ac7f53730c409da45b0d081a8b63c823, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 8569163057945977750, guid: ac7f53730c409da45b0d081a8b63c823, type: 3}
       propertyPath: letter
       value: 68
@@ -79251,6 +80255,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3929160680463887121, guid: 3005fbb8e79b98c4d9992c569552ceb9, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929160680463887121, guid: 3005fbb8e79b98c4d9992c569552ceb9, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 4306446592145690805, guid: 3005fbb8e79b98c4d9992c569552ceb9, type: 3}
       propertyPath: alertUI
       value: 
@@ -79457,6 +80469,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4281008044382576224, guid: 315c49a0aedbbed43b3bf28cb2d6c617, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281008044382576224, guid: 315c49a0aedbbed43b3bf28cb2d6c617, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 8289101741688402543, guid: 315c49a0aedbbed43b3bf28cb2d6c617, type: 3}
       propertyPath: alertUI
       value: 
@@ -79968,6 +80988,7 @@ GameObject:
   - component: {fileID: 1715738626}
   - component: {fileID: 1715738628}
   - component: {fileID: 1715738627}
+  - component: {fileID: 1715738629}
   m_Layer: 0
   m_Name: Camera8
   m_TagString: Untagged
@@ -80049,6 +81070,66 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1715738629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715738625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1715738626}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!4 &1718568155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
@@ -81090,6 +82171,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 1925043924174064722, guid: 9276d383122203242b543834b6163ad8, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925043924174064722, guid: 9276d383122203242b543834b6163ad8, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 4837462905569723147, guid: 9276d383122203242b543834b6163ad8, type: 3}
       propertyPath: letter
       value: 76
@@ -82181,6 +83270,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6395137193429657905, guid: b976bc93acf71d346b6d4d35b40598b6, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395137193429657905, guid: b976bc93acf71d346b6d4d35b40598b6, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7026984135201100044, guid: b976bc93acf71d346b6d4d35b40598b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.128962
@@ -82834,6 +83931,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 572590193237918529, guid: 8d801dc85b0583f498adaaac4234ec70, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 572590193237918529, guid: 8d801dc85b0583f498adaaac4234ec70, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5634804716459823108, guid: 8d801dc85b0583f498adaaac4234ec70, type: 3}
       propertyPath: letter
       value: 79
@@ -83348,6 +84453,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6781468235327463296, guid: 5b8e32b67ad47dd46a4108ae94e7007a, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781468235327463296, guid: 5b8e32b67ad47dd46a4108ae94e7007a, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83948,6 +85061,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6307670628022958570, guid: 6c8463991b6cdd94b96e56680ffdd497, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307670628022958570, guid: 6c8463991b6cdd94b96e56680ffdd497, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7299404678488601131, guid: 6c8463991b6cdd94b96e56680ffdd497, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.253678
@@ -84093,6 +85214,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6640785412105492892, guid: 572ead4f05d9c0c41a2903129a0a4452, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640785412105492892, guid: 572ead4f05d9c0c41a2903129a0a4452, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6698400134889194036, guid: 572ead4f05d9c0c41a2903129a0a4452, type: 3}
       propertyPath: letter
       value: 87
@@ -84514,6 +85643,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 7634037026735455726, guid: fd0a4cebe67c89c40be544b0e78d021d, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634037026735455726, guid: fd0a4cebe67c89c40be544b0e78d021d, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84530,6 +85667,7 @@ GameObject:
   - component: {fileID: 1928760352}
   - component: {fileID: 1928760350}
   - component: {fileID: 1928760351}
+  - component: {fileID: 1928760353}
   m_Layer: 0
   m_Name: Camera3
   m_TagString: Untagged
@@ -84611,6 +85749,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 129273476}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
+--- !u!114 &1928760353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928760349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1928760352}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!4 &1929539137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2349881487213063236, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
@@ -84933,6 +86131,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 498449096909997289, guid: 434189dc3b96b424b88cc4dde57033c7, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 498449096909997289, guid: 434189dc3b96b424b88cc4dde57033c7, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 5974725986763649817, guid: 434189dc3b96b424b88cc4dde57033c7, type: 3}
       propertyPath: letter
       value: 73
@@ -85473,6 +86679,8 @@ MonoBehaviour:
   fadeDuration: 1
   zoomInFOV: 40
   zoomSpeed: 2
+  soundName: Alert
+  postProcessVolume: {fileID: 1530901771}
 --- !u!114 &1953767833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85863,6 +87071,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 4090590714412203133, guid: 81d5b1dbd26686649bfd75ca65bf09ac, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090590714412203133, guid: 81d5b1dbd26686649bfd75ca65bf09ac, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 4933153265231655254, guid: 81d5b1dbd26686649bfd75ca65bf09ac, type: 3}
       propertyPath: alertUI
       value: 
@@ -86292,6 +87508,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6855537905801145017, guid: e7e9c2bdb00253a4caf16559d8e18023, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855537905801145017, guid: e7e9c2bdb00253a4caf16559d8e18023, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -86429,6 +87653,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 6633136292642245252, guid: 97f5a484317236b4c8fbc23ef0e07530, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633136292642245252, guid: 97f5a484317236b4c8fbc23ef0e07530, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 7851319074232886790, guid: 97f5a484317236b4c8fbc23ef0e07530, type: 3}
       propertyPath: alertUI
       value: 
@@ -86587,6 +87819,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 2682476353448766550, guid: 8e2638140d7edf14b88f78ee2191dbd4, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682476353448766550, guid: 8e2638140d7edf14b88f78ee2191dbd4, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 2854911133443158434, guid: 8e2638140d7edf14b88f78ee2191dbd4, type: 3}
       propertyPath: m_Name
       value: R 2
@@ -87514,6 +88754,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bcf0f720574879438a6317d47cf6e49, type: 3}
+--- !u!1001 &2060601254
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1288323310516914251, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_Name
+      value: Camera Switch Vol
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954287050912996100, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b200d6507ef5b9f448cb9f1533ff115c, type: 3}
 --- !u!1 &2060755885
 GameObject:
   m_ObjectHideFlags: 0
@@ -88070,6 +89367,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 5100693878832122084, guid: e888fe6998b3f5f4d8314623d8b676c7, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100693878832122084, guid: e888fe6998b3f5f4d8314623d8b676c7, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6304095221347431957, guid: e888fe6998b3f5f4d8314623d8b676c7, type: 3}
       propertyPath: m_Name
       value: V
@@ -88910,6 +90215,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121909759}
   m_CullTransparentMesh: 1
+--- !u!1 &2126453504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8210749561823561015, guid: 54098013025a42948bd0d0502575080e, type: 3}
+  m_PrefabInstance: {fileID: 5810223018288839093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2126453506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126453504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 2126453508}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!4 &2126453508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2718758337422236619, guid: 54098013025a42948bd0d0502575080e, type: 3}
+  m_PrefabInstance: {fileID: 5810223018288839093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &2130562491
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -88988,6 +90363,14 @@ PrefabInstance:
       propertyPath: postProcessVolume
       value: 
       objectReference: {fileID: 800548099}
+    - target: {fileID: 3758723488353045189, guid: 7900b5c35d7c100449c762826fe3e859, type: 3}
+      propertyPath: inspectStopSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3758723488353045189, guid: 7900b5c35d7c100449c762826fe3e859, type: 3}
+      propertyPath: inspectStartSoundName
+      value: Inspect
+      objectReference: {fileID: 0}
     - target: {fileID: 6083191111118543913, guid: 7900b5c35d7c100449c762826fe3e859, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4252748
@@ -90590,6 +91973,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2070724858}
     - target: {fileID: 1969221533145177063, guid: d5b6c2ad9f1b21048917f6e47db70039, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 1530901771}
+    - target: {fileID: 1969221533145177063, guid: d5b6c2ad9f1b21048917f6e47db70039, type: 3}
       propertyPath: transitionCanvasGroup
       value: 
       objectReference: {fileID: 1918302888}
@@ -90671,7 +92058,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1305750182735529088, guid: d5b6c2ad9f1b21048917f6e47db70039, type: 3}
       insertIndex: -1
       addedObject: {fileID: 422597712}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7380507426222478020, guid: d5b6c2ad9f1b21048917f6e47db70039, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1647248388}
   m_SourcePrefab: {fileID: 100100000, guid: d5b6c2ad9f1b21048917f6e47db70039, type: 3}
 --- !u!1 &1406591791752410738
 GameObject:
@@ -94261,6 +95651,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2070724858}
     - target: {fileID: 8944052685088650085, guid: 54098013025a42948bd0d0502575080e, type: 3}
+      propertyPath: postProcessVolume
+      value: 
+      objectReference: {fileID: 1530901771}
+    - target: {fileID: 8944052685088650085, guid: 54098013025a42948bd0d0502575080e, type: 3}
       propertyPath: transitionCanvasGroup
       value: 
       objectReference: {fileID: 1918302888}
@@ -94385,6 +95779,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1750742876061790651, guid: 54098013025a42948bd0d0502575080e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1374009960}
+    - targetCorrespondingSourceObject: {fileID: 8210749561823561015, guid: 54098013025a42948bd0d0502575080e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2126453506}
   m_SourcePrefab: {fileID: 100100000, guid: 54098013025a42948bd0d0502575080e, type: 3}
 --- !u!4 &5921038271667064153
 Transform:
@@ -97595,6 +98992,7 @@ SceneRoots:
   - {fileID: 489799111}
   - {fileID: 38107884}
   - {fileID: 830985519}
+  - {fileID: 2060601254}
   - {fileID: 22559739}
   - {fileID: 871370811}
   - {fileID: 97645415}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Rendering.PostProcessing;
 public class CameraSwitch : MonoBehaviour
 {
     private Outline outline;
@@ -35,10 +36,15 @@ public class CameraSwitch : MonoBehaviour
     private bool isFading = false;
 
     public string soundName = "Alert"; // Default sound name
-                                      
+
+    public PostProcessVolume postProcessVolume;
 
     void Start()
     {
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = false;
+        }
         outline = GetComponent<Outline>();
         // Ensure the main camera is active by default
         SwitchToMainCamera();
@@ -139,6 +145,10 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwitchToSecondaryCamera()
     {
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = true;
+        }
         PauseMenuController.Instance.disableTab();
         outline.enabled = false;
         secondaryCamera.enabled = true;
@@ -218,6 +228,10 @@ public class CameraSwitch : MonoBehaviour
         if (escapeUI != null && escapeUIAnimator != null)
         {
             escapeUIAnimator.SetBool("IsVisible", false);
+        }
+        if (postProcessVolume != null)
+        {
+            postProcessVolume.enabled = false;
         }
     }
 

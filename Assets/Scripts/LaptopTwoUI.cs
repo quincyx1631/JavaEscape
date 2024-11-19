@@ -89,7 +89,7 @@ public class LaptopTwoUI : MonoBehaviour
         }
         else
         {
-            alertUI.ShowAlert("Wrong Answer");
+            alertUI.ShowAlert("Wrong Answer", "Error");
             Debug.Log("Incorrect answer for question " + (index + 1));
         }
     }
