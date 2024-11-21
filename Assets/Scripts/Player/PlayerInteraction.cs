@@ -9,6 +9,9 @@ public class PlayerInteraction : MonoBehaviour
     private PickUp currentItem;
     private bool raycastingEnabled = true;
 
+    [Header("Reticle Animation")]
+    public Animator reticleAnimator; // Animator for the reticle
+
     void Start()
     {
         if (PlayerCamera == null)
@@ -18,6 +21,10 @@ public class PlayerInteraction : MonoBehaviour
         if (itemHolder == null)
         {
             Debug.LogError("itemHolder is not assigned.");
+        }
+        if (reticleAnimator == null)
+        {
+            Debug.LogError("Reticle Animator is not assigned.");
         }
     }
 
@@ -73,7 +80,6 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, PlayerReach))
         {
-            
             if (hit.collider.CompareTag("Interactables"))
             {
                 Interactables newInteractables = hit.collider.GetComponent<Interactables>();
@@ -109,6 +115,12 @@ public class PlayerInteraction : MonoBehaviour
         {
             CurrentInteractables.EnableOutline();
             UpdateUI();
+
+            // Trigger the animation to show the reticle
+            if (reticleAnimator != null)
+            {
+                reticleAnimator.SetBool("IsAiming", true);
+            }
         }
     }
 
@@ -129,6 +141,12 @@ public class PlayerInteraction : MonoBehaviour
         {
             CurrentInteractables.DisableOutline();
             CurrentInteractables = null;
+
+            // Trigger the animation to hide the reticle
+            if (reticleAnimator != null)
+            {
+                reticleAnimator.SetBool("IsAiming", false);
+            }
         }
     }
 

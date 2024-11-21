@@ -15137,6 +15137,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6579314977050443073, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6999953384981345329, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
       propertyPath: scoreButton
       value: 
@@ -15261,6 +15265,11 @@ GameObject:
 --- !u!1 &2121717454 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 15556627155219091, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 2121717448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2143960376 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6651337737744972112, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 2121717448}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &36980950418596167
@@ -20059,6 +20068,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2475673462288182081, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
+      propertyPath: reticleAnimator
+      value: 
+      objectReference: {fileID: 2143960376}
     - target: {fileID: 2793263280572299334, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.43
@@ -22689,6 +22702,10 @@ PrefabInstance:
     - target: {fileID: 9217845449363495265, guid: 476ca7b01c1570045a44fbd91e8d4183, type: 3}
       propertyPath: m_Name
       value: Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217845449363495265, guid: 476ca7b01c1570045a44fbd91e8d4183, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

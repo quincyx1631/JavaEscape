@@ -1470,6 +1470,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 585845110}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: uiToDisable.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: uiToEnable.Array.data[0]
       value: 
       objectReference: {fileID: 1084570798}
@@ -1489,6 +1493,14 @@ PrefabInstance:
       propertyPath: uiToDisable.Array.data[3]
       value: 
       objectReference: {fileID: 1946271010}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: uiToDisable.Array.data[4]
+      value: 
+      objectReference: {fileID: 47578556}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: uiToDisable.Array.data[5]
+      value: 
+      objectReference: {fileID: 1860593776}
     - target: {fileID: 2751485976233871454, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.008
@@ -2332,17 +2344,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2475673462288182081, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
+      propertyPath: reticleAnimator
+      value: 
+      objectReference: {fileID: 1860593778}
     - target: {fileID: 2793263280572299328, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: crosshairColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280572299328, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: crosshairColor.g
-      value: 0.990566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280572299328, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: crosshairColor.r
-      value: 0.98343843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280572299328, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: mouseSensitivity
@@ -2406,7 +2422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280743274100, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.74
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280743274101, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_IsActive
@@ -2418,7 +2434,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
     - target: {fileID: 2793263280743274103, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280743274103, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_Color.g
@@ -2426,7 +2442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280743274103, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_Color.r
-      value: 0.40390563
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2793263280743274103, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_Material
@@ -5082,6 +5098,7 @@ MonoBehaviour:
   - {fileID: 2019950621}
   - {fileID: 47578556}
   - {fileID: 1946271010}
+  - {fileID: 1860593776}
   uiToEnable:
   - {fileID: 1196737036}
   objectToHide: {fileID: 2010180540}
@@ -15131,6 +15148,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850230751}
   m_CullTransparentMesh: 1
+--- !u!1 &1860593776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6579314977050443073, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1510641984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1860593778 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6651337737744972112, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 1510641984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1865048690
 GameObject:
   m_ObjectHideFlags: 0

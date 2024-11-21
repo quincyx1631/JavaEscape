@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2475673462288182081, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
+      propertyPath: reticleAnimator
+      value: 
+      objectReference: {fileID: 877041811}
     - target: {fileID: 2793263280572299334, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.64
@@ -1431,6 +1435,8 @@ MonoBehaviour:
   - {fileID: 236141922}
   - {fileID: 2053377333}
   - {fileID: 1373561414}
+  - {fileID: 1874953377}
+  - {fileID: 183845852}
   uiToEnable:
   - {fileID: 880289461}
   objectToHide: {fileID: 1030880632}
@@ -1704,6 +1710,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183325927}
   m_CullTransparentMesh: 1
+--- !u!1 &183845852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6579314977050443073, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 2074415047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &187020106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6881,6 +6892,11 @@ Light:
 --- !u!1 &858887290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5631290037764602702, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
+  m_PrefabInstance: {fileID: 2074415047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &877041811 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6651337737744972112, guid: 1aa1acf345492b243aedc8a2ada9aaf1, type: 3}
   m_PrefabInstance: {fileID: 2074415047}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &880255988
@@ -17021,7 +17037,7 @@ PrefabInstance:
       objectReference: {fileID: 120649671}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: uiToDisable.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: uiToEnable.Array.data[0]
@@ -17047,6 +17063,14 @@ PrefabInstance:
       propertyPath: uiToDisable.Array.data[4]
       value: 
       objectReference: {fileID: 1373561414}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: uiToDisable.Array.data[5]
+      value: 
+      objectReference: {fileID: 1874953377}
+    - target: {fileID: 2711855394972493873, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
+      propertyPath: uiToDisable.Array.data[6]
+      value: 
+      objectReference: {fileID: 183845852}
     - target: {fileID: 3170107952148020094, guid: cdb418237398a9248a756dfaa64b58a7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -17491,6 +17515,8 @@ MonoBehaviour:
   - {fileID: 236141922}
   - {fileID: 1373561414}
   - {fileID: 2053377333}
+  - {fileID: 1874953377}
+  - {fileID: 183845852}
   uiToEnable:
   - {fileID: 1276468841}
   objectToHide: {fileID: 1030880632}
