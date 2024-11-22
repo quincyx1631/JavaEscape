@@ -14508,6 +14508,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2793263280572299334, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
   m_PrefabInstance: {fileID: 5837907545438376414}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2022695787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767647758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee9276e16a244d4bbb057f6a35bf450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSoundName: Walk
 --- !u!1 &2022850712
 GameObject:
   m_ObjectHideFlags: 0
@@ -20427,7 +20440,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2793263280572299338, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2022695787}
   m_SourcePrefab: {fileID: 100100000, guid: 0aa9c4c9ea79d0e4b94d470d8a3e52e4, type: 3}
 --- !u!33 &5898958500487647579
 MeshFilter:

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4459864850019384741}
   - component: {fileID: 4459864850019384740}
   - component: {fileID: 4142307466220990117}
+  - component: {fileID: -2715178102661868601}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -210,6 +211,20 @@ MonoBehaviour:
   PlayerReach: 3
   PlayerCamera: {fileID: 4459864851310106426}
   itemHolder: {fileID: 476792841252750887}
+  reticleAnimator: {fileID: 0}
+--- !u!114 &-2715178102661868601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864850019384750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee9276e16a244d4bbb057f6a35bf450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSoundName: Walk
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0

@@ -380,7 +380,7 @@ public class FirstPersonController : MonoBehaviour
                 if (!isWalking)
                 {
                     isWalking = true;
-                    AudioManager.Instance.Play("Walk"); // Start playing walking sound
+                    
                 }
             }
             else
@@ -388,7 +388,7 @@ public class FirstPersonController : MonoBehaviour
                 if (isWalking)
                 {
                     isWalking = false;
-                    AudioManager.Instance.Stop("Walk"); // Stop playing walking sound
+                    
                 }
             }
 
