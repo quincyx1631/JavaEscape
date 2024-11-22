@@ -49,13 +49,13 @@ RectTransform:
   - {fileID: 6856363065014575971}
   - {fileID: 2562770240033932247}
   - {fileID: 8940458626296810684}
-  - {fileID: 4393238058305060664}
   - {fileID: 3039315197874071074}
   - {fileID: 8666924006515866740}
   - {fileID: 1159025595393485000}
   - {fileID: 8847555467266872536}
   - {fileID: 8034665648446668552}
   - {fileID: 2134656973516126252}
+  - {fileID: 4393238058305060664}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -735,7 +735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 93}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1664344925925719639
@@ -3271,7 +3271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278, y: -155.9353}
+  m_AnchoredPosition: {x: 144, y: -155.9353}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4018638716258538515
@@ -4659,7 +4659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -155.9353}
+  m_AnchoredPosition: {x: -132, y: -155.9353}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8189662167682647346
@@ -5029,7 +5029,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c6dfaf04007c3de4f8e72b028a183dc7, type: 2}
   m_sharedMaterial: {fileID: -180418905773288041, guid: c6dfaf04007c3de4f8e72b028a183dc7, type: 2}
@@ -5038,15 +5038,15 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 6760473
-  m_fontColor: {r: 0.098039225, g: 0.15686275, b: 0.4039216, a: 0}
-  m_enableVertexGradient: 0
+    rgba: 8875367
+  m_fontColor: {r: 0.40569597, g: 0.42927408, b: 0.5283019, a: 0}
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.03681023, g: 0.16511455, b: 0.41509432, a: 1}
+    topRight: {r: 0.14528298, g: 0.79513305, b: 1, a: 1}
+    bottomLeft: {r: 0.31384832, g: 0.35262316, b: 0.7169812, a: 1}
+    bottomRight: {r: 0.9478119, g: 1, b: 0.2584905, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -5062,7 +5062,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5166,7 +5166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4c4975b586e278045b0aba70fa3c9087, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6288,7 +6288,7 @@ MonoBehaviour:
   finalScoreText: {fileID: 0}
   finishUIAnimator: {fileID: 5104667425992632176}
   blurEffect: {fileID: 2391751959432077581}
-  scoreButton: {fileID: 0}
+  scoreButton: {fileID: 5062455947513860837}
   uiElementsToDisable:
   - {fileID: 8910891126985230907}
   - {fileID: 5523104052792292954}

@@ -11,6 +11,8 @@ public class KeypadNumbers : MonoBehaviour
     public GameObject clueUI; // Reference to the Clue UI GameObject
     public TMP_Text clueText; // Reference to the clue text in the Clue UI
 
+    [TextArea]
+    public string[] clues; // Array for customizable clues
     private string currentInput = ""; // Stores the current input
     private int incorrectAttempts = 0; // Counter for incorrect attempts
 
@@ -122,24 +124,14 @@ public class KeypadNumbers : MonoBehaviour
     {
         clueUI.SetActive(true); // Show the Clue UI
 
-        // Provide clues based on the number of incorrect attempts
-        switch (incorrectAttempts)
+        // Display a clue based on the number of incorrect attempts
+        if (incorrectAttempts - 3 < clues.Length)
         {
-            case 3:
-                clueText.text = "Clue: Perhaps the answer lies in a sequence.";
-                break;
-            case 4:
-                clueText.text = "Clue: You're on the right track, but still far.";
-                break;
-            case 5:
-                clueText.text = "Clue: Take a closer look at the numbers around you.";
-                break;
-            case 6:
-                clueText.text = "Clue: Pay attention to repeating patterns.";
-                break;
-            default:
-                clueText.text = "Keep trying, the answer is within reach!";
-                break;
+            clueText.text = clues[incorrectAttempts - 3]; // Use clues from the array
+        }
+        else
+        {
+            clueText.text = "Think!, don't guess"; // Default message when out of clues
         }
 
         // Play the clue animation if applicable
