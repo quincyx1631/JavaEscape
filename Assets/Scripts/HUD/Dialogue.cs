@@ -103,18 +103,19 @@ public class Dialogue : MonoBehaviour
     {
         if (isTyping)
         {
-            // If typing is still in progress, stop typing and show complete text
+            // If typing animation is still playing, stop it and complete the text
             if (typingCoroutine != null)
             {
                 StopCoroutine(typingCoroutine);
                 typingCoroutine = null;
             }
+
             isTyping = false;
-            dialogueTextUI.text = dialogueEntries[currentDialogueIndex].dialogueText; // Show complete text
-            return;
+            dialogueTextUI.text = dialogueEntries[currentDialogueIndex].dialogueText; // Complete the current text
+            return; // Require another click to move to the next dialogue
         }
 
-        // Stop the current voice-over immediately
+        // Stop any ongoing voice-over for the current dialogue
         if (currentDialogueIndex >= 0 && currentDialogueIndex < dialogueEntries.Length)
         {
             DialogueEntry currentEntry = dialogueEntries[currentDialogueIndex];
@@ -124,19 +125,20 @@ public class Dialogue : MonoBehaviour
             }
         }
 
-        // Increment to the next dialogue entry
+        // Proceed to the next dialogue
         currentDialogueIndex++;
 
-        // Check if the current index is within bounds before displaying the next dialogue
         if (currentDialogueIndex < dialogueEntries.Length)
         {
-            DisplayDialogue();
+            DisplayDialogue(); // Show the next dialogue
         }
         else
         {
-            EndDialogue();
+            EndDialogue(); // End dialogue sequence
         }
     }
+
+
     private void EndDialogue()
     {
         // End of dialogue, hide the UI, enable player controls, and hide the cursor
