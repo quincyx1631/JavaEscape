@@ -1937,17 +1937,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3164328620463612285, guid: 760008a8a002544439cca52d84001db7, type: 3}
   m_PrefabInstance: {fileID: 351896373}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &266173269 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8404378074208426504, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
-  m_PrefabInstance: {fileID: 1864110154}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707455184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a872f2c1b29c144a949a8c4d0fb94f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &266246926 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 997633613943587050, guid: 760008a8a002544439cca52d84001db7, type: 3}
@@ -2271,7 +2260,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 60547211160716315, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_text
-      value: JOptionPane.VALID_OPTION,
+      value: '"Food Choices", -1, JOptionPane.CONFIRM_MESSAGE,'
       objectReference: {fileID: 0}
     - target: {fileID: 60547211160716315, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_fontSize
@@ -2740,19 +2729,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2202143790766869043, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 498.23
+      value: 862.8927
       objectReference: {fileID: 0}
     - target: {fileID: 2202143790766869043, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -231
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2202143790766869043, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 54
+      value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 2403735210408444307, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_Text
-      value: JOptionPane.VALID_OPTION,
+      value: '"Food Choices", -1, JOptionPane.CONFIRM_MESSAGE,'
       objectReference: {fileID: 0}
     - target: {fileID: 2403735210408444307, guid: 760008a8a002544439cca52d84001db7, type: 3}
       propertyPath: m_GlobalPointSize
@@ -6425,19 +6414,14 @@ PrefabInstance:
     - target: {fileID: 6428150114307754876, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_text
       value: "<color=#569CD6>import</color> javax.swing.*;\r\n\r\n<color=#569CD6>public
-        class</color> <color=#9CDCFE>ChoiceDialogExample</color> {\r\n    <color=#569CD6>public
+        class</color> <color=#9CDCFE>ChoiceDialog</color> {\r\n    <color=#569CD6>public
         static void</color> <color=#9CDCFE>main</color>(<color=#4EC9B0>String</color>[]
-        args) {\r\n        <color=#4EC9B0>Object[]</color> options = {<color=#CE9178>\"Pizza\"</color>,
+        args) {\r\n        <color=#4EC9B0>Object</color>[] options = {<color=#CE9178>\"Pizza\"</color>,
         <color=#CE9178>\"Burger\"</color>, <color=#CE9178>\"Pasta\"</color>};\r\n       
-        <color=#4EC9B0>int</color> choice = <color=#9CDCFE>JOptionPane</color>.<color=#DCDCAA>showOptionDialog</color>(\r\n           
-        <color=#569CD6>null</color>, \r\n            <color=#CE9178>\"What is your
-        favorite food?\"</color>, \r\n            <color=#CE9178>\"Food Choices\"</color>,
-        \r\n            <color=#9CDCFE>JOptionPane</color>.<color=#4EC9B0>VALID_OPTION</color>,
-        \r\n            <color=#9CDCFE>JOptionPane</color>.<color=#4EC9B0>QUESTION_MESSAGE</color>,
-        \r\n            <color=#569CD6>null</color>, \r\n            options, \r\n           
-        options[<color=#4EC9B0>0</color>]\r\n        ); \r\n        <color=#9CDCFE>JOptionPane</color>.<color=#DCDCAA>showMessageDialog</color>(\r\n           
-        <color=#569CD6>null</color>, \r\n            <color=#CE9178>\"You chose:
-        \"</color> + options[choice]\r\n        );\r\n    }\r\n}\r\n"
+        <color=#4EC9B0>int</color> choice = <color=#9CDCFE>JOptionPane</color>.<color=#DCDCAA>showOptionDialog</color>(<color=#569CD6>null</color>,
+        <color=#CE9178>\"What is your favorite food?\"</color>, \r\n               
+        <color=#CE9178>\"Food Choices\"</color>, -1, <color=#9CDCFE>JOptionPane</color>.<color=#9CDCFE>CONFIRM_MESSAGE</color>,\r\n               
+        <color=#569CD6>null</color>, options, options[0]); \r\n    }\r\n}\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6691508621640947043, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6509,7 +6493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8404378074208426504, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: debugCode
-      value: JOptionPane.DEFAULT_OPTION,
+      value: '"Food Choices", -1, JOptionPane.QUESTION_MESSAGE,'
       objectReference: {fileID: 0}
     - target: {fileID: 8404378074208426504, guid: 60a1ac7d24182d34599985dca53fe30b, type: 3}
       propertyPath: fadeDuration
@@ -12913,7 +12897,7 @@ PrefabInstance:
     - target: {fileID: 8969475035450994117, guid: 6098c9c45650ede4ba5ffd05973f669c, type: 3}
       propertyPath: computerPasswordPairs.Array.data[0].computer
       value: 
-      objectReference: {fileID: 266173269}
+      objectReference: {fileID: 1508264941}
     - target: {fileID: 8969475035450994117, guid: 6098c9c45650ede4ba5ffd05973f669c, type: 3}
       propertyPath: computerPasswordPairs.Array.data[0].password
       value: 00000
