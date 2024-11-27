@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -57,13 +58,22 @@ public class MainMenuController : MonoBehaviour
         List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
+        int defaultResolutionWidth = 1920;
+        int defaultResolutionHeight = 1080;
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option  = resolutions[i].width + " x " + resolutions[i].height;
+            string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            {
+                currentResolutionIndex = i;
+            }
+
+            // Find the index for 1920x1080
+            if (resolutions[i].width == defaultResolutionWidth &&
+                resolutions[i].height == defaultResolutionHeight)
             {
                 currentResolutionIndex = i;
             }
@@ -72,7 +82,12 @@ public class MainMenuController : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        // Ensure fullscreen is set to true by default
+        Screen.fullScreen = true;
+        fullScreenToggle.isOn = true;
     }
+
 
     public void SetResolution(int resolutionIndex)
     {
@@ -165,13 +180,15 @@ public class MainMenuController : MonoBehaviour
 
     public void GraphicsApply()
     {
+        // Ensure fullscreen is always set based on the toggle
+        _isFullScreen = fullScreenToggle.isOn;
+
         PlayerPrefs.SetFloat("masterBrightness", _brightnessLevel);
-        //change your brightness with your post processsing or whatever it is
 
         PlayerPrefs.SetInt("masterQuality", _qualityLevel);
         QualitySettings.SetQualityLevel(_qualityLevel);
 
-        PlayerPrefs.SetInt("masterFullscreen", (_isFullScreen ? 1 : 0 ));
+        PlayerPrefs.SetInt("masterFullscreen", (_isFullScreen ? 1 : 0));
         Screen.fullScreen = _isFullScreen;
 
         StartCoroutine(ConfirmationBox());
@@ -245,9 +262,16 @@ public class MainMenuController : MonoBehaviour
 
             if (resolutionDropdown != null)
             {
-                Resolution currentResolution = Screen.currentResolution;
-                Screen.SetResolution(currentResolution.width, currentResolution.height, Screen.fullScreen);
-                resolutionDropdown.value = resolutions.Length;
+                // Set to 1920x1080 resolution
+                int defaultResolutionIndex = Array.FindIndex(resolutions,
+                    r => r.width == 1920 && r.height == 1080);
+
+                if (defaultResolutionIndex != -1)
+                {
+                    Resolution defaultResolution = resolutions[defaultResolutionIndex];
+                    Screen.SetResolution(defaultResolution.width, defaultResolution.height, Screen.fullScreen);
+                    resolutionDropdown.value = defaultResolutionIndex;
+                }
             }
 
             GraphicsApply();
