@@ -51,8 +51,6 @@ public class ComputerCameraSwitch : MonoBehaviour
         {
             SwitchToMainCamera();
 
-            //FOR PAUSE DONT CHANGE -- NEIL
-            PauseMenuController.Instance.canClickTab();
         }
     }
 
@@ -159,6 +157,9 @@ public class ComputerCameraSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && isComputerCameraActive)
         {
             SwitchToMainCamera();
+
+            //FOR PAUSE DONT CHANGE -- NEIL
+            PauseMenuController.Instance.canClickTab();
         }
     }
 }
