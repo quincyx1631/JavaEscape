@@ -239,8 +239,13 @@ public class UserProfile : MonoBehaviour
             if (string.IsNullOrEmpty(quizData.QuizNumber1))
             {
                 quizData.QuizNumber1 = quizManager.score.ToString() + "/10";
-                SetQuizData(GetQuizData);
-            }
+
+                    SetQuizData(GetQuizData);
+
+                    Debug.Log("Quiz score saved successfully");
+
+                    UserAccountManager.Instance.SubmitQuiz1ScoreToLeaderboard();
+                }
             else
             {
                 Debug.Log("You already completed Quiz 1");
@@ -259,6 +264,8 @@ public class UserProfile : MonoBehaviour
             {
                 quizData.QuizNumber2 = quiz2Manager.score.ToString() + "/10";
                 SetQuizData(GetQuizData);
+
+                UserAccountManager.Instance.SubmitQuiz2ScoreToLeaderboard();
             }
             else
             {
@@ -278,6 +285,8 @@ public class UserProfile : MonoBehaviour
             {
                 quizData.QuizNumber3 = quiz3Manager.score.ToString() + "/10";
                 SetQuizData(GetQuizData);
+
+                UserAccountManager.Instance.SubmitQuiz3ScoreToLeaderboard();
             }
             else
             {
@@ -297,6 +306,8 @@ public class UserProfile : MonoBehaviour
             {
                 quizData.QuizNumber4 = quiz4Manager.score.ToString() + "/10";
                 SetQuizData(GetQuizData);
+
+                UserAccountManager.Instance.SubmitQuiz4ScoreToLeaderboard();
             }
             else
             {
@@ -316,6 +327,8 @@ public class UserProfile : MonoBehaviour
             {
                 quizData.QuizNumber5 = quiz5Manager.score.ToString() + "/10";
                 SetQuizData(GetQuizData);
+
+                UserAccountManager.Instance.SubmitQuiz5ScoreToLeaderboard();
             }
             else
             {
@@ -335,6 +348,8 @@ public class UserProfile : MonoBehaviour
             {
                 quizData.QuizNumber6 = quiz6Manager.score.ToString() + "/10";
                 SetQuizData(GetQuizData);
+
+                UserAccountManager.Instance.SubmitQuiz6ScoreToLeaderboard();
             }
             else
             {
@@ -354,6 +369,8 @@ public class UserProfile : MonoBehaviour
             {
                 quizData.QuizNumber7 = quiz7Manager.score.ToString() + "/10";
                 SetQuizData(GetQuizData);
+
+                UserAccountManager.Instance.SubmitQuiz7ScoreToLeaderboard();
             }
             else
             {
@@ -373,6 +390,8 @@ public class UserProfile : MonoBehaviour
             {
                 quizData.QuizNumber8 = quiz8Manager.score.ToString() + "/10";
                 SetQuizData(GetQuizData);
+
+                UserAccountManager.Instance.SubmitQuiz8ScoreToLeaderboard();
             }
             else
             {
