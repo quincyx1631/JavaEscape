@@ -207,9 +207,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber1.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 1 Score - BSIT 2A"
-                : "Quiz 1 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+            .Replace("-", "") // Remove hyphens
+            .Replace(" ", "") // Remove spaces
+            .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 1 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 1 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
@@ -252,9 +268,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber2.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 2 Score - BSIT 2A"
-                : "Quiz 2 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+             .Replace("-", "") // Remove hyphens
+             .Replace(" ", "") // Remove spaces
+             .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 2 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 2 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
@@ -297,9 +329,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber3.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 3 Score - BSIT 2A"
-                : "Quiz 3 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+             .Replace("-", "") // Remove hyphens
+             .Replace(" ", "") // Remove spaces
+             .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 3 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 3 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
@@ -342,9 +390,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber4.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 4 Score - BSIT 2A"
-                : "Quiz 4 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+             .Replace("-", "") // Remove hyphens
+             .Replace(" ", "") // Remove spaces
+             .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 4 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 4 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
@@ -387,9 +451,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber5.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 5 Score - BSIT 2A"
-                : "Quiz 5 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+             .Replace("-", "") // Remove hyphens
+             .Replace(" ", "") // Remove spaces
+             .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 5 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 5 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
@@ -432,9 +512,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber6.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 6 Score - BSIT 2A"
-                : "Quiz 6 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+             .Replace("-", "") // Remove hyphens
+             .Replace(" ", "") // Remove spaces
+             .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 6 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 6 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
@@ -477,9 +573,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber7.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 7 Score - BSIT 2A"
-                : "Quiz 7 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+             .Replace("-", "") // Remove hyphens
+             .Replace(" ", "") // Remove spaces
+             .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 7 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 7 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
@@ -522,9 +634,25 @@ public class UserAccountManager : MonoBehaviour
         {
             int score = int.Parse(userProfile.quizData.QuizNumber8.Split('/')[0]);
 
-            string statisticName = userProfile.profileData.Student_Section == "BSIT 2A"
-                ? "Quiz 8 Score - BSIT 2A"
-                : "Quiz 8 Score - BSIT 2B";
+            string normalizedSection = userProfile.profileData.Student_Section
+             .Replace("-", "") // Remove hyphens
+             .Replace(" ", "") // Remove spaces
+             .ToUpper();       // Convert to uppercase for consistent comparison
+
+            string statisticName;
+
+            if (normalizedSection == "BSIT2A")
+            {
+                statisticName = "Quiz 8 Score - BSIT 2A";
+            }
+            else if (normalizedSection == "BSIT2B")
+            {
+                statisticName = "Quiz 8 Score - BSIT 2B";
+            }
+            else
+            {
+                statisticName = "Quiz Scores - Wrong Section(Typo)";
+            }
 
             PlayFabClientAPI.UpdatePlayerStatistics(
                 new UpdatePlayerStatisticsRequest
